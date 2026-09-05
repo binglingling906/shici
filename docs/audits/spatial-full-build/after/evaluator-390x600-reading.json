@@ -1,0 +1,531 @@
+{
+  "at": "2026-09-01T06:41:23.206Z",
+  "view": "lushan",
+  "stage": "reading",
+  "scope": "region",
+  "viewport": {
+    "width": 390,
+    "height": 600
+  },
+  "checks": [
+    {
+      "name": "map-view-active",
+      "pass": true,
+      "details": {
+        "mapVisible": false,
+        "readingVisible": true,
+        "journeyVisible": false,
+        "scope": "region"
+      }
+    },
+    {
+      "name": "world-map-present",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前正在阅读诗词，地图退为安静的空间锚点"
+      }
+    },
+    {
+      "name": "map-geometry-source",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "地图路径在山河视图或完成态验收"
+      }
+    },
+    {
+      "name": "scale-continuity",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "阅读态通过 breadcrumb 维持空间连续性"
+      }
+    },
+    {
+      "name": "regional-relations-visible",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "scope": "region",
+        "reason": "区域关系只在长江中游镜头展示"
+      }
+    },
+    {
+      "name": "map-ai-observation",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "scope": "region",
+        "reason": "地图观察问题只在区域镜头展示"
+      }
+    },
+    {
+      "name": "memory-trace",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "完成一站后进入独立山河记忆视图"
+      }
+    },
+    {
+      "name": "journey-derived-copy",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "旅程关系只在完成态显示"
+      }
+    },
+    {
+      "name": "historical-disclaimer",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "旅程关系只在完成态显示"
+      }
+    },
+    {
+      "name": "map-necessity-counterfactual",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "阅读态不重复验收地图必要性"
+      }
+    },
+    {
+      "name": "artistic-spatial-integrity",
+      "status": "review",
+      "pass": null,
+      "details": {
+        "reason": "地图与宋画留白、青绿山水气质的协调程度，需要真实截图进行人工判断",
+        "generatedGeometry": 65,
+        "mapIsPrimary": false
+      }
+    },
+    {
+      "name": "primary-content-no-secondary-occlusion",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "intersections": []
+      }
+    },
+    {
+      "name": "poem-line-sampling-uncovered",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "lineOcclusions": []
+      }
+    },
+    {
+      "name": "reading-stage-four-lines-readable",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "stage": "reading",
+        "lineVisibility": [
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "reading-stage-four-lines-in-viewport-or-reachable",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "stage": "reading",
+        "lineVisibility": [
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "ruby-character-pairing",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "rubyErrors": []
+      }
+    },
+    {
+      "name": "poem-text-legibility",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "fontSize": "28.8px",
+        "lineHeight": "36.864px"
+      }
+    },
+    {
+      "name": "no-horizontal-overflow",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "scrollWidth": 390,
+        "clientWidth": 390
+      }
+    },
+    {
+      "name": "keyboard-touch-targets",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "undersized": []
+      }
+    },
+    {
+      "name": "poem-spatial-cues",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "cueCount": 3,
+        "activeCue": null
+      }
+    },
+    {
+      "name": "focused-input-clear-of-keyboard-viewport",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "activeInput": null,
+        "input": null,
+        "visualViewport": {
+          "offsetTop": 0,
+          "height": 600
+        }
+      }
+    },
+    {
+      "name": "large-text-reflow",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "viewport": {
+          "width": 390,
+          "height": 600
+        },
+        "qaTextScale": "100",
+        "noHorizontalOverflow": true
+      }
+    },
+    {
+      "name": "reduced-motion-contract",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前环境未请求减少动画；另以 qaReducedMotion=1 验收"
+      }
+    },
+    {
+      "name": "optional-origin-privacy",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "出发地为地图二级披露"
+      }
+    }
+  ],
+  "spatialChecks": [
+    {
+      "name": "world-map-present",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前正在阅读诗词，地图退为安静的空间锚点"
+      }
+    },
+    {
+      "name": "map-geometry-source",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "地图路径在山河视图或完成态验收"
+      }
+    },
+    {
+      "name": "scale-continuity",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "阅读态通过 breadcrumb 维持空间连续性"
+      }
+    },
+    {
+      "name": "regional-relations-visible",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "scope": "region",
+        "reason": "区域关系只在长江中游镜头展示"
+      }
+    },
+    {
+      "name": "map-ai-observation",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "scope": "region",
+        "reason": "地图观察问题只在区域镜头展示"
+      }
+    },
+    {
+      "name": "memory-trace",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "完成一站后进入独立山河记忆视图"
+      }
+    },
+    {
+      "name": "journey-derived-copy",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "旅程关系只在完成态显示"
+      }
+    },
+    {
+      "name": "historical-disclaimer",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "旅程关系只在完成态显示"
+      }
+    },
+    {
+      "name": "map-necessity-counterfactual",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "阅读态不重复验收地图必要性"
+      }
+    },
+    {
+      "name": "artistic-spatial-integrity",
+      "status": "review",
+      "pass": null,
+      "details": {
+        "reason": "地图与宋画留白、青绿山水气质的协调程度，需要真实截图进行人工判断",
+        "generatedGeometry": 65,
+        "mapIsPrimary": false
+      }
+    },
+    {
+      "name": "primary-content-no-secondary-occlusion",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "intersections": []
+      }
+    },
+    {
+      "name": "poem-line-sampling-uncovered",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "lineOcclusions": []
+      }
+    },
+    {
+      "name": "reading-stage-four-lines-readable",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "stage": "reading",
+        "lineVisibility": [
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "reading-stage-four-lines-in-viewport-or-reachable",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "stage": "reading",
+        "lineVisibility": [
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          },
+          {
+            "width": 337,
+            "height": 45,
+            "opacity": 0.98,
+            "inViewport": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "ruby-character-pairing",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "rubyErrors": []
+      }
+    },
+    {
+      "name": "poem-text-legibility",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "fontSize": "28.8px",
+        "lineHeight": "36.864px"
+      }
+    },
+    {
+      "name": "no-horizontal-overflow",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "scrollWidth": 390,
+        "clientWidth": 390
+      }
+    },
+    {
+      "name": "keyboard-touch-targets",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "undersized": []
+      }
+    },
+    {
+      "name": "poem-spatial-cues",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "cueCount": 3,
+        "activeCue": null
+      }
+    },
+    {
+      "name": "focused-input-clear-of-keyboard-viewport",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "activeInput": null,
+        "input": null,
+        "visualViewport": {
+          "offsetTop": 0,
+          "height": 600
+        }
+      }
+    },
+    {
+      "name": "large-text-reflow",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "viewport": {
+          "width": 390,
+          "height": 600
+        },
+        "qaTextScale": "100",
+        "noHorizontalOverflow": true
+      }
+    },
+    {
+      "name": "reduced-motion-contract",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前环境未请求减少动画；另以 qaReducedMotion=1 验收"
+      }
+    }
+  ],
+  "needsSpatialReview": true,
+  "spatialPass": true,
+  "pass": true
+}

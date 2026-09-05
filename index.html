@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="山河诗境：沿教材与中国山河两条路径，读诗、问概念、认识地点、人物与时代。" />
+    <title>山河诗境 · 一幅会回应你的中国地图</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css?v=curriculum-concepts-1" />
+    <script src="evaluation/experience-evaluator.js?v=curriculum-concepts-1" defer></script>
+    <script type="module" src="app.js?v=curriculum-concepts-1"></script>
+  </head>
+  <body>
+    <div class="app-shell" id="app-shell">
+      <div class="grain" aria-hidden="true"></div>
+      <header class="site-header">
+        <a class="wordmark" href="#map" data-route="map" aria-label="山河诗境，回到山河地图">
+          <span class="wordmark-seal" aria-hidden="true">山</span>
+          <span class="wordmark-copy"><strong>山河诗境</strong><small>CHINESE CIVILIZATION WORLD</small></span>
+        </a>
+        <nav class="primary-nav" aria-label="主要页面">
+          <button type="button" data-route="map" aria-current="page">山河</button>
+          <button type="button" data-route="curriculum">按教材</button>
+          <button type="button" data-route="daily">今日一诗</button>
+          <button type="button" data-route="challenge">挑战</button>
+          <button type="button" data-route="progress">我的足迹 <span id="header-progress">0/10</span></button>
+        </nav>
+        <div class="header-actions">
+          <button class="age-trigger" id="age-trigger" type="button" aria-haspopup="dialog">7–8岁</button>
+          <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="true">声音开</button>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <section class="screen world-screen is-active" id="map-screen" data-screen="map" aria-labelledby="world-title">
+          <div class="world-hero">
+            <div><p class="eyebrow"><span aria-hidden="true"></span>孩子的中国文明探索</p><h1 id="world-title">从山河<br /><em>开始</em></h1><p class="world-lede">从一幅中国地图出发。<br />一座山、一条江、一座城，会把诗带到眼前。</p></div>
+            <div class="world-promise" aria-label="探索方式"><span>01</span><p><strong>山河不是背景</strong><br />它会告诉我们，诗从哪里望出去。</p></div>
+          </div>
+          <div class="explore-bar" aria-label="地图筛选">
+            <div class="filter-group" id="map-filters" role="group" aria-label="选择地图模式">
+              <button type="button" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="tang" aria-pressed="false">唐</button><button type="button" data-filter="song" aria-pressed="false">宋诗</button><button type="button" data-filter="landscape" aria-pressed="false">山河</button><button type="button" data-filter="city" aria-pressed="false">城市</button><button type="button" data-filter="poet" aria-pressed="false">诗人</button>
+            </div>
+            <p id="filter-summary" role="status">5 个地点 · 10 首完整诗境</p>
+          </div>
+          <section class="region-ribbon" aria-labelledby="region-ribbon-title">
+            <div class="region-ribbon-heading">
+              <div><p class="section-kicker">文化地理 · 横向游历</p><h2 id="region-ribbon-title">沿一条山河，把地方连起来</h2></div>
+              <button class="text-button" id="region-reset" type="button" hidden>看回整个中国</button>
+            </div>
+            <div class="region-tabs" id="region-tabs" role="list" aria-label="文化区域与山河路线"></div>
+            <div class="region-summary" id="region-summary" aria-live="polite"></div>
+          </section>
+          <div class="world-layout">
+            <aside class="world-sidebar">
+              <p class="section-kicker">中国 · 现在看见的是整个世界</p>
+              <div class="world-direction"><span aria-hidden="true">N</span><p><strong>北向上</strong><br />先找一处正在发光的地点。</p></div>
+              <div class="origin-picker"><button id="origin-trigger" type="button" aria-expanded="false" aria-controls="origin-panel">我从哪里出发</button><div id="origin-panel" hidden><p>只保存城市名称，不读取定位，也不保存精确地址。</p><div id="origin-options" role="group" aria-label="选择出发城市"></div></div></div>
+              <button class="daily-card" id="daily-card" type="button"><span class="card-index">今天</span><strong id="daily-title">今日一诗</strong><small id="daily-meta">每天稳定出现同一首</small></button>
+              <div class="footprint-summary"><div><span id="place-progress-count">0</span><small>/ 10 首诗</small></div><p id="footprint-copy">你的诗词山河图还在等待第一枚足迹。</p></div>
+              <button class="text-button" type="button" data-route="progress">打开我的山河图</button>
+            </aside>
+            <section class="map-stage" aria-labelledby="map-stage-title">
+              <div class="map-stage-topline"><span id="map-stage-title">中国 · 物理山河骨架</span><span>真实地理路径 · 无外部图块</span></div>
+              <div class="map-viewport" id="map-viewport">
+                <svg id="world-map-svg" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="map-title map-desc"><title id="map-title">中国山河空间地图</title><desc id="map-desc">地图路径来自项目内生成的中国自然地理数据。已核验地点使用现代参考位置标记，并区分学习成熟度。</desc><g id="map-layer-root"></g></svg>
+                <div class="map-entity-layer" id="map-entity-layer" aria-label="可探索地点"></div>
+                <div class="map-empty" id="map-empty" hidden><p>这个筛选下暂时没有完整地点。</p><button type="button" data-clear-filter>查看全部</button></div>
+                <div class="map-legend" aria-hidden="true"><span><i class="legend-dot is-open"></i>可探索</span><span><i class="legend-dot is-done"></i>已留下足迹</span></div>
+              </div>
+              <div class="map-caption"><p>没有行政边界，也可以先从山川、城市与视线认识中国。</p><button class="text-button" id="map-list-toggle" type="button" aria-expanded="false" aria-controls="map-text-list">用文字读地图</button></div>
+              <ul class="map-text-list" id="map-text-list" hidden></ul>
+            </section>
+          </div>
+          <section class="place-dock" id="place-dock" hidden aria-live="polite">
+            <div class="place-dock-art"><img id="place-art" src="" alt="" /></div>
+            <div class="place-dock-copy"><p class="section-kicker" id="place-location">地点</p><h2 id="place-name">庐山</h2><p id="place-story"></p><div class="relation-chips" id="place-relations"></div></div>
+            <div class="place-poems" id="place-poems" aria-label="选择这处地点的诗"></div><button class="dock-close" id="place-close" type="button">收起</button>
+          </section>
+        </section>
+
+        <section class="screen reader-screen" id="reader-screen" data-screen="reader" aria-labelledby="reader-title" hidden>
+          <div class="reader-background" aria-hidden="true"><img id="reader-art" src="" alt="" /><span></span></div>
+          <div class="reader-topline"><button class="back-button" id="reader-back" type="button" data-route="map">回到山河</button><span id="reader-place-index">第一站 · 庐山</span></div>
+          <div class="reader-layout">
+            <aside class="reader-context">
+              <p class="eyebrow"><span aria-hidden="true"></span>从地点进入一首诗</p><p class="spatial-path" id="reader-spatial-path">中国 → 长江中游 → 庐山</p><h2 id="reader-place">庐山</h2><p id="reader-place-note"></p>
+              <details class="source-details"><summary>地理与文本依据</summary><p id="reader-source"></p></details><div class="sibling-poems" id="sibling-poems" aria-label="同一地点的另一首诗"></div>
+            </aside>
+            <article class="poem-primary" id="poem-primary" data-primary-content>
+              <header class="poem-heading"><div class="poem-taxonomy" id="poem-taxonomy" aria-label="可以探索的诗词知识"></div><h1 id="reader-title">望庐山瀑布</h1><p class="poem-author" id="poem-author"></p><p class="age-reading-note" id="age-reading-note"></p><p class="curriculum-origin" id="curriculum-origin"></p></header>
+              <div class="poem-stage" id="poem-stage" data-primary-content tabindex="-1" aria-label="完整诗文"><p class="stage-whisper" id="poem-image-cue"></p><div class="poem-lines" id="poem-lines"></div><p class="poem-source-line" id="poem-source-line"></p></div>
+              <div class="reader-controls" data-secondary-content aria-label="诗文阅读控制"><button class="primary-control" id="listen-poem" type="button">朗读全诗</button><button id="stop-poem" type="button" hidden>停止</button><button id="pinyin-toggle" type="button" aria-pressed="true">拼音开</button><span id="audio-status" role="status">也可以逐句点读</span></div>
+              <div class="keyword-strip" id="keyword-strip" aria-label="读诗时可以留意的词"></div>
+              <section class="concept-discovery" id="concept-discovery" aria-labelledby="concept-title" hidden>
+                <div class="concept-heading"><div><p class="section-kicker" id="concept-category">诗的发现</p><h2 id="concept-title">七言绝句</h2></div><button id="concept-close" type="button">收起</button></div>
+                <p class="concept-progress" id="concept-progress">第 1 步，共 4 步</p>
+                <p class="concept-prompt" id="concept-prompt"></p>
+                <div class="concept-evidence" id="concept-evidence" aria-label="当前诗句证据"></div>
+                <div class="concept-choices" id="concept-choices" role="group" aria-label="概念发现选项"></div>
+                <p class="concept-feedback" id="concept-feedback" role="status" aria-live="polite"></p>
+                <div class="concept-actions"><button class="ink-button" id="concept-next" type="button">继续发现</button><button class="text-button" id="concept-reset" type="button">重新数一遍</button></div>
+                <div class="concept-followups" id="concept-followups" aria-label="还可以继续问"></div>
+                <form class="concept-ask" id="concept-ask-form"><label for="concept-ask-input">有个词不懂</label><div><input id="concept-ask-input" maxlength="48" autocomplete="off" placeholder="例如：绝句是什么意思？" /><button type="submit">问这一首诗</button></div><p>只用当前诗和已审核概念回答；没有可靠答案时会明确说需要再查。</p></form>
+                <p class="concept-answer" id="concept-answer" role="status" aria-live="polite"></p>
+              </section>
+            </article>
+            <aside class="learning-rail" data-secondary-content>
+              <div class="learning-stage-label"><span id="learning-step">先感受</span><small id="age-mode-label">7–8岁阅读方式</small></div><h2 id="question-title">山风想问</h2><p id="question-copy"></p><div class="answer-options" id="answer-options" role="group" aria-label="回答选项"></div>
+              <button class="hint-button" id="hint-button" type="button">给我一点提示</button><p class="hint-copy" id="hint-copy" role="status"></p>
+              <form id="tutor-form" class="tutor-form"><label for="tutor-input">说说你看见的</label><textarea id="tutor-input" rows="3" maxlength="160" placeholder="一句话、一个词都可以"></textarea><p class="privacy-note">你的文字只在这一页回应，不会被保存。</p><button class="ink-button" type="submit">让山风回应</button></form>
+              <div class="tutor-response" id="tutor-response" role="status" aria-live="polite"></div><button class="complete-button" id="complete-poem" type="button">完成这首诗</button>
+            </aside>
+          </div>
+          <section class="reader-understory" aria-label="诗的解释、延伸与空间联系">
+            <section class="relation-lattice" aria-labelledby="relation-lattice-title"><div><p class="section-kicker">同一首诗 · 多条路径</p><h2 id="relation-lattice-title">从这里还能往哪里走</h2></div><div id="relation-lattice-links"></div></section>
+            <details class="meaning-card" id="meaning-card">
+              <summary><span><small>逐句读懂</small><strong>这首诗具体在说什么</strong></span><i aria-hidden="true">展开</i></summary>
+              <div class="meaning-content">
+                <p class="meaning-summary" id="meaning-summary"></p>
+                <ol class="meaning-lines" id="meaning-lines"></ol>
+              </div>
+            </details>
+            <div class="poetic-reading-card"><p class="section-kicker">诗意与写法</p><h2 id="explanation-title">先看画面，再懂意思</h2><p id="explanation-copy"></p></div>
+            <aside class="extension-card" aria-labelledby="extension-title"><p class="section-kicker">诗外的一步</p><h2 id="extension-title"></h2><p id="extension-copy"></p><p class="extension-prompt" id="extension-prompt"></p><small>这是一种延伸读法，不是唯一标准答案。</small></aside>
+            <div class="next-place-card"><p class="section-kicker">下一站为什么</p><h2 id="next-place-title"></h2><p id="next-place-reason"></p><button class="text-button" id="next-place-button" type="button">在地图上看下一站</button></div>
+          </section>
+        </section>
+
+        <section class="screen curriculum-screen" id="curriculum-screen" data-screen="curriculum" hidden aria-labelledby="curriculum-title">
+          <header class="curriculum-hero">
+            <div><p class="eyebrow"><span aria-hidden="true"></span>教材纵轴 · 不把版本混在一起</p><h1 id="curriculum-title">从一年级<br /><em>读到高中</em></h1><p>默认查看可追溯的统编语文目录快照。修订版、课内与课外、已核验与候选都会分开标记。</p></div>
+            <div class="corpus-tally" id="corpus-tally" aria-live="polite"></div>
+          </header>
+          <div class="curriculum-toolbar">
+            <label class="corpus-search" for="corpus-search">找诗、诗人或地点<input id="corpus-search" type="search" placeholder="例如：李白、黄河、送别" /></label>
+            <div class="stage-tabs" id="stage-tabs" role="group" aria-label="选择学段"></div>
+            <div class="semester-tabs" id="semester-tabs" role="group" aria-label="选择学期"><button type="button" data-semester="all" aria-pressed="true">全部</button><button type="button" data-semester="上册" aria-pressed="false">上册</button><button type="button" data-semester="下册" aria-pressed="false">下册</button></div>
+          </div>
+          <div class="curriculum-layout">
+            <aside class="grade-rail"><p class="section-kicker">选择年级</p><div id="grade-list" role="list"></div><details><summary>版本与核验说明</summary><p id="curriculum-edition-note"></p></details><button class="text-button" id="coverage-open" type="button">查看内部覆盖面板</button></aside>
+            <section class="catalog-results" aria-labelledby="catalog-heading"><div class="catalog-results-heading"><div><p class="section-kicker" id="catalog-kicker">小学 · 一年级</p><h2 id="catalog-heading">诗词学习目录</h2></div><p id="catalog-count" role="status"></p></div><div class="catalog-list" id="catalog-list"></div></section>
+          </div>
+        </section>
+
+        <section class="screen coverage-screen" id="coverage-screen" data-screen="coverage" hidden aria-labelledby="coverage-title">
+          <header class="utility-heading"><p class="eyebrow"><span aria-hidden="true"></span>内部内容审阅</p><h1 id="coverage-title">Coverage Dashboard</h1><p>数字直接来自运行时数据与审核状态，不把目录候选伪装成完整诗境。</p></header>
+          <div class="coverage-grid" id="coverage-grid"></div>
+          <section class="coverage-gaps"><div><p class="section-kicker">下一轮由缺口决定</p><h2>区域与审核缺口</h2></div><div id="coverage-gaps"></div></section>
+          <button class="back-button" type="button" data-route="curriculum">回到教材目录</button>
+        </section>
+
+        <section class="screen utility-screen" id="daily-screen" data-screen="daily" hidden aria-labelledby="daily-screen-title"><div class="utility-heading"><p class="eyebrow"><span aria-hidden="true"></span>每天稳定出现同一首</p><h1 id="daily-screen-title">今日一诗</h1><p>由本地日期决定，不追踪孩子，也不会刷新一次就换一首。</p></div><div class="feature-panel" id="daily-feature"></div></section>
+        <section class="screen utility-screen" id="challenge-screen" data-screen="challenge" hidden aria-labelledby="challenge-title"><div class="utility-heading"><p class="eyebrow"><span aria-hidden="true"></span>把线索重新连起来</p><h1 id="challenge-title">山河挑战</h1><p>不比速度。先看地图、读诗句，再作判断。</p></div><div class="challenge-panel" id="challenge-panel"></div></section>
+        <section class="screen utility-screen" id="progress-screen" data-screen="progress" hidden aria-labelledby="progress-title"><div class="utility-heading"><p class="eyebrow"><span aria-hidden="true"></span>Map as Memory</p><h1 id="progress-title">我的诗词山河图</h1><p>只保存完成状态、阅读偏好和城市级出发地，不保存自由表达原文。</p></div><div class="progress-grid" id="progress-grid"></div><button class="reset-button" id="reset-progress" type="button">重置本机足迹</button></section>
+      </main>
+
+      <dialog class="age-dialog" id="age-dialog" aria-labelledby="age-dialog-title"><form method="dialog"><p class="section-kicker">选择阅读方式</p><h2 id="age-dialog-title">现在更适合怎样读？</h2><p>不需要生日。它只会改变拼音、提示、问题深度与完成方式。</p><div class="age-options" id="age-options"></div><button class="dialog-close" value="cancel">保留现在的方式</button></form></dialog>
+      <dialog class="completion-dialog" id="completion-dialog" aria-labelledby="completion-title"><div class="completion-stamp" aria-hidden="true">印</div><p class="section-kicker">一枚新足迹</p><h2 id="completion-title">这首诗记住你来过</h2><p id="completion-copy"></p><div class="completion-actions"><button type="button" id="completion-next">去下一站</button><button type="button" id="completion-map">回到山河图</button></div></dialog>
+    </div>
+  </body>
+</html>

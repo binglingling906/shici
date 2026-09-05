@@ -1,0 +1,245 @@
+{
+  "at": "2026-09-01T09:06:19.934Z",
+  "view": "reader",
+  "viewport": {
+    "width": 390,
+    "height": 500
+  },
+  "checks": [
+    {
+      "name": "single-active-screen",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "mapVisible": false,
+        "readerVisible": true,
+        "dailyVisible": false,
+        "challengeVisible": false,
+        "progressVisible": false
+      }
+    },
+    {
+      "name": "map-system",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前不在山河页"
+      }
+    },
+    {
+      "name": "primary-content-visible",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "lineCount": 4,
+        "lineMetrics": [
+          {
+            "line": 1,
+            "width": 346,
+            "height": 52,
+            "fontSize": 31.98,
+            "inDocumentFlow": true,
+            "inViewport": false
+          },
+          {
+            "line": 2,
+            "width": 346,
+            "height": 52,
+            "fontSize": 31.98,
+            "inDocumentFlow": true,
+            "inViewport": false
+          },
+          {
+            "line": 3,
+            "width": 346,
+            "height": 52,
+            "fontSize": 31.98,
+            "inDocumentFlow": true,
+            "inViewport": false
+          },
+          {
+            "line": 4,
+            "width": 346,
+            "height": 52,
+            "fontSize": 31.98,
+            "inDocumentFlow": true,
+            "inViewport": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "primary-content-no-secondary-occlusion",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "intersections": []
+      }
+    },
+    {
+      "name": "ruby-character-pairing",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "rubyErrors": []
+      }
+    },
+    {
+      "name": "pinyin-above-character",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "pinyinVisible": true,
+        "pinyinPositionErrors": []
+      }
+    },
+    {
+      "name": "pinyin-legibility",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "minPinyinPx": 10.88
+      }
+    },
+    {
+      "name": "poem-text-legibility",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "minPoemPx": 31.98
+      }
+    },
+    {
+      "name": "reading-comfort",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "lines": 4,
+        "primaryWidth": 364,
+        "primaryScrollWidth": 364
+      }
+    },
+    {
+      "name": "touch-targets",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "undersized": []
+      }
+    },
+    {
+      "name": "input-clear-of-keyboard-viewport",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "activeInput": "tutor-input",
+        "visualViewport": {
+          "offsetTop": 0,
+          "height": 500
+        }
+      }
+    },
+    {
+      "name": "no-horizontal-overflow",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "scrollWidth": 390,
+        "clientWidth": 390
+      }
+    },
+    {
+      "name": "child-cognitive-load",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "visibleActionCount": 5,
+        "threshold": 14
+      }
+    },
+    {
+      "name": "reading-information-hierarchy",
+      "status": "review",
+      "pass": null,
+      "details": {
+        "principle": "诗为 Primary Content；地点、朗读、拼音、山风引导均在独立流式区域"
+      }
+    },
+    {
+      "name": "phase1-content-registry",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "poemCount": 10,
+        "placeCount": 5
+      }
+    },
+    {
+      "name": "versioned-progress",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "version": 2,
+        "ageMode": "7-8",
+        "persistedKeys": [
+          "version",
+          "ageMode",
+          "pinyinPreference",
+          "completedPoemIds",
+          "visitedPlaceIds",
+          "observationByPoem",
+          "challenge",
+          "originCityId",
+          "soundEnabled",
+          "lastPoemId"
+        ]
+      }
+    },
+    {
+      "name": "audio-provider",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "providerId": "browser-speech-synthesis"
+      }
+    },
+    {
+      "name": "tutor-provider",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "fallback": "grounded-local-tutor"
+      }
+    },
+    {
+      "name": "age-modes",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "modes": [
+          "7-8",
+          "9-10",
+          "11-12"
+        ]
+      }
+    },
+    {
+      "name": "optional-origin-privacy",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "persistence": "city-id-only"
+      }
+    },
+    {
+      "name": "reduced-motion-contract",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前环境未请求减少动态"
+      }
+    }
+  ],
+  "pass": true,
+  "needsHumanReview": true
+}

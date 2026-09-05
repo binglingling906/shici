@@ -1,0 +1,112 @@
+[
+  {
+    "name": "world-desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "view": "map",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "eight-short-desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 720
+    },
+    "view": "reader",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "reader-tablet-landscape",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "view": "reader",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "world-tablet-portrait",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "view": "map",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "eight-large-mobile",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "view": "reader",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "reader-mobile",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "view": "reader",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "reader-mobile-short",
+    "viewport": {
+      "width": 390,
+      "height": 600
+    },
+    "view": "reader",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "reader-near-320",
+    "viewport": {
+      "width": 320,
+      "height": 700
+    },
+    "view": "reader",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "text-scale-125",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "view": "reader",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "text-scale-150",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "view": "reader",
+    "pass": true,
+    "failed": []
+  },
+  {
+    "name": "reduced-motion",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "view": "map",
+    "pass": true,
+    "failed": []
+  }
+]

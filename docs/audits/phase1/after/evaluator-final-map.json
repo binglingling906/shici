@@ -1,0 +1,174 @@
+{
+  "at": "2026-09-01T09:14:19.810Z",
+  "view": "map",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "checks": [
+    {
+      "name": "single-active-screen",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "mapVisible": true,
+        "readerVisible": false,
+        "dailyVisible": false,
+        "challengeVisible": false,
+        "progressVisible": false
+      }
+    },
+    {
+      "name": "map-geometry-present",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "pathCount": 65,
+        "source": "content/generated/china-physical-map.json"
+      }
+    },
+    {
+      "name": "phase1-places-visible",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "visiblePlaceIds": [
+          "lushan",
+          "yellow-crane",
+          "west-lake",
+          "chengdu",
+          "chang-an"
+        ]
+      }
+    },
+    {
+      "name": "map-marker-no-overlap",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "markerOverlaps": []
+      }
+    },
+    {
+      "name": "map-filter-system",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "filters": [
+          "全部",
+          "唐",
+          "宋诗",
+          "山河",
+          "城市",
+          "诗人"
+        ]
+      }
+    },
+    {
+      "name": "map-text-alternative",
+      "status": "pass",
+      "pass": true,
+      "details": {}
+    },
+    {
+      "name": "map-information-hierarchy",
+      "status": "review",
+      "pass": null,
+      "details": {
+        "principle": "地点是入口，河流与地形是认知骨架，筛选是二级控制"
+      }
+    },
+    {
+      "name": "map-counterfactual-necessity",
+      "status": "review",
+      "pass": null,
+      "details": {
+        "question": "若移除路径、地点相对位置和筛选，孩子是否仍能理解诗从哪里望出去？"
+      }
+    },
+    {
+      "name": "reading-system",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前不在阅读页"
+      }
+    },
+    {
+      "name": "phase1-content-registry",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "poemCount": 10,
+        "placeCount": 5
+      }
+    },
+    {
+      "name": "versioned-progress",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "version": 2,
+        "ageMode": "7-8",
+        "persistedKeys": [
+          "version",
+          "ageMode",
+          "pinyinPreference",
+          "completedPoemIds",
+          "visitedPlaceIds",
+          "observationByPoem",
+          "challenge",
+          "originCityId",
+          "soundEnabled",
+          "lastPoemId"
+        ]
+      }
+    },
+    {
+      "name": "audio-provider",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "providerId": "browser-speech-synthesis"
+      }
+    },
+    {
+      "name": "tutor-provider",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "fallback": "grounded-local-tutor"
+      }
+    },
+    {
+      "name": "age-modes",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "modes": [
+          "7-8",
+          "9-10",
+          "11-12"
+        ]
+      }
+    },
+    {
+      "name": "optional-origin-privacy",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "persistence": "city-id-only"
+      }
+    },
+    {
+      "name": "reduced-motion-contract",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前环境未请求减少动态"
+      }
+    }
+  ],
+  "pass": true,
+  "needsHumanReview": true
+}

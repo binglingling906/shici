@@ -1,0 +1,322 @@
+{
+  "at": "2026-09-01T06:48:39.623Z",
+  "view": "map",
+  "stage": "map",
+  "scope": "china",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "checks": [
+    {
+      "name": "map-view-active",
+      "pass": true,
+      "details": {
+        "mapVisible": true,
+        "readingVisible": false,
+        "journeyVisible": false,
+        "scope": "china"
+      }
+    },
+    {
+      "name": "world-map-present",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "mapVisible": true,
+        "journeyVisible": false,
+        "viewportVisible": true,
+        "svgVisible": true,
+        "scope": "china"
+      }
+    },
+    {
+      "name": "map-geometry-source",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "pathCount": 65,
+        "sources": [
+          "content/generated/china-physical-map.json"
+        ],
+        "requiredSource": "content/generated/china-physical-map.json"
+      }
+    },
+    {
+      "name": "scale-continuity",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "scope": "china",
+        "levels": [
+          "中国",
+          "长江中游",
+          "庐山"
+        ],
+        "active": "中国"
+      }
+    },
+    {
+      "name": "regional-relations-visible",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "scope": "china",
+        "reason": "区域关系只在长江中游镜头展示"
+      }
+    },
+    {
+      "name": "map-ai-observation",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "scope": "china",
+        "reason": "地图观察问题只在区域镜头展示"
+      }
+    },
+    {
+      "name": "memory-trace",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "完成一站后进入独立山河记忆视图"
+      }
+    },
+    {
+      "name": "journey-derived-copy",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "旅程关系只在完成态显示"
+      }
+    },
+    {
+      "name": "historical-disclaimer",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "旅程关系只在完成态显示"
+      }
+    },
+    {
+      "name": "map-necessity-counterfactual",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "counterfactual": "若移除地图路径与相对位置，山河关系无法被观察",
+        "pathCount": 65,
+        "markerCount": 1
+      }
+    },
+    {
+      "name": "artistic-spatial-integrity",
+      "status": "review",
+      "pass": null,
+      "details": {
+        "reason": "地图与宋画留白、青绿山水气质的协调程度，需要真实截图进行人工判断",
+        "generatedGeometry": 65,
+        "mapIsPrimary": true
+      }
+    },
+    {
+      "name": "poem-spatial-cues",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "readingVisible": false
+      }
+    },
+    {
+      "name": "primary-content-no-secondary-occlusion",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "readingVisible": false
+      }
+    },
+    {
+      "name": "poem-line-sampling-uncovered",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "readingVisible": false
+      }
+    },
+    {
+      "name": "reading-stage-four-lines-readable",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "readingVisible": false
+      }
+    },
+    {
+      "name": "reduced-motion-contract",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前环境未请求减少动画；另以 qaReducedMotion=1 验收"
+      }
+    },
+    {
+      "name": "optional-origin-privacy",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "copy": "一张只属于你的山河图\n              你从哪里出发？\n              只保存你选择的城市名称，不读取定位，也不保存精确地址。\n            \n            宁波北京成都广州上海\n            清除出发地",
+        "storedValueIsCityId": true
+      }
+    }
+  ],
+  "spatialChecks": [
+    {
+      "name": "world-map-present",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "mapVisible": true,
+        "journeyVisible": false,
+        "viewportVisible": true,
+        "svgVisible": true,
+        "scope": "china"
+      }
+    },
+    {
+      "name": "map-geometry-source",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "pathCount": 65,
+        "sources": [
+          "content/generated/china-physical-map.json"
+        ],
+        "requiredSource": "content/generated/china-physical-map.json"
+      }
+    },
+    {
+      "name": "scale-continuity",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "scope": "china",
+        "levels": [
+          "中国",
+          "长江中游",
+          "庐山"
+        ],
+        "active": "中国"
+      }
+    },
+    {
+      "name": "regional-relations-visible",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "scope": "china",
+        "reason": "区域关系只在长江中游镜头展示"
+      }
+    },
+    {
+      "name": "map-ai-observation",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "scope": "china",
+        "reason": "地图观察问题只在区域镜头展示"
+      }
+    },
+    {
+      "name": "memory-trace",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "完成一站后进入独立山河记忆视图"
+      }
+    },
+    {
+      "name": "journey-derived-copy",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "旅程关系只在完成态显示"
+      }
+    },
+    {
+      "name": "historical-disclaimer",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "journeyVisible": false,
+        "reason": "旅程关系只在完成态显示"
+      }
+    },
+    {
+      "name": "map-necessity-counterfactual",
+      "status": "pass",
+      "pass": true,
+      "details": {
+        "counterfactual": "若移除地图路径与相对位置，山河关系无法被观察",
+        "pathCount": 65,
+        "markerCount": 1
+      }
+    },
+    {
+      "name": "artistic-spatial-integrity",
+      "status": "review",
+      "pass": null,
+      "details": {
+        "reason": "地图与宋画留白、青绿山水气质的协调程度，需要真实截图进行人工判断",
+        "generatedGeometry": 65,
+        "mapIsPrimary": true
+      }
+    },
+    {
+      "name": "poem-spatial-cues",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "readingVisible": false
+      }
+    },
+    {
+      "name": "primary-content-no-secondary-occlusion",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "readingVisible": false
+      }
+    },
+    {
+      "name": "poem-line-sampling-uncovered",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "readingVisible": false
+      }
+    },
+    {
+      "name": "reading-stage-four-lines-readable",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "readingVisible": false
+      }
+    },
+    {
+      "name": "reduced-motion-contract",
+      "status": "not_applicable",
+      "pass": null,
+      "details": {
+        "reason": "当前环境未请求减少动画；另以 qaReducedMotion=1 验收"
+      }
+    }
+  ],
+  "needsSpatialReview": true,
+  "spatialPass": true,
+  "pass": true
+}

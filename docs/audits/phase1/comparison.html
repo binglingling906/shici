@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Phase 1 Source / Implementation Comparison</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;padding:32px;background:#1f2d2b;color:#f4f0e4;font:14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}header{max-width:1500px;margin:0 auto 26px}h1{margin:0 0 8px;font:32px Georgia,"Songti SC",serif}p{margin:0;color:#b8c4bf}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1500px;margin:0 auto 34px}.panel{padding:12px;background:#f4f0e4;color:#173f3b}.panel h2{display:flex;justify-content:space-between;margin:0 0 10px;font-size:13px;letter-spacing:.08em}.panel img{display:block;width:100%;height:430px;object-fit:cover;object-position:top;border:1px solid rgba(23,63,59,.22)}@media(max-width:850px){.pair{grid-template-columns:1fr}.panel img{height:auto;aspect-ratio:16/10}}
+  </style>
+</head>
+<body>
+  <header><h1>山河诗境 · Phase 1 对照</h1><p>同一输入包含原始视觉真相与最终实现，用于判断层级、构图、Primary Content 与拼音位置。</p></header>
+  <section class="pair">
+    <article class="panel"><h2><span>REFERENCE · 改造前</span><span>拼音在汉字下方</span></h2><img src="before/02-reading-pinyin-below-1440x900.png" alt="改造前庐山诗词阅读页，拼音在汉字下方" /></article>
+    <article class="panel"><h2><span>IMPLEMENTATION · Phase 1</span><span>拼音在上、AI 独立侧栏</span></h2><img src="after/02-reading-lushan-1440x900.png" alt="Phase 1 庐山阅读页，拼音在汉字上方" /></article>
+  </section>
+  <section class="pair">
+    <article class="panel"><h2><span>REFERENCE · 改造前</span><span>单地点入口</span></h2><img src="before/01-world-1440x900.png" alt="改造前山河地图" /></article>
+    <article class="panel"><h2><span>IMPLEMENTATION · Phase 1</span><span>5 地点与真实筛选</span></h2><img src="after/01-world-1440x900.png" alt="Phase 1 五地点山河地图" /></article>
+  </section>
+</body>
+</html>
