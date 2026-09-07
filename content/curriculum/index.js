@@ -126,6 +126,29 @@ function cloneSource(source) {
   return { ...source, supports: [...(source.supports || [])] };
 }
 
+/**
+ * Grade ranges in candidate curriculum claims are inclusive. Keeping this
+ * matcher beside the data model makes the browser filter and deterministic
+ * checks share one interpretation (for example, 4-6 includes grade 5).
+ */
+export function claimGradeIncludes(claimGrade, selectedGrade) {
+  const selected = Number(selectedGrade);
+  if (!Number.isFinite(selected) || selected <= 0) return false;
+  const raw = String(claimGrade ?? "").trim();
+  if (/^\d+$/u.test(raw)) return Number(raw) === selected;
+  const range = raw.match(/^(\d+)\s*[-–—]\s*(\d+)$/u);
+  if (!range) return false;
+  const start = Number(range[1]);
+  const end = Number(range[2]);
+  return selected >= Math.min(start, end) && selected <= Math.max(start, end);
+}
+
+export function curriculumClaimMatches(claim, { stage, grade, semester = "all" }) {
+  if (!claim || claim.stage !== stage) return false;
+  if (claim.verificationStatus === "candidate") return true;
+  return claimGradeIncludes(claim.grade, grade) && (semester === "all" || claim.semester === semester);
+}
+
 function sourcesForClaim() {
   return [
     cloneSource(PEP_SOURCE),
@@ -406,9 +429,7 @@ const MIDDLE_STAGE_IDS = new Set([
   "child-you-shan-xi-cun",
   "child-dong-ye-du-shu",
   "child-ma-shi",
-  "child-ti-lin-an-di",
-  "child-shan-po-yang-tong-guan",
-  "child-nan-xiang-zi-beigu",
+  "child-tian-jing-sha-qiu-si",
   "child-guan-canghai",
   "child-ci-bei-gu-shan-xia",
   "child-guo-gu-ren-zhuang",
@@ -422,17 +443,7 @@ function stageFor(id) {
   return "primary";
 }
 
-function gradeFor(stage, index) {
-  if (stage === "primary") return ["1-2", "2-3", "3-4", "4-6"][index % 4];
-  if (stage === "middle") return index % 2 ? "8" : "7";
-  return index % 2 ? "11" : "10";
-}
-
-function semesterFor(index) {
-  return index % 2 ? "spring" : "autumn";
-}
-
-function claimFor(id, index) {
+function claimFor(id) {
   const stage = stageFor(id);
   return {
     claimId: `${id}--curriculum-recommended-candidate`,
@@ -440,17 +451,19 @@ function claimFor(id, index) {
     curriculumEdition: CURRICULUM_CONFIG.defaultSnapshot,
     publisher: CURRICULUM_CONFIG.publisher,
     stage,
-    grade: gradeFor(stage, index),
-    semester: semesterFor(index),
+    grade: stage === "primary" ? "1-6" : stage === "middle" ? "7-9" : "10-12",
+    semester: "all",
     inClassOrExtra: "extra",
     requiredOrRecommended: "recommended_memorization",
     source: sourcesForClaim(),
-    validFrom: stage === "high" ? "2023-01-01" : "2024-01-01",
-    validTo: "2024-12-31",
+    validFrom: CURRICULUM_RETRIEVED_AT,
+    validTo: CURRICULUM_RETRIEVED_AT,
+    validityKind: "research-snapshot",
     verificationStatus: "candidate",
-    claimBasis: "curriculum-recommended-memorization",
+    claimBasis: "editorial-stage-reading-candidate",
+    scopeBasis: "candidate-editorial-stage",
     textbookStatus: "not-verified",
-    claimNote: "优先锚定课标推荐背诵范围；不是教材课文或必背断言，需逐项对照 PEP 对应年级、上下册目录后才能升级为 source-verified。",
+    claimNote: "只表示学段级阅读候选，不表示具体年级、上下册、教材课文或必背；需逐项对照 PEP 对应册次目录后才能升级为 source-verified。",
   };
 }
 
@@ -489,10 +502,64 @@ const ITEM_LEVEL_PEP_SOURCES = {
   },
 };
 
-function verifiedClaim({ poemId, stage, grade, semester = "autumn", placement = "in-class", edition, source }) {
+const PRIMARY_MIDDLE_SERIES_SOURCE = CURRICULUM_CONFIG.curriculumSources.find((source) => source.id === "moe-2024-national-textbook-directory");
+const HIGH_SERIES_SOURCE = CURRICULUM_CONFIG.curriculumSources.find((source) => source.id === "moe-2023-high-school-textbook-directory");
+const HISTORICAL_ITEM_EVIDENCE = {
+  "primary-1-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primary1Autumn.id], poemIds: ["child-jiang-nan"] },
+  "primary-2-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primary2Autumn.id], poemIds: ["child-deng-guan-que-lou", "lushan-wang-lushan-pubu", "child-ye-su-shan-si", "child-chile-ge"] },
+  "middle-7-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.middle7Autumn.id], poemIds: ["child-guan-canghai", "child-ci-bei-gu-shan-xia", "child-tian-jing-sha-qiu-si", "child-jiang-nan-feng-li-guinian"] },
+  "high-required-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.highRequired1.id], poemIds: ["child-deng-gao"] },
+};
+
+function curriculumVolume({ id, stage, grade = null, semester = null, part = semester, title, source, volumeType = "graded-volume" }) {
+  const itemEvidence = HISTORICAL_ITEM_EVIDENCE[id] || { sourceIds: [], poemIds: [] };
+  return {
+    id,
+    stage,
+    grade,
+    semester,
+    part,
+    title,
+    volumeType,
+    schoolSystem: stage === "high" ? "普通高中" : "6-3学制",
+    publisher: CURRICULUM_CONFIG.publisher,
+    curriculumFramework: stage === "high" ? "普通高中语文课程标准（2017年版2020年修订）" : "义务教育语文课程标准（2022年版）",
+    seriesVerificationStatus: "source-verified",
+    itemEvidenceStatus: itemEvidence.sourceIds.length ? "historical-partial" : "not-item-verified",
+    itemEvidenceSourceIds: [...itemEvidence.sourceIds],
+    verifiedPoemIds: [...itemEvidence.poemIds],
+    source: [cloneSource(source)],
+    evidenceNote: itemEvidence.sourceIds.length
+      ? "册名属于当前官方书系；逐首证据来自2024修订前的历史目录，只能证明对应历史快照中的部分篇目。"
+      : "已核验册名与书系，尚未获得可支持单首篇目归属的官方逐项目录证据。",
+  };
+}
+
+/**
+ * The complete default book-series spine: 12 primary + 6 middle + 5 high.
+ * Series-level verification never upgrades a poem to item-level verification.
+ */
+export const CURRICULUM_VOLUMES = [
+  ...Array.from({ length: 6 }, (_, index) => index + 1).flatMap((grade) => [
+    curriculumVolume({ id: `primary-${grade}-autumn`, stage: "primary", grade: String(grade), semester: "autumn", title: `统编语文${["一", "二", "三", "四", "五", "六"][grade - 1]}年级上册`, source: PRIMARY_MIDDLE_SERIES_SOURCE }),
+    curriculumVolume({ id: `primary-${grade}-spring`, stage: "primary", grade: String(grade), semester: "spring", title: `统编语文${["一", "二", "三", "四", "五", "六"][grade - 1]}年级下册`, source: PRIMARY_MIDDLE_SERIES_SOURCE }),
+  ]),
+  ...Array.from({ length: 3 }, (_, index) => index + 7).flatMap((grade) => [
+    curriculumVolume({ id: `middle-${grade}-autumn`, stage: "middle", grade: String(grade), semester: "autumn", title: `统编语文${["七", "八", "九"][grade - 7]}年级上册`, source: PRIMARY_MIDDLE_SERIES_SOURCE }),
+    curriculumVolume({ id: `middle-${grade}-spring`, stage: "middle", grade: String(grade), semester: "spring", title: `统编语文${["七", "八", "九"][grade - 7]}年级下册`, source: PRIMARY_MIDDLE_SERIES_SOURCE }),
+  ]),
+  curriculumVolume({ id: "high-required-autumn", stage: "high", part: "upper", title: "统编高中语文必修上册", volumeType: "required", source: HIGH_SERIES_SOURCE }),
+  curriculumVolume({ id: "high-required-spring", stage: "high", part: "lower", title: "统编高中语文必修下册", volumeType: "required", source: HIGH_SERIES_SOURCE }),
+  curriculumVolume({ id: "high-selective-required-autumn", stage: "high", part: "upper", title: "统编高中语文选择性必修上册", volumeType: "selective-required", source: HIGH_SERIES_SOURCE }),
+  curriculumVolume({ id: "high-selective-required-middle", stage: "high", part: "middle", title: "统编高中语文选择性必修中册", volumeType: "selective-required", source: HIGH_SERIES_SOURCE }),
+  curriculumVolume({ id: "high-selective-required-spring", stage: "high", part: "lower", title: "统编高中语文选择性必修下册", volumeType: "selective-required", source: HIGH_SERIES_SOURCE }),
+];
+
+function verifiedClaim({ poemId, stage, grade, semester = "autumn", placement = "in-class", edition, source, volumeId }) {
   return {
     claimId: `${poemId}--${edition.replace(/\s+/gu, "-")}--source-verified`,
     poemId,
+    volumeId,
     curriculumEdition: edition,
     publisher: CURRICULUM_CONFIG.publisher,
     stage,
@@ -516,23 +583,27 @@ function verifiedClaim({ poemId, stage, grade, semester = "autumn", placement = 
  * from silently becoming a claim about a newer book.
  */
 export const VERIFIED_CURRICULUM_CLAIMS = [
-  verifiedClaim({ poemId: "child-jiang-nan", stage: "primary", grade: "1", edition: "2016统编语文一年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary1Autumn }),
-  verifiedClaim({ poemId: "child-deng-guan-que-lou", stage: "primary", grade: "2", edition: "2017统编语文二年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary2Autumn }),
-  verifiedClaim({ poemId: "lushan-wang-lushan-pubu", stage: "primary", grade: "2", edition: "2017统编语文二年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary2Autumn }),
-  verifiedClaim({ poemId: "child-ye-su-shan-si", stage: "primary", grade: "2", edition: "2017统编语文二年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary2Autumn }),
-  verifiedClaim({ poemId: "child-chile-ge", stage: "primary", grade: "2", edition: "2017统编语文二年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary2Autumn }),
-  verifiedClaim({ poemId: "child-guan-canghai", stage: "middle", grade: "7", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn }),
-  verifiedClaim({ poemId: "child-ci-bei-gu-shan-xia", stage: "middle", grade: "7", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn }),
-  verifiedClaim({ poemId: "child-tian-jing-sha-qiu-si", stage: "middle", grade: "7", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn }),
-  verifiedClaim({ poemId: "child-jiang-nan-feng-li-guinian", stage: "middle", grade: "7", placement: "extra", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn }),
-  verifiedClaim({ poemId: "child-deng-gao", stage: "high", grade: "10", edition: "2019统编高中语文必修上册", source: ITEM_LEVEL_PEP_SOURCES.highRequired1 }),
+  verifiedClaim({ poemId: "child-jiang-nan", stage: "primary", grade: "1", edition: "2016统编语文一年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary1Autumn, volumeId: "primary-1-autumn" }),
+  verifiedClaim({ poemId: "child-deng-guan-que-lou", stage: "primary", grade: "2", edition: "2017统编语文二年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary2Autumn, volumeId: "primary-2-autumn" }),
+  verifiedClaim({ poemId: "lushan-wang-lushan-pubu", stage: "primary", grade: "2", edition: "2017统编语文二年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary2Autumn, volumeId: "primary-2-autumn" }),
+  verifiedClaim({ poemId: "child-ye-su-shan-si", stage: "primary", grade: "2", edition: "2017统编语文二年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary2Autumn, volumeId: "primary-2-autumn" }),
+  verifiedClaim({ poemId: "child-chile-ge", stage: "primary", grade: "2", edition: "2017统编语文二年级上册", source: ITEM_LEVEL_PEP_SOURCES.primary2Autumn, volumeId: "primary-2-autumn" }),
+  verifiedClaim({ poemId: "child-guan-canghai", stage: "middle", grade: "7", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn, volumeId: "middle-7-autumn" }),
+  verifiedClaim({ poemId: "child-ci-bei-gu-shan-xia", stage: "middle", grade: "7", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn, volumeId: "middle-7-autumn" }),
+  verifiedClaim({ poemId: "child-tian-jing-sha-qiu-si", stage: "middle", grade: "7", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn, volumeId: "middle-7-autumn" }),
+  verifiedClaim({ poemId: "child-jiang-nan-feng-li-guinian", stage: "middle", grade: "7", placement: "extra", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn, volumeId: "middle-7-autumn" }),
+  verifiedClaim({ poemId: "child-deng-gao", stage: "high", grade: "10", edition: "2019统编高中语文必修上册", source: ITEM_LEVEL_PEP_SOURCES.highRequired1, volumeId: "high-required-autumn" }),
 ];
 
 export const CURRICULUM_CLAIMS = [
-  ...CATALOG_IDS.map((id, index) => claimFor(id, index)),
+  ...CATALOG_IDS.map((id) => claimFor(id)),
   ...VERIFIED_CURRICULUM_CLAIMS,
 ];
-const CLAIMS_BY_ID = new Map(CURRICULUM_CLAIMS.map((claim) => [claim.poemId, claim]));
+const CLAIMS_BY_ID = new Map();
+for (const claim of CURRICULUM_CLAIMS) {
+  if (!CLAIMS_BY_ID.has(claim.poemId)) CLAIMS_BY_ID.set(claim.poemId, []);
+  CLAIMS_BY_ID.get(claim.poemId).push(claim);
+}
 
 /** Kept separate so the 2024 transition note cannot silently rewrite per-poem claims. */
 export const CURRICULUM_REVISION_ADDENDUM = [
@@ -1511,7 +1582,7 @@ export function buildLearningCatalog(runtimeCatalog, phase1Poems = []) {
       maturityPath: maturityPathFor(item.id),
       review: reviewFlagsFor(item.id),
       reviewFlags: reviewFlagsFor(item.id),
-      curriculumClaims: CLAIMS_BY_ID.has(item.id) ? [CLAIMS_BY_ID.get(item.id)] : [],
+      curriculumClaims: CLAIMS_BY_ID.has(item.id) ? [...CLAIMS_BY_ID.get(item.id)] : [],
       conceptRelations: poemConcepts,
       geoRelations: poemGeo,
       regionIds,
@@ -1545,6 +1616,9 @@ export const coverageSummary = {
   geoNodes: GEO_NODES.length,
   mappedGeoNodes: GEO_NODES.filter((node) => node.positionKind !== "unknown").length,
   concepts: CONCEPTS.length,
+  curriculumVolumes: CURRICULUM_VOLUMES.length,
+  seriesVerifiedVolumes: CURRICULUM_VOLUMES.filter((volume) => volume.seriesVerificationStatus === "source-verified").length,
+  itemEvidenceVolumes: CURRICULUM_VOLUMES.filter((volume) => volume.itemEvidenceStatus === "historical-partial").length,
   curriculumClaimStatus: {
     candidate: CURRICULUM_CLAIMS.filter((claim) => claim.verificationStatus === "candidate").length,
     sourceVerified: CURRICULUM_CLAIMS.filter((claim) => claim.verificationStatus === "source-verified").length,
@@ -1557,6 +1631,7 @@ export const CURRICULUM_SYSTEM = {
   goldIds: GOLD_IDS,
   immersiveIds: IMMERSIVE_IDS,
   guidedIds: GUIDED_IDS,
+  volumes: CURRICULUM_VOLUMES,
   claims: CURRICULUM_CLAIMS,
   revisionAddendum: CURRICULUM_REVISION_ADDENDUM,
   reviewFlagDefinitions: REVIEW_FLAG_DEFINITIONS,

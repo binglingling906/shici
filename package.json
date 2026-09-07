@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "python3 -m http.server 4173 --bind 127.0.0.1",
     "build:map": "node scripts/build-map-data.mjs",
     "build:catalog": "node scripts/build-phase1-catalog.mjs",
     "check": "node scripts/check-phase1-content.mjs && node scripts/check-phase1-system.mjs && node scripts/check-spatial-system.mjs && node scripts/check-curriculum-system.mjs && node scripts/check-experience-contract.mjs",

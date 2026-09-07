@@ -18,6 +18,7 @@ import {
   CURRICULUM_CLAIMS,
   CURRICULUM_CONFIG,
   CURRICULUM_REVISION_ADDENDUM,
+  CURRICULUM_VOLUMES,
   CULTURAL_REGIONS,
   GEO_NODES,
   GOLD_IDS,
@@ -25,9 +26,12 @@ import {
   IMMERSIVE_IDS,
   POEM_CONCEPTS,
   REVIEW_FLAG_DEFINITIONS,
+  VERIFIED_CURRICULUM_CLAIMS,
   buildLearningCatalog,
   buildPoemConceptLinks,
   buildPoemGeoRelations,
+  claimGradeIncludes,
+  curriculumClaimMatches,
   coverageSummary,
 } from "../content/curriculum/index.js";
 
@@ -106,9 +110,31 @@ function checkClaim(claim, runtimeIds) {
     assert(claim.requiredOrRecommended === "recommended_memorization", `candidate claim ${claim.poemId} must remain a recommendation candidate`);
     assert(claim.textbookStatus === "not-verified", `candidate claim ${claim.poemId} cannot look textbook-verified`);
   } else {
+    assert(typeof claim.volumeId === "string" && claim.volumeId.trim(), `source-verified claim ${claim.poemId} needs a volumeId`);
     assert(claim.textbookStatus === "verified-item-level", `source-verified claim ${claim.poemId} needs item-level verification`);
     assert(claim.source.some((source) => source.supports?.includes("item_level_textbook_directory")), `source-verified claim ${claim.poemId} needs an item-level official directory source`);
     assert(["textbook_inclusion", "textbook_extra_recitation"].includes(claim.requiredOrRecommended), `source-verified claim ${claim.poemId} needs precise textbook placement`);
+  }
+}
+
+function checkVolume(volume) {
+  for (const field of ["id", "stage", "part", "title", "volumeType", "schoolSystem", "publisher", "curriculumFramework", "seriesVerificationStatus", "itemEvidenceStatus", "source", "evidenceNote"]) {
+    assert(nonEmpty(volume?.[field]), `curriculum volume ${volume?.id || "(unknown)"} missing ${field}`);
+  }
+  assert(CURRICULUM_CONFIG.claimEnums.stage.includes(volume.stage), `curriculum volume ${volume.id} stage is invalid`);
+  assert(volume.seriesVerificationStatus === "source-verified", `curriculum volume ${volume.id} must keep a series-level verified status`);
+  assert(["historical-partial", "not-item-verified"].includes(volume.itemEvidenceStatus), `curriculum volume ${volume.id} item evidence status is invalid`);
+  assert(Array.isArray(volume.itemEvidenceSourceIds), `curriculum volume ${volume.id} needs itemEvidenceSourceIds[]`);
+  assert(Array.isArray(volume.verifiedPoemIds), `curriculum volume ${volume.id} needs verifiedPoemIds[]`);
+  assert(Array.isArray(volume.source) && volume.source.length > 0, `curriculum volume ${volume.id} needs official series source[]`);
+  for (const source of volume.source || []) checkSource(`curriculum volume ${volume.id}`, source);
+  if (volume.itemEvidenceStatus === "historical-partial") {
+    assert(volume.itemEvidenceSourceIds.length > 0, `curriculum volume ${volume.id} historical evidence needs source ids`);
+    assert(volume.verifiedPoemIds.length > 0, `curriculum volume ${volume.id} historical evidence needs verified poem ids`);
+    assert(/历史/u.test(volume.evidenceNote), `curriculum volume ${volume.id} must label historical evidence honestly`);
+  } else {
+    assert(volume.itemEvidenceSourceIds.length === 0, `curriculum volume ${volume.id} cannot imply item evidence`);
+    assert(volume.verifiedPoemIds.length === 0, `curriculum volume ${volume.id} cannot imply verified poems`);
   }
 }
 
@@ -210,6 +236,27 @@ async function main() {
   assert(CURRICULUM_CONFIG.defaultSnapshot.includes("2024修订统编小学/初中"), "default curriculum frame must use 2024 revised primary/middle PEP");
   assert(CURRICULUM_CONFIG.defaultSnapshot.includes("2023统编高中五册"), "default curriculum frame must use 2023 high five volumes");
   assert(CURRICULUM_CONFIG.revisionAddendumPolicy.mergedIntoDefault === false, "2024 transition note must remain independent per-poem");
+  const expectedVolumeIds = new Set([
+    ...Array.from({ length: 6 }, (_, index) => index + 1).flatMap((grade) => [`primary-${grade}-autumn`, `primary-${grade}-spring`]),
+    ...Array.from({ length: 3 }, (_, index) => index + 7).flatMap((grade) => [`middle-${grade}-autumn`, `middle-${grade}-spring`]),
+    "high-required-autumn", "high-required-spring", "high-selective-required-autumn", "high-selective-required-middle", "high-selective-required-spring",
+  ]);
+  assert(CURRICULUM_VOLUMES.length === 23, `curriculum book spine has ${CURRICULUM_VOLUMES.length}; expected 23`);
+  assert(new Set(CURRICULUM_VOLUMES.map((volume) => volume.id)).size === CURRICULUM_VOLUMES.length, "curriculum volume ids must be unique");
+  assert(CURRICULUM_VOLUMES.every((volume) => expectedVolumeIds.has(volume.id)), "curriculum volume spine has an unexpected or missing id");
+  assert(CURRICULUM_VOLUMES.filter((volume) => volume.stage === "primary").length === 12, "curriculum book spine needs 12 primary volumes");
+  assert(CURRICULUM_VOLUMES.filter((volume) => volume.stage === "middle").length === 6, "curriculum book spine needs 6 middle volumes");
+  assert(CURRICULUM_VOLUMES.filter((volume) => volume.stage === "high").length === 5, "curriculum book spine needs 5 high volumes");
+  assert(CURRICULUM_VOLUMES.filter((volume) => volume.itemEvidenceStatus === "historical-partial").length === 4, "exactly four volumes currently have historical partial item evidence");
+  for (const volume of CURRICULUM_VOLUMES) checkVolume(volume);
+  assert(CURRICULUM_VOLUMES.filter((volume) => ["primary", "middle"].includes(volume.stage)).every((volume) => /^\d+$/u.test(volume.grade) && ["autumn", "spring"].includes(volume.semester) && volume.part === volume.semester), "primary/middle volumes need exact grade and semester structure");
+  assert(CURRICULUM_VOLUMES.filter((volume) => volume.stage === "high").every((volume) => volume.grade === null && volume.semester === null && ["upper", "middle", "lower"].includes(volume.part)), "high volumes need structured parts without invented grade/semester assignment");
+  const allowedSeriesSourceIds = new Set(["moe-2024-national-textbook-directory", "moe-2023-high-school-textbook-directory"]);
+  assert(CURRICULUM_VOLUMES.every((volume) => volume.source.every((source) => allowedSeriesSourceIds.has(source.id))), "volume sources must come from the official series directories");
+  assert(claimGradeIncludes("4-6", 5), "inclusive grade range must include its middle grade");
+  assert(claimGradeIncludes("2-3", 2) && claimGradeIncludes("2-3", 3), "inclusive grade range must include both endpoints");
+  assert(!claimGradeIncludes("4-6", 3), "grade range must reject grades outside the interval");
+  assert(claimGradeIncludes("10", 10) && !claimGradeIncludes("10", 11), "exact high-school grade claims must not leak across grades");
 
   const claimIds = new Set();
   assert(CURRICULUM_CLAIMS.filter((claim) => claim.verificationStatus === "candidate").length === 100, "curriculum layer must retain 100 explicit candidates");
@@ -219,6 +266,25 @@ async function main() {
     claimIds.add(claim.claimId);
     checkClaim(claim, runtimeIds);
   }
+  const candidates = CURRICULUM_CLAIMS.filter((claim) => claim.verificationStatus === "candidate");
+  assert(candidates.every((claim) => claim.scopeBasis === "candidate-editorial-stage" && claim.semester === "all" && claim.validityKind === "research-snapshot"), "candidate claims must remain stage-level editorial snapshots");
+  assert(candidates.every((claim) => ({ primary: "1-6", middle: "7-9", high: "10-12" })[claim.stage] === claim.grade), "candidate claims cannot invent exact grade placement");
+  assert(candidates.find((claim) => claim.poemId === "child-tian-jing-sha-qiu-si")?.stage === "middle", "天净沙·秋思 candidate must not conflict with its verified middle-school stage");
+  const primaryCandidate = candidates.find((claim) => claim.stage === "primary");
+  assert(curriculumClaimMatches(primaryCandidate, { stage: "primary", grade: 5, semester: "autumn" }), "stage candidate must remain discoverable without inventing a volume placement");
+  assert(!curriculumClaimMatches(primaryCandidate, { stage: "middle", grade: 7, semester: "autumn" }), "stage candidate must not leak into another school stage");
+  const verifiedSecondGrade = VERIFIED_CURRICULUM_CLAIMS.find((claim) => claim.volumeId === "primary-2-autumn");
+  assert(curriculumClaimMatches(verifiedSecondGrade, { stage: "primary", grade: 2, semester: "autumn" }), "verified claim must match its exact grade and semester");
+  assert(!curriculumClaimMatches(verifiedSecondGrade, { stage: "primary", grade: 2, semester: "spring" }), "verified claim must not leak across semesters");
+  assert(!curriculumClaimMatches(verifiedSecondGrade, { stage: "primary", grade: 3, semester: "autumn" }), "verified claim must not leak across grades");
+  const volumeById = new Map(CURRICULUM_VOLUMES.map((volume) => [volume.id, volume]));
+  const itemLevelSourceIds = new Set(VERIFIED_CURRICULUM_CLAIMS.flatMap((claim) => claim.source.map((source) => source.id)));
+  for (const claim of VERIFIED_CURRICULUM_CLAIMS) {
+    const volume = volumeById.get(claim.volumeId);
+    assert(Boolean(volume), `verified claim ${claim.claimId} must link to a known curriculum volume`);
+    assert(volume?.verifiedPoemIds.includes(claim.poemId), `verified claim ${claim.claimId} must be indexed by its volume`);
+  }
+  assert(CURRICULUM_VOLUMES.flatMap((volume) => volume.itemEvidenceSourceIds).every((id) => itemLevelSourceIds.has(id)), "volume item evidence ids must resolve to verified claim sources");
   assert(CURRICULUM_REVISION_ADDENDUM.length === 1, "2024 transition addendum must remain a separate record");
   assert(CURRICULUM_REVISION_ADDENDUM[0].notMergedIntoDefault === true, "transition addendum must not be merged into per-poem claims");
   const addendum = CURRICULUM_REVISION_ADDENDUM[0];
@@ -254,7 +320,9 @@ async function main() {
     assert(["standard", "guided", "immersive"].includes(item.maturity), `joined ${item.id} maturity is invalid`);
     assert(item.maturityPath.includes("mother") && item.maturityPath.includes("curriculum") && item.maturityPath.includes("standard"), `joined ${item.id} maturity path misses base layers`);
     for (const key of CURRICULUM_CONFIG.reviewFlagKeys) assert(typeof item.reviewFlags?.[key] === "boolean", `joined ${item.id} review flag ${key} must be boolean`);
-    assert(item.curriculumClaims.length === 1, `joined ${item.id} needs one candidate claim`);
+    assert(item.curriculumClaims.length >= 1, `joined ${item.id} needs at least one curriculum claim`);
+    assert(item.curriculumClaims.filter((claim) => claim.verificationStatus === "candidate").length === 1, `joined ${item.id} needs exactly one candidate claim`);
+    assert(item.curriculumClaims.length === (VERIFIED_CURRICULUM_CLAIMS.some((claim) => claim.poemId === item.id) ? 2 : 1), `joined ${item.id} must retain both candidate and verified claims when available`);
     assert(item.conceptRelations.length > 0, `joined ${item.id} needs at least one concept relation`);
   }
 
@@ -302,6 +370,7 @@ async function main() {
   assert(coverageSummary.totalCatalogIds === 100, "coverage summary total must be 100");
   assert(coverageSummary.gold === 10 && coverageSummary.immersive === 30 && coverageSummary.additionalImmersive === 20, "coverage summary maturity totals are wrong");
   assert(coverageSummary.culturalRegions === 8 && coverageSummary.geoNodes >= 15 && coverageSummary.concepts >= 15, "coverage summary spatial/concept totals are wrong");
+  assert(coverageSummary.curriculumVolumes === 23 && coverageSummary.seriesVerifiedVolumes === 23 && coverageSummary.itemEvidenceVolumes === 4, "coverage summary curriculum volume totals are wrong");
 
   if (errors.length) {
     console.error("Curriculum system check failed:");

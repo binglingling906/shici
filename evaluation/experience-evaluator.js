@@ -514,6 +514,7 @@
     const api = runtimeApi();
     const hasSurface = Boolean(api.curriculum || api.curriculumClaims || api.coverage?.curriculum || api.coverage?.claims);
     const claims = runtimeCurriculum(api);
+    const volumes = firstArray(api.curriculum?.volumes, api.curriculumVolumes, api.coverage?.curriculumVolumes, api.coverage?.volumes);
     if (!hasSurface && !claims.length) return [na("curriculum-coverage", { reason: "运行时尚未注册教材覆盖数据" })];
     const required = {
       curriculumEdition: ["curriculumEdition", "edition", "editionId"],
@@ -564,6 +565,56 @@
     const candidateAsFormal = claims
       .map((claim, index) => ({ index, id: recordId(claim), status: reviewStatus(claim), formal: claim.isOfficial === true || claim.isFormal === true || claim.displayStatus === "official" || claim.official === true }))
       .filter((item) => isCandidate(item.status) && item.formal);
+    const candidateScopeLeaks = claims
+      .map((claim, index) => ({
+        index,
+        id: recordId(claim),
+        status: reviewStatus(claim),
+        scopeBasis: text(property(claim, "scopeBasis")),
+        grade: text(property(claim, "grade", "gradeLevel")),
+        semester: text(property(claim, "semester", "term")),
+        stage: text(property(claim, "stage", "schoolStage")).toLowerCase(),
+      }))
+      .filter((item) => isCandidate(item.status))
+      .filter((item) => item.scopeBasis !== "candidate-editorial-stage"
+        || item.semester !== "all"
+        || (/primary/u.test(item.stage) && item.grade !== "1-6")
+        || (/middle/u.test(item.stage) && item.grade !== "7-9")
+        || (/high/u.test(item.stage) && item.grade !== "10-12"));
+    const volumeIds = new Set(volumes.map((volume) => recordId(volume)));
+    const volumeStageCounts = volumes.reduce((counts, volume) => {
+      const stage = text(property(volume, "stage", "schoolStage")).toLowerCase();
+      const key = /primary|小学/u.test(stage) ? "primary" : /middle|初中/u.test(stage) ? "middle" : /high|高中/u.test(stage) ? "high" : "unknown";
+      counts[key] = (counts[key] || 0) + 1;
+      return counts;
+    }, {});
+    const volumeFieldIssues = volumes.flatMap((volume, index) => {
+      const issues = [];
+      for (const field of ["id", "stage", "part", "title", "publisher", "curriculumFramework", "seriesVerificationStatus", "itemEvidenceStatus", "source", "evidenceNote"]) {
+        const value = field === "source" ? property(volume, "source", "sources", "provenance") : property(volume, field);
+        if (field === "source" ? !sourcePresent(value) : !text(value)) issues.push({ index, id: recordId(volume), field });
+      }
+      return issues;
+    });
+    const dishonestVolumeEvidence = volumes.filter((volume) => {
+      const seriesStatus = text(property(volume, "seriesVerificationStatus")).toLowerCase();
+      const itemStatus = text(property(volume, "itemEvidenceStatus")).toLowerCase();
+      const itemSources = firstArray(volume.itemEvidenceSourceIds, volume.itemEvidenceSources);
+      const verifiedPoems = firstArray(volume.verifiedPoemIds, volume.itemVerifiedPoemIds);
+      return seriesStatus !== "source-verified"
+        || !["historical-partial", "not-item-verified"].includes(itemStatus)
+        || (itemStatus === "historical-partial" && (itemSources.length === 0 || verifiedPoems.length === 0))
+        || (itemStatus === "not-item-verified" && (itemSources.length > 0 || verifiedPoems.length > 0));
+    }).map((volume) => recordId(volume));
+    const historicalPartialVolumes = volumes.filter((volume) => text(property(volume, "itemEvidenceStatus")).toLowerCase() === "historical-partial");
+    const verifiedClaimVolumeIssues = claims.filter((claim) => /source-verified|verified_source/u.test(reviewStatus(claim))).flatMap((claim) => {
+      const volumeId = text(property(claim, "volumeId"));
+      const volume = volumes.find((item) => recordId(item) === volumeId);
+      if (!volumeId || !volume) return [{ poemId: recordId(claim), volumeId, reason: "missing-known-volume" }];
+      return firstArray(volume.verifiedPoemIds, volume.itemVerifiedPoemIds).includes(recordId(claim))
+        ? []
+        : [{ poemId: recordId(claim), volumeId, reason: "volume-missing-poem-index" }];
+    });
     return [
       check("curriculum-claims-present", claims.length > 0, { claimCount: claims.length }),
       check("curriculum-claim-fields", missingFields.length === 0, { missingFields: missingFields.slice(0, 80), totalMissing: missingFields.length }),
@@ -571,6 +622,12 @@
       check("curriculum-alias-collisions", aliasCollisions.length === 0, { aliasCollisions: aliasCollisions.slice(0, 40) }),
       check("curriculum-verification-status", badStatuses.length === 0, { badStatuses: badStatuses.slice(0, 80) }),
       check("curriculum-candidate-honesty", candidateAsFormal.length === 0, { candidateAsFormal }),
+      check("curriculum-candidate-scope-honesty", candidateScopeLeaks.length === 0, { candidateScopeLeaks: candidateScopeLeaks.slice(0, 80) }),
+      check("curriculum-volume-registry", volumes.length === 23 && volumeIds.size === 23, { volumeCount: volumes.length, uniqueIds: volumeIds.size }),
+      check("curriculum-volume-stage-spine", volumeStageCounts.primary === 12 && volumeStageCounts.middle === 6 && volumeStageCounts.high === 5, { volumeStageCounts }),
+      check("curriculum-volume-fields", volumeFieldIssues.length === 0, { issues: volumeFieldIssues.slice(0, 80), totalIssues: volumeFieldIssues.length }),
+      check("curriculum-series-item-evidence-separation", dishonestVolumeEvidence.length === 0 && historicalPartialVolumes.length === 4, { dishonestVolumeEvidence, historicalPartialVolumes: historicalPartialVolumes.map((volume) => recordId(volume)) }),
+      check("curriculum-verified-claim-volume-links", verifiedClaimVolumeIssues.length === 0, { verifiedClaimVolumeIssues }),
     ];
   }
 

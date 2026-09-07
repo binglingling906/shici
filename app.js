@@ -6,6 +6,7 @@ import { createConceptTutor } from "./core/concept-tutor.js";
 import {
   CURRICULUM_CONFIG,
   CURRICULUM_CLAIMS,
+  CURRICULUM_VOLUMES,
   CONCEPTS,
   POEM_CONCEPTS,
   CULTURAL_REGIONS,
@@ -13,7 +14,8 @@ import {
   IMMERSIVE_IDS,
   GUIDED_IDS,
   buildLearningCatalog,
-} from "./content/curriculum/index.js?v=curriculum-concepts-1";
+  curriculumClaimMatches,
+} from "./content/curriculum/index.js?v=curriculum-concepts-2";
 
 const MAP_DATA_URL = "./content/generated/china-physical-map.json";
 const ART_BY_PLACE = {
@@ -653,8 +655,11 @@ function renderCurriculumOrigin(poem) {
     dom.curriculum_origin.textContent = "教材关系：尚未逐项核验，不显示为正式教材篇目";
     return;
   }
-  const status = /verified/u.test(verified.verificationStatus) ? "已核验" : "候选，待核验";
-  dom.curriculum_origin.textContent = `${normalizedStage(verified.stage)} · ${displayGrade(verified.grade)}${semesterLabel(verified.semester)} · ${placementLabel(verified.inClassOrExtra)} · ${status}`;
+  if (/verified/u.test(verified.verificationStatus)) {
+    dom.curriculum_origin.textContent = `历史教材已核验 · ${verified.curriculumEdition} · ${placementLabel(verified.inClassOrExtra)} · 不自动继承到2024修订版`;
+    return;
+  }
+  dom.curriculum_origin.textContent = `${normalizedStage(verified.stage)}阶段阅读候选 · 具体年级与册次尚未逐项核验`;
 }
 
 function latticeButton(label, value, filterKind, filterValue) {
@@ -671,7 +676,7 @@ function renderRelationLattice(poem) {
   const claim = claims.find((item) => /verified/u.test(item.verificationStatus)) || claims[0];
   const place = placeForPoem(poem);
   const links = [
-    claim && latticeButton("同年级", `${displayGrade(claim.grade)}${semesterLabel(claim.semester)}`, "grade", displayGrade(claim.grade)),
+    claim && /verified/u.test(claim.verificationStatus) && latticeButton("历史同册", `${displayGrade(claim.grade)}${semesterLabel(claim.semester)}`, "grade", displayGrade(claim.grade)),
     place.id !== "unknown" && latticeButton("同地点", place.name, "place", place.id),
     latticeButton("同诗人", poem.author.name, "author", poem.author.name),
     latticeButton("同体裁", poem.genre, "genre", poem.genre),
@@ -1084,8 +1089,12 @@ function gradeOptions(stage) {
 }
 
 function catalogClaim(poem) {
-  const claims = poem.curriculumClaims || allClaims().filter((claim) => claim.poemId === poem.id);
+  const claims = catalogClaims(poem);
   return claims.find((claim) => /verified/u.test(claim.verificationStatus)) || claims[0] || null;
+}
+
+function catalogClaims(poem) {
+  return poem.curriculumClaims?.length ? poem.curriculumClaims : allClaims().filter((claim) => claim.poemId === poem.id);
 }
 
 function maturityLabel(poem) {
@@ -1140,45 +1149,43 @@ function renderGradeList() {
 }
 
 function claimMatchesSelection(claim) {
-  if (!claim) return false;
-  const selectedGrade = gradeNumber(state.curriculum.grade);
-  const claimGrades = String(claim.grade || "").split("-").map(Number).filter(Number.isFinite);
-  const gradeMatch = claim.grade === state.curriculum.grade
-    || claimGrades.includes(selectedGrade)
-    || (normalizedStage(claim.stage) === "高中" && selectedGrade >= 10);
-  const semesterMatch = state.curriculum.semester === "all" || semesterLabel(claim.semester) === state.curriculum.semester;
-  return normalizedStage(claim.stage) === state.curriculum.stage && gradeMatch && semesterMatch;
+  const stage = state.curriculum.stage === "小学" ? "primary" : state.curriculum.stage === "初中" ? "middle" : "high";
+  const semester = state.curriculum.semester === "上册" ? "autumn" : state.curriculum.semester === "下册" ? "spring" : "all";
+  return curriculumClaimMatches(claim, { stage, grade: gradeNumber(state.curriculum.grade), semester });
+}
+
+function catalogClaimForSelection(poem) {
+  const matching = catalogClaims(poem).filter(claimMatchesSelection);
+  return matching.find((claim) => /verified/u.test(claim.verificationStatus)) || matching[0] || null;
 }
 
 function renderCatalogResults() {
   const query = state.curriculum.query.trim().toLocaleLowerCase("zh-CN");
-  const selected = learningCatalog.filter((poem) => {
-    const claim = catalogClaim(poem);
-    const relationMatch = claimMatchesSelection(claim);
-    if (!query) return relationMatch;
+  const selected = learningCatalog.map((poem) => ({ poem, claim: catalogClaimForSelection(poem) })).filter(({ poem, claim }) => {
+    if (!claim) return false;
+    if (!query) return true;
     const haystack = [poem.title.text, poem.author.name, poem.genre, ...(poem.themes || []), ...poem.placeCandidates || []].join(" ").toLocaleLowerCase("zh-CN");
-    return haystack.includes(query) && (relationMatch || normalizedStage(claim?.stage) === state.curriculum.stage);
+    return haystack.includes(query);
   }).sort((a, b) => {
-    const aVerified = /verified/u.test(catalogClaim(a)?.verificationStatus || "") ? 1 : 0;
-    const bVerified = /verified/u.test(catalogClaim(b)?.verificationStatus || "") ? 1 : 0;
+    const aVerified = /verified/u.test(a.claim?.verificationStatus || "") ? 1 : 0;
+    const bVerified = /verified/u.test(b.claim?.verificationStatus || "") ? 1 : 0;
     if (aVerified !== bVerified) return bVerified - aVerified;
-    return a.title.text.localeCompare(b.title.text, "zh-CN");
+    return a.poem.title.text.localeCompare(b.poem.title.text, "zh-CN");
   });
   dom.catalog_kicker.textContent = `${state.curriculum.stage} · ${state.curriculum.grade}${state.curriculum.semester === "all" ? "" : ` · ${state.curriculum.semester}`}`;
   dom.catalog_heading.textContent = query ? `“${state.curriculum.query}”的目录结果` : "诗词学习目录";
-  const verifiedCount = selected.filter((poem) => /verified/u.test(catalogClaim(poem)?.verificationStatus || "")).length;
-  dom.catalog_count.textContent = `${selected.length} 首 · ${verifiedCount} 首教材关系已核验`;
+  const verifiedCount = selected.filter(({ claim }) => /verified/u.test(claim?.verificationStatus || "")).length;
+  dom.catalog_count.textContent = `${verifiedCount} 首符合当前册次的历史核验 · ${selected.length - verifiedCount} 首为学段阅读候选`;
   if (!selected.length) {
     dom.catalog_list.innerHTML = `<div class="catalog-empty"><strong>这一格没有被硬填满。</strong><br>可能是当前筛选没有结果，也可能是教材关系仍待核验。可以换年级、清除搜索，或去山河地图探索。</div>`;
     return;
   }
-  dom.catalog_list.replaceChildren(...selected.map((poem) => {
-    const claim = catalogClaim(poem);
+  dom.catalog_list.replaceChildren(...selected.map(({ poem, claim }) => {
     const card = document.createElement("article");
     card.className = `catalog-card${/verified/u.test(claim?.verificationStatus || "") ? "" : " is-candidate"}`;
     const claimCopy = /verified/u.test(claim?.verificationStatus || "")
-      ? `${placementLabel(claim.inClassOrExtra)} · ${requirementLabel(claim.requiredOrRecommended)}`
-      : "目录候选 · 不作为正式教材事实";
+      ? `历史教材已核验 · ${claim.curriculumEdition} · ${placementLabel(claim.inClassOrExtra)}`
+      : `${normalizedStage(claim.stage)}阶段阅读候选 · 年级/册次未核验`;
     card.innerHTML = `<span class="tier-mark">${maturityLabel(poem)}</span><h3>《${poem.title.text}》</h3><p>${poem.dynasty} · ${poem.author.name} · ${poem.genre}</p><p class="claim-mark">${claimCopy}</p><button type="button" data-poem-id="${poem.id}" data-entry-route="curriculum">读原诗</button>`;
     return card;
   }));
@@ -1192,7 +1199,13 @@ function renderCurriculum() {
   renderGradeList();
   qa("[data-semester]", dom.semester_tabs).forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.semester === state.curriculum.semester)));
   const framework = CURRICULUM_CONFIG.defaultEdition || CURRICULUM_CONFIG.defaultSnapshot || CURRICULUM_CONFIG.name || "6-3学制统编语文";
-  dom.curriculum_edition_note.textContent = `${framework}。课程标准推荐、教材课文、课外诵读分别记录；2024修订教材按起始年级逐年换用，具体学校仍可能不同。`;
+  const selectedGrade = String(gradeNumber(state.curriculum.grade));
+  const stage = state.curriculum.stage === "小学" ? "primary" : state.curriculum.stage === "初中" ? "middle" : "high";
+  const selectedVolumes = CURRICULUM_VOLUMES.filter((volume) => volume.stage === stage && (stage === "high" || volume.grade === selectedGrade) && (state.curriculum.semester === "all" || semesterLabel(volume.semester) === state.curriculum.semester));
+  const volumeNote = stage === "high"
+    ? "高中五册书系已核验，但官方书系不等于固定的高一/高二/高三学期排课。"
+    : `${selectedVolumes.map((volume) => volume.title).join("、")}的册名与书系已核验；逐首归属只在标为“教材关系已核验”时成立。`;
+  dom.curriculum_edition_note.textContent = `${framework}。${volumeNote} 课程标准推荐、教材课文、课外诵读分别记录；2024修订教材按起始年级逐年换用，具体学校仍可能不同。`;
   renderCatalogResults();
 }
 
@@ -1220,7 +1233,9 @@ function coverageStats() {
     return sources.some((source) => source?.license || source?.rights);
   }).length;
   const mappedPoems = learningCatalog.filter((poem) => placeForPoem(poem).id !== "unknown").length;
-  return { claims: claims.length, verifiedClaims: verifiedClaims.length, standard, guided, immersive, pinyinReviewed, geoReviewed, conceptReviewed, regions: CULTURAL_REGIONS.length, places: GEO_NODES.filter((node) => node.positionKind !== "unknown").length, verifiedGrades, verifiedSemesters, gradeVerification, genres, dynasties, poets, licenseDeclared, mappedPoems };
+  const seriesVerifiedVolumes = CURRICULUM_VOLUMES.filter((volume) => volume.seriesVerificationStatus === "source-verified").length;
+  const itemEvidenceVolumes = CURRICULUM_VOLUMES.filter((volume) => volume.itemEvidenceStatus === "historical-partial").length;
+  return { claims: claims.length, verifiedClaims: verifiedClaims.length, standard, guided, immersive, pinyinReviewed, geoReviewed, conceptReviewed, regions: CULTURAL_REGIONS.length, places: GEO_NODES.filter((node) => node.positionKind !== "unknown").length, verifiedGrades, verifiedSemesters, gradeVerification, genres, dynasties, poets, licenseDeclared, mappedPoems, curriculumVolumes: CURRICULUM_VOLUMES.length, seriesVerifiedVolumes, itemEvidenceVolumes };
 }
 
 function renderCoverage() {
@@ -1230,6 +1245,8 @@ function renderCoverage() {
     [stats.standard, stats.standard, "标准学习页", "每一首都有可打开的规范原文页"],
     [stats.guided, stats.standard, "引导式学习", "年龄分层问题与观察任务"],
     [stats.immersive, stats.standard, "沉浸式诗境", "地点、概念、朗读与关系完整"],
+    [stats.seriesVerifiedVolumes, stats.curriculumVolumes, "教材册次框架", "小学12册 · 初中6册 · 高中5册；只核验书系和册名"],
+    [stats.itemEvidenceVolumes, stats.curriculumVolumes, "有逐首历史证据的册次", "历史目录的部分篇目证据，不外推到2024修订版"],
     [stats.verifiedClaims, stats.claims || 1, "教材关系已核验", "未核验项不会冒充正式目录"],
     [stats.pinyinReviewed, stats.standard, "拼音已审核", "机器候选与人工复核分开"],
     [stats.conceptReviewed, stats.standard, "概念已审核", "正式术语有年龄分层入口"],
@@ -1255,6 +1272,7 @@ function renderCoverage() {
   }).map((region) => region.name);
   dom.coverage_gaps.innerHTML = [
     `${candidateClaims} 项教材关系仍是候选，必须继续逐册核验。`,
+    `${stats.curriculumVolumes} 册书系骨架已完整登记；其中 ${stats.itemEvidenceVolumes} 册只有历史目录的部分逐首证据，其余册次没有把书系证据冒充篇目证据。`,
     `逐项已核年级：${Object.entries(stats.gradeVerification).filter(([, count]) => count > 0).map(([grade, count]) => `${grade}${count}首`).join("、") || "暂无"}；其它年级保持候选状态。`,
     `${noPlace} 首没有可靠地点，保持“不落图”而不是制造坐标。`,
     `${Math.max(0, stats.standard - stats.pinyinReviewed)} 首拼音仍只在审核管线中，儿童页不展示机器候选。`,
@@ -1523,7 +1541,7 @@ window.__SHANHE_PHASE1__ = {
   audio,
   tutor,
   conceptTutor,
-  get curriculum() { return { config: CURRICULUM_CONFIG, claims: CURRICULUM_CLAIMS, concepts: CONCEPTS, poemConcepts: POEM_CONCEPTS, regions: CULTURAL_REGIONS, geoNodes: GEO_NODES, catalog: learningCatalog }; },
+  get curriculum() { return { config: CURRICULUM_CONFIG, volumes: CURRICULUM_VOLUMES, claims: CURRICULUM_CLAIMS, concepts: CONCEPTS, poemConcepts: POEM_CONCEPTS, regions: CULTURAL_REGIONS, geoNodes: GEO_NODES, catalog: learningCatalog }; },
   get coverage() { return coverageStats(); },
 };
 
