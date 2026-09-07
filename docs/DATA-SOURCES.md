@@ -6,7 +6,7 @@
 
 项目不把几十万首母库打包进儿童端。构建阶段以明确许可证的语料作候选召回，运行时只发布 100 首学习目录；其中 10 首是人工完成的 Gold Standard。Natural Earth 50m 的中国轮廓、河流与湖泊几何已转换成项目内静态资产。它是一张用于中国—区域尺度认知的真实地理骨架，不是导航地图，也不依赖在线瓦片或第三方地图账号。
 
-课程框架采用 6-3 学制、2024 修订统编小学/初中语文（逐年换用）与 2023 统编高中五册。教育部目录只证明书系与版本框架；单首诗的年级/学期必须另有逐项目录证据。当前有 100 条明确标记的 `candidate` 和 10 条人教社逐项目录页支持的 `source-verified` 历史教材声明。具体边界见 [`CURRICULUM-CONCEPT-SYSTEM.md`](./CURRICULUM-CONCEPT-SYSTEM.md) 与 [`research/corpus-source-report.md`](./research/corpus-source-report.md)。
+课程框架采用 6-3 学制、2024 修订统编小学/初中语文（逐年换用）与 2023 统编高中五册。教育部目录只证明书系与版本框架；单首诗的年级/学期必须另有逐项证据。当前有 100 条明确标记的 `candidate` 和 34 条由人教社逐项目录或官方教材选篇文章支持的 `source-verified` 历史教材声明。具体边界见 [`CURRICULUM-CONCEPT-SYSTEM.md`](./CURRICULUM-CONCEPT-SYSTEM.md) 与 [`research/corpus-source-report.md`](./research/corpus-source-report.md)。
 
 当前数据组合为：
 
@@ -17,7 +17,7 @@
 - [chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)：仅作为诗文候选索引，不作为权威版本、人物消歧或地点关系来源。
 - [教育部 2024 年义务教育国家课程教学用书目录](https://www.moe.gov.cn/srcsite/A26/s8001/202408/W020250418502592948423.pdf)：小学/初中 2024 修订书系与过渡框架，不直接证明单首诗归属。
 - [教育部 2023 年普通高中国家课程教学用书目录](https://www.moe.gov.cn/srcsite/A26/s8001/202305/t20230506_1058493.html)：高中五册书系框架。
-- 人教社一年级上、二年级上、七年级上和高中必修上逐项目录页：当前 10 条 item-level 教材声明的直接证据；有效期与新版继承关系分开记录。
+- 人教社一年级上、二年级上、七年级上下、八年级上和高中必修上逐项目录页，以及2019统编小学教材选篇官方文章：当前 34 条 item-level 教材声明的直接证据；未写明课内/课外位置的条目保持 `unspecified`，有效期与新版继承关系分开记录。
 
 OpenStreetMap 可在需要现代 POI/道路/水系时评估，但必须遵守 ODbL、署名及 API/瓦片使用政策。CHGIS、CBDB 等高价值历史数据目前存在非商业或独家商业授权限制，只用于研究核对，不打包进产品。
 

@@ -1072,7 +1072,7 @@ function displayGrade(value) {
 }
 
 function placementLabel(value) {
-  return value === "in-class" ? "课内" : value === "extra" ? "课外诵读" : "目录";
+  return value === "in-class" ? "课内" : value === "extra" ? "课外诵读" : value === "unspecified" ? "教材收录 · 课内/课外待核" : "目录";
 }
 
 function requirementLabel(value) {

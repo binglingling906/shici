@@ -58,7 +58,7 @@ export const CURRICULUM_CONFIG = {
   ],
   claimEnums: {
     stage: ["primary", "middle", "high"],
-    inClassOrExtra: ["in-class", "extra"],
+    inClassOrExtra: ["in-class", "extra", "unspecified"],
     requiredOrRecommended: ["recommended_memorization", "textbook_inclusion", "textbook_extra_recitation"],
     verificationStatus: ["candidate", "source-verified"],
   },
@@ -400,9 +400,7 @@ function maturityPathFor(id) {
 }
 
 const HIGH_STAGE_IDS = new Set([
-  "yellow-crane-huang-he-lou",
   "chengdu-chun-ye-xi-yu",
-  "chang-an-chun-wang",
   "child-deng-gao",
   "child-guan-yi-mai",
   "child-shui-diao-ge-tou",
@@ -412,11 +410,12 @@ const HIGH_STAGE_IDS = new Set([
 ]);
 
 const MIDDLE_STAGE_IDS = new Set([
+  "yellow-crane-huang-he-lou",
   "yellow-crane-song-meng-hao-ran",
-  "west-lake-yin-hu-shang",
   "west-lake-xiao-chu-jing-ci-si",
   "chengdu-jueju-two-orioles",
   "chang-an-zi-ye-wu-ge-qiu-ge",
+  "chang-an-chun-wang",
   "child-shi-zhi-sai-shang",
   "child-du-jing-men-song-bie",
   "child-wen-guan-jun-shou-he-nan-he-bei",
@@ -429,10 +428,14 @@ const MIDDLE_STAGE_IDS = new Set([
   "child-you-shan-xi-cun",
   "child-dong-ye-du-shu",
   "child-ma-shi",
+  "child-zhu-li-guan",
+  "child-wan-chun",
+  "child-wang-yue",
+  "child-deng-fei-lai-feng",
   "child-tian-jing-sha-qiu-si",
+  "child-yin-jiu-tao-yuanming",
   "child-guan-canghai",
   "child-ci-bei-gu-shan-xia",
-  "child-guo-gu-ren-zhuang",
   "child-su-jiande-jiang",
   "child-ye-yu-ji-bei",
 ]);
@@ -492,6 +495,22 @@ const ITEM_LEVEL_PEP_SOURCES = {
     supports: ["item_level_textbook_directory", "grade", "semester", "in_class_or_extra_status"],
     retrievedAt: CURRICULUM_RETRIEVED_AT,
   },
+  middle7Spring: {
+    id: "pep-middle-7-spring-2016-directory",
+    url: "https://www.pep.com.cn/products/jc/czjks/201802/t20180209_1922680.shtml",
+    title: "人民教育出版社 · 语文七年级下册目录（2016统编版）",
+    license: "source-defined",
+    supports: ["item_level_textbook_directory", "grade", "semester", "in_class_or_extra_status"],
+    retrievedAt: "2026-09-07",
+  },
+  middle8Autumn: {
+    id: "pep-middle-8-autumn-2017-directory",
+    url: "https://www.pep.com.cn/products/jc/czjks/201802/t20180209_1922717.shtml",
+    title: "人民教育出版社 · 语文八年级上册目录（2017统编版）",
+    license: "source-defined",
+    supports: ["item_level_textbook_directory", "grade", "semester", "in_class_or_extra_status"],
+    retrievedAt: "2026-09-07",
+  },
   highRequired1: {
     id: "pep-high-required-autumn-2019-directory",
     url: "https://www.pep.com.cn/xw/zt/hd/zjywjytbskjc/201909/t20190906_1945033.html",
@@ -500,14 +519,31 @@ const ITEM_LEVEL_PEP_SOURCES = {
     supports: ["item_level_textbook_directory", "required_volume", "in_class_status"],
     retrievedAt: CURRICULUM_RETRIEVED_AT,
   },
+  primaryTraditionalCulture2019: {
+    id: "pep-2019-primary-traditional-culture-selection",
+    url: "https://www.pep.com.cn/xw/zt/hd/zjywjytbskjc/201908/t20190830_1944754.html",
+    title: "人民教育出版社 · 统编小学语文教科书：传统文化内容中的自然美与社会美",
+    license: "source-defined",
+    supports: ["item_level_textbook_evidence", "grade", "semester", "lesson_number_where_stated"],
+    retrievedAt: "2026-09-07",
+  },
 };
 
 const PRIMARY_MIDDLE_SERIES_SOURCE = CURRICULUM_CONFIG.curriculumSources.find((source) => source.id === "moe-2024-national-textbook-directory");
 const HIGH_SERIES_SOURCE = CURRICULUM_CONFIG.curriculumSources.find((source) => source.id === "moe-2023-high-school-textbook-directory");
 const HISTORICAL_ITEM_EVIDENCE = {
   "primary-1-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primary1Autumn.id], poemIds: ["child-jiang-nan"] },
-  "primary-2-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primary2Autumn.id], poemIds: ["child-deng-guan-que-lou", "lushan-wang-lushan-pubu", "child-ye-su-shan-si", "child-chile-ge"] },
+  "primary-2-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primary2Autumn.id, ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019.id], poemIds: ["child-deng-guan-que-lou", "lushan-wang-lushan-pubu", "child-ye-su-shan-si", "child-chile-ge", "child-xiao-er-chui-diao"] },
+  "primary-2-spring": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019.id], poemIds: ["child-cun-ju"] },
+  "primary-3-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019.id], poemIds: ["child-zeng-liu-jing-wen", "west-lake-yin-hu-shang", "child-suo-jian"] },
+  "primary-3-spring": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019.id], poemIds: ["child-jueju-chi-ri", "child-hui-chong-chun-jiang", "child-yi-jiang-nan"] },
+  "primary-4-spring": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019.id], poemIds: ["child-qing-ping-le-cun-ju"] },
+  "primary-5-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019.id], poemIds: ["child-feng-qiao-ye-bo"] },
+  "primary-5-spring": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019.id], poemIds: ["child-xiang-cun-si-yue"] },
+  "primary-6-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019.id], poemIds: ["child-wang-hu-lou-zui-shu", "child-guo-gu-ren-zhuang"] },
   "middle-7-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.middle7Autumn.id], poemIds: ["child-guan-canghai", "child-ci-bei-gu-shan-xia", "child-tian-jing-sha-qiu-si", "child-jiang-nan-feng-li-guinian"] },
+  "middle-7-spring": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.middle7Spring.id], poemIds: ["child-zhu-li-guan", "child-wan-chun", "child-wang-yue", "child-deng-fei-lai-feng", "child-you-shan-xi-cun"] },
+  "middle-8-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.middle8Autumn.id], poemIds: ["yellow-crane-huang-he-lou", "child-shi-zhi-sai-shang", "child-du-jing-men-song-bie", "child-qian-tang-hu-chun-xing", "child-yin-jiu-tao-yuanming", "chang-an-chun-wang"] },
   "high-required-autumn": { sourceIds: [ITEM_LEVEL_PEP_SOURCES.highRequired1.id], poemIds: ["child-deng-gao"] },
 };
 
@@ -566,7 +602,7 @@ function verifiedClaim({ poemId, stage, grade, semester = "autumn", placement = 
     grade,
     semester,
     inClassOrExtra: placement,
-    requiredOrRecommended: placement === "in-class" ? "textbook_inclusion" : "textbook_extra_recitation",
+    requiredOrRecommended: placement === "extra" ? "textbook_extra_recitation" : "textbook_inclusion",
     source: [cloneSource(source)],
     validFrom: edition.includes("2016") ? "2016-07-01" : edition.includes("2017") ? "2017-07-01" : "2019-09-01",
     validTo: "2024-08-31",
@@ -593,6 +629,30 @@ export const VERIFIED_CURRICULUM_CLAIMS = [
   verifiedClaim({ poemId: "child-tian-jing-sha-qiu-si", stage: "middle", grade: "7", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn, volumeId: "middle-7-autumn" }),
   verifiedClaim({ poemId: "child-jiang-nan-feng-li-guinian", stage: "middle", grade: "7", placement: "extra", edition: "2016统编语文七年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle7Autumn, volumeId: "middle-7-autumn" }),
   verifiedClaim({ poemId: "child-deng-gao", stage: "high", grade: "10", edition: "2019统编高中语文必修上册", source: ITEM_LEVEL_PEP_SOURCES.highRequired1, volumeId: "high-required-autumn" }),
+  verifiedClaim({ poemId: "child-xiao-er-chui-diao", stage: "primary", grade: "2", placement: "unspecified", edition: "2019统编语文二年级上册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-2-autumn" }),
+  verifiedClaim({ poemId: "child-cun-ju", stage: "primary", grade: "2", semester: "spring", placement: "unspecified", edition: "2019统编语文二年级下册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-2-spring" }),
+  verifiedClaim({ poemId: "child-zeng-liu-jing-wen", stage: "primary", grade: "3", placement: "in-class", edition: "2019统编语文三年级上册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-3-autumn" }),
+  verifiedClaim({ poemId: "west-lake-yin-hu-shang", stage: "primary", grade: "3", placement: "unspecified", edition: "2019统编语文三年级上册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-3-autumn" }),
+  verifiedClaim({ poemId: "child-suo-jian", stage: "primary", grade: "3", placement: "unspecified", edition: "2019统编语文三年级上册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-3-autumn" }),
+  verifiedClaim({ poemId: "child-jueju-chi-ri", stage: "primary", grade: "3", semester: "spring", placement: "in-class", edition: "2019统编语文三年级下册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-3-spring" }),
+  verifiedClaim({ poemId: "child-hui-chong-chun-jiang", stage: "primary", grade: "3", semester: "spring", placement: "in-class", edition: "2019统编语文三年级下册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-3-spring" }),
+  verifiedClaim({ poemId: "child-yi-jiang-nan", stage: "primary", grade: "3", semester: "spring", placement: "unspecified", edition: "2019统编语文三年级下册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-3-spring" }),
+  verifiedClaim({ poemId: "child-qing-ping-le-cun-ju", stage: "primary", grade: "4", semester: "spring", placement: "in-class", edition: "2019统编语文四年级下册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-4-spring" }),
+  verifiedClaim({ poemId: "child-feng-qiao-ye-bo", stage: "primary", grade: "5", placement: "unspecified", edition: "2019统编语文五年级上册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-5-autumn" }),
+  verifiedClaim({ poemId: "child-xiang-cun-si-yue", stage: "primary", grade: "5", semester: "spring", placement: "unspecified", edition: "2019统编语文五年级下册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-5-spring" }),
+  verifiedClaim({ poemId: "child-wang-hu-lou-zui-shu", stage: "primary", grade: "6", placement: "unspecified", edition: "2019统编语文六年级上册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-6-autumn" }),
+  verifiedClaim({ poemId: "child-guo-gu-ren-zhuang", stage: "primary", grade: "6", placement: "unspecified", edition: "2019统编语文六年级上册", source: ITEM_LEVEL_PEP_SOURCES.primaryTraditionalCulture2019, volumeId: "primary-6-autumn" }),
+  verifiedClaim({ poemId: "yellow-crane-huang-he-lou", stage: "middle", grade: "8", placement: "in-class", edition: "2017统编语文八年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle8Autumn, volumeId: "middle-8-autumn" }),
+  verifiedClaim({ poemId: "child-shi-zhi-sai-shang", stage: "middle", grade: "8", placement: "in-class", edition: "2017统编语文八年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle8Autumn, volumeId: "middle-8-autumn" }),
+  verifiedClaim({ poemId: "child-du-jing-men-song-bie", stage: "middle", grade: "8", placement: "in-class", edition: "2017统编语文八年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle8Autumn, volumeId: "middle-8-autumn" }),
+  verifiedClaim({ poemId: "child-qian-tang-hu-chun-xing", stage: "middle", grade: "8", placement: "in-class", edition: "2017统编语文八年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle8Autumn, volumeId: "middle-8-autumn" }),
+  verifiedClaim({ poemId: "child-yin-jiu-tao-yuanming", stage: "middle", grade: "8", placement: "in-class", edition: "2017统编语文八年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle8Autumn, volumeId: "middle-8-autumn" }),
+  verifiedClaim({ poemId: "chang-an-chun-wang", stage: "middle", grade: "8", placement: "in-class", edition: "2017统编语文八年级上册", source: ITEM_LEVEL_PEP_SOURCES.middle8Autumn, volumeId: "middle-8-autumn" }),
+  verifiedClaim({ poemId: "child-zhu-li-guan", stage: "middle", grade: "7", semester: "spring", placement: "extra", edition: "2016统编语文七年级下册", source: ITEM_LEVEL_PEP_SOURCES.middle7Spring, volumeId: "middle-7-spring" }),
+  verifiedClaim({ poemId: "child-wan-chun", stage: "middle", grade: "7", semester: "spring", placement: "extra", edition: "2016统编语文七年级下册", source: ITEM_LEVEL_PEP_SOURCES.middle7Spring, volumeId: "middle-7-spring" }),
+  verifiedClaim({ poemId: "child-wang-yue", stage: "middle", grade: "7", semester: "spring", placement: "in-class", edition: "2016统编语文七年级下册", source: ITEM_LEVEL_PEP_SOURCES.middle7Spring, volumeId: "middle-7-spring" }),
+  verifiedClaim({ poemId: "child-deng-fei-lai-feng", stage: "middle", grade: "7", semester: "spring", placement: "in-class", edition: "2016统编语文七年级下册", source: ITEM_LEVEL_PEP_SOURCES.middle7Spring, volumeId: "middle-7-spring" }),
+  verifiedClaim({ poemId: "child-you-shan-xi-cun", stage: "middle", grade: "7", semester: "spring", placement: "in-class", edition: "2016统编语文七年级下册", source: ITEM_LEVEL_PEP_SOURCES.middle7Spring, volumeId: "middle-7-spring" }),
 ];
 
 export const CURRICULUM_CLAIMS = [

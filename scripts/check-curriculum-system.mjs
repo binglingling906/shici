@@ -93,7 +93,7 @@ function checkSource(owner, source) {
   assert(typeof source?.title === "string" && source.title.trim(), `${owner} source needs title`);
   assert(typeof source?.license === "string" && source.license.trim(), `${owner} source needs license`);
   assert(Array.isArray(source?.supports) && source.supports.length > 0, `${owner} source needs supports[]`);
-  assert(source?.retrievedAt === "2026-09-01", `${owner} source retrievedAt must be 2026-09-01`);
+  assert(/^2026-09-(01|07)$/u.test(source?.retrievedAt || ""), `${owner} source retrievedAt must use a recorded September 2026 review date`);
 }
 
 function checkClaim(claim, runtimeIds) {
@@ -112,7 +112,7 @@ function checkClaim(claim, runtimeIds) {
   } else {
     assert(typeof claim.volumeId === "string" && claim.volumeId.trim(), `source-verified claim ${claim.poemId} needs a volumeId`);
     assert(claim.textbookStatus === "verified-item-level", `source-verified claim ${claim.poemId} needs item-level verification`);
-    assert(claim.source.some((source) => source.supports?.includes("item_level_textbook_directory")), `source-verified claim ${claim.poemId} needs an item-level official directory source`);
+    assert(claim.source.some((source) => source.supports?.includes("item_level_textbook_directory") || source.supports?.includes("item_level_textbook_evidence")), `source-verified claim ${claim.poemId} needs item-level official textbook evidence`);
     assert(["textbook_inclusion", "textbook_extra_recitation"].includes(claim.requiredOrRecommended), `source-verified claim ${claim.poemId} needs precise textbook placement`);
   }
 }
@@ -247,7 +247,7 @@ async function main() {
   assert(CURRICULUM_VOLUMES.filter((volume) => volume.stage === "primary").length === 12, "curriculum book spine needs 12 primary volumes");
   assert(CURRICULUM_VOLUMES.filter((volume) => volume.stage === "middle").length === 6, "curriculum book spine needs 6 middle volumes");
   assert(CURRICULUM_VOLUMES.filter((volume) => volume.stage === "high").length === 5, "curriculum book spine needs 5 high volumes");
-  assert(CURRICULUM_VOLUMES.filter((volume) => volume.itemEvidenceStatus === "historical-partial").length === 4, "exactly four volumes currently have historical partial item evidence");
+  assert(CURRICULUM_VOLUMES.filter((volume) => volume.itemEvidenceStatus === "historical-partial").length === 13, "exactly thirteen volumes currently have historical partial item evidence");
   for (const volume of CURRICULUM_VOLUMES) checkVolume(volume);
   assert(CURRICULUM_VOLUMES.filter((volume) => ["primary", "middle"].includes(volume.stage)).every((volume) => /^\d+$/u.test(volume.grade) && ["autumn", "spring"].includes(volume.semester) && volume.part === volume.semester), "primary/middle volumes need exact grade and semester structure");
   assert(CURRICULUM_VOLUMES.filter((volume) => volume.stage === "high").every((volume) => volume.grade === null && volume.semester === null && ["upper", "middle", "lower"].includes(volume.part)), "high volumes need structured parts without invented grade/semester assignment");
@@ -260,7 +260,7 @@ async function main() {
 
   const claimIds = new Set();
   assert(CURRICULUM_CLAIMS.filter((claim) => claim.verificationStatus === "candidate").length === 100, "curriculum layer must retain 100 explicit candidates");
-  assert(CURRICULUM_CLAIMS.filter((claim) => claim.verificationStatus === "source-verified").length >= 10, "curriculum layer needs item-level verified examples across school stages");
+  assert(CURRICULUM_CLAIMS.filter((claim) => claim.verificationStatus === "source-verified").length === 34, "curriculum layer must retain all 34 currently verified item-level examples");
   for (const claim of CURRICULUM_CLAIMS) {
     assert(!claimIds.has(claim.claimId), `duplicate claim id ${claim.claimId}`);
     claimIds.add(claim.claimId);
@@ -270,6 +270,7 @@ async function main() {
   assert(candidates.every((claim) => claim.scopeBasis === "candidate-editorial-stage" && claim.semester === "all" && claim.validityKind === "research-snapshot"), "candidate claims must remain stage-level editorial snapshots");
   assert(candidates.every((claim) => ({ primary: "1-6", middle: "7-9", high: "10-12" })[claim.stage] === claim.grade), "candidate claims cannot invent exact grade placement");
   assert(candidates.find((claim) => claim.poemId === "child-tian-jing-sha-qiu-si")?.stage === "middle", "天净沙·秋思 candidate must not conflict with its verified middle-school stage");
+  assert(VERIFIED_CURRICULUM_CLAIMS.every((verified) => candidates.find((candidate) => candidate.poemId === verified.poemId)?.stage === verified.stage), "stage candidates must not conflict with item-level verified stages");
   const primaryCandidate = candidates.find((claim) => claim.stage === "primary");
   assert(curriculumClaimMatches(primaryCandidate, { stage: "primary", grade: 5, semester: "autumn" }), "stage candidate must remain discoverable without inventing a volume placement");
   assert(!curriculumClaimMatches(primaryCandidate, { stage: "middle", grade: 7, semester: "autumn" }), "stage candidate must not leak into another school stage");
@@ -370,7 +371,7 @@ async function main() {
   assert(coverageSummary.totalCatalogIds === 100, "coverage summary total must be 100");
   assert(coverageSummary.gold === 10 && coverageSummary.immersive === 30 && coverageSummary.additionalImmersive === 20, "coverage summary maturity totals are wrong");
   assert(coverageSummary.culturalRegions === 8 && coverageSummary.geoNodes >= 15 && coverageSummary.concepts >= 15, "coverage summary spatial/concept totals are wrong");
-  assert(coverageSummary.curriculumVolumes === 23 && coverageSummary.seriesVerifiedVolumes === 23 && coverageSummary.itemEvidenceVolumes === 4, "coverage summary curriculum volume totals are wrong");
+  assert(coverageSummary.curriculumVolumes === 23 && coverageSummary.seriesVerifiedVolumes === 23 && coverageSummary.itemEvidenceVolumes === 13, "coverage summary curriculum volume totals are wrong");
 
   if (errors.length) {
     console.error("Curriculum system check failed:");

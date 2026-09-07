@@ -626,7 +626,7 @@
       check("curriculum-volume-registry", volumes.length === 23 && volumeIds.size === 23, { volumeCount: volumes.length, uniqueIds: volumeIds.size }),
       check("curriculum-volume-stage-spine", volumeStageCounts.primary === 12 && volumeStageCounts.middle === 6 && volumeStageCounts.high === 5, { volumeStageCounts }),
       check("curriculum-volume-fields", volumeFieldIssues.length === 0, { issues: volumeFieldIssues.slice(0, 80), totalIssues: volumeFieldIssues.length }),
-      check("curriculum-series-item-evidence-separation", dishonestVolumeEvidence.length === 0 && historicalPartialVolumes.length === 4, { dishonestVolumeEvidence, historicalPartialVolumes: historicalPartialVolumes.map((volume) => recordId(volume)) }),
+      check("curriculum-series-item-evidence-separation", dishonestVolumeEvidence.length === 0 && historicalPartialVolumes.length === 13, { dishonestVolumeEvidence, historicalPartialVolumes: historicalPartialVolumes.map((volume) => recordId(volume)) }),
       check("curriculum-verified-claim-volume-links", verifiedClaimVolumeIssues.length === 0, { verifiedClaimVolumeIssues }),
     ];
   }
