@@ -576,6 +576,316 @@ export const curatedOverrides = {
     }),
   },
 
+  "child-furong-lou-song-xin-jian": {
+    overrideReason: "第五批内容复核：寒雨送客、洛阳亲友与冰心玉壶的空间和比喻关系已人工确认。",
+    ...catalogReview({
+      reviewNotes: "芙蓉楼与洛阳分别作为送别场景和远方亲友参照；不把现代位置连线解释为王昌龄此行的完整历史路线。",
+      spatialLearning: {
+        coreRelation: "sendoff-and-distant-friends",
+        observation: "夜雨连江进入吴地，清晨送客望楚山；目光从江边送别转向洛阳亲友，最后落在冰心玉壶的内心比喻。",
+        mapAction: "先标芙蓉楼与洛阳两个关系点，用‘眼前送别—远方亲友—内心品格’复述诗境，不画未经证实的行程线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "地图能标出送别与远方的关系，品格比喻要回到诗句理解。",
+      },
+      placeRelations: [
+        { targetId: "furong-lou", type: "departure_place", confidence: "medium", assertion: "诗题直接点出芙蓉楼送辛渐，作为送别场景参照；不把现代楼址当作精确站位。", childMeaning: "诗人在江边楼处送朋友。", sourceKeys: ["chinesePoetry"] },
+        { targetId: "luoyang", type: "destination_mentioned", confidence: "high", assertion: "第三句直接写洛阳亲友，是远方关系参照。", childMeaning: "朋友或亲友在洛阳方向，诗人把话送向远方。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["furong-lou", "luoyang"],
+    }),
+  },
+
+  "child-wang-yue": {
+    overrideReason: "第五批内容复核：泰山观察视线、齐鲁空间尺度、阴阳光影与登顶愿望已人工确认；岱、夫、了、眦、凌按诗句语境校正。",
+    ...catalogReview({
+      reviewNotes: "泰山是题名和诗句的明确参照；齐鲁、阴阳、归鸟用于空间镜头，不把‘一览众山小’当现实地貌测量。",
+      pinyinOverrides: [
+        { path: "line-1.token-1", char: "岱", pinyin: "dài", reason: "‘岱宗’是泰山尊称，岱读 dài。" },
+        { path: "line-1.token-3", char: "夫", pinyin: "fū", reason: "‘夫如何’中的夫为语气词，读 fū。" },
+        { path: "line-2.token-5", char: "了", pinyin: "liǎo", reason: "‘未了’意为没有尽头，了读 liǎo。" },
+        { path: "line-6.token-2", char: "眦", pinyin: "zì", reason: "‘决眦’中的眦指眼角，读 zì。" },
+        { path: "line-7.token-3", char: "凌", pinyin: "líng", reason: "‘凌绝顶’意为登上、越过最高峰，凌读 líng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "mountain-climb-and-changing-horizon",
+        observation: "视线从泰山脚下抬向齐鲁山色、阴阳光影、层云和归鸟，最后落到想登绝顶的行动愿望。",
+        mapAction: "把泰山作为观察中心，用‘齐鲁远景—山体光影—峰顶视野’表达尺度变化；不将诗句当作精确地形测量。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8"],
+        childTakeaway: "换一个高度和视角，能看见更大的范围；愿望还要通过行动靠近。",
+      },
+      placeRelations: [
+        { targetId: "mount-tai", type: "mountain_association", confidence: "high", assertion: "诗题和‘岱宗’直接指向泰山，作为诗境山体参照。", childMeaning: "诗人面对泰山，视线从山脚一路抬到峰顶。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["mount-tai"],
+    }),
+  },
+
+  "child-ye-yu-ji-bei": {
+    overrideReason: "第五批内容复核：巴山夜雨、归期未定与西窗未来团聚的时间关系已人工确认；涨按水位上涨语境读 zhǎng。",
+    ...catalogReview({
+      reviewNotes: "巴山是诗中夜雨区域参照，西窗是室内未来想象；不把诗句推断成作者精确写作坐标或实际归期。",
+      pinyinOverrides: [
+        { path: "line-2.token-5", char: "涨", pinyin: "zhǎng", reason: "‘涨秋池’指雨水使池水上涨，涨读 zhǎng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "rain-now-and-homecoming-future",
+        observation: "巴山夜雨和秋池构成眼前的旅夜空间，西窗则是未来与家人团聚、回忆今夜的室内空间。",
+        mapAction: "以巴山作诗中区域参照，用时间轴连接‘今夜听雨—未来西窗共话’，不画成已确定的返乡路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "同一场雨可以连接现在的牵挂和未来的共同回忆。",
+      },
+      placeRelations: [
+        { targetId: "bashan", type: "cultural_association", confidence: "medium", assertion: "诗句直接写巴山夜雨，作为旅夜雨景的区域参照；不据此断言精确写作地点。", childMeaning: "诗人在巴山一带听雨，想念远方的家人。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["bashan"],
+    }),
+  },
+
+  "child-wu-yi-xiang": {
+    overrideReason: "第五批内容复核：朱雀桥、乌衣巷与王谢旧宅构成的金陵历史城市参照已人工确认；斜、燕按语境校正。",
+    ...catalogReview({
+      reviewNotes: "朱雀桥、乌衣巷与王谢旧宅构成金陵历史城市参照；燕子带出古今变化，不把诗句当作今天遗址的完整复原。",
+      pinyinOverrides: [
+        { path: "line-2.token-7", char: "斜", pinyin: "xié", reason: "‘夕阳斜’写夕阳斜照，斜读 xié。" },
+        { path: "line-3.token-7", char: "燕", pinyin: "yàn", reason: "‘堂前燕’指燕子，燕读 yàn。" },
+      ],
+      spatialLearning: {
+        coreRelation: "old-city-and-changing-neighborhood",
+        observation: "视线从朱雀桥边的野草花移到乌衣巷口的夕阳，再由燕子把王谢旧宅和寻常百姓家连接起来。",
+        mapAction: "以金陵旧城作历史城市参照，标出‘桥—巷—旧宅—寻常人家’的观察关系；不把诗句当作遗址复原图。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "景物可能还在，但城市里生活的人和方式会随着时间改变。",
+      },
+      placeRelations: [
+        { targetId: "jinling", type: "historical_city", confidence: "high", assertion: "朱雀桥和乌衣巷是金陵历史城市的直接参照，诗用燕子观察古今变化。", childMeaning: "一座旧城里，桥巷、燕子和住家共同见证时间。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["jinling"],
+    }),
+  },
+
+  "child-chu-sai": {
+    overrideReason: "第五批内容复核：秦汉明月、边关、未归士兵与阴山守护愿望的历史空间关系已人工确认；还、将、教、度按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗中秦汉、关塞、阴山构成历史边塞想象；玉门关与阴山为文化地理参照，不把诗句当成具体军情或个人路线。",
+      pinyinOverrides: [
+        { path: "line-2.token-7", char: "还", pinyin: "huán", reason: "‘人未还’意为人还没有回来，读 huán。" },
+        { path: "line-3.token-6", char: "将", pinyin: "jiàng", reason: "‘飞将在’中的将是将领，读 jiàng。" },
+        { path: "line-4.token-2", char: "教", pinyin: "jiào", reason: "‘不教’意为不让、不要使，读 jiào。" },
+        { path: "line-4.token-5", char: "度", pinyin: "dù", reason: "‘度阴山’意为越过阴山，度读 dù。" },
+      ],
+      spatialLearning: {
+        coreRelation: "frontier-history-and-homecoming",
+        observation: "月亮把秦汉历史和眼前关塞连接起来，万里征途落到未归士兵，最后由阴山构成守护边地的愿望边界。",
+        mapAction: "用玉门关、阴山作文化地理参照，画‘关塞—远征—守护’关系，不把诗中边塞想象当作个人行军路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "边塞景物承载着等待归来和守护平安的愿望，历史想象要和现代事实区分。",
+      },
+      placeRelations: [
+        { targetId: "yumen-pass", type: "frontier_region", confidence: "medium", assertion: "关塞与长城边地可用玉门关作区域文化参照，但诗句未直接点名玉门关。", childMeaning: "古代边地有许多关塞，玉门关是认识这一空间的参照点。", sourceKeys: ["chinesePoetry"] },
+        { targetId: "yinshan", type: "frontier_mountain", confidence: "high", assertion: "末句直接写阴山，是诗中边地山脉参照。", childMeaning: "阴山像边地的山关，承载守护和平的愿望。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["yumen-pass", "yinshan"],
+    }),
+  },
+
+  "child-du-zuo-jing-ting-shan": {
+    overrideReason: "第五批内容复核：群鸟、孤云离去与诗人和敬亭山相看不厌的陪伴关系已人工确认；敬亭山只作诗题地点参照，不推断精确观景位置。",
+    ...catalogReview({
+      reviewNotes: "题目直接写敬亭山，地图可使用今天的敬亭山作现代山体参照；诗句没有提供诗人具体站位，也不把‘只有’解释成现实地理上只剩一座山。",
+      pinyinOverrides: [
+        { path: "line-3.token-1", char: "相", pinyin: "xiāng", reason: "‘相看’表示彼此相看，读 xiāng，不是相貌义的 xiàng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "solitary-viewpoint-and-mountain-companionship",
+        observation: "鸟和云从天空远去，视线逐渐收束到独坐的诗人与敬亭山；山成为画面中稳定留下的参照。",
+        mapAction: "以敬亭山作现代山体参照，先复述‘鸟—云—人—山’的视线收束，不标出未经诗句证明的诗人具体坐标。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "地图能说明山在哪里，诗句则让我们感受一座山怎样成为陪伴。",
+      },
+      placeRelations: [
+        { targetId: "jingting-mountain", type: "mountain_association", confidence: "high", assertion: "题目直接点名敬亭山，是诗境的明确山体参照；不等同于诗人当时的精确观察点。", childMeaning: "鸟云远去后，诗人的目光停在敬亭山上。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["jingting-mountain"],
+    }),
+  },
+
+  "child-jiang-nan": {
+    overrideReason: "第五批内容复核：江南采莲、莲叶茂盛与东南西北方向展开已人工确认；‘间’的语境读音和江南区域边界已明确。",
+    ...catalogReview({
+      reviewNotes: "‘江南’是诗歌中的宽泛水乡地域和文化称呼，不是现代行政区边界；本诗没有可核定的单一池塘坐标，方向词只用于同一莲塘的观察。",
+      pinyinOverrides: [
+        { path: "line-3.token-5", char: "间", pinyin: "jiān", reason: "‘莲叶间’表示莲叶之间，读 jiān，不是间隔义的 jiàn。" },
+      ],
+      spatialLearning: {
+        coreRelation: "regional-water-and-directional-lotus-pond",
+        observation: "从江南这一宽泛水乡区域进入一片莲塘，先看莲叶，再用东、西、南、北展开鱼儿的活动范围。",
+        mapAction: "用示意图画一片莲塘的中心、东、西、南、北，不勾勒江南现代行政边界，也不把诗歌方向直接换成真实坐标。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7"],
+        childTakeaway: "方向词能让孩子在一片水面里找到观察顺序，区域名称则需要保留它的宽泛边界。",
+      },
+    }),
+  },
+
+  "child-hui-xiang-ou-shu": {
+    overrideReason: "第五批内容复核：少年离家、年老归来、乡音未改与儿童发问的时间关系已人工确认；‘少/衰/相’按诗句语境校正，不据候选地点推断故乡坐标。",
+    ...catalogReview({
+      reviewNotes: "诗句没有说出具体故乡名称或回乡路线；候选目录中的地点只作待考参考，不升级为地理关系，地图不应把贺知章的故乡或归途画成诗中事实。",
+      pinyinOverrides: [
+        { path: "line-1.token-1", char: "少", pinyin: "shào", reason: "‘少小’指年少，读 shào，不是数量少的 shǎo。" },
+        { path: "line-2.token-7", char: "衰", pinyin: "shuāi", reason: "‘鬓毛衰’写鬓发稀疏衰老，读 shuāi。" },
+        { path: "line-3.token-3", char: "相", pinyin: "xiāng", reason: "‘儿童相见’表示彼此见面，读 xiāng，不是相貌义的 xiàng。" },
+        { path: "line-3.token-6", char: "相", pinyin: "xiāng", reason: "‘不相识’表示彼此不认识，读 xiāng，不是相貌义的 xiàng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "departure-return-and-recognition",
+        observation: "空间从‘离家’拉到‘回乡’，最后缩近到孩子和老人面对面的一问；故乡的地点没有被诗句具体化。",
+        mapAction: "可以画‘少年离家—多年后归来—孩子相遇’的时间路线，但不添加未经诗句证明的城市、门牌或实际行程。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "回到原来的地方不一定立刻被认出，时间会改变人的外貌和彼此的关系。",
+      },
+    }),
+  },
+
+  "child-yong-liu": {
+    overrideReason: "第五批内容复核：整树—柳条—细叶—春风剪刀的观察层次与比喻关系已人工确认；‘一/绦/似’按语境校正，不虚构具体地理地点。",
+    ...catalogReview({
+      reviewNotes: "诗只写春日柳树与春风，没有可核定的单一地理地点；柳树的自然生长场景不应被强行关联到某个城市或景区。",
+      pinyinOverrides: [
+        { path: "line-1.token-5", char: "一", pinyin: "yí", reason: "‘一树’后接去声 shù，连续朗读读 yí，保留普通话变调呈现。" },
+        { path: "line-2.token-7", char: "绦", pinyin: "tāo", reason: "‘丝绦’指丝带，绦读 tāo，是需要人工确认的生僻字。" },
+        { path: "line-4.token-5", char: "似", pinyin: "sì", reason: "‘似剪刀’表示像剪刀，读 sì，不是相似之外的其他语境。" },
+      ],
+      spatialLearning: {
+        coreRelation: "tree-to-branch-to-leaf-observation",
+        observation: "视线从整棵柳树落到万条柳枝，再靠近细叶，最后由春风的方向把想象收回到整片春色。",
+        mapAction: "用树冠—枝条—叶片的近距离空间关系学习观察层次，不给柳树场景添加未经诗句证明的城市坐标。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "看自然时先看整体、再看细节，最后可以用一个好比喻说出发现。",
+      },
+    }),
+  },
+
+  "child-chang-ge-xing": {
+    overrideReason: "第五批内容复核：春荣—秋衰、百川入海与珍惜年少的时间关系已人工确认；‘朝/晞/华/衰/少’按语境校正，不将百川误标为黄河或具体航线。",
+    ...catalogReview({
+      reviewNotes: "‘百川东到海’是众多河流和时间流逝的泛化意象，不特指黄河，也不提供诗人具体行程；目录中的候选河流仅作机器辅助提示，不提升为已确认地理关系。",
+      pinyinOverrides: [
+        { path: "line-2.token-1", char: "朝", pinyin: "zhāo", reason: "‘朝露’指清晨的露水，读 zhāo，不是朝代义的 cháo。" },
+        { path: "line-2.token-5", char: "晞", pinyin: "xī", reason: "‘晞’意为晒干、干燥，是‘朝露待日晞’中的生僻字读音。" },
+        { path: "line-6.token-3", char: "华", pinyin: "huā", reason: "‘华叶’指花叶，读 huā，不是华丽义的 huá。" },
+        { path: "line-6.token-5", char: "衰", pinyin: "shuāi", reason: "‘华叶衰’写花叶衰败，读 shuāi。" },
+        { path: "line-9.token-1", char: "少", pinyin: "shào", reason: "‘少壮’指年轻的时候，读 shào，不是数量少的 shǎo。" },
+      ],
+      spatialLearning: {
+        coreRelation: "seasonal-growth-and-river-time-arrow",
+        observation: "视线从园中葵花和春光，转到秋叶衰败，再沿百川向东入海，把自然方向变成时间不可回流的比喻。",
+        mapAction: "画‘春—秋—河流向海—年少到年老’的关系图；不绘制百川的具体河道，也不把它等同黄河或某条现实航线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8", "line-9", "line-10"],
+        childTakeaway: "自然有方向、时间会向前，今天能开始的小行动值得被珍惜。",
+      },
+    }),
+  },
+
+  "child-mei-hua": {
+    overrideReason: "第六批内容复核：墙角梅枝、凌寒独开与暗香辨认的观察链已人工确认；数、凌、为按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗中是墙角梅花的近距离季节观察，没有可核定的单一地理地点；不把墙角推断为具体园林坐标。",
+      pinyinOverrides: [
+        { path: "line-1.token-3", char: "数", pinyin: "shù", reason: "‘数枝梅’中的数表示几枝，读 shù。" },
+        { path: "line-2.token-1", char: "凌", pinyin: "líng", reason: "‘凌寒’意为面对、顶着寒冷，凌读 líng。" },
+        { path: "line-4.token-1", char: "为", pinyin: "wèi", reason: "‘为有暗香来’意为因为有，读 wèi。" },
+      ],
+      spatialLearning: {
+        coreRelation: "winter-corner-and-scent",
+        observation: "视线从院墙角落的几枝梅，经过寒风中的独开，转到远处辨认花朵的暗香；空间很小，感官线索很丰富。",
+        mapAction: "用‘墙角—梅枝—寒风—飘来的香气’画一张观察小地图，不给梅花附会具体名园地点。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "不显眼的景物也能用颜色和气味留下可靠线索。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-hui-chong-chun-jiang": {
+    overrideReason: "第六批内容复核：桃花、鸭子、水暖、江岸植物和河豚上溯的早春观察链已人工确认；蒌、豚按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗是一幅江岸早春画面，没有单一地点可核定；春江和河豚上溯是季节与生态关系，不生成虚构路线。",
+      pinyinOverrides: [
+        { path: "line-3.token-1", char: "蒌", pinyin: "lóu", reason: "‘蒌蒿’是江岸植物，蒌读 lóu。" },
+        { path: "line-4.token-4", char: "豚", pinyin: "tún", reason: "‘河豚’中的豚是鱼类名称，读 tún。" },
+      ],
+      spatialLearning: {
+        coreRelation: "riverbank-season-and-animal-sense",
+        observation: "竹外桃花位于江岸近景，鸭子在水面先感到水暖，蒌蒿芦芽铺在岸边，河豚沿江上溯，季节线索层层展开。",
+        mapAction: "画‘竹林—桃花—春江—江岸植物—河豚上溯’的生态关系图，不把诗境等同一个可考的具体河段。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "植物、动物和水温一起提供春天到来的证据。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-si-shi-tian-yuan": {
+    overrideReason: "第六批内容复核：果实、花田、长日篱落与昆虫飞舞的夏日田园镜头已人工确认；蛱按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗提供的是乡村田园季节观察，没有可核定的单一地理地点；不把篱落或花田推断成具体村庄。",
+      pinyinOverrides: [
+        { path: "line-4.token-5", char: "蛱", pinyin: "jiá", reason: "‘蛱蝶’是蝴蝶一类，蛱读 jiá。" },
+      ],
+      spatialLearning: {
+        coreRelation: "summer-field-and-insect-soundscape",
+        observation: "近处果实和花田先提供季节颜色，镜头移到篱落和空小路，再由蜻蜓蛱蝶的飞动补足安静田园的生命感。",
+        mapAction: "用‘果树—花田—篱落—昆虫’画一张小尺度田园观察图，不虚构诗人的具体行走地点。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "无人经过不等于没有生命，安静能让细小动作更清楚。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-zhu-shi": {
+    overrideReason: "第六批内容复核：青山破岩扎根、经受磨击和四面风中的坚韧关系已人工确认；还、劲按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗以竹子和岩石构成象征性的山地近景，没有可核定的具体地名；不把青山、破岩当作真实路线。",
+      pinyinOverrides: [
+        { path: "line-3.token-5", char: "还", pinyin: "hái", reason: "‘还坚劲’意为仍然坚强有力，读 hái。" },
+        { path: "line-3.token-7", char: "劲", pinyin: "jìng", reason: "‘坚劲’意为坚强有力，劲读 jìng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "rock-root-and-four-direction-wind",
+        observation: "竹根从破岩缝中扎入青山，时间和磨击从各方向施加压力，竹子摇动却不失去根基。",
+        mapAction: "用‘青山—破岩—竹根—四方来风’画垂直和方向关系，不把诗句解读为作者的登山路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "坚韧是在变化和压力中守住根基，不等于完全不动。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-shan-po-yang-tong-guan": {
+    overrideReason: "第六批内容复核：潼关山河险要、西都历史视线、宫阙兴亡与百姓处境的关系已人工确认；踌、行、兴、亡按语境校正。",
+    ...catalogReview({
+      reviewNotes: "潼关是诗中明确的关隘参照，西都、秦汉和宫阙属于历史文化视线；不把历史兴亡简化成现代路线，也不把山河壮景遮住百姓处境。",
+      pinyinOverrides: [
+        { path: "line-2.token-6", char: "踌", pinyin: "chóu", reason: "‘踌躇’表示心情徘徊感慨，踌读 chóu。" },
+        { path: "line-3.token-6", char: "行", pinyin: "xíng", reason: "‘经行处’意为经过的地方，行读 xíng。" },
+        { path: "line-4.token-1", char: "兴", pinyin: "xīng", reason: "‘兴’与‘亡’相对，指王朝兴起，读 xīng。" },
+        { path: "line-4.token-7", char: "亡", pinyin: "wáng", reason: "‘亡’与‘兴’相对，指王朝灭亡，读 wáng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "pass-landscape-history-and-people",
+        observation: "潼关山河先形成雄险入口，视线再向西都和秦汉旧地延伸，宫阙化土后落回兴亡中的百姓生活。",
+        mapAction: "以潼关作关隘参照，连出‘山河—西都—秦汉遗迹—百姓生活’的历史关系，不把诗句绘成个人行军路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "看历史地图既要看关隘和王朝，也要追问普通人承受了什么。",
+      },
+      placeRelations: [
+        { targetId: "tongguan", type: "mountain_pass", confidence: "high", assertion: "曲题和‘潼关路’直接指向潼关关隘，山河险要是诗境入口。", childMeaning: "山和河围出一条重要的关隘道路。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["tongguan"],
+    }),
+  },
+
   "child-lu-chai": {
     text: "空山不见人，但闻人语响。\n返景入深林，复照青苔上。",
     overrideReason: "修正候选快照把‘但闻人语响’误录为‘但余钟磬音’的问题；保留原始快照，由人工 override 覆盖运行时。",
