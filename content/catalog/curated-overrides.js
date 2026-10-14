@@ -331,6 +331,50 @@ export const curatedOverrides = {
     }),
   },
 
+  "child-yong-e": {
+    overrideReason: "第二批内容复核：曲项、浮、拨的儿童释义与观察顺序已人工确认；不强加未经诗句证明的地理关系。",
+    ...catalogReview({
+      reviewNotes: "《咏鹅》是动物观察小诗，重点是声音、颜色和动作；目录保留无地点关系状态，不为动物诗虚构地理定位。",
+      pinyinOverrides: [
+        { path: "line-4.token-1", char: "曲", pinyin: "qū", reason: "‘曲项’指弯曲的脖子，读 qū，不是歌曲的 qǔ。" },
+      ],
+    }),
+  },
+
+  "child-min-nong-two": {
+    overrideReason: "第二批内容复核：锄禾、汗滴与盘中餐的劳动关系已人工确认；不附会具体农田地点。",
+    ...catalogReview({
+      reviewNotes: "《悯农·其二》把餐桌与田间劳动连起来，属于普遍劳动教育语境；诗句没有可核定的单一地理地点。",
+    }),
+  },
+
+  "child-jing-ye-si": {
+    overrideReason: "第二批内容复核：床前月光—举头—低头的视线推进与思乡寓意已人工确认；不把诗意地点误写成作者行踪。",
+    ...catalogReview({
+      reviewNotes: "《静夜思》以室内月夜和故乡想象为核心，保留无地点关系状态，避免把常见传说地点当成诗句证据。",
+    }),
+  },
+
+  "child-chun-xiao": {
+    overrideReason: "第二批内容复核：闻的语境、觉的读音、风雨与花落的时间关系已人工确认。",
+    ...catalogReview({
+      reviewNotes: "《春晓》用声音回想昨夜花落，不把花落数量、天气或具体地点当作事实数据。",
+      pinyinOverrides: [
+        { path: "line-1.token-4", char: "觉", pinyin: "jué", reason: "‘不觉晓’表示不知不觉天亮，读 jué，不是睡觉的 jiào。" },
+      ],
+    }),
+  },
+
+  "child-cun-ju": {
+    overrideReason: "第二批内容复核：草长、纸鸢等儿童易混词与远近镜头关系已人工确认；不推断诗人精确写作地点。",
+    ...catalogReview({
+      reviewNotes: "《村居》描写乡村早春与儿童放风筝，地理只保留乡村场景的文学尺度，不绑定现代行政地点。",
+      pinyinOverrides: [
+        { path: "line-1.token-2", char: "长", pinyin: "zhǎng", reason: "‘草长’写草木生长，读 zhǎng，不是长度的 cháng。" },
+      ],
+    }),
+  },
+
   "child-lu-chai": {
     text: "空山不见人，但闻人语响。\n返景入深林，复照青苔上。",
     overrideReason: "修正候选快照把‘但闻人语响’误录为‘但余钟磬音’的问题；保留原始快照，由人工 override 覆盖运行时。",

@@ -313,6 +313,88 @@
         }
       ]
     },
+    "child-yong-e": {
+      "lines": [
+        {
+          "lineId": "child-yong-e-line-1",
+          "src": "./assets/audio/readings/child-yong-e/line-1.mp3",
+          "durationMs": 320
+        },
+        {
+          "lineId": "child-yong-e-line-2",
+          "src": "./assets/audio/readings/child-yong-e/line-2.mp3",
+          "durationMs": 320
+        },
+        {
+          "lineId": "child-yong-e-line-3",
+          "src": "./assets/audio/readings/child-yong-e/line-3.mp3",
+          "durationMs": 320
+        },
+        {
+          "lineId": "child-yong-e-line-4",
+          "src": "./assets/audio/readings/child-yong-e/line-4.mp3",
+          "durationMs": 1514
+        },
+        {
+          "lineId": "child-yong-e-line-5",
+          "src": "./assets/audio/readings/child-yong-e/line-5.mp3",
+          "durationMs": 1320
+        },
+        {
+          "lineId": "child-yong-e-line-6",
+          "src": "./assets/audio/readings/child-yong-e/line-6.mp3",
+          "durationMs": 1393
+        }
+      ]
+    },
+    "child-min-nong-two": {
+      "lines": [
+        {
+          "lineId": "child-min-nong-two-line-1",
+          "src": "./assets/audio/readings/child-min-nong-two/line-1.mp3",
+          "durationMs": 1319
+        },
+        {
+          "lineId": "child-min-nong-two-line-2",
+          "src": "./assets/audio/readings/child-min-nong-two/line-2.mp3",
+          "durationMs": 1374
+        },
+        {
+          "lineId": "child-min-nong-two-line-3",
+          "src": "./assets/audio/readings/child-min-nong-two/line-3.mp3",
+          "durationMs": 1508
+        },
+        {
+          "lineId": "child-min-nong-two-line-4",
+          "src": "./assets/audio/readings/child-min-nong-two/line-4.mp3",
+          "durationMs": 1245
+        }
+      ]
+    },
+    "child-jing-ye-si": {
+      "lines": [
+        {
+          "lineId": "child-jing-ye-si-line-1",
+          "src": "./assets/audio/readings/child-jing-ye-si/line-1.mp3",
+          "durationMs": 1481
+        },
+        {
+          "lineId": "child-jing-ye-si-line-2",
+          "src": "./assets/audio/readings/child-jing-ye-si/line-2.mp3",
+          "durationMs": 1360
+        },
+        {
+          "lineId": "child-jing-ye-si-line-3",
+          "src": "./assets/audio/readings/child-jing-ye-si/line-3.mp3",
+          "durationMs": 1283
+        },
+        {
+          "lineId": "child-jing-ye-si-line-4",
+          "src": "./assets/audio/readings/child-jing-ye-si/line-4.mp3",
+          "durationMs": 1325
+        }
+      ]
+    },
     "child-deng-guan-que-lou": {
       "lines": [
         {
@@ -334,6 +416,54 @@
           "lineId": "child-deng-guan-que-lou-line-4",
           "src": "./assets/audio/readings/child-deng-guan-que-lou/line-4.mp3",
           "durationMs": 1285
+        }
+      ]
+    },
+    "child-chun-xiao": {
+      "lines": [
+        {
+          "lineId": "child-chun-xiao-line-1",
+          "src": "./assets/audio/readings/child-chun-xiao/line-1.mp3",
+          "durationMs": 1365
+        },
+        {
+          "lineId": "child-chun-xiao-line-2",
+          "src": "./assets/audio/readings/child-chun-xiao/line-2.mp3",
+          "durationMs": 1353
+        },
+        {
+          "lineId": "child-chun-xiao-line-3",
+          "src": "./assets/audio/readings/child-chun-xiao/line-3.mp3",
+          "durationMs": 1289
+        },
+        {
+          "lineId": "child-chun-xiao-line-4",
+          "src": "./assets/audio/readings/child-chun-xiao/line-4.mp3",
+          "durationMs": 1377
+        }
+      ]
+    },
+    "child-cun-ju": {
+      "lines": [
+        {
+          "lineId": "child-cun-ju-line-1",
+          "src": "./assets/audio/readings/child-cun-ju/line-1.mp3",
+          "durationMs": 1910
+        },
+        {
+          "lineId": "child-cun-ju-line-2",
+          "src": "./assets/audio/readings/child-cun-ju/line-2.mp3",
+          "durationMs": 1956
+        },
+        {
+          "lineId": "child-cun-ju-line-3",
+          "src": "./assets/audio/readings/child-cun-ju/line-3.mp3",
+          "durationMs": 1861
+        },
+        {
+          "lineId": "child-cun-ju-line-4",
+          "src": "./assets/audio/readings/child-cun-ju/line-4.mp3",
+          "durationMs": 1918
         }
       ]
     },

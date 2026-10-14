@@ -686,6 +686,93 @@ export const curatedMasteryContentByPoemId = {
       prompt: "有没有一个‘快要结束、所以更想认真看’的时刻？你会怎样描述它？",
     },
   }),
+
+  "child-yong-e": mastery({
+    wholeMeaning: "小鹅弯着脖子朝天歌唱，白色羽毛浮在绿水上，红色脚掌拨动清清的水波。诗写出鹅在水面上的颜色、姿态和声音。",
+    mainContent: "诗先听鹅叫，再看白羽、绿水和红掌，把一只鹅的声音、颜色和动作连成一幅明亮的水面画。",
+    emotion: "新鲜、喜爱和对小动物的好奇。",
+    centralIdea: "用简单的颜色、动作和声音，就能把熟悉的小动物观察得很生动。",
+    lineMeanings: [
+      lineMeaning("line-1", "鹅的叫声一声接一声，先把听觉带进画面。", ["鹅", "声音"], "前三个‘鹅’是有节奏的呼唤，不是三只已经数清的鹅。", "水面传来清亮的鹅叫。", "你先听见了什么？"),
+      lineMeaning("line-2", "诗句再次呼唤鹅，让声音有了回响。", ["鹅", "重复"], "重复不是多余，而是在模拟孩子听见叫声时的惊喜。", "叫声在水边回荡。", "重复读出来有什么感觉？"),
+      lineMeaning("line-3", "第三声鹅叫把注意力推向眼前的小动物。", ["鹅", "观察"], "这里重在节奏和观察，不必强行解释鹅的数量。", "孩子顺着声音找到了鹅。", "声音把你的目光带到哪里？"),
+      lineMeaning("line-4", "鹅弯着脖子朝天歌唱。", ["曲项", "向天", "歌"], "‘曲项’是弯曲的脖子，不是歌曲的曲调。", "鹅抬起弯弯的脖子叫个不停。", "鹅的姿态是什么样的？"),
+      lineMeaning("line-5", "白色的羽毛浮在绿色的水面上。", ["白毛", "浮", "绿水"], "‘浮’写羽毛轻轻漂在水上，不是鹅被水冲走。", "白鹅像一团白云，浮在碧绿的水面。", "诗里有哪两种颜色？"),
+      lineMeaning("line-6", "红色的脚掌拨动清清的水波。", ["红掌", "拨", "清波"], "‘拨’是脚掌划水的动作，不是用手拨琴。", "红脚掌一下下划开细细的波纹。", "哪个动作让水面动起来了？"),
+    ],
+    commonMisunderstandings: [{ phrase: "曲项", correction: "读 qū xiàng，指弯曲的脖子。" }, { phrase: "拨清波", correction: "拨是脚掌划水，不是拨动乐器。" }],
+    memoryKeywords: [{ lineId: "line-1", keywords: ["鹅", "声音"], cue: "先听第一声" }, { lineId: "line-2", keywords: ["鹅", "回响"], cue: "声音有回响" }, { lineId: "line-3", keywords: ["鹅", "观察"], cue: "顺声找鹅" }, { lineId: "line-4", keywords: ["曲项", "歌"], cue: "看姿态和歌声" }, { lineId: "line-5", keywords: ["白毛", "绿水"], cue: "再看颜色" }, { lineId: "line-6", keywords: ["红掌", "拨"], cue: "最后看动作" }],
+    firstCharacterHints: [{ lineId: "line-1", character: "鹅", cue: "第一声鹅" }, { lineId: "line-2", character: "鹅", cue: "第二声鹅" }, { lineId: "line-3", character: "鹅", cue: "第三声鹅" }, { lineId: "line-4", character: "曲", cue: "曲项向天歌" }, { lineId: "line-5", character: "白", cue: "白毛浮水" }, { lineId: "line-6", character: "红", cue: "红掌拨波" }],
+    extension: { title: "给一只小动物画三笔", text: "这首诗没有把鹅写成抽象的‘可爱’，而是抓住叫声、白羽、绿水和红掌，让观察变得具体。", prompt: "你能为身边的小动物找到一种声音、一种颜色和一个动作吗？" },
+  }),
+
+  "child-min-nong-two": mastery({
+    wholeMeaning: "正午烈日下，农民在田里锄禾，汗水一滴滴落进泥土。诗提醒我们，盘中的每一粒粮食都来自辛苦劳动。",
+    mainContent: "诗把饭桌上的米饭和田里的汗水连起来，从眼前的一餐想到劳动和珍惜。",
+    emotion: "体谅劳动、珍惜粮食和对农人的尊重。",
+    centralIdea: "看见食物背后的劳动，才能真正懂得珍惜，不把节约变成一句空话。",
+    lineMeanings: [
+      lineMeaning("line-1", "农民顶着正午的太阳在田里锄草、松土。", ["锄禾", "日当午"], "‘锄禾’不是锄掉禾苗，而是给庄稼除草松土。", "太阳正高，农民弯腰在田垄间劳作。", "你从哪个词感觉到天气很热？"),
+      lineMeaning("line-2", "汗水一滴滴落到禾苗下面的土地里。", ["汗滴", "禾下土"], "‘禾下土’写汗水落在田土，不是汗水变成了泥土。", "汗珠从额头落下，融进黑色泥土。", "汗水和禾苗之间有什么联系？"),
+      lineMeaning("line-3", "谁能知道盘子里的饭，每一粒都包含着辛苦？", ["谁知", "盘中餐"], "‘谁知’是在提醒和追问，不是找一个具体名字。", "饭碗就在眼前，田里的劳动却被藏在饭后面。", "盘中的饭从哪里来？"),
+      lineMeaning("line-4", "每一粒粮食都凝结着农人的辛苦。", ["粒粒", "辛苦"], "不是说每粒米都能看见汗水，而是说粮食来得不容易。", "一粒米被放大，背后连着一整季田间劳作。", "你会怎样把‘珍惜’变成一个动作？"),
+    ],
+    commonMisunderstandings: [{ phrase: "锄禾", correction: "锄的是田里的杂草和土，不是把禾苗锄掉。" }, { phrase: "盘中餐", correction: "指饭桌上的粮食，诗把它和农人的劳动联系起来。" }],
+    memoryKeywords: [{ lineId: "line-1", keywords: ["锄禾", "日当午"], cue: "烈日下劳动" }, { lineId: "line-2", keywords: ["汗滴", "禾下土"], cue: "汗水落进田土" }, { lineId: "line-3", keywords: ["谁知", "盘中餐"], cue: "想到饭从哪里来" }, { lineId: "line-4", keywords: ["粒粒", "辛苦"], cue: "每一粒都要珍惜" }],
+    firstCharacterHints: [{ lineId: "line-1", character: "锄", cue: "田间劳动" }, { lineId: "line-2", character: "汗", cue: "汗落禾下" }, { lineId: "line-3", character: "谁", cue: "盘中之餐" }, { lineId: "line-4", character: "粒", cue: "粒粒辛苦" }],
+    extension: { title: "一粒米的旅行", text: "诗把餐桌和田地放在同一条关系线上：饭不是凭空出现的，节约也不只是口号，而是对劳动的回应。", prompt: "下一次吃饭时，你能说出一个让你想到劳动的细节吗？" },
+  }),
+
+  "child-jing-ye-si": mastery({
+    wholeMeaning: "诗人在夜里看到床前的月光，误以为是地上的白霜；抬头望月时想到远方的故乡，低头又沉入思念。",
+    mainContent: "诗按‘看见—误认—抬头—低头’推进，月光把眼前的房间和远方的故乡连在一起。",
+    emotion: "安静、思乡和夜深时的牵挂。",
+    centralIdea: "一个熟悉的月亮能把人从眼前带回故乡，思念常常从很小的景物开始。",
+    lineMeanings: [
+      lineMeaning("line-1", "床前洒着明亮的月光。", ["床前", "明月光"], "‘床’在古诗中常指床榻，不要把画面误解成现代高低床。", "月光从窗边铺到床前。", "月光先落在了哪里？"),
+      lineMeaning("line-2", "诗人恍惚间以为地上铺的是秋天的白霜。", ["疑是", "地上霜"], "‘疑是’表示看错后的猜想，不是真的下霜。", "冷白的月光像一层薄霜。", "为什么月光会像霜？"),
+      lineMeaning("line-3", "诗人抬起头，望着天上的明月。", ["举头", "望明月"], "‘举头’是抬头的动作，改变了观看方向。", "目光从地面转到窗外的月亮。", "诗人的视线怎样移动？"),
+      lineMeaning("line-4", "低下头时，诗人想起了自己的故乡。", ["低头", "思故乡"], "‘思’是思念、想念，不只是思考一个问题。", "月亮还在，人的心却已经回到家乡。", "是什么景物把你带回了另一个地方？"),
+    ],
+    commonMisunderstandings: [{ phrase: "疑是", correction: "表示诗人一开始看错了，把月光看成地上白霜。" }, { phrase: "举头/低头", correction: "两次动作改变了视线，也带出从眼前到思乡的情绪变化。" }],
+    memoryKeywords: [{ lineId: "line-1", keywords: ["床前", "月光"], cue: "先看眼前" }, { lineId: "line-2", keywords: ["疑是", "白霜"], cue: "月光像霜" }, { lineId: "line-3", keywords: ["举头", "明月"], cue: "抬头看月" }, { lineId: "line-4", keywords: ["低头", "故乡"], cue: "低头想家" }],
+    firstCharacterHints: [{ lineId: "line-1", character: "床", cue: "月光到床前" }, { lineId: "line-2", character: "疑", cue: "误认成霜" }, { lineId: "line-3", character: "举", cue: "抬头望月" }, { lineId: "line-4", character: "低", cue: "低头思乡" }],
+    extension: { title: "月亮把哪里连在一起", text: "诗中没有画地图，却有一条很清楚的空间线：床前的月光—窗外的明月—心里的故乡。", prompt: "你看到什么景物时，会想起一个远方的人或地方？" },
+  }),
+
+  "child-chun-xiao": mastery({
+    wholeMeaning: "春天早晨醒来，诗人想起夜里听到的风雨声，不知道昨夜又有多少花被吹落。",
+    mainContent: "诗先写睡醒时的感觉，再回想夜里的声音，最后把注意力落到可能落下的花。",
+    emotion: "春日的轻快、惊喜和对花落的温柔惋惜。",
+    centralIdea: "声音能帮助我们回想没有亲眼看见的事情，春天的美也包含花开花落的变化。",
+    lineMeanings: [
+      lineMeaning("line-1", "春日睡得香，不知不觉已经天亮。", ["春眠", "不觉晓"], "‘晓’是天亮，不是明白道理。", "鸟声和晨光来到窗边，诗人还在睡梦中。", "哪一个词说明天已经亮了？"),
+      lineMeaning("line-2", "到处都能听见鸟儿的啼叫。", ["处处", "闻", "啼鸟"], "‘闻’在这里是听见，不是用鼻子闻气味。", "窗外各个方向都有鸟声。", "你闭上眼能判断声音来自哪里吗？"),
+      lineMeaning("line-3", "想起昨夜曾听到风雨声。", ["夜来", "风雨声"], "‘夜来’是昨夜以来，不是风雨从夜里走来。", "夜色里风吹雨落，声音留在记忆中。", "诗人为什么先写声音？"),
+      lineMeaning("line-4", "不知道昨夜的风雨让多少花儿落下了。", ["花落", "知多少"], "‘知多少’是带着想象的问句，不要求算出花的数量。", "清晨花瓣落在地上，春色有了变化。", "这句是开心还是有一点可惜？"),
+    ],
+    commonMisunderstandings: [{ phrase: "闻啼鸟", correction: "闻是听见，啼鸟是鸟叫声。" }, { phrase: "知多少", correction: "是诗人的想象和轻轻追问，不是数学题。" }],
+    memoryKeywords: [{ lineId: "line-1", keywords: ["春眠", "晓"], cue: "春日睡醒" }, { lineId: "line-2", keywords: ["处处", "啼鸟"], cue: "四处鸟声" }, { lineId: "line-3", keywords: ["夜来", "风雨"], cue: "回想昨夜" }, { lineId: "line-4", keywords: ["花落", "多少"], cue: "猜花落几许" }],
+    firstCharacterHints: [{ lineId: "line-1", character: "春", cue: "春眠天亮" }, { lineId: "line-2", character: "处", cue: "到处鸟鸣" }, { lineId: "line-3", character: "夜", cue: "夜里的风雨" }, { lineId: "line-4", character: "花", cue: "花落多少" }],
+    extension: { title: "用声音回看昨夜", text: "诗人没有看见夜里的花落，而是从风雨声想到它。听见的声音，也可以成为理解空间和时间的线索。", prompt: "你听到一个声音时，会想到它来自什么地方、什么时间吗？" },
+  }),
+
+  "child-cun-ju": mastery({
+    wholeMeaning: "早春二月，草木生长、黄莺飞翔，杨柳拂着堤岸，孩子们放学早早回家，趁着东风放起风筝。",
+    mainContent: "诗从春天的远景写到堤岸，再落到放学孩子的动作，画面从大自然收束到儿童生活。",
+    emotion: "明快、自由和对春日童趣的喜爱。",
+    centralIdea: "春天不只是花草的季节，也是孩子在风里奔跑、游戏和创造的时间。",
+    lineMeanings: [
+      lineMeaning("line-1", "二月的乡村，草木长起来了，黄莺也飞来飞去。", ["草长", "莺飞", "二月天"], "‘长’读 zhǎng，写草木生长，不是长度的 cháng。", "嫩绿的草地上，黄莺在春空飞翔。", "哪些词让你知道春天来了？"),
+      lineMeaning("line-2", "杨柳轻拂堤岸，春烟像醉了一样轻柔迷蒙。", ["拂堤", "杨柳", "春烟"], "‘醉’是拟人写法，写春烟迷蒙可爱，不是柳树真的喝醉。", "柳枝垂到堤边，薄薄的春雾绕着它。", "柳枝和春烟分别在怎样动？"),
+      lineMeaning("line-3", "孩子们放学回来得很早。", ["儿童", "散学", "早"], "‘散学’是放学，不是把学校拆散。", "孩子们背着书包跑出村塾。", "孩子们接下来要去做什么？"),
+      lineMeaning("line-4", "孩子们赶紧趁着东风放起纸鸢，也就是风筝。", ["忙趁", "东风", "纸鸢"], "‘纸鸢’是风筝；‘忙趁’写孩子抓住风来的机会。", "风筝越飞越高，孩子们牵着线在田野奔跑。", "为什么要‘趁’风？"),
+    ],
+    commonMisunderstandings: [{ phrase: "草长", correction: "长读 zhǎng，表示草木生长。" }, { phrase: "纸鸢", correction: "纸鸢是风筝，鸢是古代对鹰类鸟的称呼。" }],
+    memoryKeywords: [{ lineId: "line-1", keywords: ["草长", "莺飞"], cue: "春天远景" }, { lineId: "line-2", keywords: ["杨柳", "春烟"], cue: "堤岸近景" }, { lineId: "line-3", keywords: ["儿童", "散学早"], cue: "孩子放学" }, { lineId: "line-4", keywords: ["东风", "纸鸢"], cue: "趁风放风筝" }],
+    firstCharacterHints: [{ lineId: "line-1", character: "草", cue: "草长莺飞" }, { lineId: "line-2", character: "拂", cue: "柳拂堤岸" }, { lineId: "line-3", character: "儿", cue: "儿童散学" }, { lineId: "line-4", character: "忙", cue: "忙趁东风" }],
+    extension: { title: "春天从远处跑到孩子身边", text: "前两句看草木和堤岸，后两句看孩子和风筝，诗的镜头从整个乡村落到一个正在奔跑的身影。", prompt: "如果你要画这首诗，先画远景还是先画放风筝的孩子？为什么？" },
+  }),
 };
 
 export const phase1MasteryPoemIds = Object.keys(masteryContentByPoemId);

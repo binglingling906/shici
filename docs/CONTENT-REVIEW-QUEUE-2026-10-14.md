@@ -1,6 +1,6 @@
 # 内容人工复核队列（2026-10-14）
 
-本文件把 90 首 `machine-assisted-candidate` 诗整理为可执行的人工复核队列。队列顺序只用于安排工作，**不代表这些诗已经通过审核**，也不会改变运行时的 `learningContract.status`。
+本文件把尚未完成内容复核的 `machine-assisted-candidate` 诗整理为可执行的人工复核队列。队列顺序只用于安排工作，**不代表这些诗已经通过审核**，也不会改变运行时的 `learningContract.status`。
 
 ## 第一批：10 首
 
@@ -29,10 +29,14 @@
 - 通过桌面、390×844 手机和键盘/触摸流程检查；
 - 完成后才允许把该条从 `machine-assisted-candidate` 提升为人工审核状态。
 
+## 第二批：5 首已完成
+
+`child-yong-e`《咏鹅》、`child-min-nong-two`《悯农·其二》、`child-jing-ye-si`《静夜思》、`child-chun-xiao`《春晓》、`child-cun-ju`《村居》已补齐逐句释义、儿童误解提示、主动表达延伸和语境拼音校正。动物、农事和春日诗没有可核定地点的，保留 `unassigned`，不虚构地理关系。
+
 ## 当前状态
 
 - 已完整人工审核：10 首；
-- 本队列：8/10 已完成第一批内容复核；`child-deng-guan-que-lou`、`child-zao-fa-bai-di-cheng`、`child-liang-zhou-ci`、`child-song-yuan-er-an-xi`、`child-jiu-yue-jiu-ri`、`child-bo-chuan-gua-zhou`、`child-ci-bei-gu-shan-xia`、`child-le-you-yuan` 已标记 `curated_content_v1`；
-- 剩余队列中的诗仍保持原审核等级，其余候选也不因进入队列而自动升级。
+- 另有 13 首已标记 `curated_content_v1`（第一批 8 首 + 第二批 5 首）；
+- 其余 77 首仍保持 `machine-assisted-candidate`，不会因进入队列而自动升级。
 
 候选排序来自运行时目录的机器辅助评分，只用于安排人工工作，不是内容质量证明。
