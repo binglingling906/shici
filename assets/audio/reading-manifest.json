@@ -3,6 +3,98 @@
   "voice": "Tingting",
   "generatedBy": "macOS say",
   "poems": {
+    "lushan-wang-lushan-pubu": {
+      "lines": [
+        {
+          "lineId": "lushan-wang-lushan-pubu-line-1",
+          "src": "./assets/audio/readings/lushan-wang-lushan-pubu/line-1.mp3",
+          "durationMs": 1825
+        },
+        {
+          "lineId": "lushan-wang-lushan-pubu-line-2",
+          "src": "./assets/audio/readings/lushan-wang-lushan-pubu/line-2.mp3",
+          "durationMs": 2137
+        },
+        {
+          "lineId": "lushan-wang-lushan-pubu-line-3",
+          "src": "./assets/audio/readings/lushan-wang-lushan-pubu/line-3.mp3",
+          "durationMs": 1985
+        },
+        {
+          "lineId": "lushan-wang-lushan-pubu-line-4",
+          "src": "./assets/audio/readings/lushan-wang-lushan-pubu/line-4.mp3",
+          "durationMs": 1917
+        }
+      ]
+    },
+    "lushan-ti-xi-lin-bi": {
+      "lines": [
+        {
+          "lineId": "lushan-ti-xi-lin-bi-line-1",
+          "src": "./assets/audio/readings/lushan-ti-xi-lin-bi/line-1.mp3",
+          "durationMs": 2148
+        },
+        {
+          "lineId": "lushan-ti-xi-lin-bi-line-2",
+          "src": "./assets/audio/readings/lushan-ti-xi-lin-bi/line-2.mp3",
+          "durationMs": 1778
+        },
+        {
+          "lineId": "lushan-ti-xi-lin-bi-line-3",
+          "src": "./assets/audio/readings/lushan-ti-xi-lin-bi/line-3.mp3",
+          "durationMs": 1598
+        },
+        {
+          "lineId": "lushan-ti-xi-lin-bi-line-4",
+          "src": "./assets/audio/readings/lushan-ti-xi-lin-bi/line-4.mp3",
+          "durationMs": 2027
+        }
+      ]
+    },
+    "yellow-crane-huang-he-lou": {
+      "lines": [
+        {
+          "lineId": "yellow-crane-huang-he-lou-line-1",
+          "src": "./assets/audio/readings/yellow-crane-huang-he-lou/line-1.mp3",
+          "durationMs": 1904
+        },
+        {
+          "lineId": "yellow-crane-huang-he-lou-line-2",
+          "src": "./assets/audio/readings/yellow-crane-huang-he-lou/line-2.mp3",
+          "durationMs": 1817
+        },
+        {
+          "lineId": "yellow-crane-huang-he-lou-line-3",
+          "src": "./assets/audio/readings/yellow-crane-huang-he-lou/line-3.mp3",
+          "durationMs": 1771
+        },
+        {
+          "lineId": "yellow-crane-huang-he-lou-line-4",
+          "src": "./assets/audio/readings/yellow-crane-huang-he-lou/line-4.mp3",
+          "durationMs": 1900
+        },
+        {
+          "lineId": "yellow-crane-huang-he-lou-line-5",
+          "src": "./assets/audio/readings/yellow-crane-huang-he-lou/line-5.mp3",
+          "durationMs": 1872
+        },
+        {
+          "lineId": "yellow-crane-huang-he-lou-line-6",
+          "src": "./assets/audio/readings/yellow-crane-huang-he-lou/line-6.mp3",
+          "durationMs": 1950
+        },
+        {
+          "lineId": "yellow-crane-huang-he-lou-line-7",
+          "src": "./assets/audio/readings/yellow-crane-huang-he-lou/line-7.mp3",
+          "durationMs": 1791
+        },
+        {
+          "lineId": "yellow-crane-huang-he-lou-line-8",
+          "src": "./assets/audio/readings/yellow-crane-huang-he-lou/line-8.mp3",
+          "durationMs": 1962
+        }
+      ]
+    },
     "yellow-crane-song-meng-hao-ran": {
       "lines": [
         {
@@ -48,6 +140,176 @@
           "lineId": "west-lake-yin-hu-shang-line-4",
           "src": "./assets/audio/readings/west-lake-yin-hu-shang/line-4.mp3",
           "durationMs": 1707
+        }
+      ]
+    },
+    "west-lake-xiao-chu-jing-ci-si": {
+      "lines": [
+        {
+          "lineId": "west-lake-xiao-chu-jing-ci-si-line-1",
+          "src": "./assets/audio/readings/west-lake-xiao-chu-jing-ci-si/line-1.mp3",
+          "durationMs": 1796
+        },
+        {
+          "lineId": "west-lake-xiao-chu-jing-ci-si-line-2",
+          "src": "./assets/audio/readings/west-lake-xiao-chu-jing-ci-si/line-2.mp3",
+          "durationMs": 1869
+        },
+        {
+          "lineId": "west-lake-xiao-chu-jing-ci-si-line-3",
+          "src": "./assets/audio/readings/west-lake-xiao-chu-jing-ci-si/line-3.mp3",
+          "durationMs": 1849
+        },
+        {
+          "lineId": "west-lake-xiao-chu-jing-ci-si-line-4",
+          "src": "./assets/audio/readings/west-lake-xiao-chu-jing-ci-si/line-4.mp3",
+          "durationMs": 1812
+        }
+      ]
+    },
+    "chengdu-chun-ye-xi-yu": {
+      "lines": [
+        {
+          "lineId": "chengdu-chun-ye-xi-yu-line-1",
+          "src": "./assets/audio/readings/chengdu-chun-ye-xi-yu/line-1.mp3",
+          "durationMs": 1247
+        },
+        {
+          "lineId": "chengdu-chun-ye-xi-yu-line-2",
+          "src": "./assets/audio/readings/chengdu-chun-ye-xi-yu/line-2.mp3",
+          "durationMs": 1382
+        },
+        {
+          "lineId": "chengdu-chun-ye-xi-yu-line-3",
+          "src": "./assets/audio/readings/chengdu-chun-ye-xi-yu/line-3.mp3",
+          "durationMs": 1405
+        },
+        {
+          "lineId": "chengdu-chun-ye-xi-yu-line-4",
+          "src": "./assets/audio/readings/chengdu-chun-ye-xi-yu/line-4.mp3",
+          "durationMs": 1351
+        },
+        {
+          "lineId": "chengdu-chun-ye-xi-yu-line-5",
+          "src": "./assets/audio/readings/chengdu-chun-ye-xi-yu/line-5.mp3",
+          "durationMs": 1325
+        },
+        {
+          "lineId": "chengdu-chun-ye-xi-yu-line-6",
+          "src": "./assets/audio/readings/chengdu-chun-ye-xi-yu/line-6.mp3",
+          "durationMs": 1524
+        },
+        {
+          "lineId": "chengdu-chun-ye-xi-yu-line-7",
+          "src": "./assets/audio/readings/chengdu-chun-ye-xi-yu/line-7.mp3",
+          "durationMs": 1487
+        },
+        {
+          "lineId": "chengdu-chun-ye-xi-yu-line-8",
+          "src": "./assets/audio/readings/chengdu-chun-ye-xi-yu/line-8.mp3",
+          "durationMs": 1413
+        }
+      ]
+    },
+    "chengdu-jueju-two-orioles": {
+      "lines": [
+        {
+          "lineId": "chengdu-jueju-two-orioles-line-1",
+          "src": "./assets/audio/readings/chengdu-jueju-two-orioles/line-1.mp3",
+          "durationMs": 1825
+        },
+        {
+          "lineId": "chengdu-jueju-two-orioles-line-2",
+          "src": "./assets/audio/readings/chengdu-jueju-two-orioles/line-2.mp3",
+          "durationMs": 1916
+        },
+        {
+          "lineId": "chengdu-jueju-two-orioles-line-3",
+          "src": "./assets/audio/readings/chengdu-jueju-two-orioles/line-3.mp3",
+          "durationMs": 2085
+        },
+        {
+          "lineId": "chengdu-jueju-two-orioles-line-4",
+          "src": "./assets/audio/readings/chengdu-jueju-two-orioles/line-4.mp3",
+          "durationMs": 1778
+        }
+      ]
+    },
+    "chang-an-chun-wang": {
+      "lines": [
+        {
+          "lineId": "chang-an-chun-wang-line-1",
+          "src": "./assets/audio/readings/chang-an-chun-wang/line-1.mp3",
+          "durationMs": 1401
+        },
+        {
+          "lineId": "chang-an-chun-wang-line-2",
+          "src": "./assets/audio/readings/chang-an-chun-wang/line-2.mp3",
+          "durationMs": 1481
+        },
+        {
+          "lineId": "chang-an-chun-wang-line-3",
+          "src": "./assets/audio/readings/chang-an-chun-wang/line-3.mp3",
+          "durationMs": 1308
+        },
+        {
+          "lineId": "chang-an-chun-wang-line-4",
+          "src": "./assets/audio/readings/chang-an-chun-wang/line-4.mp3",
+          "durationMs": 1467
+        },
+        {
+          "lineId": "chang-an-chun-wang-line-5",
+          "src": "./assets/audio/readings/chang-an-chun-wang/line-5.mp3",
+          "durationMs": 1370
+        },
+        {
+          "lineId": "chang-an-chun-wang-line-6",
+          "src": "./assets/audio/readings/chang-an-chun-wang/line-6.mp3",
+          "durationMs": 1350
+        },
+        {
+          "lineId": "chang-an-chun-wang-line-7",
+          "src": "./assets/audio/readings/chang-an-chun-wang/line-7.mp3",
+          "durationMs": 1320
+        },
+        {
+          "lineId": "chang-an-chun-wang-line-8",
+          "src": "./assets/audio/readings/chang-an-chun-wang/line-8.mp3",
+          "durationMs": 1330
+        }
+      ]
+    },
+    "chang-an-zi-ye-wu-ge-qiu-ge": {
+      "lines": [
+        {
+          "lineId": "chang-an-zi-ye-wu-ge-qiu-ge-line-1",
+          "src": "./assets/audio/readings/chang-an-zi-ye-wu-ge-qiu-ge/line-1.mp3",
+          "durationMs": 1295
+        },
+        {
+          "lineId": "chang-an-zi-ye-wu-ge-qiu-ge-line-2",
+          "src": "./assets/audio/readings/chang-an-zi-ye-wu-ge-qiu-ge/line-2.mp3",
+          "durationMs": 1336
+        },
+        {
+          "lineId": "chang-an-zi-ye-wu-ge-qiu-ge-line-3",
+          "src": "./assets/audio/readings/chang-an-zi-ye-wu-ge-qiu-ge/line-3.mp3",
+          "durationMs": 1396
+        },
+        {
+          "lineId": "chang-an-zi-ye-wu-ge-qiu-ge-line-4",
+          "src": "./assets/audio/readings/chang-an-zi-ye-wu-ge-qiu-ge/line-4.mp3",
+          "durationMs": 1348
+        },
+        {
+          "lineId": "chang-an-zi-ye-wu-ge-qiu-ge-line-5",
+          "src": "./assets/audio/readings/chang-an-zi-ye-wu-ge-qiu-ge/line-5.mp3",
+          "durationMs": 1293
+        },
+        {
+          "lineId": "chang-an-zi-ye-wu-ge-qiu-ge-line-6",
+          "src": "./assets/audio/readings/chang-an-zi-ye-wu-ge-qiu-ge/line-6.mp3",
+          "durationMs": 1372
         }
       ]
     },

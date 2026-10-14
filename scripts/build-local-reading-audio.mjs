@@ -6,7 +6,8 @@ import { promisify } from "node:util";
 const run = promisify(execFile);
 const ROOT = process.cwd();
 const runtime = JSON.parse(await fs.readFile(path.join(ROOT, "content/catalog/phase1-runtime.json"), "utf8"));
-const poems = runtime.catalog.filter((item) => /curated_content_v1|approved_full_experience/u.test(item.learningContract?.status || ""));
+const completeIds = new Set((runtime.poems || []).map((item) => item.id));
+const poems = runtime.catalog.filter((item) => completeIds.has(item.id) || /curated_content_v1|approved_full_experience/u.test(item.learningContract?.status || ""));
 const outRoot = path.join(ROOT, "assets/audio/readings");
 await fs.mkdir(outRoot, { recursive: true });
 

@@ -2,7 +2,8 @@ import fs from "node:fs";
 
 const manifest = JSON.parse(fs.readFileSync("assets/audio/reading-manifest.json", "utf8"));
 const runtime = JSON.parse(fs.readFileSync("content/catalog/phase1-runtime.json", "utf8"));
-const reviewed = runtime.catalog.filter((item) => /curated_content_v1|approved_full_experience/u.test(item.learningContract?.status || ""));
+const completeIds = new Set((runtime.poems || []).map((item) => item.id));
+const reviewed = runtime.catalog.filter((item) => completeIds.has(item.id) || /curated_content_v1|approved_full_experience/u.test(item.learningContract?.status || ""));
 const failures = [];
 if (manifest.version !== 1) failures.push("unsupported reading manifest version");
 if (Object.keys(manifest.poems || {}).length !== reviewed.length) failures.push(`reviewed poem audio count mismatch: expected ${reviewed.length}`);
