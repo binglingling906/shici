@@ -1041,7 +1041,7 @@ async function playWholePoem() {
   dom.pause_poem.hidden = true;
   dom.audio_status.textContent = audio.isAvailable() ? "正在准备诗意朗读……" : "朗读暂不可用，先跟着上方拼音慢慢读";
   try {
-    const result = await audio.playLines(poem.lines, {
+    const result = await audio.playLines(poem.lines.map((line) => ({ ...line, poemId: poem.id })), {
       rate: 0.66,
       pauseBetweenMs: 320,
       onLineStart: (index) => { if (run !== state.playbackRun) return; setSpeakingLine(index); dom.pause_poem.hidden = !audio.canPause(); dom.audio_status.textContent = `诗意朗读 · 第 ${index + 1} / ${poem.lines.length} 句`; },
@@ -1076,7 +1076,7 @@ async function playSingleLine(lineId) {
   dom.pause_poem.hidden = true;
   dom.audio_status.textContent = `正在准备第 ${index + 1} 句……`;
   try {
-    const result = await audio.playLine(poem.lines[index], { onLineStart: () => { if (run === state.playbackRun) { setSpeakingLine(index); dom.pause_poem.hidden = !audio.canPause(); dom.audio_status.textContent = `设备朗读 · 第 ${index + 1} 句`; } }, onUnavailable: (message) => { if (run === state.playbackRun) dom.audio_status.textContent = message; } });
+    const result = await audio.playLine({ ...poem.lines[index], poemId: poem.id }, { onLineStart: () => { if (run === state.playbackRun) { setSpeakingLine(index); dom.pause_poem.hidden = !audio.canPause(); dom.audio_status.textContent = `设备朗读 · 第 ${index + 1} 句`; } }, onUnavailable: (message) => { if (run === state.playbackRun) dom.audio_status.textContent = message; } });
     if (run === state.playbackRun && result?.completed) { state.reader.listened = true; updateCompletionControl(); dom.audio_status.textContent = "这一句读完了，轮到你试试看。"; }
   } catch {
     if (run === state.playbackRun) dom.audio_status.textContent = "这一句暂时没能读出声，可以重试。";
