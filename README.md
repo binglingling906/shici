@@ -61,7 +61,7 @@ node scripts/check-100-learning-layer.mjs
 
 当前本地预览：<http://127.0.0.1:4174/#poem/lushan-wang-lushan-pubu>
 
-在线 Demo：尚未部署。
+在线 Demo：<https://binglingling906.github.io/shici/>
 
 ## 截图与审计资料
 
@@ -72,7 +72,7 @@ node scripts/check-100-learning-layer.mjs
 1. 逐首复核剩余 90 首候选诗的正文、拼音、释义和教材关系；
 2. 为重点地点补充更一致的诗境视觉资源；
 3. 在明确隐私与监护人同意方案后，再评估远端模型 Tutor；
-4. 完成公开仓库清理、静态部署和真实手机验收；
+4. 持续进行公开 Demo 的真实手机验收与体验修正；
 5. 根据亲子共读观察调整问题难度和复习节奏。
 
 ## 已知限制
