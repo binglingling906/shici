@@ -1,5 +1,7 @@
 # 山河诗境 · Phase 1 Design QA
 
+最新书卷式 UI 与学习体验升级验收（2026-09-20）：见 [UI-READING-UPGRADE-2026-09-20.md](docs/UI-READING-UPGRADE-2026-09-20.md)。下文保留 9 月 1 日历史记录，不代表新版当前截图。
+
 验收日期：2026-09-01
 
 ## Source / implementation comparison

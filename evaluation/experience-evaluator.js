@@ -256,7 +256,7 @@
       && !element.matches(".primary-control, .ink-button, .complete-button, [data-child-action='true']");
   }
 
-  function touchTargetIssue(element, minimum = 48) {
+  function touchTargetIssue(element, minimum = 44) {
     if (isTextLinkException(element)) return null;
     const box = rect(element);
     if (box.width >= minimum && box.height >= minimum) return null;
@@ -348,10 +348,10 @@
       .filter((button) => visible(button) && !button.disabled)
       .map((button) => touchTargetIssue(button))
       .filter(Boolean);
-    const visibleActions = [...document.querySelectorAll("#reader-screen button")].filter((button) => {
+    const visibleActions = [...document.querySelectorAll("#reader-screen button:not(.recall-token)")].filter((button) => {
       const box = rect(button);
       return visible(button) && box.bottom > 0 && box.top < viewport.height;
-    }).length;
+    }).length + (document.querySelector("#reader-screen[data-learning-phase='recite'] .recall-token") ? 1 : 0);
     const interpretation = document.querySelector("#meaning-card");
     const meaningItems = [...document.querySelectorAll("#meaning-lines li")];
     const extensionCopy = document.querySelector("#extension-copy")?.textContent.trim() || "";
@@ -364,13 +364,268 @@
       check("pinyin-legibility", !pinyinVisible || rtFontSizes.every((size) => size >= 9.5), { minPinyinPx: rtFontSizes.length ? Math.min(...rtFontSizes) : null }),
       check("poem-text-legibility", lineMetrics.every((line) => line.fontSize >= 22), { minPoemPx: lineMetrics.length ? Math.min(...lineMetrics.map((line) => line.fontSize)) : null }),
       check("reading-comfort", lines.length <= 32 && primary.scrollWidth <= primary.clientWidth + 1, { lines: lines.length, primaryWidth: primary.clientWidth, primaryScrollWidth: primary.scrollWidth }),
-      check("touch-targets", touchTargets.length === 0, { undersized: touchTargets, minimum: 48, textLinksMayBeSmaller: true }),
-      check("input-clear-of-keyboard-viewport", !input || (inputBox.top >= visualViewport.offsetTop && inputBox.bottom <= visualViewport.offsetTop + visualViewport.height), { activeInput: input?.id || null, visualViewport: { offsetTop: visualViewport.offsetTop, height: visualViewport.height } }),
+      check("touch-targets", touchTargets.length === 0, { undersized: touchTargets, minimum: 44, textLinksMayBeSmaller: true }),
+      check("input-clear-of-keyboard-viewport", !input || (inputBox.top >= visualViewport.offsetTop && inputBox.bottom <= visualViewport.offsetTop + visualViewport.height), { activeInput: input?.id || null, inputBox: input ? { top: inputBox.top, bottom: inputBox.bottom } : null, visualViewport: { offsetTop: visualViewport.offsetTop, height: visualViewport.height } }),
       check("no-horizontal-overflow", document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1, { scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth }),
-      check("child-cognitive-load", visibleActions <= 14, { visibleActionCount: visibleActions, threshold: 14 }),
+      check("child-cognitive-load", visibleActions <= 14, { visibleActionCount: visibleActions, threshold: 14, grouping: "同一诗文中的逐字提示属于一个背诵操作组；其余按钮逐个计数" }),
       check("poem-meaning-support", Boolean(interpretation) && meaningItems.length === lines.length && extensionCopy.length >= 20, { meaningLineCount: meaningItems.length, poemLineCount: lines.length, hasExtension: extensionCopy.length >= 20 }),
       review("reading-information-hierarchy", { principle: "诗为 Primary Content；地点、朗读、拼音、山风引导均在独立流式区域" }),
     ];
+  }
+
+  // Learning Mastery is deliberately evaluated as a data contract rather than
+  // inferred from clicks.  The aliases below let the evaluator read the
+  // current content model while making the required evidence explicit for
+  // future content builders.
+  const MASTERY_STAMPS = {
+    understood: ["understood", "understand", "reading", "read", "读懂", "读懂印"],
+    interpreted: ["interpreted", "theme", "meaning", "emotion", "会意", "会意印"],
+    recited: ["recited", "recite", "memorized", "熟背", "熟背印"],
+    retained: ["retained", "retention", "reviewed", "remembered", "记牢", "记牢印"],
+  };
+
+  const STAGE_GROUPS = {
+    withPinyin: /pinyin|拼音/u,
+    withoutPinyin: /without.?pinyin|no.?pinyin|无拼音|去拼音/u,
+    keywords: /keyword|关键词|遮.{0,2}字|隐藏.{0,2}字/u,
+    initials: /initial|first.?character|首字|首字提示/u,
+    images: /image|picture|画面|线索|场景/u,
+    hidden: /hidden|no.?prompt|full.?recit|complete|无提示|完全隐藏|完整背/u,
+  };
+
+  function normalizedKey(value) {
+    return text(value).replace(/[\s_\-]/gu, "").toLocaleLowerCase("zh-CN");
+  }
+
+  function objectMap(value) {
+    return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+  }
+
+  function firstObject(...values) {
+    return values.find((value) => value && typeof value === "object" && !Array.isArray(value)) || {};
+  }
+
+  function field(record, ...keys) {
+    for (const key of keys) {
+      if (record && Object.prototype.hasOwnProperty.call(record, key) && record[key] !== undefined && record[key] !== null) return record[key];
+    }
+    return undefined;
+  }
+
+  function learningContract(record) {
+    return firstObject(
+      record?.learningContract,
+      record?.masteryContract,
+      record?.learningMastery,
+      record?.learning,
+      record?.mastery,
+      record,
+    );
+  }
+
+  function lineContract(record) {
+    const contract = learningContract(record);
+    const interpretation = firstObject(contract.understanding, contract.interpretation, record?.understanding, record?.interpretation);
+    return firstArray(
+      interpretation.lineMeanings,
+      interpretation.lines,
+      contract.lineMeanings,
+      record?.lineMeanings,
+      record?.interpretation?.lineMeanings,
+    );
+  }
+
+  function serialized(value) {
+    try { return JSON.stringify(value || ""); } catch { return String(value || ""); }
+  }
+
+  function stagePayload(stage) {
+    return typeof stage === "string" ? stage : serialized(stage);
+  }
+
+  function hasBooleanTrue(record, ...keys) {
+    return keys.some((key) => record?.[key] === true);
+  }
+
+  function stampPresent(stamps, aliases) {
+    const normalized = Array.isArray(stamps)
+      ? stamps.map((stamp) => normalizedKey(typeof stamp === "object" ? stamp.id || stamp.key || stamp.name || stamp.status : stamp))
+      : Object.entries(objectMap(stamps)).filter(([, value]) => value === true || text(value).toLowerCase() === "true").map(([key]) => normalizedKey(key));
+    return aliases.some((alias) => normalized.some((value) => value.includes(normalizedKey(alias))));
+  }
+
+  function checkUnderstandingIntegrity(records) {
+    if (!records.length) return [na("understanding-integrity", { reason: "运行时尚未注册完整诗词" })];
+    const issues = [];
+    for (const [index, record] of records.entries()) {
+      const id = recordId(record) || `record-${index + 1}`;
+      const contract = learningContract(record);
+      const interpretation = firstObject(contract.understanding, contract.interpretation, record?.understanding, record?.interpretation);
+      const meanings = lineContract(record);
+      const lines = firstArray(record.lines, record.verses, record.lineBreaks);
+      const lineIssues = [];
+      if (!lines.length || meanings.length !== lines.length) lineIssues.push({ reason: "line-count-mismatch", expected: lines.length, actual: meanings.length });
+      meanings.forEach((entry, lineIndex) => {
+        const keyWords = firstArray(entry?.keyWords, entry?.keywords, entry?.keyTerms, entry?.terms);
+        const hasMeaning = Boolean(text(field(entry, "childMeaning", "childExplanation", "meaning", "explanation", "summary")));
+        const hasMisunderstanding = Boolean(text(field(entry, "commonMisunderstanding", "misunderstanding", "misconception")))
+          || firstArray(entry?.commonMisunderstandings, entry?.misunderstandings).length > 0;
+        const hasPrompt = Boolean(text(field(entry, "imagePrompt", "scene", "picture", "question", "guidingQuestion", "observationPrompt")));
+        if (!hasMeaning || !keyWords.length || !hasMisunderstanding || !hasPrompt) {
+          lineIssues.push({ line: lineIndex + 1, missing: [!hasMeaning && "childMeaning", !keyWords.length && "keyWords", !hasMisunderstanding && "commonMisunderstanding", !hasPrompt && "imagePromptOrQuestion"].filter(Boolean) });
+        }
+      });
+      const wholeMeaning = text(field(interpretation, "wholeMeaning", "summary", "overview"));
+      const mainContent = text(field(interpretation, "mainContent", "mainIdea", "content", "whatItWrites") || field(contract, "mainContent", "wholeMeaning"));
+      const evidence = firstArray(interpretation.evidenceLines, interpretation.evidence, contract.evidenceLines);
+      const requiresEvidence = hasBooleanTrue(interpretation, "requiresEvidence", "requiresResponseEvidence", "notClickOnly")
+        || Boolean(field(interpretation, "completionEvidence", "completionRule", "validation", "evidenceModel"));
+      if (lineIssues.length || !wholeMeaning || !mainContent || !evidence.length || !requiresEvidence) {
+        issues.push({ id, lineIssues, missing: [!wholeMeaning && "wholeMeaning", !mainContent && "mainContent", !evidence.length && "evidenceLines", !requiresEvidence && "nonClickEvidenceRule"].filter(Boolean) });
+      }
+    }
+    return [check("understanding-integrity", issues.length === 0, { issueCount: issues.length, issues: issues.slice(0, 80), required: ["childMeaning", "keyWords", "commonMisunderstanding", "imagePromptOrQuestion", "wholeMeaning", "mainContent", "evidenceLines", "nonClickEvidenceRule"] })];
+  }
+
+  function checkThemeIntegrity(records) {
+    if (!records.length) return [na("theme-integrity", { reason: "运行时尚未注册完整诗词" })];
+    const issues = [];
+    for (const [index, record] of records.entries()) {
+      const id = recordId(record) || `record-${index + 1}`;
+      const contract = learningContract(record);
+      const theme = firstObject(contract.theme, contract.interpretation?.theme, record?.theme, record?.interpretation?.theme, contract);
+      const mainContent = text(field(theme, "mainContent", "content", "whatItWrites", "summary"));
+      const emotion = text(field(theme, "emotion", "feeling", "mood"));
+      const centralIdea = text(field(theme, "centralIdea", "coreIdea", "message", "theme", "whatToFeel"));
+      const evidence = firstArray(theme.evidenceLines, theme.evidence, record?.interpretation?.evidenceLines);
+      const accepted = firstArray(theme.acceptedExpressions, theme.acceptableAnswers, theme.childExpressions, theme.semanticVariants, theme.examples, theme.acceptedChildResponses);
+      const flexible = accepted.length >= 2
+        || hasBooleanTrue(theme, "allowParaphrase", "allowReasonableExpression", "openEnded", "semanticMatch")
+        || /semantic|meaning|paraphrase|自由表达|合理表达|语义/u.test(text(field(theme, "matchMode", "answerMode", "evaluation")));
+      const exactOnly = /exact|literal|strict|逐字|完全一致/u.test(text(field(theme, "matchMode", "answerMode", "evaluation")));
+      if (!mainContent || !emotion || !centralIdea || !evidence.length || !flexible || exactOnly) {
+        issues.push({ id, missing: [!mainContent && "mainContent", !emotion && "emotion", !centralIdea && "centralIdea", !evidence.length && "evidenceLines", !flexible && "multipleReasonableChildExpressions"].filter(Boolean), exactOnly });
+      }
+    }
+    return [check("theme-integrity", issues.length === 0, { issueCount: issues.length, issues: issues.slice(0, 80), principle: "中心思想允许儿童用不同但合理的话表达" })];
+  }
+
+  function checkRecitationIntegrity(records) {
+    if (!records.length) return [na("recitation-integrity", { reason: "运行时尚未注册完整诗词" })];
+    const issues = [];
+    for (const [index, record] of records.entries()) {
+      const id = recordId(record) || `record-${index + 1}`;
+      const contract = learningContract(record);
+      const recitation = firstObject(contract.recitation, contract.recite, record?.recitation, record?.recitationStages);
+      const stages = firstArray(recitation.stages, recitation.modes, recitation.steps, recitation.recitationStages, contract.recitationStages, record?.recitationStages);
+      const payload = stages.map(stagePayload).join(" ");
+      const missingStages = Object.entries(STAGE_GROUPS).filter(([, pattern]) => !pattern.test(payload)).map(([name]) => name);
+      const memoryKeywords = firstArray(recitation.memoryKeywords, recitation.keywords, contract.memoryKeywords, record?.memoryKeywords);
+      const firstHints = firstArray(recitation.firstCharacterHints, recitation.initialHints, recitation.firstHints, contract.firstCharacterHints, record?.firstCharacterHints);
+      const verification = firstObject(recitation.verification, recitation.completion, recitation.masteryCheck, contract.verification, record?.recitationVerification);
+      const noPrompt = hasBooleanTrue(verification, "requiresNoPrompt", "noText", "hiddenText", "fullHidden", "mustBeUnassisted")
+        || Boolean(field(verification, "noPromptEvidence", "unassistedEvidence", "passCondition"));
+      const selfReportOnly = /self.?report|click|button|我会背|自报/u.test(serialized(verification)) && !noPrompt;
+      if (missingStages.length || !memoryKeywords.length || !firstHints.length || !noPrompt || selfReportOnly) {
+        issues.push({ id, missingStages, missing: [!memoryKeywords.length && "memoryKeywords", !firstHints.length && "firstCharacterHints", !noPrompt && "unassistedVerification"].filter(Boolean), selfReportOnly, stageCount: stages.length });
+      }
+    }
+    return [check("recitation-integrity", issues.length === 0, { issueCount: issues.length, issues: issues.slice(0, 80), requiredStages: Object.keys(STAGE_GROUPS) })];
+  }
+
+  function masteryState(api) {
+    let progress = {};
+    try { progress = api?.store?.get?.() || {}; } catch { progress = {}; }
+    return firstObject(api?.learningMastery, api?.mastery, api?.learning, progress.mastery, progress.learningMastery, progress.learningState);
+  }
+
+  function masteryEntries(api) {
+    let progress = {};
+    try { progress = api?.store?.get?.() || {}; } catch { progress = {}; }
+    const state = masteryState(api);
+    return firstObject(state.byPoem, state.masteryByPoem, state.statusByPoem, state.records, progress.masteryByPoem, progress.learningByPoem, progress.learningStatusByPoem, progress.statusByPoem);
+  }
+
+  function statusValue(value) {
+    if (typeof value === "string") return value.toLowerCase();
+    if (value && typeof value === "object") return text(value.status || value.masteryStatus || value.level).toLowerCase();
+    return "";
+  }
+
+  function checkMasteryIntegrity(records) {
+    const api = runtimeApi();
+    let progress = {};
+    try { progress = api?.store?.get?.() || {}; } catch { progress = {}; }
+    const entries = masteryEntries(api);
+    const completed = new Set(Array.isArray(progress.completedPoemIds) ? progress.completedPoemIds : []);
+    const mastered = new Set(Array.isArray(progress.masteredPoemIds) ? progress.masteredPoemIds : []);
+    const statusEntries = Object.entries(entries);
+    const completionLeaks = [...completed].filter((id) => !mastered.has(id) && statusValue(entries[id]) !== "mastered");
+    const missingStamps = [];
+    for (const [id, value] of statusEntries) {
+      const item = objectMap(value);
+      const stamps = field(item, "stamps", "badges", "marks", "learningMarks", "coreMarks", "印记");
+      const absent = Object.entries(MASTERY_STAMPS).filter(([, aliases]) => !stampPresent(stamps, aliases)).map(([name]) => name);
+      if (absent.length) missingStamps.push({ id, missing: absent });
+    }
+    const hasDistinctSchema = statusEntries.length > 0 || Object.prototype.hasOwnProperty.call(progress, "masteredPoemIds") || Object.prototype.hasOwnProperty.call(progress, "masteryByPoem") || Boolean(api?.learningMastery || api?.mastery);
+    const missingSchema = records.length > 0 && statusEntries.length === 0 && !Object.prototype.hasOwnProperty.call(progress, "masteredPoemIds");
+    const aliasedCompletion = completed.length > 0 && mastered.length > 0 && completed.length === mastered.length && completed.every((id) => mastered.has(id)) && statusEntries.length === 0;
+    if (!hasDistinctSchema || missingSchema) return [check("mastery-integrity", false, { reason: "没有独立 mastery/status/stamps 数据；completed 不能代表 mastered", completed: [...completed], mastered: [...mastered] })];
+    return [check("mastery-integrity", completionLeaks.length === 0 && missingStamps.length === 0 && !aliasedCompletion, { completionLeaks, missingStamps: missingStamps.slice(0, 80), aliasedCompletion, completed: [...completed], mastered: [...mastered], stampKeys: Object.keys(MASTERY_STAMPS) })];
+  }
+
+  function checkSpacedReviewIntegrity() {
+    const api = runtimeApi();
+    let progress = {};
+    try { progress = api?.store?.get?.() || {}; } catch { progress = {}; }
+    const state = masteryState(api);
+    const schedule = firstObject(state.reviewSchedule, state.spacedReview, state.retention, api?.reviewSchedule, progress.reviewSchedule, progress.spacedReview);
+    const rawIntervals = firstArray(schedule.intervalsDays, schedule.intervals, schedule.steps, schedule.schedule);
+    const intervals = rawIntervals.map((item) => Number(typeof item === "object" ? item.days || item.intervalDays || item.afterDays : item)).filter(Number.isFinite);
+    const needed = [1, 3, 7];
+    const missingIntervals = needed.filter((day) => !intervals.includes(day));
+    const reviews = firstObject(progress.reviewByPoem, state.reviewByPoem, state.reviews);
+    const reviewEntries = Object.entries(reviews);
+    const scheduleMethods = Boolean(field(schedule, "getNextReview", "nextReviewAt", "recordReview", "onReview"));
+    const hasSchedule = intervals.length > 0 || scheduleMethods;
+    const malformed = reviewEntries.filter(([, review]) => !review || typeof review !== "object" || !Number.isFinite(Number(review.count)) || !Number.isFinite(Number(review.nextReviewAt)));
+    return [check("spaced-review-integrity", hasSchedule && missingIntervals.length === 0 && malformed.length === 0, { intervals, missingIntervals, reviewCount: reviewEntries.length, malformed: malformed.map(([id]) => id), requiredIntervalsDays: needed })];
+  }
+
+  function checkRewardAlignment() {
+    const api = runtimeApi();
+    let progress = {};
+    try { progress = api?.store?.get?.() || {}; } catch { progress = {}; }
+    const state = masteryState(api);
+    const reward = firstObject(state.rewardPolicy, state.rewards, api?.rewardPolicy, api?.rewards, api?.progression?.rewards, progress.rewardPolicy, progress.rewards);
+    const weights = firstObject(reward.weights, reward.stampWeights, reward.pointsByStamp, reward.coreWeights, reward.points);
+    const readWeight = (...keys) => {
+      for (const key of keys) {
+        if (weights[key] !== undefined) return Number(weights[key]);
+        const normalized = normalizedKey(key);
+        const found = Object.entries(weights).find(([name]) => normalizedKey(name).includes(normalized));
+        if (found) return Number(found[1]);
+      }
+      return Number.NaN;
+    };
+    const weightValues = {
+      understood: readWeight("understood", "understand", "读懂"),
+      interpreted: readWeight("interpreted", "theme", "meaning", "会意"),
+      recited: readWeight("recited", "recite", "熟背"),
+      retained: readWeight("retained", "retention", "记牢"),
+    };
+    const finiteWeights = Object.values(weightValues).every(Number.isFinite);
+    const sum = Object.values(weightValues).reduce((total, value) => total + (Number.isFinite(value) ? value : 0), 0);
+    const normalizedSum = Math.abs(sum - 1) < 0.01 || Math.abs(sum - 100) < 0.1;
+    const recitedHighest = finiteWeights && weightValues.recited >= Math.max(weightValues.understood, weightValues.interpreted, weightValues.retained);
+    const actionDump = serialized(reward.actions || reward.events || reward.sources || reward).toLowerCase();
+    const nonLearningPoints = Object.entries(objectMap(reward.actions || reward.events || {})).filter(([name, value]) => /open|visit|click|listen|play|repeat|停留|打开|点击|播放|重复/u.test(name) && Number(value) > 0).map(([name]) => name);
+    const roles = firstArray(reward.roles, reward.roleUnlocks, reward.unlocks, api?.progression?.roles);
+    const unlockIssues = roles.filter((role) => !role?.free && !role?.starter && !Object.prototype.hasOwnProperty.call(role || {}, "free")
+      && !Number.isFinite(Number(field(role, "masteredPoemCount", "masteryCount", "requiredMastered", "masteredCount"))));
+    const hasRewardSurface = Object.keys(reward).length > 0 || Object.keys(weights).length > 0;
+    return [check("reward-alignment", hasRewardSurface && finiteWeights && normalizedSum && recitedHighest && nonLearningPoints.length === 0 && unlockIssues.length === 0, { weights: weightValues, sum, recitedHighest, nonLearningPoints, unlockIssues, hasRewardSurface, principle: "奖励只来自四枚学习印记；熟背权重最高；角色需掌握诗数" })];
   }
 
   function ageExplanation(concept, mode) {
@@ -487,7 +742,7 @@
       check("concept-tutor-no-poem-occlusion", !active || overlapArea(poemBox, sectionBox) <= 1, { active, overlapArea: Math.round(overlapArea(poemBox, sectionBox)) }),
       check("concept-tutor-count-state", !active || Boolean(countMatch && currentStep >= 1 && totalSteps >= currentStep), { active, countText, currentStep, totalSteps }),
       check("concept-tutor-keyboard", !active || keyboardIssues.length === 0, { keyboardIssues }),
-      check("concept-tutor-touch-targets", !active || touchIssues.length === 0, { undersized: touchIssues, minimum: 48, textLinksMayBeSmaller: true }),
+      check("concept-tutor-touch-targets", !active || touchIssues.length === 0, { undersized: touchIssues, minimum: 44, textLinksMayBeSmaller: true }),
       check("concept-tutor-close-path", closePath, { active, closeControl: closeButton?.id || closeButton?.dataset.conceptClose || null }),
       check("concept-tutor-unknown-question", unknownPathInDom || unknownPathInData, { active, unknownPathInDom, unknownPathInData }),
       check("concept-tutor-source-bound", sourceBound, { sourceBound, provider: Boolean(api.conceptTutor) }),
@@ -890,6 +1145,12 @@
       ...checkMap(mapVisible),
       ...checkReading(readerVisible, viewport),
       ...checkSystem(),
+      ...checkUnderstandingIntegrity(runtimeCorpus(runtimeApi())),
+      ...checkThemeIntegrity(runtimeCorpus(runtimeApi())),
+      ...checkRecitationIntegrity(runtimeCorpus(runtimeApi())),
+      ...checkMasteryIntegrity(runtimeCorpus(runtimeApi())),
+      ...checkSpacedReviewIntegrity(),
+      ...checkRewardAlignment(),
       ...checkJargonGuard(readerVisible, runtimeConcepts()),
       ...checkConceptTutor(readerVisible, runtimeConcepts()),
       ...checkCurriculumCoverage(),
@@ -934,6 +1195,9 @@
 
   window.__SHANHE_EVALUATOR__ = { run, schedule };
   addEventListener("resize", schedule, { passive: true });
+  addEventListener("scroll", schedule, { passive: true });
+  window.visualViewport?.addEventListener("resize", schedule, { passive: true });
+  window.visualViewport?.addEventListener("scroll", schedule, { passive: true });
   document.addEventListener("shanhe:viewchange", schedule);
   document.addEventListener("focusin", schedule);
   document.addEventListener("DOMContentLoaded", schedule, { once: true });

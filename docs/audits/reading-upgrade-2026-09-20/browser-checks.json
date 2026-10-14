@@ -1,0 +1,32 @@
+[
+  {
+    "at": "2026-09-20T08:51:48.565Z",
+    "failures": [],
+    "pass": true,
+    "view": "reader",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "at": "2026-09-20T08:52:16.998Z",
+    "failures": [],
+    "pass": true,
+    "view": "reader",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "at": "2026-09-20T08:52:30.192Z",
+    "failures": [],
+    "pass": true,
+    "view": "daily",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  }
+]

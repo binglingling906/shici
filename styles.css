@@ -46,6 +46,8 @@ button:disabled { cursor: not-allowed; opacity: .45; }
 
 .screen { position: relative; min-height: calc(100vh - 82px); }
 .section-kicker, .eyebrow { margin: 0; color: var(--ink-soft); font-size: .7rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
+.content-status-note, .tutor-provider-note { margin: 6px 0 0; color: var(--ink-faint); font-size: .68rem; line-height: 1.55; }
+.content-status-note { max-width: 42rem; }
 .eyebrow { display: flex; align-items: center; gap: 10px; }
 .eyebrow > span { width: 8px; height: 8px; border: 1px solid var(--cinnabar); transform: rotate(45deg); }
 .text-button { min-height: 48px; padding: 6px 0; border: 0; border-bottom: 1px solid var(--line-strong); background: transparent; color: var(--ink); cursor: pointer; }

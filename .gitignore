@@ -1,2 +1,41 @@
 node_modules/
 .DS_Store
+
+# Local-only work products. These may contain downloaded media, transcripts,
+# model weights, or generated caches and must not enter the public repository.
+tmp/
+downloads/
+recordings/
+local-media/
+.cache/
+.models/
+models/
+whisper/
+__pycache__/
+
+# Common media/model artifacts from local experiments.
+*.mp4
+*.mov
+*.webm
+*.m4a
+*.wav
+*.flac
+*.srt
+*.vtt
+*.bin
+*.pt
+*.pth
+*.onnx
+*.gguf
+
+# Keep the small ambient bed that is intentionally shipped with the demo.
+!assets/audio/
+!assets/audio/**
+
+# Local secrets and machine-specific configuration.
+.env
+.env.*
+!.env.example
+*.local
+*.local.*
+Thumbs.db

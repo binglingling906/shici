@@ -1,3 +1,5 @@
+import { masteryContentByPoemId } from "./mastery-content.js";
+
 /**
  * Ten complete Phase 1 learning units.
  *
@@ -138,6 +140,70 @@ function poem({
   sourceRecords,
   reviewNotes,
 }) {
+  const content = masteryContentByPoemId[id];
+  if (!content) throw new Error(`${id} learning mastery content is missing`);
+  const expectedLineIds = lines.map((line) => line.id);
+  if (!Array.isArray(content.lineMeanings) || content.lineMeanings.length !== lines.length) {
+    throw new Error(`${id} mastery content needs one line meaning per poem line`);
+  }
+  const lineMeanings = content.lineMeanings.map((entry, index) => {
+    if (entry?.lineId !== expectedLineIds[index]) throw new Error(`${id} mastery line ${index + 1} is out of order`);
+    if (!entry.meaning || !entry.keywords?.length || !entry.misunderstanding || !(entry.picture || entry.prompt)) {
+      throw new Error(`${id} mastery line ${entry?.lineId || index + 1} needs meaning, keywords, misunderstanding and picture/prompt`);
+    }
+    return {
+      ...interpretation.lineMeanings[index],
+      ...entry,
+      childMeaning: entry.meaning,
+      keyWords: [...entry.keywords],
+      commonMisunderstanding: entry.misunderstanding,
+      imagePrompt: entry.picture || entry.prompt,
+    };
+  });
+  for (const field of ["wholeMeaning", "mainContent", "emotion", "centralIdea"]) {
+    if (!content[field]) throw new Error(`${id} mastery content is missing ${field}`);
+  }
+  if (!Array.isArray(content.commonMisunderstandings) || content.commonMisunderstandings.length < 2) {
+    throw new Error(`${id} mastery content needs common misunderstandings`);
+  }
+  if (!Array.isArray(content.memoryKeywords) || content.memoryKeywords.length !== lines.length) {
+    throw new Error(`${id} mastery content needs one memory cue per poem line`);
+  }
+  if (!Array.isArray(content.firstCharacterHints) || content.firstCharacterHints.length !== lines.length) {
+    throw new Error(`${id} mastery content needs one first-character cue per poem line`);
+  }
+  const learningContract = {
+    understanding: {
+      lineMeanings,
+      wholeMeaning: content.wholeMeaning,
+      mainContent: content.mainContent,
+      evidenceLines: lines.map((line) => line.id),
+      completionEvidence: "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
+      requiresEvidence: true,
+    },
+    theme: {
+      mainContent: content.mainContent,
+      emotion: content.emotion,
+      centralIdea: content.centralIdea,
+      evidenceLines: lines.map((line) => line.id),
+      acceptedExpressions: ["用自己的话说", "意思相近即可", "可以先说出画面"],
+      allowReasonableExpression: true,
+      matchMode: "semantic-paraphrase",
+    },
+    recitation: {
+      stages: ["原文+拼音", "without pinyin / 去拼音", "隐藏关键词", "首字提示", "画面线索", "完全隐藏 / 无提示完整背诵"],
+      memoryKeywords: content.memoryKeywords,
+      firstCharacterHints: content.firstCharacterHints,
+      verification: { requiresNoPrompt: true, unassistedEvidence: "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。" },
+    },
+    statuses: [
+      { id: "understood", label: "读懂印" },
+      { id: "interpreted", label: "会意印" },
+      { id: "recited", label: "熟背印" },
+      { id: "retained", label: "记牢印" },
+    ],
+    retention: { intervalsDays: [1, 3, 7], rule: "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。" },
+  };
   return {
     id,
     title: { text: title, pinyin: titlePinyin },
@@ -151,6 +217,13 @@ function poem({
     spatialLearning,
     ageBands: ageBands(age),
     interpretation: validateInterpretation(interpretation, lines, id),
+    mastery: { ...content, lineMeanings },
+    learningContract,
+    masteryStatuses: learningContract.statuses,
+    recitationStages: learningContract.recitation.stages,
+    memoryKeywords: learningContract.recitation.memoryKeywords,
+    firstCharacterHints: learningContract.recitation.firstCharacterHints,
+    reviewIntervalsDays: learningContract.retention.intervalsDays,
     background,
     relatedPoemIds,
     nextPlaceId,

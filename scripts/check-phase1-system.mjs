@@ -18,7 +18,7 @@ assert.deepEqual(Object.keys(AGE_MODES), ["7-8", "9-10", "11-12"], "Three age mo
 
 const storage = new MemoryStorage();
 const progress = createProgressStore(storage);
-assert.equal(progress.get().version, 2);
+assert.equal(progress.get().version, 3);
 assert.equal(progress.shouldShowPinyin(), true, "Young mode defaults pinyin on");
 progress.setAgeMode("11-12");
 assert.equal(progress.shouldShowPinyin(), false, "Older mode defaults pinyin off");
@@ -32,7 +32,7 @@ const malformedStorage = new MemoryStorage({
   "shanhe.phase1.progress": JSON.stringify({ version: 1, ageMode: "unknown", completedPoemIds: ["a", "a"], rawInput: "child answer" }),
 });
 const migrated = createProgressStore(malformedStorage).get();
-assert.equal(migrated.version, 2);
+assert.equal(migrated.version, 3);
 assert.equal(migrated.ageMode, "7-8");
 assert.deepEqual(migrated.completedPoemIds, ["a"]);
 assert.equal("rawInput" in migrated, false);
