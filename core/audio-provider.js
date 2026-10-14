@@ -122,6 +122,52 @@ export function createSilentAudioProvider() {
   };
 }
 
+export function createLocalReadingAudioProvider({
+  AudioCtor = globalThis.Audio,
+  basePath = "./assets/audio/readings",
+} = {}) {
+  let current = null;
+  let playbackId = 0;
+  const available = Boolean(AudioCtor);
+  const stop = () => {
+    playbackId += 1;
+    if (current) {
+      try { current.pause(); } catch { /* no-op */ }
+      current = null;
+    }
+  };
+  const playOne = (line, index, token, onLineStart, onLineEnd) => new Promise((resolve, reject) => {
+    const poemId = line.poemId || String(line.id || "").replace(/-line-\d+$/u, "");
+    const src = `${basePath}/${encodeURIComponent(poemId)}/line-${index + 1}.mp3`;
+    const audio = new AudioCtor(src);
+    current = audio;
+    audio.preload = "auto";
+    audio.onplay = () => { if (token === playbackId) onLineStart?.(index); };
+    audio.onended = () => { if (token === playbackId) { onLineEnd?.(index); resolve({ ended: true }); } else resolve({ cancelled: true }); };
+    audio.onerror = () => reject(new Error("local-reading-audio-missing"));
+    audio.play().catch(reject);
+  });
+  return {
+    id: "local-reading-audio",
+    isAvailable: () => available,
+    stop,
+    canPause: () => Boolean(current),
+    isPaused: () => Boolean(current?.paused),
+    pause: () => { if (!current) return false; current.pause(); return true; },
+    resume: () => { if (!current) return false; current.play().catch(() => {}); return true; },
+    async playLines(lines, { onLineStart, onLineEnd, pauseBetweenMs = 160 } = {}) {
+      const token = ++playbackId;
+      for (const [index, line] of lines.entries()) {
+        if (token !== playbackId) return { cancelled: true };
+        await playOne(line, index, token, onLineStart, onLineEnd);
+        if (pauseBetweenMs && index < lines.length - 1) await new Promise((resolve) => setTimeout(resolve, pauseBetweenMs));
+      }
+      return { completed: true };
+    },
+    playLine(line, options = {}) { return this.playLines([line], options); },
+  };
+}
+
 export function createAudioEngine({ primary = createSpeechSynthesisProvider(), fallback = createSilentAudioProvider() } = {}) {
   const activeProvider = () => (primary.isAvailable() ? primary : fallback);
   return {
@@ -132,11 +178,19 @@ export function createAudioEngine({ primary = createSpeechSynthesisProvider(), f
     isPaused: () => activeProvider().isPaused?.() === true,
     pause: () => activeProvider().pause?.() === true,
     resume: () => activeProvider().resume?.() === true,
-    playLines(lines, options) {
-      return activeProvider().playLines(lines, options);
+    async playLines(lines, options) {
+      try { return await activeProvider().playLines(lines, options); }
+      catch (error) {
+        if (activeProvider() === primary && fallback.isAvailable?.()) return fallback.playLines(lines, options);
+        throw error;
+      }
     },
-    playLine(line, options) {
-      return activeProvider().playLine(line, options);
+    async playLine(line, options) {
+      try { return await activeProvider().playLine(line, options); }
+      catch (error) {
+        if (activeProvider() === primary && fallback.isAvailable?.()) return fallback.playLine(line, options);
+        throw error;
+      }
     },
   };
 }

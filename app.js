@@ -1,7 +1,7 @@
 import { phase1Places, phase1Poems, phase1PlaceById, phase1PoemById } from "./content/phase1/index.js?v=interpretation-1";
 import { AGE_MODES, createProgressStore } from "./core/progress-store.js?v=reading-2";
 import { createTutorEngine, createRemoteTutor } from "./core/tutor-engine.js";
-import { createAudioEngine, createSilentAudioProvider } from "./core/audio-provider.js?v=reading-2";
+import { createAudioEngine, createLocalReadingAudioProvider, createSpeechSynthesisProvider, createSilentAudioProvider } from "./core/audio-provider.js?v=reading-3";
 import { createConceptTutor } from "./core/concept-tutor.js";
 import {
   CURRICULUM_CONFIG,
@@ -113,7 +113,10 @@ if (qaParams.get("qaReducedMotion") === "1") document.documentElement.dataset.qa
 const store = createProgressStore();
 const audio = qaParams.get("qaAudioUnavailable") === "1"
   ? createAudioEngine({ primary: createSilentAudioProvider() })
-  : createAudioEngine();
+  : createAudioEngine({
+    primary: createLocalReadingAudioProvider(),
+    fallback: createSpeechSynthesisProvider(),
+  });
 const ambientAudio = new Audio("./assets/audio/reading-ambient-bed.mp3");
 ambientAudio.loop = true;
 ambientAudio.preload = "auto";
