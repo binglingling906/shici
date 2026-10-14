@@ -1,5 +1,7 @@
 const STORAGE_KEY = "shanhe.phase1.progress";
 const CURRENT_VERSION = 3;
+const BACKUP_FORMAT = "shanhe-shijing-progress";
+const BACKUP_VERSION = 1;
 const RECENT_LIMIT = 12;
 const DAY_MS = 24 * 60 * 60 * 1000;
 const REVIEW_INTERVAL_MS = DAY_MS;
@@ -21,7 +23,7 @@ const LEGACY_KEYS = {
   origin: ["shanhe-shijing-origin-city", "shanhe.origin-city", "shanhe-origin-city"],
 };
 
-export { MASTERY_STATES, MASTERY_MARK_KEYS, REVIEW_INTERVAL_DAYS };
+export { MASTERY_STATES, MASTERY_MARK_KEYS, REVIEW_INTERVAL_DAYS, BACKUP_FORMAT, BACKUP_VERSION };
 
 export const AGE_MODES = {
   "7-8": {
@@ -103,8 +105,9 @@ function normalizeReview(value) {
 function normalizeMastery(value) {
   const mastery = value && typeof value === "object" ? value : {};
   const marks = mastery.marks && typeof mastery.marks === "object" ? mastery.marks : {};
-  const markAt = Object.fromEntries(MASTERY_MARK_KEYS.map((key) => [key, timestamp(marks[key])]));
-  const state = typeof mastery.state === "string" && MASTERY_STATE_RANK[mastery.state] !== undefined ? mastery.state : "new";
+  const markAt = Object.fromEntries(MASTERY_MARK_KEYS.map((key) => [key, typeof marks[key] === "boolean" ? marks[key] : timestamp(marks[key])]));
+  const rawState = typeof mastery.state === "string" ? mastery.state : mastery.status;
+  const state = typeof rawState === "string" && MASTERY_STATE_RANK[rawState] !== undefined ? rawState : "new";
   return { state, marks: markAt, attempts: Math.max(0, Math.floor(Number(mastery.attempts) || 0)), lastAttemptAt: timestamp(mastery.lastAttemptAt), nextReviewAt: timestamp(mastery.nextReviewAt) };
 }
 
@@ -179,6 +182,151 @@ function masteryForStatus(status, marks) {
   if (MASTERY_STATE_RANK[status] >= MASTERY_STATE_RANK.recited_once) next.recited = true;
   if (MASTERY_STATE_RANK[status] >= MASTERY_STATE_RANK.retained) next.retained = true;
   return next;
+}
+
+function nonZeroTimestamp(...values) {
+  return values.map(timestamp).filter((value) => value > 0).sort((a, b) => b - a)[0] || 0;
+}
+
+function mergeMark(...values) {
+  if (values.some((value) => value === true)) return true;
+  return nonZeroTimestamp(...values);
+}
+
+function earliestTimestamp(...values) {
+  return values.map(timestamp).filter((value) => value > 0).sort((a, b) => a - b)[0] || 0;
+}
+
+function masteryStatus(value) {
+  const status = value && typeof value === "object" ? (value.status || value.state) : "";
+  return normalizeMasteryState(status);
+}
+
+function mergeObservation(first, second) {
+  const a = first && typeof first === "object" ? first : {};
+  const b = second && typeof second === "object" ? second : {};
+  return {
+    attempts: Math.max(0, Math.floor(Number(a.attempts) || 0), Math.floor(Number(b.attempts) || 0)),
+    usedHint: Boolean(a.usedHint || b.usedHint),
+    completed: Boolean(a.completed || b.completed),
+  };
+}
+
+function mergeReview(first, second) {
+  const a = normalizeReview(first);
+  const b = normalizeReview(second);
+  const latest = b.lastPracticedAt > a.lastPracticedAt ? b : a;
+  return {
+    count: Math.max(a.count, b.count),
+    lastPracticedAt: Math.max(a.lastPracticedAt, b.lastPracticedAt),
+    // Preserve the earliest due date so importing a backup cannot silently
+    // postpone a review that is already due on this device.
+    nextReviewAt: earliestTimestamp(a.nextReviewAt, b.nextReviewAt),
+    intervalDays: latest.intervalDays || a.intervalDays || b.intervalDays || 0,
+  };
+}
+
+function mergeMastery(first, second) {
+  const a = first && typeof first === "object" ? first : {};
+  const b = second && typeof second === "object" ? second : {};
+  const marks = Object.fromEntries(MASTERY_MARK_KEYS.map((key) => [key, mergeMark(a.marks?.[key], b.marks?.[key])]));
+  const statusA = masteryStatus(a);
+  const statusB = masteryStatus(b);
+  const status = MASTERY_STATE_RANK[statusB] > MASTERY_STATE_RANK[statusA] ? statusB : statusA;
+  const milestones = Object.fromEntries([
+    "understoodLinesAt",
+    "understoodWholeAt",
+    "understoodThemeAt",
+    "recitedOnceAt",
+    "retainedAt",
+    "masteredAt",
+  ].map((key) => [key, nonZeroTimestamp(a.milestones?.[key], b.milestones?.[key], a[key], b[key])]));
+  return {
+    status,
+    statusUpdatedAt: nonZeroTimestamp(a.statusUpdatedAt, b.statusUpdatedAt),
+    marks,
+    milestones,
+    attempts: Math.max(0, Math.floor(Number(a.attempts) || 0), Math.floor(Number(b.attempts) || 0)),
+    lastAttemptAt: nonZeroTimestamp(a.lastAttemptAt, b.lastAttemptAt),
+    nextReviewAt: earliestTimestamp(a.nextReviewAt, b.nextReviewAt),
+  };
+}
+
+function hasLearningActivity(value) {
+  return Boolean(
+    value.lastPoemId
+      || value.completedPoemIds?.length
+      || value.visitedPlaceIds?.length
+      || value.favoritePoemIds?.length
+      || value.recentPoemIds?.length
+      || Object.keys(value.observationByPoem || {}).length
+      || Object.keys(value.reviewByPoem || {}).length
+      || Object.keys(value.masteryByPoem || {}).length
+      || value.challenge?.completed,
+  );
+}
+
+function mergeStates(current, incoming) {
+  const next = { ...current };
+  next.completedPoemIds = uniqueStrings([...current.completedPoemIds, ...incoming.completedPoemIds]);
+  next.visitedPlaceIds = uniqueStrings([...current.visitedPlaceIds, ...incoming.visitedPlaceIds]);
+  next.favoritePoemIds = uniqueStrings([...current.favoritePoemIds, ...incoming.favoritePoemIds]);
+  next.recentPoemIds = uniqueStrings([...current.recentPoemIds, ...incoming.recentPoemIds]).slice(0, RECENT_LIMIT);
+
+  next.observationByPoem = {};
+  for (const poemId of new Set([...Object.keys(current.observationByPoem), ...Object.keys(incoming.observationByPoem)])) {
+    next.observationByPoem[poemId] = mergeObservation(current.observationByPoem[poemId], incoming.observationByPoem[poemId]);
+  }
+  next.reviewByPoem = {};
+  for (const poemId of new Set([...Object.keys(current.reviewByPoem), ...Object.keys(incoming.reviewByPoem)])) {
+    next.reviewByPoem[poemId] = mergeReview(current.reviewByPoem[poemId], incoming.reviewByPoem[poemId]);
+  }
+  next.masteryByPoem = {};
+  for (const poemId of new Set([...Object.keys(current.masteryByPoem), ...Object.keys(incoming.masteryByPoem)])) {
+    next.masteryByPoem[poemId] = mergeMastery(current.masteryByPoem[poemId], incoming.masteryByPoem[poemId]);
+  }
+
+  // A fresh browser should inherit the reader's preferences. When a device
+  // already has learning activity, preserve its preferences and only merge
+  // additive learning records.
+  if (!hasLearningActivity(current)) {
+    next.ageMode = incoming.ageMode;
+    next.pinyinPreference = incoming.pinyinPreference;
+    next.originCityId = incoming.originCityId;
+    next.soundEnabled = incoming.soundEnabled;
+  }
+  next.lastPoemId = current.lastPoemId || incoming.lastPoemId;
+  if (!current.challenge?.completed && incoming.challenge?.completed) next.challenge = { ...incoming.challenge };
+  return next;
+}
+
+function parseBackup(value) {
+  let payload = value;
+  if (typeof value === "string") {
+    try {
+      payload = JSON.parse(value);
+    } catch {
+      return { ok: false, message: "这不是有效的 JSON 备份文件。" };
+    }
+  }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return { ok: false, message: "备份内容格式不正确。" };
+  }
+  if (payload.format !== BACKUP_FORMAT || payload.formatVersion !== BACKUP_VERSION) {
+    return { ok: false, message: "这不是山河诗境的备份，或备份版本暂不支持。" };
+  }
+  if (!Number.isInteger(payload.progressVersion) || payload.progressVersion < 1 || payload.progressVersion > CURRENT_VERSION) {
+    return { ok: false, message: "备份的学习记录版本过新或已损坏。" };
+  }
+  if (!payload.progress || typeof payload.progress !== "object" || Array.isArray(payload.progress)) {
+    return { ok: false, message: "备份中没有可读取的学习记录。" };
+  }
+  return { ok: true, payload };
+}
+
+export function validateProgressBackup(value) {
+  const result = parseBackup(value);
+  return result.ok ? { ok: true, progressVersion: result.payload.progressVersion } : result;
 }
 
 function migrate(raw) {
@@ -293,8 +441,34 @@ export function createProgressStore(storage) {
   return {
     key: STORAGE_KEY,
     version: CURRENT_VERSION,
+    backupFormat: BACKUP_FORMAT,
+    backupVersion: BACKUP_VERSION,
     get storageAvailable() { return storageAvailable; },
     get: snapshot,
+    exportData() {
+      return {
+        format: BACKUP_FORMAT,
+        formatVersion: BACKUP_VERSION,
+        exportedAt: new Date().toISOString(),
+        progressVersion: CURRENT_VERSION,
+        progress: snapshot(),
+      };
+    },
+    importData(value) {
+      const parsed = parseBackup(value);
+      if (!parsed.ok) return parsed;
+      const incoming = migrate(parsed.payload.progress);
+      const before = snapshot();
+      state = migrate(mergeStates(state, incoming));
+      persist();
+      return {
+        ok: true,
+        imported: true,
+        mergedPoemCount: Math.max(0, state.completedPoemIds.length - before.completedPoemIds.length),
+        mergedFavoriteCount: Math.max(0, state.favoritePoemIds.length - before.favoritePoemIds.length),
+        state: snapshot(),
+      };
+    },
     setAgeMode(ageMode) {
       if (!AGE_MODES[ageMode]) return snapshot();
       return update((draft) => {

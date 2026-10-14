@@ -202,6 +202,13 @@ function buildCatalog(rawSnapshot) {
         overrideReason: override?.overrideReason || "",
         overrideSource: override?.overrideSource ? { ...override.overrideSource } : null,
       },
+      reviewFlags: override?.reviewFlags ? { ...override.reviewFlags } : null,
+      pronunciationOverrides: override?.pronunciationOverrides ? [...override.pronunciationOverrides] : [],
+      spatialLearning: override?.spatialLearning ? { ...override.spatialLearning } : null,
+      placeRelations: override?.placeRelations ? override.placeRelations.map((relation) => ({ ...relation })) : null,
+      canonicalPlaceIds: override?.canonicalPlaceIds ? [...override.canonicalPlaceIds] : [],
+      relationAliases: override?.relationAliases ? override.relationAliases.map((alias) => ({ ...alias })) : [],
+      reviewNotes: override?.reviewNotes || "",
       priority: selection.priority,
       provenance: {
         source: rawSnapshot.snapshot.repository,

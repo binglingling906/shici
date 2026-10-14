@@ -11,6 +11,18 @@ function normalize(text) {
   return String(text || "").trim().replace(/\s+/gu, " ").slice(0, 160);
 }
 
+function sanitizeRemoteResult(value) {
+  if (!value || typeof value !== "object") throw new TutorUnavailableError("Tutor response is not an object");
+  const message = String(value.message || "").replace(/<[^>]*>/gu, "").trim().slice(0, 420);
+  if (!message) throw new TutorUnavailableError("Tutor response has no message");
+  return {
+    kind: ["empty", "unsure", "grounded", "partial", "open"].includes(value.kind) ? value.kind : "grounded",
+    message,
+    microHint: value.microHint ? String(value.microHint).replace(/<[^>]*>/gu, "").trim().slice(0, 180) : "",
+    revealAnswer: false,
+  };
+}
+
 function includesAny(text, terms = []) {
   return terms.some((term) => term && text.includes(term));
 }
@@ -78,7 +90,7 @@ export function createRemoteTutor({ endpoint = "", fetchImpl = globalThis.fetch 
         }),
       });
       if (!response.ok) throw new TutorUnavailableError(`Tutor HTTP ${response.status}`);
-      return response.json();
+      return sanitizeRemoteResult(await response.json());
     },
   };
 }

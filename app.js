@@ -100,7 +100,7 @@ const dom = Object.fromEntries([
   "corpus-tally", "corpus-search", "stage-tabs", "semester-tabs", "grade-list", "curriculum-edition-note", "coverage-open", "catalog-kicker", "catalog-heading", "catalog-count", "catalog-list", "coverage-grid", "coverage-gaps",
   "next-place-title", "next-place-reason", "next-place-button", "daily-feature", "challenge-panel", "progress-grid", "reset-progress",
   "age-dialog", "age-options", "completion-dialog", "completion-copy", "completion-next", "completion-map",
-  "home-date", "home-recent", "favorite-poem", "pause-poem", "phase-kicker", "phase-title", "phase-copy", "phase-next", "practice-panel", "practice-feedback", "record-practice", "word-tools", "word-explanation", "learning-rail", "notebook-summary", "notebook-list", "storage-note",
+  "home-date", "home-recent", "favorite-poem", "pause-poem", "phase-kicker", "phase-title", "phase-copy", "phase-next", "practice-panel", "practice-feedback", "record-practice", "word-tools", "word-explanation", "learning-rail", "notebook-summary", "notebook-list", "export-progress", "import-progress-file", "progress-backup-status", "storage-note",
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
 
 const qaParams = new URLSearchParams(location.search);
@@ -1545,7 +1545,7 @@ function renderNotebook() {
     const status = state.notebookTab === "review" && review ? (due.includes(poem.id) ? "今天可以重温" : `下次重温 ${new Intl.DateTimeFormat("zh-CN", { month: "numeric", day: "numeric" }).format(review.nextReviewAt)}`) : mastery.state === "mastered" ? "已经记牢" : progress.completedPoemIds.includes(poem.id) ? "今天学会，等待复习" : "读过，等你继续";
     return `<article class="notebook-row"><div><h2>${poem.title.text}</h2><p>${poem.dynasty} · ${poem.author.name} <span>${status}</span></p>${review ? `<small>自己记录的练习 · ${review.count} 遍</small>` : ""}</div><button class="outline-button" type="button" data-poem-id="${poem.id}" data-entry-route="progress"${state.notebookTab === "review" ? ' data-start-practice="true"' : ""}>${state.notebookTab === "review" ? "再练一遍" : "继续读"} →</button></article>`;
   }).join("") : `<div class="empty-shelf"><div><strong>好诗，值得慢慢积攒。</strong><p>${empty}</p></div><button type="button" class="ink-button" data-route="daily">去读今日一诗 →</button></div>`;
-  dom.storage_note.textContent = store.storageAvailable ? "学习记录仅保存在当前浏览器中。换设备或端口后不会自动同步。" : "浏览器暂时无法保存记录；本次仍可学习，关闭页面后新记录可能丢失。";
+  dom.storage_note.textContent = store.storageAvailable ? "学习记录保存在当前浏览器中，不会自动跨设备同步；需要换设备时，可用上方 JSON 备份。" : "浏览器暂时无法保存记录；本次仍可学习，关闭页面后新记录可能丢失。可以先尝试导出备份。";
 }
 
 function deterministicChoices(correctPlaceId) {
@@ -1602,6 +1602,64 @@ function renderAgeOptions() {
     const detail = mode.id === "7-8" ? "默认显示拼音 · 选择与动作提示" : mode.id === "9-10" ? "默认显示拼音 · 空间关系与表达" : "默认隐藏拼音 · 证据、结构与比较";
     button.innerHTML = `<strong>${mode.label}</strong><small>${detail}</small><span>${progress.ageMode === mode.id ? "正在使用" : "选择"}</span>`;
     dom.age_options.append(button);
+  }
+}
+
+function setProgressBackupStatus(message, tone = "") {
+  if (!dom.progress_backup_status) return;
+  dom.progress_backup_status.textContent = message;
+  dom.progress_backup_status.dataset.tone = tone;
+}
+
+function exportProgressBackup() {
+  try {
+    const payload = store.exportData();
+    const date = new Date().toISOString().slice(0, 10);
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `shanhe-shijing-progress-${date}.json`;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setProgressBackupStatus("备份已下载。请把这个 JSON 文件放在自己能找到的地方。", "success");
+  } catch {
+    setProgressBackupStatus("暂时无法导出，请检查浏览器的下载权限。", "error");
+  }
+}
+
+function readBackupFile(file) {
+  if (typeof file?.text === "function") return file.text();
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result || ""));
+    reader.onerror = () => reject(reader.error || new Error("read failed"));
+    reader.readAsText(file);
+  });
+}
+
+async function importProgressBackup(file) {
+  if (!file) return;
+  if (file.size > 1024 * 1024) {
+    setProgressBackupStatus("备份文件超过 1 MB，已拒绝读取。", "error");
+    return;
+  }
+  setProgressBackupStatus("正在读取备份……");
+  try {
+    const result = store.importData(await readBackupFile(file));
+    if (!result.ok) {
+      setProgressBackupStatus(result.message || "无法读取这份备份。", "error");
+      return;
+    }
+    updateHeader();
+    renderProgress();
+    setProgressBackupStatus("已合并导入。当前设备原有的学习记录没有被清除。", "success");
+  } catch {
+    setProgressBackupStatus("读取备份失败，原有学习记录没有改变。", "error");
+  } finally {
+    if (dom.import_progress_file) dom.import_progress_file.value = "";
   }
 }
 
@@ -1809,6 +1867,8 @@ dom.sound_toggle.addEventListener("click", () => {
 });
 dom.completion_next.addEventListener("click", () => { const id = dom.completion_next.dataset.placeId; dom.completion_dialog.close(); routeTo("map"); selectPlace(id); });
 dom.completion_map.addEventListener("click", () => { dom.completion_dialog.close(); routeTo("map"); });
+dom.export_progress.addEventListener("click", exportProgressBackup);
+dom.import_progress_file.addEventListener("change", () => importProgressBackup(dom.import_progress_file.files?.[0]));
 dom.reset_progress.addEventListener("click", armReset);
 
 const mapViewport = q("#map-viewport");

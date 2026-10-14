@@ -11,7 +11,7 @@ function lineMeaning(lineId, meaning, keywords, misunderstanding, picture, promp
   return { lineId, meaning, keywords, misunderstanding, picture, prompt };
 }
 
-function mastery({ wholeMeaning, mainContent, emotion, centralIdea, lineMeanings, commonMisunderstandings, memoryKeywords, firstCharacterHints }) {
+function mastery({ wholeMeaning, mainContent, emotion, centralIdea, lineMeanings, commonMisunderstandings, memoryKeywords, firstCharacterHints, extension }) {
   return {
     wholeMeaning,
     mainContent,
@@ -21,6 +21,7 @@ function mastery({ wholeMeaning, mainContent, emotion, centralIdea, lineMeanings
     commonMisunderstandings,
     memoryKeywords,
     firstCharacterHints,
+    ...(extension ? { extension } : {}),
   };
 }
 
@@ -365,6 +366,325 @@ export const masteryContentByPoemId = {
       { lineId: "line-5", character: "何", cue: "何日平胡虏" },
       { lineId: "line-6", character: "良", cue: "良人罢远征" },
     ],
+  }),
+};
+
+/**
+ * The first catalog review batch.  These records are deliberately kept in
+ * the same small, line-oriented shape as the ten immersive units above, so a
+ * reviewed catalog item can be promoted without inventing a second meaning
+ * schema.  They are content-reviewed candidates, not additional immersive
+ * places: the build layer adds the explicit `curated_content_v1` status.
+ */
+export const curatedMasteryContentByPoemId = {
+  "yellow-crane-song-meng-hao-ran": {
+    ...masteryContentByPoemId["yellow-crane-song-meng-hao-ran"],
+    extension: {
+      title: "目光送到江天尽头",
+      text: "诗没有写‘我很难过’，而是让我们跟着一叶孤帆越看越远：船影消失以后，江水还在流。送别的情绪因此留在远方和空旷里。",
+      prompt: "如果朋友要远行，你会用一个正在变远的景物，还是一个声音，来写你的不舍？",
+    },
+  },
+
+  "west-lake-yin-hu-shang": {
+    ...masteryContentByPoemId["west-lake-yin-hu-shang"],
+    extension: {
+      title: "晴雨都是西湖的表情",
+      text: "诗人没有把晴天和雨天排成高下，而是先写水光、山色，再借西施的淡妆浓抹说明不同天气都有自己的好。读懂‘相宜’，可以从比较两幅画面开始。",
+      prompt: "如果今天的天气是一种妆容或颜色，你会怎样形容它？请用诗里的一个景物作证。",
+    },
+  },
+
+  "child-deng-guan-que-lou": mastery({
+    wholeMeaning: "诗人登上鹳雀楼，看到夕阳沿山落下，黄河向大海流去；想把千里之外的景物看得更远，就要再登一层楼。",
+    mainContent: "诗先写从高楼看到的日落和黄河，再由‘欲穷’与‘更上’把视线和行动推向更高、更远。",
+    emotion: "开阔、向上和愿意继续探索的心情。",
+    centralIdea: "站得更高，可能看见更大的世界；‘更上一层楼’既是诗中的登楼动作，也可以成为继续观察、学习的启发，不是任何问题都只有一个口号答案。",
+    lineMeanings: [
+      lineMeaning("line-1", "夕阳仿佛沿着远山慢慢落下，天边的光线在山后收拢。", ["白日", "依山", "尽"], "‘尽’写太阳落到山后、视线中的光线收尽，不是太阳被山吃掉。", "金色夕阳贴着远山下沉，山脊变成剪影。", "太阳落下时，你还能看见它的哪一部分？"),
+      lineMeaning("line-2", "黄河水向着大海不停流去，视线从眼前的河流伸向远方。", ["黄河", "入海", "流"], "‘入海’写河流最终奔向大海，不表示鹳雀楼就在河流入海口。", "宽阔的河水越流越远，像一条路伸向海边。", "哪个词把眼前的河水带到了更远的地方？"),
+      lineMeaning("line-3", "诗人想把千里之外的景色看得尽可能远。", ["欲穷", "千里目"], "‘穷’在这里是尽、看完，不是贫穷；‘千里’也有扩大视野的意味。", "诗人眯起眼睛，努力把远方收进视线。", "你想看得更远时，会先改变什么？"),
+      lineMeaning("line-4", "再登高一层，眼前的视野会变得更开阔；它既是实景动作，也给继续探索留下了空间。", ["更上", "一层楼"], "这句不是保证登一层就能解决所有事情，而是用登楼写主动向上、继续看。", "脚步再向上，楼外的山河展开得更大。", "如果你再往高处走一步，会多看到什么？"),
+    ],
+    commonMisunderstandings: [
+      { phrase: "白日依山尽", correction: "‘尽’写夕阳落到山后、视线中的光收尽，不是太阳消失在山里。" },
+      { phrase: "欲穷千里目", correction: "‘穷’是尽、看完；不是贫穷，也不是必须真的看清一千里。" },
+      { phrase: "更上一层楼", correction: "先是登楼的具体动作，再可以延伸为继续观察和学习，不强行解释成唯一成功公式。" },
+    ],
+    memoryKeywords: [
+      { lineId: "line-1", keywords: ["白日", "依山尽"], cue: "夕阳沿山落" },
+      { lineId: "line-2", keywords: ["黄河", "入海流"], cue: "河流向远方" },
+      { lineId: "line-3", keywords: ["欲穷", "千里目"], cue: "想看得更远" },
+      { lineId: "line-4", keywords: ["更上", "一层楼"], cue: "再登高一层" },
+    ],
+    firstCharacterHints: [
+      { lineId: "line-1", character: "白", cue: "夕阳落山" },
+      { lineId: "line-2", character: "黄", cue: "黄河远流" },
+      { lineId: "line-3", character: "欲", cue: "想看千里" },
+      { lineId: "line-4", character: "更", cue: "再上高楼" },
+    ],
+    extension: {
+      title: "从一层楼看见更大的世界",
+      text: "诗里的‘更上一层楼’首先是一个向上走的画面。它也能提醒我们：遇到看不清的事，可以换一个位置、补一点信息、再观察一次；孩子可以提出自己的启发，不必背一个固定答案。",
+      prompt: "你最近有没有通过换位置、换方法或再试一次，看见原来没看见的东西？",
+    },
+  }),
+
+  "child-zao-fa-bai-di-cheng": mastery({
+    wholeMeaning: "清晨，诗人从云霞间的白帝城出发，顺江回到江陵；船行很快，猿声还在耳边，轻舟已经穿过层层山峡。",
+    mainContent: "诗按顺江行舟推进：从高处的白帝城出发，经过猿声回响的峡江，最后用‘已过万重山’写出轻快速度和心情。",
+    emotion: "获释归途中的轻快、惊喜和对自由行舟的畅快。",
+    centralIdea: "空间距离、声音和速度一起写出归途的轻快；‘千里一日’是诗歌中的夸张和体验，不等于可直接复原的交通时刻表。",
+    lineMeanings: [
+      lineMeaning("line-1", "清晨，诗人告别高高的白帝城；彩云环绕城郭，仿佛城在云霞之间。", ["朝辞", "白帝", "彩云间"], "‘朝’读 zhāo，指早晨；‘彩云间’写白帝城高和云霞环绕，不是城漂在云里。", "晨光和云霞托着山城，船从高处向江面出发。", "你从哪两个词看出出发的时间和地点？"),
+      lineMeaning("line-2", "从白帝城到江陵路途很远，诗人感觉顺流的船一天就能抵达。", ["千里", "江陵", "一日还"], "‘还’读 huán，是返回；‘千里一日’夸张地写船行极快和心情轻快，不是精确里程表。", "江水推着小舟向下游飞快前进。", "如果旅途很顺，你会用哪个动作词写速度？"),
+      lineMeaning("line-3", "两岸山间猿猴的叫声连续不断，回声随着船行一路传来。", ["两岸", "猿声", "啼不住"], "‘啼不住’写叫声不断，不是说猿猴永远不会停下来。", "狭长峡谷把猿声从左岸、右岸一阵阵送到船上。", "声音为什么能让你感觉两岸很近？"),
+      lineMeaning("line-4", "猿声还没停，轻快的小船已经穿过层层山峰，行程显得非常迅疾。", ["轻舟", "已过", "万重山"], "‘重’读 chóng，表示层层叠叠；‘万重山’是夸张的山势感，不是实际数山。", "小船划过一道峡口，身后的重山迅速退到远处。", "哪一个词最能让你感觉船快？"),
+    ],
+    commonMisunderstandings: [
+      { phrase: "朝辞", correction: "‘朝’读 zhāo，表示清晨；不是朝代的 cháo。" },
+      { phrase: "一日还", correction: "‘还’读 huán，指返回；‘千里一日’是顺流快行的诗意夸张。" },
+      { phrase: "万重山", correction: "‘重’读 chóng，表示层层；‘万’写山多、山势连续，不是逐座清点。" },
+    ],
+    memoryKeywords: [
+      { lineId: "line-1", keywords: ["朝辞", "白帝", "彩云"], cue: "清晨云中出发" },
+      { lineId: "line-2", keywords: ["千里", "江陵", "一日还"], cue: "顺流快速返回" },
+      { lineId: "line-3", keywords: ["两岸", "猿声"], cue: "峡谷回响猿声" },
+      { lineId: "line-4", keywords: ["轻舟", "已过", "万重山"], cue: "小舟飞过群山" },
+    ],
+    firstCharacterHints: [
+      { lineId: "line-1", character: "朝", cue: "清晨离开白帝城" },
+      { lineId: "line-2", character: "千", cue: "千里一日归" },
+      { lineId: "line-3", character: "两", cue: "两岸猿声" },
+      { lineId: "line-4", character: "轻", cue: "轻舟过山" },
+    ],
+    extension: {
+      title: "让声音追不上小船",
+      text: "诗把猿声和船速放在一起：耳朵还听着两岸回声，眼前的船已经越过许多山。空间、声音和心情同时加速，才有‘归来如飞’的感觉。",
+      prompt: "如果用三个镜头表现‘船很快’，你会先拍哪里，再让什么声音留在身后？",
+    },
+  }),
+
+  "child-liang-zhou-ci": mastery({
+    wholeMeaning: "诗人把黄河、白云、孤城和万仞山写成苍茫的边地画面，又听见羌笛吹《杨柳》曲，想到玉门关外春风难至、戍边人的乡愁和无奈。",
+    mainContent: "前两句从大河和高山铺开边地尺度，后两句由笛声和杨柳曲转入人的情绪；‘春风不度’既是自然感受，也带有边关隔绝的象征意味。",
+    emotion: "苍凉、孤寂和对远方春意与家乡的牵挂。",
+    centralIdea: "宏阔的山河并不遮住人的心事；一支笛曲让边关的距离、季节和思念同时被听见。",
+    lineMeanings: [
+      lineMeaning("line-1", "黄河像从远方白云之间伸展而来，视线沿着河流拉向高处和远处。", ["黄河", "远上", "白云间"], "‘远上’是诗人的远望构图，不是说黄河真的向天空上游。", "黄河在苍茫天际延伸，像从白云深处来。", "你觉得视线是沿河向远处，还是向天空抬起？"),
+      lineMeaning("line-2", "一座孤零零的城池被高高的山群围在其中，边地显得空旷而险峻。", ["一片孤城", "万仞山"], "‘万仞’写山高的夸张感，‘孤城’突出环境中的孤单，不是说城里没有一个人。", "小城被一圈高山包住，天地显得很大。", "把城和山放在一起，谁更大、谁更孤单？"),
+      lineMeaning("line-3", "羌笛吹起《杨柳》曲，诗人劝它不必为离情哀怨；曲名中的杨柳不只是眼前一棵树。", ["羌笛", "何须", "怨杨柳"], "‘杨柳’常与古曲《折杨柳》及送别、思乡情绪相连，不等于笛子在责怪柳树。", "夜色里的笛声穿过城墙和山口，带来熟悉又遥远的曲调。", "一支曲子怎样让你想到远方的人？"),
+      lineMeaning("line-4", "诗人说春风似乎吹不到玉门关外，边地的春意和家乡相隔很远。", ["春风", "不度", "玉门关"], "‘不度’不是天气报告，‘春风’也不一定只指风；它把边地的寒凉、隔绝和盼春写在一起。", "关外山地仍显冷峻，春意停在关内外的距离上。", "如果春风能带来消息，它会从哪里吹到哪里？"),
+    ],
+    commonMisunderstandings: [
+      { phrase: "黄河远上", correction: "是从远处望黄河、让河流伸向天际的构图，不是河水倒着向高处流。" },
+      { phrase: "羌笛怨杨柳", correction: "‘杨柳’还关联古曲《折杨柳》和送别情绪，不是笛声真的在责怪柳树。" },
+      { phrase: "春风不度", correction: "是边关隔绝与思乡的诗意表达，不要当作玉门关永远没有风的气象事实。" },
+    ],
+    memoryKeywords: [
+      { lineId: "line-1", keywords: ["黄河", "白云间"], cue: "河流伸向远天" },
+      { lineId: "line-2", keywords: ["孤城", "万仞山"], cue: "小城被高山围住" },
+      { lineId: "line-3", keywords: ["羌笛", "杨柳"], cue: "笛声牵出离情" },
+      { lineId: "line-4", keywords: ["春风", "玉门关"], cue: "春意隔在关外" },
+    ],
+    firstCharacterHints: [
+      { lineId: "line-1", character: "黄", cue: "黄河远望" },
+      { lineId: "line-2", character: "一", cue: "孤城高山" },
+      { lineId: "line-3", character: "羌", cue: "边地笛声" },
+      { lineId: "line-4", character: "春", cue: "春风不到关外" },
+    ],
+    extension: {
+      title: "一支笛子里的边地距离",
+      text: "这首诗不是一张气象地图，而是一幅把山河尺度和人的感受叠在一起的边塞画。孩子可以先听笛声、看孤城，再思考为什么‘春风’会变成想家的语言。",
+      prompt: "什么声音会让你想起一个不在身边的人或地方？它带来了什么画面？",
+    },
+  }),
+
+  "child-song-yuan-er-an-xi": mastery({
+    wholeMeaning: "清晨的细雨洗过渭城，客舍旁的柳色显得清新。王维为即将出使安西的朋友元二饯行，请他再喝一杯，因为出了阳关，可能很久遇不到老朋友。",
+    mainContent: "诗从雨后渭城的清新景色写起，镜头转到酒席和朋友，再由阳关把眼前的送别推向遥远边地。",
+    emotion: "温柔、克制而深长的惜别与牵挂。",
+    centralIdea: "一杯酒不是简单劝饮，而是朋友在出发前用短暂相聚面对漫长旅途；‘无故人’写的是远行后的孤单可能，不是说安西绝对没有任何人。",
+    lineMeanings: [
+      lineMeaning("line-1", "清晨的雨落在渭城，洗去道路上的尘土，只留下轻轻的湿润。", ["渭城", "朝雨", "浥轻尘"], "‘朝’读 zhāo，指早晨；‘浥’读 yì，是沾湿、润湿，不是大雨冲刷。", "雨后青石路干净湿亮，尘土被轻轻压下。", "你从哪个词听出这场雨很轻？"),
+      lineMeaning("line-2", "客舍旁的柳树在雨后更青，柳色显出新鲜的春意。", ["客舍", "青青", "柳色新"], "‘客舍’是旅店，不是客人家的房子；柳色也在送别语境里牵出离情。", "旅店外的柳枝带着水珠，颜色清新。", "为什么送别诗常让柳树出现在路边？"),
+      lineMeaning("line-3", "请朋友再把这一杯酒喝完，把眼前相聚的时间再延长一点。", ["劝君", "更尽", "一杯酒"], "‘更尽’是再饮尽一杯，不是催朋友喝很多；‘一’读 yì。", "朋友停下话头，再举一次酒杯。", "‘再’这个动作让告别变长了多久？"),
+      lineMeaning("line-4", "出了阳关向西远行，老朋友可能很难再相逢。", ["西出", "阳关", "无故人"], "‘故人’是老朋友；‘无故人’写远行后的孤独和难遇知交，不是说关外绝对没有人。", "马车或行舟越过关口，回头的人影渐远。", "哪一个方向把送别从眼前带到远方？"),
+    ],
+    commonMisunderstandings: [
+      { phrase: "朝雨浥轻尘", correction: "‘朝’读 zhāo，‘浥’读 yì；写清晨细雨润湿尘土，不是暴雨。" },
+      { phrase: "更尽一杯酒", correction: "‘更’是再、又，‘尽’是喝完；是在告别前珍惜最后的相聚。" },
+      { phrase: "无故人", correction: "指很难遇到老朋友、知心人，不是安西没有任何人居住。" },
+    ],
+    memoryKeywords: [
+      { lineId: "line-1", keywords: ["渭城", "朝雨", "浥"], cue: "清晨细雨洗尘" },
+      { lineId: "line-2", keywords: ["客舍", "柳色新"], cue: "旅店外的青柳" },
+      { lineId: "line-3", keywords: ["劝君", "一杯酒"], cue: "再留一会儿" },
+      { lineId: "line-4", keywords: ["西出", "阳关", "故人"], cue: "出关后路远人稀" },
+    ],
+    firstCharacterHints: [
+      { lineId: "line-1", character: "渭", cue: "渭城清晨雨" },
+      { lineId: "line-2", character: "客", cue: "客舍柳色新" },
+      { lineId: "line-3", character: "劝", cue: "再饮一杯" },
+      { lineId: "line-4", character: "西", cue: "西出阳关" },
+    ],
+    extension: {
+      title: "一杯酒的长度",
+      text: "送别不一定要大声哭喊，雨、柳色、酒杯和一个方向就足以让人感觉到离开。诗把‘再坐一会儿’写成一杯酒的长度，把短暂相聚和漫长远行放在一起。",
+      prompt: "你会选什么小动作，来表达‘我还想和你多待一会儿’？",
+    },
+  }),
+
+  "child-jiu-yue-jiu-ri": mastery({
+    wholeMeaning: "王维独自在长安等地做客，每到重阳这样的节日就更加想念亲人。他想象远方的兄弟们登高、佩戴茱萸，却因为少了自己而不完整。",
+    mainContent: "诗先写诗人身在异乡的孤单，再把视线越过距离，想象家乡兄弟重阳登高的画面，最后用‘少一人’收束思念。",
+    emotion: "节日里的孤独、思亲和想象中的温暖。",
+    centralIdea: "距离让节日习俗既热闹又显出缺席；诗人没有只说自己想家，而是想象亲人如何过节，把思念写成两地相望。",
+    lineMeanings: [
+      lineMeaning("line-1", "诗人独自待在别人的地方，作为异乡客人，身份和心情都显得孤单。", ["独在", "异乡", "异客"], "‘异乡’是离开家乡的地方，不限定为今天某一个省；‘异客’不是奇怪的客人。", "一个人站在陌生城市的街道上，周围很热闹，身边却没有家人。", "‘独’字让画面少了谁？"),
+      lineMeaning("line-2", "每逢重阳这样的节日，平常的思念会比平日更强烈。", ["每逢", "佳节", "倍思亲"], "‘倍’是更加、加倍，不是思念被量成一个固定数字。", "节日人家都在团聚，诗人更清楚地感到自己的远离。", "为什么节日会把想家放大？"),
+      lineMeaning("line-3", "诗人在远方想象兄弟们一起登上高处过重阳。", ["遥知", "兄弟", "登高处"], "‘遥知’说明这是远方的想象和牵挂，不是诗人眼前亲眼看见。", "想象中的兄弟们沿山路登高，衣角被秋风吹起。", "你能在脑中把家乡的画面放到远方吗？"),
+      lineMeaning("line-4", "兄弟们遍身佩戴茱萸，只有诗人没有在其中，所以少了一个人。", ["遍插", "茱萸", "少一人"], "‘少一人’指少了诗人自己；茱萸是重阳习俗中的植物，不是普通装饰。", "山顶的人群里留着一个空位，大家都知道那是远方亲人的位置。", "最后一句写的是谁不在场？"),
+    ],
+    commonMisunderstandings: [
+      { phrase: "异客", correction: "指身在异乡的客人，不是性格奇怪的人。" },
+      { phrase: "山东", correction: "题目中的‘山东’通常解释为华山以东的家乡方向，不直接等同于今天的山东省。" },
+      { phrase: "少一人", correction: "少的是远在异乡的诗人自己；它把思念落在一个具体的缺席位置上。" },
+    ],
+    memoryKeywords: [
+      { lineId: "line-1", keywords: ["独在", "异乡", "异客"], cue: "一个人在异乡" },
+      { lineId: "line-2", keywords: ["佳节", "倍思亲"], cue: "节日更想家" },
+      { lineId: "line-3", keywords: ["遥知", "兄弟登高"], cue: "想象远方兄弟" },
+      { lineId: "line-4", keywords: ["茱萸", "少一人"], cue: "习俗里留下空位" },
+    ],
+    firstCharacterHints: [
+      { lineId: "line-1", character: "独", cue: "异乡独处" },
+      { lineId: "line-2", character: "每", cue: "佳节思亲" },
+      { lineId: "line-3", character: "遥", cue: "想象远方" },
+      { lineId: "line-4", character: "遍", cue: "茱萸少一人" },
+    ],
+    extension: {
+      title: "节日地图上的一个空位",
+      text: "这首诗让我们同时看见两个地点：诗人在异乡，兄弟在家乡。重阳的登高和茱萸把两地连起来，而‘少一人’让远方的思念变成一个看得见的空位。",
+      prompt: "如果给远方的家人画一张节日地图，你会在地图上标出什么联系两地的东西？",
+    },
+  }),
+
+  "child-bo-chuan-gua-zhou": mastery({
+    wholeMeaning: "王安石把船停在瓜洲，望见京口和钟山都在江南一带；春风吹绿江南岸，他却问明月什么时候照着自己回去，写出旅途中的归乡愿望。",
+    mainContent: "诗从瓜洲、京口、钟山的近远关系写起，再用‘绿’让春风变成有动作的颜色，最后回到等待归期的心情。",
+    emotion: "江南春色中的乡愁、牵挂和想回家的愿望。",
+    centralIdea: "一江、几重山和一轮明月把地理距离写成心里的距离；美丽的春色并没有消除归乡愿望，反而让‘还’更清楚。",
+    lineMeanings: [
+      lineMeaning("line-1", "京口和瓜洲隔着一条水道，水面看似不宽，却把两处地点分开。", ["京口", "瓜洲", "一水间"], "‘间’读 jiān，是中间、相隔；不是时间的 jiàn，也不是说两地没有水路联系。", "船停在瓜洲，隔着江水望向对岸的京口。", "哪一个词告诉你两地之间隔着什么？"),
+      lineMeaning("line-2", "钟山仿佛只隔着几重山，距离在诗人眼中并不遥远，却仍未能立刻回去。", ["钟山", "只隔", "数重山"], "‘数’读 shù，表示几、几重；‘重’读 chóng，表示层层山岭。", "山一层叠着一层，挡住了回家的视线。", "‘只隔’听起来近，为什么还不能马上到？"),
+      lineMeaning("line-3", "春风又一次吹绿江南两岸；‘绿’把风带来的季节变化写成了有力的动作。", ["春风", "又绿", "江南岸"], "‘绿’在这里是使……变绿的动词，不只是颜色名称；不必说风真的染色。", "春风掠过江岸，草木从灰褐变成一片新绿。", "如果把‘绿’换成‘吹’，画面会少掉什么？"),
+      lineMeaning("line-4", "明月什么时候才能照着我回到故乡？诗人把归期交给月亮来追问。", ["明月", "何时", "还"], "‘还’读 huán，是回去；‘何时’表达等待，不是已经安排好日期。", "月光照在船头，诗人望着回家的方向。", "月亮为什么像一个陪你等消息的人？"),
+    ],
+    commonMisunderstandings: [
+      { phrase: "一水间", correction: "‘间’读 jiān，表示中间、相隔；不要读成时间的 jiàn。" },
+      { phrase: "又绿江南岸", correction: "‘绿’是使动用法，写春风带来草木变绿的过程，不只是静态颜色。" },
+      { phrase: "照我还", correction: "‘还’读 huán，表示返回；诗人是在问归期，不是说月亮会替他走路。" },
+    ],
+    memoryKeywords: [
+      { lineId: "line-1", keywords: ["京口", "瓜洲", "一水间"], cue: "江水隔着两处" },
+      { lineId: "line-2", keywords: ["钟山", "数重山"], cue: "山层挡住归路" },
+      { lineId: "line-3", keywords: ["春风", "又绿"], cue: "春风染绿江岸" },
+      { lineId: "line-4", keywords: ["明月", "何时还"], cue: "月下问归期" },
+    ],
+    firstCharacterHints: [
+      { lineId: "line-1", character: "京", cue: "京口瓜洲" },
+      { lineId: "line-2", character: "钟", cue: "钟山隔重山" },
+      { lineId: "line-3", character: "春", cue: "春风又绿" },
+      { lineId: "line-4", character: "明", cue: "明月照归人" },
+    ],
+    extension: {
+      title: "‘绿’是春风留下的动作",
+      text: "诗人没有只说江南很绿，而是说春风‘又绿’江南岸，让季节变化像一个正在发生的动作。可是眼前越美，等待回家的心也越清楚。",
+      prompt: "你能用一个动词写出季节改变身边景物的过程吗？",
+    },
+  }),
+
+  "child-ci-bei-gu-shan-xia": mastery({
+    wholeMeaning: "王湾行舟经过北固山下，看到潮水上涨让两岸显得开阔，风正好把船帆悬起；夜还没有结束，海上太阳已经升起，江南春意进入旧年，诗人借归雁把家书送向洛阳。",
+    mainContent: "诗沿水路从行舟、潮汐和船帆写到日出、江春，再由归雁转入对洛阳故乡的思念；空间和时间一起向前。",
+    emotion: "旅途中的开阔、对新年的感受和淡淡乡愁。",
+    centralIdea: "自然的潮、风、日和春把旅程推向前方，人的家书和思念却仍指向故乡；开阔景象与乡愁可以同时存在。",
+    lineMeanings: [
+      lineMeaning("line-1", "旅人的道路伸向青山之外。", ["客路", "青山外"], "‘客路’是旅途，不是客人的一条专用道路。", "小船外的青山一层层展开，路还在远方。", "你从哪个词看出诗人正在路上？"),
+      lineMeaning("line-2", "行船在碧绿的水面前进，诗人的视线贴着水路向前。", ["行舟", "绿水前"], "‘行舟’是行进中的船，先写位置和动作，不是停船看水。", "船头划开绿水，水路在青山前延伸。", "船正在怎样移动？"),
+      lineMeaning("line-3", "潮水上涨后，水面似乎与两岸齐平，江面显得更加宽阔。", ["潮平", "两岸阔"], "不是两岸真的移动变远，而是水位和视线共同造成开阔感。", "潮水漫上来，左右两岸被拉成更远的两条线。", "水面变宽会让船看起来更自由吗？"),
+      lineMeaning("line-4", "风向端正，船帆高高悬起，船行得平稳而有力。", ["风正", "一帆悬"], "‘正’写风向合适，不是正午的‘正’；‘悬’写帆张起的样子。", "一面白帆被风托住，船身稳稳向前。", "哪一个词让你感觉风正在帮船？"),
+      lineMeaning("line-5", "海上的太阳在残夜将尽时升起，新的光线从黑暗边缘出现。", ["海日", "生", "残夜"], "‘海日’是海上升起的太阳，‘生’写出生、升起，不是太阳被制造出来。", "夜色尚未全退，海面先亮出一轮日光。", "光和黑夜在这句里怎样交接？"),
+      lineMeaning("line-6", "江南的春意闯入还没有过去的旧年，时间像在船行中交替。", ["江春", "入", "旧年"], "‘入’是进入、来到；不是说春天真的走进一间屋子。", "旧年最后一夜的水面上，嫩绿的春色已经到来。", "这句为什么让新旧年份像碰面一样？"),
+      lineMeaning("line-7", "写给家乡的书信要托谁送到？诗人把疑问留在旅途上。", ["乡书", "何处达"], "‘达’是送到、抵达；这句没有给出现代邮寄路线。", "诗人望着远方，想着一封信怎样回家。", "你会把信交给谁？"),
+      lineMeaning("line-8", "诗人想到归雁飞向洛阳，把家乡的方向托付给雁影。", ["归雁", "洛阳边"], "这是借归雁寄托家书和思念的诗意想象，不等于古人真的把信绑在雁脚上。", "大雁向北飞，船上的人目光追着它去洛阳。", "你会让什么沿哪条路回家？"),
+    ],
+    commonMisunderstandings: [
+      { phrase: "次北固山下", correction: "题目里的‘次’是停留、驻扎，不是第二次；诗人停舟在北固山附近。" },
+      { phrase: "海日生残夜", correction: "‘生’写太阳从将尽的夜里升起，是明暗交替的画面，不是太阳被制造。" },
+      { phrase: "归雁洛阳边", correction: "是借归雁寄托家书和思念的想象，不等于古人真的把信绑在雁脚上。" },
+    ],
+    memoryKeywords: [
+      { lineId: "line-1", keywords: ["客路", "青山外"], cue: "旅路伸向青山" },
+      { lineId: "line-2", keywords: ["行舟", "绿水"], cue: "船行绿水前" },
+      { lineId: "line-3", keywords: ["潮平", "两岸阔"], cue: "潮涨水面开阔" },
+      { lineId: "line-4", keywords: ["风正", "一帆悬"], cue: "顺风帆起" },
+      { lineId: "line-5", keywords: ["海日", "残夜"], cue: "日出夜将尽" },
+      { lineId: "line-6", keywords: ["江春", "入旧年"], cue: "春意进入旧年" },
+      { lineId: "line-7", keywords: ["乡书", "何处达"], cue: "家书问归路" },
+      { lineId: "line-8", keywords: ["归雁", "洛阳"], cue: "借雁寄家书" },
+    ],
+    firstCharacterHints: [
+      { lineId: "line-1", character: "客", cue: "客路青山外" },
+      { lineId: "line-2", character: "行", cue: "行舟绿水前" },
+      { lineId: "line-3", character: "潮", cue: "潮平岸阔" },
+      { lineId: "line-4", character: "风", cue: "风正帆悬" },
+      { lineId: "line-5", character: "海", cue: "海日破夜" },
+      { lineId: "line-6", character: "江", cue: "江春入年" },
+      { lineId: "line-7", character: "乡", cue: "乡书问达" },
+      { lineId: "line-8", character: "归", cue: "归雁洛阳" },
+    ],
+    extension: {
+      title: "一条水路，两种方向",
+      text: "船在向前，春天也在向前，可诗人的心仍朝向洛阳。诗用潮、风、日出写旅途的开阔，再用一封想寄出的家书把视线拉回故乡。",
+      prompt: "你有没有一边去往新地方，一边想念原来的家？用一个景物说说这种感觉。",
+    },
+  }),
+
+  "child-le-you-yuan": mastery({
+    wholeMeaning: "傍晚时诗人心情不太舒畅，驾车登上长安城南的乐游原。夕阳景色无限美好，可它已经接近黄昏，也提醒人们美好时刻正在走向结束。",
+    mainContent: "前两句交代心情和登原的行动，后两句把视线放到夕阳，从赞叹美景转为对时间将尽的感受。",
+    emotion: "欣赏夕阳时的惆怅、珍惜和对时间流逝的敏感。",
+    centralIdea: "美和结束可以同时出现；‘只是近黄昏’不是把美好否定掉，而是让赞叹里多了一层时间感。",
+    lineMeanings: [
+      lineMeaning("line-1", "傍晚时分，诗人的心情有些不舒畅、郁闷。", ["向晚", "意", "不适"], "‘不适’读 bù shì，指心情不舒畅，不是身体受伤或不适合做事。", "暮色将近，诗人一个人感到心事沉沉。", "‘向晚’和‘不适’分别写时间和心情，你先注意到哪一个？"),
+      lineMeaning("line-2", "诗人驾车登上长安城南的乐游原，想借较高的地方舒展心情、看一看远景。", ["驱车", "登", "古原"], "‘古原’不是随便一块旧土地，诗中指乐游原这一处历史游览地。", "车沿坡道向上，城市和远方在脚下展开。", "为什么心情不好时，登高看远会有帮助？"),
+      lineMeaning("line-3", "夕阳的景色非常美好，让诗人忍不住赞叹。", ["夕阳", "无限好"], "‘无限好’写当下的美，不是在说夕阳永远不会落下。", "红金色的光铺满远山和城郭，天空亮得温柔。", "你会用哪种颜色形容这时的夕阳？"),
+      lineMeaning("line-4", "只是此刻已经接近黄昏，美景也带着将要结束的时间感。", ["只是", "近", "黄昏"], "‘只是’不是否定夕阳美，而是补上一层临近结束的感受。", "太阳越往下，光越美，也越让人舍不得。", "美好的东西快结束时，你的感受会怎样变化？"),
+    ],
+    commonMisunderstandings: [
+      { phrase: "意不适", correction: "‘不适’读 bù shì，这里主要写心情不舒畅，不是身体不舒服。" },
+      { phrase: "古原", correction: "它与题目‘乐游原’相连，是长安城南的历史游览地，不是普通荒原。" },
+      { phrase: "只是近黄昏", correction: "‘只是’补充时间将尽，并没有抹掉夕阳的美；美好与惆怅可以并存。" },
+    ],
+    memoryKeywords: [
+      { lineId: "line-1", keywords: ["向晚", "意不适"], cue: "傍晚心情郁闷" },
+      { lineId: "line-2", keywords: ["驱车", "登古原"], cue: "登高看远" },
+      { lineId: "line-3", keywords: ["夕阳", "无限好"], cue: "眼前美景" },
+      { lineId: "line-4", keywords: ["只是", "近黄昏"], cue: "美景将近结束" },
+    ],
+    firstCharacterHints: [
+      { lineId: "line-1", character: "向", cue: "向晚心不适" },
+      { lineId: "line-2", character: "驱", cue: "驱车登原" },
+      { lineId: "line-3", character: "夕", cue: "夕阳无限好" },
+      { lineId: "line-4", character: "只", cue: "只是近黄昏" },
+    ],
+    extension: {
+      title: "美好为什么让人舍不得",
+      text: "这首诗常被只截取‘夕阳无限好’，但后一句提醒我们：美景正因为有时间边界，才让人更愿意认真观看。孩子可以从自己的经验说出珍惜，不必把诗压成悲观结论。",
+      prompt: "有没有一个‘快要结束、所以更想认真看’的时刻？你会怎样描述它？",
+    },
   }),
 };
 
