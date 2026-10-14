@@ -31,12 +31,12 @@
 
 ## 第二批：5 首已完成
 
-第二批 `child-yong-e`《咏鹅》、`child-min-nong-two`《悯农·其二》、`child-jing-ye-si`《静夜思》、`child-chun-xiao`《春晓》、`child-cun-ju`《村居》，以及第三批 `child-xiao-chi`《小池》、`child-chile-ge`《敕勒歌》、`child-wang-dong-ting`《望洞庭》、`child-wang-tian-men-shan`《望天门山》、`child-feng-qiao-ye-bo`《枫桥夜泊》已补齐逐句释义、儿童误解提示、主动表达延伸和语境拼音校正。没有可核定地点的诗保留 `unassigned`，不虚构地理关系。
+第二批 `child-yong-e`《咏鹅》、`child-min-nong-two`《悯农·其二》、`child-jing-ye-si`《静夜思》、`child-chun-xiao`《春晓》、`child-cun-ju`《村居》，第三批 `child-xiao-chi`《小池》、`child-chile-ge`《敕勒歌》、`child-wang-dong-ting`《望洞庭》、`child-wang-tian-men-shan`《望天门山》、`child-feng-qiao-ye-bo`《枫桥夜泊》，以及第四批 `child-min-nong-one`《悯农·其一》、`child-suo-jian`《所见》、`child-chi-shang`《池上》、`child-ye-su-shan-si`《夜宿山寺》、`child-zeng-wang-lun`《赠汪伦》已补齐逐句释义、儿童误解提示、主动表达延伸和语境拼音校正。没有可核定地点的诗保留 `unassigned`，不虚构地理关系。
 
 ## 当前状态
 
 - 已完整人工审核：10 首；
-- 另有 18 首已标记 `curated_content_v1`（第一批 8 首 + 第二批 5 首 + 第三批 5 首）；
-- 其余 72 首仍保持 `machine-assisted-candidate`，不会因进入队列而自动升级。
+- 另有 23 首已标记 `curated_content_v1`（第一批 8 首 + 第二批 5 首 + 第三批 5 首 + 第四批 5 首）；
+- 其余 67 首仍保持 `machine-assisted-candidate`，不会因进入队列而自动升级。
 
 候选排序来自运行时目录的机器辅助评分，只用于安排人工工作，不是内容质量证明。

@@ -483,6 +483,99 @@ export const curatedOverrides = {
     }),
   },
 
+  "child-min-nong-one": {
+    overrideReason: "第四批内容复核：播种—收获—天下田野—农夫处境的反差、‘种’读音与历史社会边界已人工确认；不把普遍劳动主题硬贴到具体地点。",
+    ...catalogReview({
+      reviewNotes: "诗句没有可核定的单一地理地点；‘四海’是天下各处的宽泛说法，不是现代行政边界，也不据此生成农田坐标。",
+      pinyinOverrides: [
+        { path: "line-1.token-2", char: "种", pinyin: "zhòng", reason: "‘春种一粒粟’中的种是播种动作，读 zhòng，不是名词‘种子’的 zhǒng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "seed-field-harvest-and-labor",
+        observation: "视线从一粒种子和一块田，放大到四海田野，再落回农夫的生活处境；这是劳动关系的空间放大，不是路线地图。",
+        mapAction: "可以画‘种子—田地—收成—餐桌/劳动者’的关系图；不把‘四海’画成精确边界，也不虚构诗人的行走地点。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "食物来自土地和劳动，读诗时既要珍惜粮食，也要看见劳动者。",
+      },
+    }),
+  },
+
+  "child-suo-jian": {
+    overrideReason: "第四批内容复核：骑牛、回荡的歌声、捕蝉与忽然安静的动作链已人工确认；‘樾’的字义与读音已校正，不虚构诗中地点。",
+    ...catalogReview({
+      reviewNotes: "诗句只提供乡野树林的儿童观察场景，没有可核定的单一地点；‘林樾’是树荫空间，不等于地名或行政区域。",
+      pinyinOverrides: [
+        { path: "line-2.token-5", char: "樾", pinyin: "yuè", reason: "‘林樾’中的樾指树木枝叶形成的树荫，读 yuè，不作地点名处理。" },
+      ],
+      spatialLearning: {
+        coreRelation: "pastoral-path-and-soundscape",
+        observation: "孩子骑牛沿乡间路径移动，歌声从牛背传入树林；发现蝉后，声音和动作一起收住。",
+        mapAction: "用‘小路—牛背—树荫—蝉声’画一条近距离观察路径，不把牧童的活动地点推定为某个真实村庄。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "空间不只靠地图大小，也能靠声音远近和动作变化被感知。",
+      },
+    }),
+  },
+
+  "child-chi-shang": {
+    overrideReason: "第四批内容复核：小艇采莲、浮萍分开留下水痕的因果关系与‘解/藏’语境读音已人工确认；不把池塘场景误标为具体名胜。",
+    ...catalogReview({
+      reviewNotes: "诗中只有池塘、白莲、浮萍等水面意象，没有可核定的单一地理地点；‘一道开’是船行留下的局部水痕，不是道路或边界。",
+      pinyinOverrides: [
+        { path: "line-3.token-2", char: "解", pinyin: "jiě", reason: "‘不解’意为不懂得、不会，读 jiě，不是押解义的 jiè。" },
+        { path: "line-3.token-3", char: "藏", pinyin: "cáng", reason: "‘藏踪迹’意为隐藏痕迹，读 cáng，不是宝藏义的 zàng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "pond-route-and-floating-plant-trace",
+        observation: "小艇从白莲间返回，船身把浮萍向两边分开，水面留下能回望的路径痕迹。",
+        mapAction: "把池塘画成‘采莲处—返程—浮萍水痕’的小尺度空间，不给它附会成某一处历史名胜。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "看似悄悄的行动也会在环境中留下线索。",
+      },
+    }),
+  },
+
+  "child-ye-su-shan-si": {
+    overrideReason: "第四批内容复核：山寺高楼、星辰夸张与放轻声音的想象关系已人工确认；‘危’和‘语’的语境读音已校正，不把诗意高度当作实测建筑数据。",
+    ...catalogReview({
+      reviewNotes: "诗题只说明夜宿山寺，未提供可核定的具体寺名或坐标；‘危楼’的高与‘天上人’的想象不等同真实地理或建筑测量。",
+      pinyinOverrides: [
+        { path: "line-3.token-5", char: "语", pinyin: "yǔ", reason: "‘不敢高声语’中的语是说话，读 yǔ；‘高声’修饰声音大小。" },
+      ],
+      spatialLearning: {
+        coreRelation: "mountain-temple-height-and-sky",
+        observation: "站在山寺高楼，视线从楼脚抬向星辰；登高带来空间距离被压缩的感觉，随后夜色让人主动安静。",
+        mapAction: "用‘山寺—高楼—星空’表示垂直层次，不为‘危楼’赋予未经诗句证明的高度，也不指定具体寺院。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "诗歌可以用夸张把登高时的惊奇放大，但想象不等于测量结果。",
+      },
+    }),
+  },
+
+  "child-zeng-wang-lun": {
+    overrideReason: "第四批内容复核：桃花潭送别水面、岸上踏歌与水深—友情比较已人工确认；‘将/行/踏’读音已按语境校正，不由诗句推断完整历史航线。",
+    ...catalogReview({
+      reviewNotes: "桃花潭是诗中送别与水深比较的现代参考地点；诗句不提供具体泊位或完整行程，地图只呈现水面—岸边—离舟的关系。",
+      pinyinOverrides: [
+        { path: "line-1.token-5", char: "将", pinyin: "jiāng", reason: "‘将欲行’表示将要、正准备出发，读 jiāng，不是将领义的 jiàng。" },
+        { path: "line-1.token-7", char: "行", pinyin: "xíng", reason: "‘欲行’表示出发、离开，读 xíng，不是银行义的 háng。" },
+        { path: "line-2.token-5", char: "踏", pinyin: "tà", reason: "‘踏歌’是踏着节拍唱歌，读 tà，不是脚步之外的其他语境。" },
+      ],
+      spatialLearning: {
+        coreRelation: "shore-song-and-departing-boat",
+        observation: "李白的船将离开桃花潭，岸上汪伦踏歌相送；水面把出发者和送行者暂时分隔，又让歌声跨过来。",
+        mapAction: "以桃花潭作现代区域参照，标出‘岸边—船—潭水’三者关系；不画成已核实的唐代精确航迹或泊位。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "地图能说明送别发生在哪里、彼此隔着什么；友情的深度仍要由诗句来感受。",
+      },
+      placeRelations: [
+        { targetId: "taohuatan", type: "departure_place", confidence: "medium", assertion: "诗中写李白将欲行、岸上送歌，桃花潭是送别水面参照；不据此断言具体泊位或完整旅行路线。", childMeaning: "船将离岸，朋友的歌声从岸边追来。", sourceKeys: ["chinesePoetry"] },
+        { targetId: "taohuatan", type: "river_imagery", confidence: "high", assertion: "桃花潭直接出现在第三句，是水深与友情比较的诗中景物。", childMeaning: "自然水深成为表达友情深度的参照。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["taohuatan"],
+    }),
+  },
+
   "child-lu-chai": {
     text: "空山不见人，但闻人语响。\n返景入深林，复照青苔上。",
     overrideReason: "修正候选快照把‘但闻人语响’误录为‘但余钟磬音’的问题；保留原始快照，由人工 override 覆盖运行时。",

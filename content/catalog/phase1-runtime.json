@@ -16144,19 +16144,43 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-012",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第四批内容复核：播种—收获—天下田野—农夫处境的反差、‘种’读音与历史社会边界已人工确认；不把普遍劳动主题硬贴到具体地点。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-2",
+          "char": "种",
+          "pinyin": "zhòng",
+          "reason": "‘春种一粒粟’中的种是播种动作，读 zhòng，不是名词‘种子’的 zhǒng。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "seed-field-harvest-and-labor",
+        "observation": "视线从一粒种子和一块田，放大到四海田野，再落回农夫的生活处境；这是劳动关系的空间放大，不是路线地图。",
+        "mapAction": "可以画‘种子—田地—收成—餐桌/劳动者’的关系图；不把‘四海’画成精确边界，也不虚构诗人的行走地点。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "食物来自土地和劳动，读诗时既要珍惜粮食，也要看见劳动者。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗句没有可核定的单一地理地点；‘四海’是天下各处的宽泛说法，不是现代行政边界，也不据此生成农田坐标。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -16178,8 +16202,9 @@
             },
             {
               "char": "种",
-              "pinyin": "zhǒng",
-              "tone": 5
+              "pinyin": "zhòng",
+              "tone": 4,
+              "pronunciationReview": "‘春种一粒粟’中的种是播种动作，读 zhòng，不是名词‘种子’的 zhǒng。"
             },
             {
               "char": "一",
@@ -16309,73 +16334,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-min-nong-one-line-1",
-              "meaning": "先从原句找出农事和四季：这句写了“春种一粒粟，”，再用自己的话说说画面怎样变化。",
+              "meaning": "春天播下一粒粟，也就是一粒谷物种子。",
               "keywords": [
-                "农事",
-                "四季",
-                "劳动"
+                "春种",
+                "一粒",
+                "粟"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“春种一粒粟，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘种’读 zhòng，是播种的动作；‘粟’是古代常见的谷物名称，不要把一粒理解成已经收好的米饭。",
+              "picture": "春天的田土里，一粒小小种子被放进泥土。",
+              "prompt": "这句写的是一年中的哪一个季节和哪一个动作？",
+              "childMeaning": "春天播下一粒粟，也就是一粒谷物种子。",
+              "keyWords": [
+                "春种",
+                "一粒",
+                "粟"
+              ],
+              "commonMisunderstanding": "‘种’读 zhòng，是播种的动作；‘粟’是古代常见的谷物名称，不要把一粒理解成已经收好的米饭。",
+              "imagePrompt": "春天的田土里，一粒小小种子被放进泥土。"
             },
             {
               "lineId": "child-min-nong-one-line-2",
-              "meaning": "先从原句找出农事和四季：这句写了“秋收万颗子。”，再用自己的话说说画面怎样变化。",
+              "meaning": "到了秋天，田里收获了许多粮食种子。",
               "keywords": [
-                "农事",
-                "四季",
-                "劳动"
+                "秋收",
+                "万颗",
+                "子"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“秋收万颗子。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘万颗’是写收获很多的概数和夸张，不要求真的数出一万颗；‘子’指谷粒、种子。",
+              "picture": "秋风吹过成熟的庄稼，篮子里装满一粒粒粮食。",
+              "prompt": "春天的一粒和秋天的许多粒形成了什么变化？",
+              "childMeaning": "到了秋天，田里收获了许多粮食种子。",
+              "keyWords": [
+                "秋收",
+                "万颗",
+                "子"
+              ],
+              "commonMisunderstanding": "‘万颗’是写收获很多的概数和夸张，不要求真的数出一万颗；‘子’指谷粒、种子。",
+              "imagePrompt": "秋风吹过成熟的庄稼，篮子里装满一粒粒粮食。"
             },
             {
               "lineId": "child-min-nong-one-line-3",
-              "meaning": "先从原句找出农事和四季：这句写了“四海无闲田，”，再用自己的话说说画面怎样变化。",
+              "meaning": "天下到处都有田地在耕种，没有一块田完全闲置。",
               "keywords": [
-                "农事",
-                "四季",
-                "劳动"
+                "四海",
+                "无闲田",
+                "土地"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“四海无闲田，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘四海’是古诗中表示天下、各处的宽泛说法，不是只沿海的四片土地；‘闲田’是没有耕种的田。",
+              "picture": "目光从一块田拉到很远的田野，处处都有人劳作。",
+              "prompt": "这一句把画面从一块田扩大到了哪里？",
+              "childMeaning": "天下到处都有田地在耕种，没有一块田完全闲置。",
+              "keyWords": [
+                "四海",
+                "无闲田",
+                "土地"
+              ],
+              "commonMisunderstanding": "‘四海’是古诗中表示天下、各处的宽泛说法，不是只沿海的四片土地；‘闲田’是没有耕种的田。",
+              "imagePrompt": "目光从一块田拉到很远的田野，处处都有人劳作。"
             },
             {
               "lineId": "child-min-nong-one-line-4",
-              "meaning": "先从原句找出农事和四季：这句写了“农夫犹饿死。”，再用自己的话说说画面怎样变化。",
+              "meaning": "即使有许多田地和粮食，农夫仍可能因为社会处境而挨饿甚至死亡。",
               "keywords": [
-                "农事",
-                "四季",
-                "劳动"
+                "农夫",
+                "犹",
+                "饿死"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“农夫犹饿死。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘犹’是仍然；这句写诗人看到的历史社会不公平，不是说今天每个农夫都必然如此，也不是把责任推给农夫。",
+              "picture": "收成堆在田野一边，劳作的人却没有足够的饭吃，反差令人难过。",
+              "prompt": "为什么‘有田’和‘有饭吃’在诗里没有自动连在一起？",
+              "childMeaning": "即使有许多田地和粮食，农夫仍可能因为社会处境而挨饿甚至死亡。",
+              "keyWords": [
+                "农夫",
+                "犹",
+                "饿死"
+              ],
+              "commonMisunderstanding": "‘犹’是仍然；这句写诗人看到的历史社会不公平，不是说今天每个农夫都必然如此，也不是把责任推给农夫。",
+              "imagePrompt": "收成堆在田野一边，劳作的人却没有足够的饭吃，反差令人难过。"
             }
           ],
-          "wholeMeaning": "这首诗围绕农事、四季、劳动展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过农事、四季、劳动写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "春天播下一粒粟，秋天收获许多粮食；可是四海之内没有荒着的田，农夫仍然可能饿死。诗用播种与收获的对比，提出对劳动和不公平的追问。",
+          "mainContent": "前两句写一年四季的农事循环和种少收多，后两句把镜头拉到广阔土地与农夫处境，形成丰收和饥饿的强烈反差。",
           "evidenceLines": [
             "child-min-nong-one-line-1",
             "child-min-nong-one-line-2",
             "child-min-nong-one-line-3",
             "child-min-nong-one-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过农事、四季、劳动表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "前两句写一年四季的农事循环和种少收多，后两句把镜头拉到广阔土地与农夫处境，形成丰收和饥饿的强烈反差。",
+          "emotion": "对农人辛苦的体谅、对不公平处境的忧思和珍惜粮食的责任感。",
+          "centralIdea": "粮食从土地和劳动中来，但有收成不等于每个劳动者都能平等分享；读诗既要珍惜食物，也要看见劳动者的处境。",
           "evidenceLines": [
             "child-min-nong-one-line-1",
             "child-min-nong-one-line-2",
             "child-min-nong-one-line-3",
             "child-min-nong-one-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -16383,53 +16450,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "农事",
-              "四季"
-            ],
-            [
-              "农事",
-              "四季"
-            ],
-            [
-              "农事",
-              "四季"
-            ],
-            [
-              "农事",
-              "四季"
-            ]
+            {
+              "lineId": "child-min-nong-one-line-1",
+              "keywords": [
+                "春种",
+                "一粒粟"
+              ],
+              "cue": "春天把种子放进土里"
+            },
+            {
+              "lineId": "child-min-nong-one-line-2",
+              "keywords": [
+                "秋收",
+                "万颗子"
+              ],
+              "cue": "秋天收获很多"
+            },
+            {
+              "lineId": "child-min-nong-one-line-3",
+              "keywords": [
+                "四海",
+                "无闲田"
+              ],
+              "cue": "放大到天下田野"
+            },
+            {
+              "lineId": "child-min-nong-one-line-4",
+              "keywords": [
+                "农夫",
+                "犹饿死"
+              ],
+              "cue": "看见收成背后的不公平"
+            }
           ],
           "firstCharacterHints": [
-            "春",
-            "秋",
-            "四",
-            "农"
+            {
+              "lineId": "child-min-nong-one-line-1",
+              "character": "春",
+              "cue": "春种一粒"
+            },
+            {
+              "lineId": "child-min-nong-one-line-2",
+              "character": "秋",
+              "cue": "秋收万颗"
+            },
+            {
+              "lineId": "child-min-nong-one-line-3",
+              "character": "四",
+              "cue": "四海无闲田"
+            },
+            {
+              "lineId": "child-min-nong-one-line-4",
+              "character": "农",
+              "cue": "农夫仍饥饿"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "春天播下一粒粟，秋天收获许多粮食；可是四海之内没有荒着的田，农夫仍然可能饿死。诗用播种与收获的对比，提出对劳动和不公平的追问。",
+        "lineMeanings": [
+          {
+            "lineId": "child-min-nong-one-line-1",
+            "meaning": "春天播下一粒粟，也就是一粒谷物种子。"
+          },
+          {
+            "lineId": "child-min-nong-one-line-2",
+            "meaning": "到了秋天，田里收获了许多粮食种子。"
+          },
+          {
+            "lineId": "child-min-nong-one-line-3",
+            "meaning": "天下到处都有田地在耕种，没有一块田完全闲置。"
+          },
+          {
+            "lineId": "child-min-nong-one-line-4",
+            "meaning": "即使有许多田地和粮食，农夫仍可能因为社会处境而挨饿甚至死亡。"
+          }
+        ],
+        "extension": {
+          "title": "从一粒种子想到一张关系图",
+          "text": "这首诗不是只让孩子记住‘要节约’，还把种子、田地、收成和农夫放进同一张关系图：食物来自劳动，而公平地看见劳动者同样重要。",
+          "prompt": "画一粒粮食从种下到端上饭桌的路线，并在路线旁写下一个你想感谢的人。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -18902,19 +19048,43 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-018",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第四批内容复核：骑牛、回荡的歌声、捕蝉与忽然安静的动作链已人工确认；‘樾’的字义与读音已校正，不虚构诗中地点。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-2.token-5",
+          "char": "樾",
+          "pinyin": "yuè",
+          "reason": "‘林樾’中的樾指树木枝叶形成的树荫，读 yuè，不作地点名处理。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "pastoral-path-and-soundscape",
+        "observation": "孩子骑牛沿乡间路径移动，歌声从牛背传入树林；发现蝉后，声音和动作一起收住。",
+        "mapAction": "用‘小路—牛背—树荫—蝉声’画一条近距离观察路径，不把牧童的活动地点推定为某个真实村庄。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "空间不只靠地图大小，也能靠声音远近和动作变化被感知。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗句只提供乡野树林的儿童观察场景，没有可核定的单一地点；‘林樾’是树荫空间，不等于地名或行政区域。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -18987,7 +19157,8 @@
             {
               "char": "樾",
               "pinyin": "yuè",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘林樾’中的樾指树木枝叶形成的树荫，读 yuè，不作地点名处理。"
             },
             {
               "char": "。",
@@ -19067,73 +19238,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-suo-jian-line-1",
-              "meaning": "先从原句找出儿童和动物：这句写了“牧童骑黄牛，”，再用自己的话说说画面怎样变化。",
+              "meaning": "牧童骑在黄牛背上，牛慢慢走，孩子自在地在户外游玩。",
               "keywords": [
-                "儿童",
-                "动物",
-                "动作"
+                "牧童",
+                "骑",
+                "黄牛"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“牧童骑黄牛，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘牧童’是放牧的孩子，不是专门表演骑牛的人；诗句先写一个正在移动的儿童画面。",
+              "picture": "孩子骑在黄牛背上，牛蹄沿着乡间小路慢慢走。",
+              "prompt": "谁在移动？他骑着什么？",
+              "childMeaning": "牧童骑在黄牛背上，牛慢慢走，孩子自在地在户外游玩。",
+              "keyWords": [
+                "牧童",
+                "骑",
+                "黄牛"
+              ],
+              "commonMisunderstanding": "‘牧童’是放牧的孩子，不是专门表演骑牛的人；诗句先写一个正在移动的儿童画面。",
+              "imagePrompt": "孩子骑在黄牛背上，牛蹄沿着乡间小路慢慢走。"
             },
             {
               "lineId": "child-suo-jian-line-2",
-              "meaning": "先从原句找出儿童和动物：这句写了“歌声振林樾。”，再用自己的话说说画面怎样变化。",
+              "meaning": "牧童的歌声很响，在树林的树荫间回荡开来。",
               "keywords": [
-                "儿童",
-                "动物",
-                "动作"
+                "歌声",
+                "振",
+                "林樾"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“歌声振林樾。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘振’是震动、回荡，不是把树林摇倒；‘樾’读 yuè，指树木枝叶形成的阴影。",
+              "picture": "歌声从牛背上飘进树荫，叶子和空气仿佛都被声音碰到。",
+              "prompt": "歌声让你感觉树林是近的还是远的？",
+              "childMeaning": "牧童的歌声很响，在树林的树荫间回荡开来。",
+              "keyWords": [
+                "歌声",
+                "振",
+                "林樾"
+              ],
+              "commonMisunderstanding": "‘振’是震动、回荡，不是把树林摇倒；‘樾’读 yuè，指树木枝叶形成的阴影。",
+              "imagePrompt": "歌声从牛背上飘进树荫，叶子和空气仿佛都被声音碰到。"
             },
             {
               "lineId": "child-suo-jian-line-3",
-              "meaning": "先从原句找出儿童和动物：这句写了“意欲捕鸣蝉，”，再用自己的话说说画面怎样变化。",
+              "meaning": "牧童忽然想到要捕捉正在鸣叫的蝉。",
               "keywords": [
-                "儿童",
-                "动物",
-                "动作"
+                "意欲",
+                "捕",
+                "鸣蝉"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“意欲捕鸣蝉，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘意欲’是想要；‘捕’不是已经抓住，诗写的是一个刚出现的计划。",
+              "picture": "孩子抬头寻找树上的蝉，眼睛和耳朵都专注起来。",
+              "prompt": "他为什么要改变自己的动作？",
+              "childMeaning": "牧童忽然想到要捕捉正在鸣叫的蝉。",
+              "keyWords": [
+                "意欲",
+                "捕",
+                "鸣蝉"
+              ],
+              "commonMisunderstanding": "‘意欲’是想要；‘捕’不是已经抓住，诗写的是一个刚出现的计划。",
+              "imagePrompt": "孩子抬头寻找树上的蝉，眼睛和耳朵都专注起来。"
             },
             {
               "lineId": "child-suo-jian-line-4",
-              "meaning": "先从原句找出儿童和动物：这句写了“忽然闭口立。”，再用自己的话说说画面怎样变化。",
+              "meaning": "为了不惊动蝉，牧童突然闭上嘴，站在那里一动不动。",
               "keywords": [
-                "儿童",
-                "动物",
-                "动作"
+                "忽然",
+                "闭口",
+                "立"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“忽然闭口立。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘立’是站立不动；不是说牧童从牛背上摔下来，也没有说明他一定已经抓到蝉。",
+              "picture": "刚才还唱歌的孩子忽然安静，连牛背旁的空气也像停住了。",
+              "prompt": "哪两个动作表示他变得安静？",
+              "childMeaning": "为了不惊动蝉，牧童突然闭上嘴，站在那里一动不动。",
+              "keyWords": [
+                "忽然",
+                "闭口",
+                "立"
+              ],
+              "commonMisunderstanding": "‘立’是站立不动；不是说牧童从牛背上摔下来，也没有说明他一定已经抓到蝉。",
+              "imagePrompt": "刚才还唱歌的孩子忽然安静，连牛背旁的空气也像停住了。"
             }
           ],
-          "wholeMeaning": "这首诗围绕儿童、动物、动作展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过儿童、动物、动作写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "牧童骑着黄牛，歌声在树林里回荡；他本想捕捉鸣叫的蝉，却忽然闭上嘴、站住不动，生怕声音惊走了蝉。诗抓住了儿童动作突然变化的瞬间。",
+          "mainContent": "前两句写骑牛和放声歌唱的动态，后两句用‘欲捕’到‘闭口立’的转折，把一个活泼孩子的注意力和安静动作写出来。",
           "evidenceLines": [
             "child-suo-jian-line-1",
             "child-suo-jian-line-2",
             "child-suo-jian-line-3",
             "child-suo-jian-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过儿童、动物、动作表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "前两句写骑牛和放声歌唱的动态，后两句用‘欲捕’到‘闭口立’的转折，把一个活泼孩子的注意力和安静动作写出来。",
+          "emotion": "活泼、专注和对儿童临场趣味的喜爱。",
+          "centralIdea": "观察需要在热闹和安静之间切换；孩子为了接近一只蝉，能立刻收住声音和动作。",
           "evidenceLines": [
             "child-suo-jian-line-1",
             "child-suo-jian-line-2",
             "child-suo-jian-line-3",
             "child-suo-jian-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -19141,53 +19354,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "儿童",
-              "动物"
-            ],
-            [
-              "儿童",
-              "动物"
-            ],
-            [
-              "儿童",
-              "动物"
-            ],
-            [
-              "儿童",
-              "动物"
-            ]
+            {
+              "lineId": "child-suo-jian-line-1",
+              "keywords": [
+                "牧童",
+                "黄牛"
+              ],
+              "cue": "先看骑牛的孩子"
+            },
+            {
+              "lineId": "child-suo-jian-line-2",
+              "keywords": [
+                "歌声",
+                "林樾"
+              ],
+              "cue": "歌声震动树荫"
+            },
+            {
+              "lineId": "child-suo-jian-line-3",
+              "keywords": [
+                "意欲",
+                "鸣蝉"
+              ],
+              "cue": "忽然想捉蝉"
+            },
+            {
+              "lineId": "child-suo-jian-line-4",
+              "keywords": [
+                "闭口",
+                "立"
+              ],
+              "cue": "为了蝉安静下来"
+            }
           ],
           "firstCharacterHints": [
-            "牧",
-            "歌",
-            "意",
-            "忽"
+            {
+              "lineId": "child-suo-jian-line-1",
+              "character": "牧",
+              "cue": "牧童骑牛"
+            },
+            {
+              "lineId": "child-suo-jian-line-2",
+              "character": "歌",
+              "cue": "歌声入林"
+            },
+            {
+              "lineId": "child-suo-jian-line-3",
+              "character": "意",
+              "cue": "想捕鸣蝉"
+            },
+            {
+              "lineId": "child-suo-jian-line-4",
+              "character": "忽",
+              "cue": "忽然闭口"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "牧童骑着黄牛，歌声在树林里回荡；他本想捕捉鸣叫的蝉，却忽然闭上嘴、站住不动，生怕声音惊走了蝉。诗抓住了儿童动作突然变化的瞬间。",
+        "lineMeanings": [
+          {
+            "lineId": "child-suo-jian-line-1",
+            "meaning": "牧童骑在黄牛背上，牛慢慢走，孩子自在地在户外游玩。"
+          },
+          {
+            "lineId": "child-suo-jian-line-2",
+            "meaning": "牧童的歌声很响，在树林的树荫间回荡开来。"
+          },
+          {
+            "lineId": "child-suo-jian-line-3",
+            "meaning": "牧童忽然想到要捕捉正在鸣叫的蝉。"
+          },
+          {
+            "lineId": "child-suo-jian-line-4",
+            "meaning": "为了不惊动蝉，牧童突然闭上嘴，站在那里一动不动。"
+          }
+        ],
+        "extension": {
+          "title": "声音的开关",
+          "text": "诗人只写‘歌声’和‘闭口’两个状态，就让我们看见孩子的注意力如何转向：先和世界一起唱，再为了靠近一只蝉而安静。",
+          "prompt": "你有没有为了听清或看清一样东西，主动把自己的声音和动作调小？当时发生了什么？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -19779,19 +20071,49 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-020",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第四批内容复核：小艇采莲、浮萍分开留下水痕的因果关系与‘解/藏’语境读音已人工确认；不把池塘场景误标为具体名胜。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-3.token-2",
+          "char": "解",
+          "pinyin": "jiě",
+          "reason": "‘不解’意为不懂得、不会，读 jiě，不是押解义的 jiè。"
+        },
+        {
+          "path": "line-3.token-3",
+          "char": "藏",
+          "pinyin": "cáng",
+          "reason": "‘藏踪迹’意为隐藏痕迹，读 cáng，不是宝藏义的 zàng。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "pond-route-and-floating-plant-trace",
+        "observation": "小艇从白莲间返回，船身把浮萍向两边分开，水面留下能回望的路径痕迹。",
+        "mapAction": "把池塘画成‘采莲处—返程—浮萍水痕’的小尺度空间，不给它附会成某一处历史名胜。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "看似悄悄的行动也会在环境中留下线索。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗中只有池塘、白莲、浮萍等水面意象，没有可核定的单一地理地点；‘一道开’是船行留下的局部水痕，不是道路或边界。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -19884,12 +20206,14 @@
             {
               "char": "解",
               "pinyin": "jiě",
-              "tone": 5
+              "tone": 3,
+              "pronunciationReview": "‘不解’意为不懂得、不会，读 jiě，不是押解义的 jiè。"
             },
             {
               "char": "藏",
               "pinyin": "cáng",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘藏踪迹’意为隐藏痕迹，读 cáng，不是宝藏义的 zàng。"
             },
             {
               "char": "踪",
@@ -19944,73 +20268,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-chi-shang-line-1",
-              "meaning": "先从原句找出儿童和荷花：这句写了“小娃撑小艇，”，再用自己的话说说画面怎样变化。",
+              "meaning": "小孩子撑着一只小船，在水面上慢慢前进。",
               "keywords": [
-                "儿童",
-                "荷花",
-                "水面"
+                "小娃",
+                "撑",
+                "小艇"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“小娃撑小艇，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘撑’是用篙或桨推动小船，不是把船举起来；‘小’重复出现，写孩子和船都小巧。",
+              "picture": "一个孩子站在小艇上，船篙轻轻点开水面。",
+              "prompt": "这句里有哪两个‘小’？它们让画面变得怎样？",
+              "childMeaning": "小孩子撑着一只小船，在水面上慢慢前进。",
+              "keyWords": [
+                "小娃",
+                "撑",
+                "小艇"
+              ],
+              "commonMisunderstanding": "‘撑’是用篙或桨推动小船，不是把船举起来；‘小’重复出现，写孩子和船都小巧。",
+              "imagePrompt": "一个孩子站在小艇上，船篙轻轻点开水面。"
             },
             {
               "lineId": "child-chi-shang-line-2",
-              "meaning": "先从原句找出儿童和荷花：这句写了“偷采白莲回。”，再用自己的话说说画面怎样变化。",
+              "meaning": "孩子偷偷采了一些白莲，然后划船回来。",
               "keywords": [
-                "儿童",
-                "荷花",
-                "水面"
+                "偷采",
+                "白莲",
+                "回"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“偷采白莲回。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘偷’写孩子自以为不被发现的调皮，不一定是严重的偷窃；‘回’写采完后的返程。",
+              "picture": "白莲叶间伸出小手，船舱里藏着几朵刚采下的莲花。",
+              "prompt": "孩子从哪里采了什么，又要回到哪里？",
+              "childMeaning": "孩子偷偷采了一些白莲，然后划船回来。",
+              "keyWords": [
+                "偷采",
+                "白莲",
+                "回"
+              ],
+              "commonMisunderstanding": "‘偷’写孩子自以为不被发现的调皮，不一定是严重的偷窃；‘回’写采完后的返程。",
+              "imagePrompt": "白莲叶间伸出小手，船舱里藏着几朵刚采下的莲花。"
             },
             {
               "lineId": "child-chi-shang-line-3",
-              "meaning": "先从原句找出儿童和荷花：这句写了“不解藏踪迹，”，再用自己的话说说画面怎样变化。",
+              "meaning": "孩子不知道怎样把自己划船留下的踪迹藏起来。",
               "keywords": [
-                "儿童",
-                "荷花",
-                "水面"
+                "不解",
+                "藏",
+                "踪迹"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“不解藏踪迹，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘解’读 jiě，是懂得、知道；‘藏’读 cáng，是隐藏，不是宝藏的 zàng。",
+              "picture": "孩子回头看水面，却没想到船后留下了一条痕迹。",
+              "prompt": "什么东西让他没法真正藏起来？",
+              "childMeaning": "孩子不知道怎样把自己划船留下的踪迹藏起来。",
+              "keyWords": [
+                "不解",
+                "藏",
+                "踪迹"
+              ],
+              "commonMisunderstanding": "‘解’读 jiě，是懂得、知道；‘藏’读 cáng，是隐藏，不是宝藏的 zàng。",
+              "imagePrompt": "孩子回头看水面，却没想到船后留下了一条痕迹。"
             },
             {
               "lineId": "child-chi-shang-line-4",
-              "meaning": "先从原句找出儿童和荷花：这句写了“浮萍一道开。”，再用自己的话说说画面怎样变化。",
+              "meaning": "浮萍被小船划开，水面显出一条直直的通道，正好暴露了孩子来过的路线。",
               "keywords": [
-                "儿童",
-                "荷花",
-                "水面"
+                "浮萍",
+                "一道",
+                "开"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“浮萍一道开。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘一道’指一条水路痕迹，不是铺在水面上的道路；浮萍会随水面分开又慢慢合拢。",
+              "picture": "绿色浮萍向两边分开，留下船经过的细长水痕。",
+              "prompt": "如果没有最后这一句，别人怎样发现孩子来过？",
+              "childMeaning": "浮萍被小船划开，水面显出一条直直的通道，正好暴露了孩子来过的路线。",
+              "keyWords": [
+                "浮萍",
+                "一道",
+                "开"
+              ],
+              "commonMisunderstanding": "‘一道’指一条水路痕迹，不是铺在水面上的道路；浮萍会随水面分开又慢慢合拢。",
+              "imagePrompt": "绿色浮萍向两边分开，留下船经过的细长水痕。"
             }
           ],
-          "wholeMeaning": "这首诗围绕儿童、荷花、水面展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过儿童、荷花、水面写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "小孩子撑着小船偷偷采了白莲，划回来时没有想到要藏住行踪；浮萍被船划开，水面留下了一条清楚的痕迹。诗写出儿童的天真和可爱的小淘气。",
+          "mainContent": "诗先写孩子撑船采莲，再用‘不解’和浮萍被分开的水路揭示他留下的踪迹，画面从行动推进到结果。",
           "evidenceLines": [
             "child-chi-shang-line-1",
             "child-chi-shang-line-2",
             "child-chi-shang-line-3",
             "child-chi-shang-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过儿童、荷花、水面表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写孩子撑船采莲，再用‘不解’和浮萍被分开的水路揭示他留下的踪迹，画面从行动推进到结果。",
+          "emotion": "天真、调皮而温柔的儿童趣味。",
+          "centralIdea": "孩子以为自己做得很隐蔽，水面却留下诚实的痕迹；诗不急着责备，而是从细节里写出天真。",
           "evidenceLines": [
             "child-chi-shang-line-1",
             "child-chi-shang-line-2",
             "child-chi-shang-line-3",
             "child-chi-shang-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -20018,53 +20384,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "儿童",
-              "荷花"
-            ],
-            [
-              "儿童",
-              "荷花"
-            ],
-            [
-              "儿童",
-              "荷花"
-            ],
-            [
-              "儿童",
-              "荷花"
-            ]
+            {
+              "lineId": "child-chi-shang-line-1",
+              "keywords": [
+                "小娃",
+                "小艇"
+              ],
+              "cue": "先看孩子和小船"
+            },
+            {
+              "lineId": "child-chi-shang-line-2",
+              "keywords": [
+                "偷采",
+                "白莲"
+              ],
+              "cue": "悄悄采莲回来"
+            },
+            {
+              "lineId": "child-chi-shang-line-3",
+              "keywords": [
+                "不解",
+                "踪迹"
+              ],
+              "cue": "还不会藏痕迹"
+            },
+            {
+              "lineId": "child-chi-shang-line-4",
+              "keywords": [
+                "浮萍",
+                "一道开"
+              ],
+              "cue": "水面留下船路"
+            }
           ],
           "firstCharacterHints": [
-            "小",
-            "偷",
-            "不",
-            "浮"
+            {
+              "lineId": "child-chi-shang-line-1",
+              "character": "小",
+              "cue": "小娃撑小艇"
+            },
+            {
+              "lineId": "child-chi-shang-line-2",
+              "character": "偷",
+              "cue": "偷偷采白莲"
+            },
+            {
+              "lineId": "child-chi-shang-line-3",
+              "character": "不",
+              "cue": "不解藏踪迹"
+            },
+            {
+              "lineId": "child-chi-shang-line-4",
+              "character": "浮",
+              "cue": "浮萍被划开"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "小孩子撑着小船偷偷采了白莲，划回来时没有想到要藏住行踪；浮萍被船划开，水面留下了一条清楚的痕迹。诗写出儿童的天真和可爱的小淘气。",
+        "lineMeanings": [
+          {
+            "lineId": "child-chi-shang-line-1",
+            "meaning": "小孩子撑着一只小船，在水面上慢慢前进。"
+          },
+          {
+            "lineId": "child-chi-shang-line-2",
+            "meaning": "孩子偷偷采了一些白莲，然后划船回来。"
+          },
+          {
+            "lineId": "child-chi-shang-line-3",
+            "meaning": "孩子不知道怎样把自己划船留下的踪迹藏起来。"
+          },
+          {
+            "lineId": "child-chi-shang-line-4",
+            "meaning": "浮萍被小船划开，水面显出一条直直的通道，正好暴露了孩子来过的路线。"
+          }
+        ],
+        "extension": {
+          "title": "水面会记得谁来过",
+          "text": "孩子以为自己安安静静地回来，浮萍却像一张会留下痕迹的水面地图，把小船的路线画了出来。观察结果，常常比一句‘我没被发现’更诚实。",
+          "prompt": "找一处会留下痕迹的地方（沙地、雪地或水面），想想它会记录什么动作。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -20120,19 +20565,78 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-021",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第四批内容复核：桃花潭送别水面、岸上踏歌与水深—友情比较已人工确认；‘将/行/踏’读音已按语境校正，不由诗句推断完整历史航线。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
-      "placeRelations": null,
-      "canonicalPlaceIds": [],
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-5",
+          "char": "将",
+          "pinyin": "jiāng",
+          "reason": "‘将欲行’表示将要、正准备出发，读 jiāng，不是将领义的 jiàng。"
+        },
+        {
+          "path": "line-1.token-7",
+          "char": "行",
+          "pinyin": "xíng",
+          "reason": "‘欲行’表示出发、离开，读 xíng，不是银行义的 háng。"
+        },
+        {
+          "path": "line-2.token-5",
+          "char": "踏",
+          "pinyin": "tà",
+          "reason": "‘踏歌’是踏着节拍唱歌，读 tà，不是脚步之外的其他语境。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "shore-song-and-departing-boat",
+        "observation": "李白的船将离开桃花潭，岸上汪伦踏歌相送；水面把出发者和送行者暂时分隔，又让歌声跨过来。",
+        "mapAction": "以桃花潭作现代区域参照，标出‘岸边—船—潭水’三者关系；不画成已核实的唐代精确航迹或泊位。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "地图能说明送别发生在哪里、彼此隔着什么；友情的深度仍要由诗句来感受。"
+      },
+      "placeRelations": [
+        {
+          "targetId": "taohuatan",
+          "type": "departure_place",
+          "confidence": "medium",
+          "assertion": "诗中写李白将欲行、岸上送歌，桃花潭是送别水面参照；不据此断言具体泊位或完整旅行路线。",
+          "childMeaning": "船将离岸，朋友的歌声从岸边追来。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        },
+        {
+          "targetId": "taohuatan",
+          "type": "river_imagery",
+          "confidence": "high",
+          "assertion": "桃花潭直接出现在第三句，是水深与友情比较的诗中景物。",
+          "childMeaning": "自然水深成为表达友情深度的参照。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        }
+      ],
+      "canonicalPlaceIds": [
+        "taohuatan"
+      ],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "桃花潭是诗中送别与水深比较的现代参考地点；诗句不提供具体泊位或完整行程，地图只呈现水面—岸边—离舟的关系。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -20170,7 +20674,8 @@
             {
               "char": "将",
               "pinyin": "jiāng",
-              "tone": 5
+              "tone": 1,
+              "pronunciationReview": "‘将欲行’表示将要、正准备出发，读 jiāng，不是将领义的 jiàng。"
             },
             {
               "char": "欲",
@@ -20180,7 +20685,8 @@
             {
               "char": "行",
               "pinyin": "xíng",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘欲行’表示出发、离开，读 xíng，不是银行义的 háng。"
             },
             {
               "char": "，",
@@ -20215,7 +20721,8 @@
             {
               "char": "踏",
               "pinyin": "tà",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘踏歌’是踏着节拍唱歌，读 tà，不是脚步之外的其他语境。"
             },
             {
               "char": "歌",
@@ -20325,73 +20832,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-zeng-wang-lun-line-1",
-              "meaning": "先从原句找出友情和送别：这句写了“李白乘舟将欲行，”，再用自己的话说说画面怎样变化。",
+              "meaning": "李白坐在船上，正准备离开桃花潭。",
               "keywords": [
-                "友情",
-                "送别",
-                "水深"
+                "乘舟",
+                "将欲",
+                "行"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“李白乘舟将欲行，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘将欲’是将要、正准备；‘行’读 xíng，指出发，不是行走在陆地上。",
+              "picture": "船头离开岸边，诗人已经把行李和目光放向远方。",
+              "prompt": "船是在出发前还是已经走远？",
+              "childMeaning": "李白坐在船上，正准备离开桃花潭。",
+              "keyWords": [
+                "乘舟",
+                "将欲",
+                "行"
+              ],
+              "commonMisunderstanding": "‘将欲’是将要、正准备；‘行’读 xíng，指出发，不是行走在陆地上。",
+              "imagePrompt": "船头离开岸边，诗人已经把行李和目光放向远方。"
             },
             {
               "lineId": "child-zeng-wang-lun-line-2",
-              "meaning": "先从原句找出友情和送别：这句写了“忽闻岸上踏歌声。”，再用自己的话说说画面怎样变化。",
+              "meaning": "船将要离开时，诗人忽然听见岸上有人踏着节拍唱歌送行。",
               "keywords": [
-                "友情",
-                "送别",
-                "水深"
+                "忽闻",
+                "岸上",
+                "踏歌声"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“忽闻岸上踏歌声。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘闻’是听见；‘踏歌’是边踏步或打着节拍边唱歌，不是踩着歌声。",
+              "picture": "岸边的人一边唱，一边踏着节拍，歌声追上了即将离岸的船。",
+              "prompt": "什么声音让诗人突然回头？",
+              "childMeaning": "船将要离开时，诗人忽然听见岸上有人踏着节拍唱歌送行。",
+              "keyWords": [
+                "忽闻",
+                "岸上",
+                "踏歌声"
+              ],
+              "commonMisunderstanding": "‘闻’是听见；‘踏歌’是边踏步或打着节拍边唱歌，不是踩着歌声。",
+              "imagePrompt": "岸边的人一边唱，一边踏着节拍，歌声追上了即将离岸的船。"
             },
             {
               "lineId": "child-zeng-wang-lun-line-3",
-              "meaning": "先从原句找出友情和送别：这句写了“桃花潭水深千尺，”，再用自己的话说说画面怎样变化。",
+              "meaning": "桃花潭的水很深，诗人用‘千尺’夸张地写出水深和水面的分量。",
               "keywords": [
-                "友情",
-                "送别",
-                "水深"
+                "桃花潭",
+                "深",
+                "千尺"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“桃花潭水深千尺，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘千尺’是夸张的诗意尺度，不是要求测量潭水；桃花潭是送别场景的水面参照。",
+              "picture": "碧水在船边向深处延伸，岸边桃花倒映在潭面。",
+              "prompt": "诗人先拿什么景物来和友情比较？",
+              "childMeaning": "桃花潭的水很深，诗人用‘千尺’夸张地写出水深和水面的分量。",
+              "keyWords": [
+                "桃花潭",
+                "深",
+                "千尺"
+              ],
+              "commonMisunderstanding": "‘千尺’是夸张的诗意尺度，不是要求测量潭水；桃花潭是送别场景的水面参照。",
+              "imagePrompt": "碧水在船边向深处延伸，岸边桃花倒映在潭面。"
             },
             {
               "lineId": "child-zeng-wang-lun-line-4",
-              "meaning": "先从原句找出友情和送别：这句写了“不及汪伦送我情。”，再用自己的话说说画面怎样变化。",
+              "meaning": "即使桃花潭水有千尺深，也比不上汪伦送别我的情谊深。",
               "keywords": [
-                "友情",
-                "送别",
-                "水深"
+                "不及",
+                "汪伦",
+                "送我情"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“不及汪伦送我情。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘不及’是比不上；这里比较的是情谊，不是说汪伦真的把潭水变深了。",
+              "picture": "船已经在水上，岸上的歌声和送别的人却把情感留在身边。",
+              "prompt": "哪一种‘深’才是诗人真正想说的？",
+              "childMeaning": "即使桃花潭水有千尺深，也比不上汪伦送别我的情谊深。",
+              "keyWords": [
+                "不及",
+                "汪伦",
+                "送我情"
+              ],
+              "commonMisunderstanding": "‘不及’是比不上；这里比较的是情谊，不是说汪伦真的把潭水变深了。",
+              "imagePrompt": "船已经在水上，岸上的歌声和送别的人却把情感留在身边。"
             }
           ],
-          "wholeMeaning": "这首诗围绕友情、送别、水深展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过友情、送别、水深写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "李白乘船正要离开桃花潭，忽然听见岸上有人踏着节拍唱歌来送行。桃花潭水再深，也比不上汪伦送别的情谊。诗把真实水深和友情的深度放在一起比较。",
+          "mainContent": "诗先写船将出发和岸上歌声，再写桃花潭的水深，最后用‘不及’把自然尺度转成友情尺度。",
           "evidenceLines": [
             "child-zeng-wang-lun-line-1",
             "child-zeng-wang-lun-line-2",
             "child-zeng-wang-lun-line-3",
             "child-zeng-wang-lun-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过友情、送别、水深表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写船将出发和岸上歌声，再写桃花潭的水深，最后用‘不及’把自然尺度转成友情尺度。",
+          "emotion": "惊喜、感动和依依不舍的朋友情谊。",
+          "centralIdea": "深厚的友情不能用尺子量；水深千尺只是夸张的参照，真正要表达的是朋友用行动来送别的情义。",
           "evidenceLines": [
             "child-zeng-wang-lun-line-1",
             "child-zeng-wang-lun-line-2",
             "child-zeng-wang-lun-line-3",
             "child-zeng-wang-lun-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -20399,53 +20948,133 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "友情",
-              "送别"
-            ],
-            [
-              "友情",
-              "送别"
-            ],
-            [
-              "友情",
-              "送别"
-            ],
-            [
-              "友情",
-              "送别"
-            ]
+            {
+              "lineId": "child-zeng-wang-lun-line-1",
+              "keywords": [
+                "李白",
+                "乘舟",
+                "欲行"
+              ],
+              "cue": "船将要出发"
+            },
+            {
+              "lineId": "child-zeng-wang-lun-line-2",
+              "keywords": [
+                "忽闻",
+                "踏歌声"
+              ],
+              "cue": "岸上歌声追来"
+            },
+            {
+              "lineId": "child-zeng-wang-lun-line-3",
+              "keywords": [
+                "桃花潭",
+                "千尺"
+              ],
+              "cue": "先比水的深"
+            },
+            {
+              "lineId": "child-zeng-wang-lun-line-4",
+              "keywords": [
+                "不及",
+                "送我情"
+              ],
+              "cue": "友情比水更深"
+            }
           ],
           "firstCharacterHints": [
-            "李",
-            "忽",
-            "桃",
-            "不"
+            {
+              "lineId": "child-zeng-wang-lun-line-1",
+              "character": "李",
+              "cue": "李白乘舟"
+            },
+            {
+              "lineId": "child-zeng-wang-lun-line-2",
+              "character": "忽",
+              "cue": "忽闻歌声"
+            },
+            {
+              "lineId": "child-zeng-wang-lun-line-3",
+              "character": "桃",
+              "cue": "桃花潭水"
+            },
+            {
+              "lineId": "child-zeng-wang-lun-line-4",
+              "character": "不",
+              "cue": "不及送我情"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "李白乘船正要离开桃花潭，忽然听见岸上有人踏着节拍唱歌来送行。桃花潭水再深，也比不上汪伦送别的情谊。诗把真实水深和友情的深度放在一起比较。",
+        "lineMeanings": [
+          {
+            "lineId": "child-zeng-wang-lun-line-1",
+            "meaning": "李白坐在船上，正准备离开桃花潭。"
+          },
+          {
+            "lineId": "child-zeng-wang-lun-line-2",
+            "meaning": "船将要离开时，诗人忽然听见岸上有人踏着节拍唱歌送行。"
+          },
+          {
+            "lineId": "child-zeng-wang-lun-line-3",
+            "meaning": "桃花潭的水很深，诗人用‘千尺’夸张地写出水深和水面的分量。"
+          },
+          {
+            "lineId": "child-zeng-wang-lun-line-4",
+            "meaning": "即使桃花潭水有千尺深，也比不上汪伦送别我的情谊深。"
+          }
+        ],
+        "extension": {
+          "title": "用一个尺度写友情",
+          "text": "诗先让我们看见船、岸、歌声和潭水，再把‘千尺’转成无法用尺子测量的情谊。朋友的送别不只是说再见，也可以是一种让人记很久的行动。",
+          "prompt": "如果要写朋友对你的帮助，你会借用什么景物来比较它的‘深’或‘重’？请说明理由。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -21070,19 +21699,43 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-023",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第四批内容复核：山寺高楼、星辰夸张与放轻声音的想象关系已人工确认；‘危’和‘语’的语境读音已校正，不把诗意高度当作实测建筑数据。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-3.token-5",
+          "char": "语",
+          "pinyin": "yǔ",
+          "reason": "‘不敢高声语’中的语是说话，读 yǔ；‘高声’修饰声音大小。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "mountain-temple-height-and-sky",
+        "observation": "站在山寺高楼，视线从楼脚抬向星辰；登高带来空间距离被压缩的感觉，随后夜色让人主动安静。",
+        "mapAction": "用‘山寺—高楼—星空’表示垂直层次，不为‘危楼’赋予未经诗句证明的高度，也不指定具体寺院。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "诗歌可以用夸张把登高时的惊奇放大，但想象不等于测量结果。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗题只说明夜宿山寺，未提供可核定的具体寺名或坐标；‘危楼’的高与‘天上人’的想象不等同真实地理或建筑测量。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -21190,7 +21843,8 @@
             {
               "char": "语",
               "pinyin": "yǔ",
-              "tone": 5
+              "tone": 3,
+              "pronunciationReview": "‘不敢高声语’中的语是说话，读 yǔ；‘高声’修饰声音大小。"
             },
             {
               "char": "，",
@@ -21235,73 +21889,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-ye-su-shan-si-line-1",
-              "meaning": "先从原句找出高楼和夜晚：这句写了“危楼高百尺，”，再用自己的话说说画面怎样变化。",
+              "meaning": "山寺里的高楼高得惊人，仿佛危险又高耸地立在夜色中。",
               "keywords": [
-                "高楼",
-                "夜晚",
-                "想象"
+                "危楼",
+                "高",
+                "百尺"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“危楼高百尺，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘危’在这里主要是高，不是说楼马上要倒；‘百尺’是夸张地写高，不是精确测量。",
+              "picture": "山寺楼阁贴着夜空，楼下的山路已经远远看不清。",
+              "prompt": "哪个词让你感觉楼特别高？",
+              "childMeaning": "山寺里的高楼高得惊人，仿佛危险又高耸地立在夜色中。",
+              "keyWords": [
+                "危楼",
+                "高",
+                "百尺"
+              ],
+              "commonMisunderstanding": "‘危’在这里主要是高，不是说楼马上要倒；‘百尺’是夸张地写高，不是精确测量。",
+              "imagePrompt": "山寺楼阁贴着夜空，楼下的山路已经远远看不清。"
             },
             {
               "lineId": "child-ye-su-shan-si-line-2",
-              "meaning": "先从原句找出高楼和夜晚：这句写了“手可摘星辰。”，再用自己的话说说画面怎样变化。",
+              "meaning": "站在这么高的楼上，伸手仿佛就能摘到天上的星星。",
               "keywords": [
-                "高楼",
-                "夜晚",
-                "想象"
+                "手可",
+                "摘",
+                "星辰"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“手可摘星辰。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘摘星辰’是想象和夸张，星星不会真的被手摘下来；‘可’写感觉上仿佛够得着。",
+              "picture": "孩子伸出手，星光就在指尖上方闪烁。",
+              "prompt": "诗人把楼和星星之间的距离写得怎样？",
+              "childMeaning": "站在这么高的楼上，伸手仿佛就能摘到天上的星星。",
+              "keyWords": [
+                "手可",
+                "摘",
+                "星辰"
+              ],
+              "commonMisunderstanding": "‘摘星辰’是想象和夸张，星星不会真的被手摘下来；‘可’写感觉上仿佛够得着。",
+              "imagePrompt": "孩子伸出手，星光就在指尖上方闪烁。"
             },
             {
               "lineId": "child-ye-su-shan-si-line-3",
-              "meaning": "先从原句找出高楼和夜晚：这句写了“不敢高声语，”，再用自己的话说说画面怎样变化。",
+              "meaning": "诗人不敢放声说话，怕自己的声音破坏夜里的安静。",
               "keywords": [
-                "高楼",
-                "夜晚",
-                "想象"
+                "不敢",
+                "高声",
+                "语"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“不敢高声语，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘语’读 yǔ，是说话；‘高声’是大声，不是楼的高度。",
+              "picture": "刚才还在心里惊叹的人把声音压低，只听见夜风。",
+              "prompt": "什么动作说明他开始安静下来？",
+              "childMeaning": "诗人不敢放声说话，怕自己的声音破坏夜里的安静。",
+              "keyWords": [
+                "不敢",
+                "高声",
+                "语"
+              ],
+              "commonMisunderstanding": "‘语’读 yǔ，是说话；‘高声’是大声，不是楼的高度。",
+              "imagePrompt": "刚才还在心里惊叹的人把声音压低，只听见夜风。"
             },
             {
               "lineId": "child-ye-su-shan-si-line-4",
-              "meaning": "先从原句找出高楼和夜晚：这句写了“恐惊天上人。”，再用自己的话说说画面怎样变化。",
+              "meaning": "他担心大声说话会惊动天上的人，这是诗人的想象，不是现实中的访客。",
               "keywords": [
-                "高楼",
-                "夜晚",
+                "恐惊",
+                "天上人",
                 "想象"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“恐惊天上人。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘天上人’是诗歌想象中的神仙或天界人物，不是说楼上真的住着人；‘惊’是惊动。",
+              "picture": "星空像有住客，楼上的人小心翼翼不愿惊扰它们。",
+              "prompt": "为什么高处的夜晚会让人想象天空里也有邻居？",
+              "childMeaning": "他担心大声说话会惊动天上的人，这是诗人的想象，不是现实中的访客。",
+              "keyWords": [
+                "恐惊",
+                "天上人",
+                "想象"
+              ],
+              "commonMisunderstanding": "‘天上人’是诗歌想象中的神仙或天界人物，不是说楼上真的住着人；‘惊’是惊动。",
+              "imagePrompt": "星空像有住客，楼上的人小心翼翼不愿惊扰它们。"
             }
           ],
-          "wholeMeaning": "这首诗围绕高楼、夜晚、想象展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过高楼、夜晚、想象写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "山寺里的楼高得像能伸手摘到星星，诗人因此不敢大声说话，担心惊动天上的人。诗用夸张的想象写夜宿高楼时的高远和安静。",
+          "mainContent": "前两句把楼的高度推向星辰，后两句由‘不敢高声’转入想象中的天上人，形成从登高到静听夜空的变化。",
           "evidenceLines": [
             "child-ye-su-shan-si-line-1",
             "child-ye-su-shan-si-line-2",
             "child-ye-su-shan-si-line-3",
             "child-ye-su-shan-si-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过高楼、夜晚、想象表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "前两句把楼的高度推向星辰，后两句由‘不敢高声’转入想象中的天上人，形成从登高到静听夜空的变化。",
+          "emotion": "惊奇、敬畏和夜晚登高时的安静想象。",
+          "centralIdea": "夸张不是测量楼高，而是把孩子站在高处时的惊奇放大；越觉得接近星空，越愿意放轻声音。",
           "evidenceLines": [
             "child-ye-su-shan-si-line-1",
             "child-ye-su-shan-si-line-2",
             "child-ye-su-shan-si-line-3",
             "child-ye-su-shan-si-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -21309,53 +22005,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "高楼",
-              "夜晚"
-            ],
-            [
-              "高楼",
-              "夜晚"
-            ],
-            [
-              "高楼",
-              "夜晚"
-            ],
-            [
-              "高楼",
-              "夜晚"
-            ]
+            {
+              "lineId": "child-ye-su-shan-si-line-1",
+              "keywords": [
+                "危楼",
+                "高百尺"
+              ],
+              "cue": "先写楼高"
+            },
+            {
+              "lineId": "child-ye-su-shan-si-line-2",
+              "keywords": [
+                "手可",
+                "星辰"
+              ],
+              "cue": "高到仿佛能摘星"
+            },
+            {
+              "lineId": "child-ye-su-shan-si-line-3",
+              "keywords": [
+                "不敢",
+                "高声语"
+              ],
+              "cue": "惊奇后放低声音"
+            },
+            {
+              "lineId": "child-ye-su-shan-si-line-4",
+              "keywords": [
+                "恐惊",
+                "天上人"
+              ],
+              "cue": "把夜空想成有邻居"
+            }
           ],
           "firstCharacterHints": [
-            "危",
-            "手",
-            "不",
-            "恐"
+            {
+              "lineId": "child-ye-su-shan-si-line-1",
+              "character": "危",
+              "cue": "高楼百尺"
+            },
+            {
+              "lineId": "child-ye-su-shan-si-line-2",
+              "character": "手",
+              "cue": "伸手摘星"
+            },
+            {
+              "lineId": "child-ye-su-shan-si-line-3",
+              "character": "不",
+              "cue": "不敢高声"
+            },
+            {
+              "lineId": "child-ye-su-shan-si-line-4",
+              "character": "恐",
+              "cue": "恐惊天上人"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "山寺里的楼高得像能伸手摘到星星，诗人因此不敢大声说话，担心惊动天上的人。诗用夸张的想象写夜宿高楼时的高远和安静。",
+        "lineMeanings": [
+          {
+            "lineId": "child-ye-su-shan-si-line-1",
+            "meaning": "山寺里的高楼高得惊人，仿佛危险又高耸地立在夜色中。"
+          },
+          {
+            "lineId": "child-ye-su-shan-si-line-2",
+            "meaning": "站在这么高的楼上，伸手仿佛就能摘到天上的星星。"
+          },
+          {
+            "lineId": "child-ye-su-shan-si-line-3",
+            "meaning": "诗人不敢放声说话，怕自己的声音破坏夜里的安静。"
+          },
+          {
+            "lineId": "child-ye-su-shan-si-line-4",
+            "meaning": "他担心大声说话会惊动天上的人，这是诗人的想象，不是现实中的访客。"
+          }
+        ],
+        "extension": {
+          "title": "把惊奇调成小声",
+          "text": "这首诗很像一次夜晚登高：先因为离星星很近而惊讶，接着又因为想象天空有客人而不敢大声说话。孩子可以自由判断这是幽默、敬畏还是童话般的想象。",
+          "prompt": "当你看到特别壮观的夜景时，你会想大声说出来，还是想安静看一会儿？为什么？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }

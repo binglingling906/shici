@@ -347,6 +347,30 @@
         }
       ]
     },
+    "child-min-nong-one": {
+      "lines": [
+        {
+          "lineId": "child-min-nong-one-line-1",
+          "src": "./assets/audio/readings/child-min-nong-one/line-1.mp3",
+          "durationMs": 1260
+        },
+        {
+          "lineId": "child-min-nong-one-line-2",
+          "src": "./assets/audio/readings/child-min-nong-one/line-2.mp3",
+          "durationMs": 1303
+        },
+        {
+          "lineId": "child-min-nong-one-line-3",
+          "src": "./assets/audio/readings/child-min-nong-one/line-3.mp3",
+          "durationMs": 1497
+        },
+        {
+          "lineId": "child-min-nong-one-line-4",
+          "src": "./assets/audio/readings/child-min-nong-one/line-4.mp3",
+          "durationMs": 1282
+        }
+      ]
+    },
     "child-min-nong-two": {
       "lines": [
         {
@@ -467,6 +491,30 @@
         }
       ]
     },
+    "child-suo-jian": {
+      "lines": [
+        {
+          "lineId": "child-suo-jian-line-1",
+          "src": "./assets/audio/readings/child-suo-jian/line-1.mp3",
+          "durationMs": 1441
+        },
+        {
+          "lineId": "child-suo-jian-line-2",
+          "src": "./assets/audio/readings/child-suo-jian/line-2.mp3",
+          "durationMs": 1239
+        },
+        {
+          "lineId": "child-suo-jian-line-3",
+          "src": "./assets/audio/readings/child-suo-jian/line-3.mp3",
+          "durationMs": 1242
+        },
+        {
+          "lineId": "child-suo-jian-line-4",
+          "src": "./assets/audio/readings/child-suo-jian/line-4.mp3",
+          "durationMs": 1237
+        }
+      ]
+    },
     "child-xiao-chi": {
       "lines": [
         {
@@ -491,6 +539,54 @@
         }
       ]
     },
+    "child-chi-shang": {
+      "lines": [
+        {
+          "lineId": "child-chi-shang-line-1",
+          "src": "./assets/audio/readings/child-chi-shang/line-1.mp3",
+          "durationMs": 1556
+        },
+        {
+          "lineId": "child-chi-shang-line-2",
+          "src": "./assets/audio/readings/child-chi-shang/line-2.mp3",
+          "durationMs": 1428
+        },
+        {
+          "lineId": "child-chi-shang-line-3",
+          "src": "./assets/audio/readings/child-chi-shang/line-3.mp3",
+          "durationMs": 1239
+        },
+        {
+          "lineId": "child-chi-shang-line-4",
+          "src": "./assets/audio/readings/child-chi-shang/line-4.mp3",
+          "durationMs": 1352
+        }
+      ]
+    },
+    "child-zeng-wang-lun": {
+      "lines": [
+        {
+          "lineId": "child-zeng-wang-lun-line-1",
+          "src": "./assets/audio/readings/child-zeng-wang-lun/line-1.mp3",
+          "durationMs": 1918
+        },
+        {
+          "lineId": "child-zeng-wang-lun-line-2",
+          "src": "./assets/audio/readings/child-zeng-wang-lun/line-2.mp3",
+          "durationMs": 1831
+        },
+        {
+          "lineId": "child-zeng-wang-lun-line-3",
+          "src": "./assets/audio/readings/child-zeng-wang-lun/line-3.mp3",
+          "durationMs": 2079
+        },
+        {
+          "lineId": "child-zeng-wang-lun-line-4",
+          "src": "./assets/audio/readings/child-zeng-wang-lun/line-4.mp3",
+          "durationMs": 1842
+        }
+      ]
+    },
     "child-zao-fa-bai-di-cheng": {
       "lines": [
         {
@@ -512,6 +608,30 @@
           "lineId": "child-zao-fa-bai-di-cheng-line-4",
           "src": "./assets/audio/readings/child-zao-fa-bai-di-cheng/line-4.mp3",
           "durationMs": 1884
+        }
+      ]
+    },
+    "child-ye-su-shan-si": {
+      "lines": [
+        {
+          "lineId": "child-ye-su-shan-si-line-1",
+          "src": "./assets/audio/readings/child-ye-su-shan-si/line-1.mp3",
+          "durationMs": 1313
+        },
+        {
+          "lineId": "child-ye-su-shan-si-line-2",
+          "src": "./assets/audio/readings/child-ye-su-shan-si/line-2.mp3",
+          "durationMs": 1566
+        },
+        {
+          "lineId": "child-ye-su-shan-si-line-3",
+          "src": "./assets/audio/readings/child-ye-su-shan-si/line-3.mp3",
+          "durationMs": 1146
+        },
+        {
+          "lineId": "child-ye-su-shan-si-line-4",
+          "src": "./assets/audio/readings/child-ye-su-shan-si/line-4.mp3",
+          "durationMs": 1463
         }
       ]
     },
