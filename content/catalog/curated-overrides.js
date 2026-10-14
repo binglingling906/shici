@@ -1252,6 +1252,231 @@ export const curatedOverrides = {
     }),
   },
 
+  "child-wang-hu-lou-zui-shu": {
+    overrideReason: "第十二批内容复核：黑云白雨、卷地风和望湖楼雨后水天的天气变化链已人工确认；遮、跳、卷、散按语境校正。",
+    ...catalogReview({
+      reviewNotes: "望湖楼与西湖是诗题和诗境直接提供的观察参照；诗写一场阵雨的短时变化，不据此推断苏轼完整游踪。",
+      pinyinOverrides: [
+        { path: "line-1.token-6", char: "遮", pinyin: "zhē", reason: "‘未遮山’意为乌云尚未完全遮住山，遮读 zhē。" },
+        { path: "line-2.token-3", char: "跳", pinyin: "tiào", reason: "‘跳珠’写雨点弹跳，跳读 tiào。" },
+        { path: "line-3.token-1", char: "卷", pinyin: "juǎn", reason: "‘卷地风’写风势卷过地面和湖面，卷读 juǎn。" },
+        { path: "line-3.token-7", char: "散", pinyin: "sàn", reason: "‘吹散’意为云雨散开，散读 sàn。" },
+      ],
+      spatialLearning: {
+        coreRelation: "west-lake-storm-and-clearing",
+        observation: "西湖望湖楼下先见乌云压山和白雨入船，风来后云雨迅速散开，最后湖面重新与天空相接。",
+        mapAction: "以西湖和望湖楼作观察参照，画‘山—湖—船—风—开阔水天’的天气变化，不扩写成苏轼完整游览路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "把云、雨、风和水面的连续变化连起来，才能读懂阵雨的节奏。",
+      },
+      placeRelations: [
+        { targetId: "west-lake", type: "lake_observation", confidence: "high", assertion: "题目直接写望湖楼，诗中水面和天气观察以西湖为参照。", childMeaning: "诗人在西湖望湖楼附近看一场来得急、去得快的阵雨。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["west-lake"],
+    }),
+  },
+
+  "child-sai-xia-lulun": {
+    overrideReason: "第十二批内容复核：暗月高雁、单于夜遁、轻骑追逐和大雪弓刀的边塞行动关系已人工确认；单、遁、将、骑按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗用月黑、雁群、大雪和弓刀构成泛化边塞夜战画面，没有可核定的单一关隘；不把它当作具体军情或个人路线。",
+      pinyinOverrides: [
+        { path: "line-2.token-1", char: "单", pinyin: "chán", reason: "‘单于’是古代北方首领称号，单读 chán。" },
+        { path: "line-2.token-4", char: "遁", pinyin: "dùn", reason: "‘夜遁逃’意为趁夜逃走，遁读 dùn。" },
+        { path: "line-3.token-2", char: "将", pinyin: "jiāng", reason: "‘欲将轻骑’意为想要带领骑兵，将读 jiāng。" },
+        { path: "line-3.token-4", char: "骑", pinyin: "jì", reason: "‘轻骑’指轻装骑兵，骑读 jì，不是骑马动作的 qí。" },
+      ],
+      spatialLearning: {
+        coreRelation: "frontier-night-pursuit-and-snow",
+        observation: "夜色中的雁群和逃敌先在远处出现，轻骑把视线带向追击方向，最后大雪落到弓刀的近景。",
+        mapAction: "用‘暗月—雁群—逃遁方向—骑兵—雪中弓刀’表现边塞行动关系，不指定未经诗句确认的关隘坐标。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "困难环境不能代替判断，清楚目标并彼此配合，才能继续行动。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-zao-chun-shui-bu": {
+    overrideReason: "第十二批内容复核：长安街雨、远近草色、早春时节和烟柳皇都的比较关系已人工确认；酥、处、胜按语境校正。",
+    ...catalogReview({
+      reviewNotes: "天街、皇都构成长安城市参照，诗重点在早春雨色和远近观察；不把诗句解释成韩愈的完整城市路线。",
+      pinyinOverrides: [
+        { path: "line-1.token-7", char: "酥", pinyin: "sū", reason: "‘润如酥’用酥油比喻细雨滋润，酥读 sū。" },
+        { path: "line-3.token-7", char: "处", pinyin: "chù", reason: "‘春好处’指美好的时节或景处，处读 chù。" },
+        { path: "line-4.token-2", char: "胜", pinyin: "shèng", reason: "‘绝胜’意为远远胜过，胜读 shèng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "chang-an-street-and-early-spring-distance",
+        observation: "长安街上的细雨润地，远处草色若有若无，皇都烟柳成为晚春参照；诗用远近和时序观察早春。",
+        mapAction: "以长安城作城市参照，画‘天街—远处草色—皇都烟柳’的视线与季节关系，不虚构诗人行走路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "刚发生的细微变化值得慢慢观察，早春的美不一定最浓烈才最好。",
+      },
+      placeRelations: [
+        { targetId: "chang-an", type: "city_observation", confidence: "high", assertion: "‘天街’和‘皇都’直接构成长安城市参照，诗写城中早春观察。", childMeaning: "长安街上的细雨和草色让人发现春天刚刚开始。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["chang-an"],
+    }),
+  },
+
+  "child-shi-hui-yin": {
+    overrideReason: "第十二批内容复核：千锤万凿、烈火、粉骨碎身与清白品格的物我关系已人工确认；凿、焚、浑按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗以石灰开采和烧炼过程承载品格象征，没有可核定的单一地点；深山是泛化材料来源，不虚构矿山坐标。",
+      pinyinOverrides: [
+        { path: "line-1.token-4", char: "凿", pinyin: "záo", reason: "‘千锤万凿’中的凿指开凿，读 záo。" },
+        { path: "line-2.token-3", char: "焚", pinyin: "fén", reason: "‘焚烧’意为用火烧炼，焚读 fén。" },
+        { path: "line-3.token-5", char: "浑", pinyin: "hún", reason: "‘浑不怕’意为完全不怕，浑读 hún。" },
+      ],
+      spatialLearning: {
+        coreRelation: "mountain-stone-fire-and-clear-integrity",
+        observation: "石灰从深山岩石出发，经锤凿、烈火和粉碎，最后把白色清白留在人间；空间过程对应品格选择。",
+        mapAction: "画‘深山—开凿—火炉—人间’的材料路径，再把它转译成‘考验—选择—清白’的学习关系，不标具体矿山。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "清白不是没有经历困难，而是在困难和代价面前仍守住原则。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-tian-jing-sha-qiu-si": {
+    overrideReason: "第十二批内容复核：枯藤老树、桥水人家、古道瘦马与天涯断肠人的秋日旅途画面已人工确认；藤、瘦、肠、涯按语境校正。",
+    ...catalogReview({
+      reviewNotes: "散曲提供的是泛化秋日旅途空间，没有可核定的单一地理地点；景物串联表达漂泊心情，不生成虚构路线。",
+      pinyinOverrides: [
+        { path: "line-1.token-2", char: "藤", pinyin: "téng", reason: "‘枯藤’指枯萎的藤蔓，藤读 téng。" },
+        { path: "line-2.token-5", char: "瘦", pinyin: "shòu", reason: "‘瘦马’写旅途劳顿，瘦读 shòu。" },
+        { path: "line-3.token-7", char: "肠", pinyin: "cháng", reason: "‘断肠人’是极度悲伤的夸张表达，肠读 cháng。" },
+        { path: "line-3.token-11", char: "涯", pinyin: "yá", reason: "‘天涯’指遥远的地方，涯读 yá。" },
+      ],
+      spatialLearning: {
+        coreRelation: "autumn-road-and-distant-home",
+        observation: "景物从枯藤老树和小桥流水的近远并置，经过古道西风瘦马，最后在夕阳和天涯旅人处收束为漂泊心情。",
+        mapAction: "画‘树藤—桥水人家—古道—瘦马—夕阳—天涯’的旅途镜头，不把散曲虚构成作者实际路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3"],
+        childTakeaway: "具体景物可以共同表达没有直接说出的心情，观察顺序会改变阅读感受。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-xiao-er-chui-diao": {
+    overrideReason: "第十一批内容复核：儿童垂钓、远处招手与怕惊鱼的安静动作链已人工确认；纶、应按语境校正，不附会具体地点。",
+    ...catalogReview({
+      reviewNotes: "《小儿垂钓》只提供泛化的水边儿童观察场景，没有可核定的单一地理地点；保留儿童行为和水边尺度，不生成虚构路线。",
+      pinyinOverrides: [
+        { path: "line-1.token-7", char: "纶", pinyin: "lún", reason: "‘垂纶’指垂下钓线，纶读 lún。" },
+        { path: "line-4.token-5", char: "不", pinyin: "bù", reason: "‘不应人’中不后接一声 yìng，按词语本调读 bù。" },
+        { path: "line-4.token-6", char: "应", pinyin: "yìng", reason: "‘不应人’意为不回应路人，应读 yìng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "waterside-child-and-quiet-attention",
+        observation: "视线从孩子的蓬头、钓线和莓苔近景，移到远处路人，再回到孩子怕惊鱼而保持安静的动作。",
+        mapAction: "画‘水边—孩子—钓线—远处路人’的观察关系，不标注诗人或孩子的实际地点。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "地图可以帮助我们安排观察位置，诗句让我们理解一个孩子为什么选择安静。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-xiang-cun-si-yue": {
+    overrideReason: "第十一批内容复核：山原河川、子规烟雨与养蚕插田的四月农事顺序已人工确认；了按完成义校正。",
+    ...catalogReview({
+      reviewNotes: "《乡村四月》是泛化的江南乡村农事与春雨画面，没有可核定的单一地点；不把候选地点扩写成作者行程。",
+      pinyinOverrides: [
+        { path: "line-4.token-2", char: "了", pinyin: "liǎo", reason: "‘才了蚕桑’意为刚完成养蚕采桑，了读 liǎo。" },
+      ],
+      spatialLearning: {
+        coreRelation: "spring-rural-landscape-and-farm-work",
+        observation: "远景从绿山原、白河川和烟雨展开，再收进乡村道路与连续农事，景物和人的动作共同构成四月。",
+        mapAction: "画‘山原—河川—村庄—桑蚕—水田’的乡村观察层级，不虚构诗人的精确写作地点。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "春雨让乡村变得清润，季节也安排着人们一项接一项的劳动。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-zeng-liu-jing-wen": {
+    overrideReason: "第十一批内容复核：荷尽菊残、傲霜枝与橙黄橘绿的晚秋观察和勉励寓意已人工确认；擎、傲按语境校正。",
+    ...catalogReview({
+      reviewNotes: "《赠刘景文》以泛化的晚秋池塘和果树为背景，没有可核定的单一地理地点；不将季节景物误写成作者路线。",
+      pinyinOverrides: [
+        { path: "line-1.token-5", char: "擎", pinyin: "qíng", reason: "‘擎雨盖’意为托起雨水，擎读 qíng。" },
+        { path: "line-2.token-5", char: "傲", pinyin: "ào", reason: "‘傲霜枝’写菊枝不怕霜，傲读 ào。" },
+      ],
+      spatialLearning: {
+        coreRelation: "late-autumn-pond-and-fruit-color",
+        observation: "视线从荷尽的池面移到霜中的菊枝，再转向橙黄橘绿的果树，写出晚秋由衰到盛的另一种层次。",
+        mapAction: "画‘池塘—菊枝—果树’的晚秋观察关系，不标定诗人的具体观景位置。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "同一个季节也有不同阶段，花叶退去之后，枝条和果实仍然可以成为好景。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-qing-ping-le-cun-ju": {
+    overrideReason: "第十一批内容复核：溪边茅檐、吴音翁媪、三子分工与小儿剥莲蓬的家庭空间已人工确认；亡、剥及标点后的逐字拼音按语境校正。",
+    ...catalogReview({
+      reviewNotes: "《清平乐·村居》保留泛化村居家庭空间，不把吴地口音直接等同于作者或词作的精确居所；现代地图不生成虚构坐标。",
+      pinyinOverrides: [
+        { path: "line-1.token-6", char: "溪", pinyin: "xī", reason: "‘溪上’中的溪读 xī；修正标点后的逐字对齐。" },
+        { path: "line-1.token-7", char: "上", pinyin: "shàng", reason: "‘溪上’表示溪水上方或溪边，读 shàng；修正标点后的逐字对齐。" },
+        { path: "line-1.token-8", char: "青", pinyin: "qīng", reason: "‘青青草’中青读 qīng；修正标点后的逐字对齐。" },
+        { path: "line-1.token-10", char: "草", pinyin: "cǎo", reason: "‘青草’中的草读 cǎo；修正标点后的逐字对齐。" },
+        { path: "line-2.token-9", char: "白", pinyin: "bái", reason: "‘白发’中的白读 bái；修正标点后的逐字对齐。" },
+        { path: "line-2.token-10", char: "发", pinyin: "fà", reason: "‘白发’指头发，发读 fà；修正标点后的逐字对齐。" },
+        { path: "line-2.token-11", char: "谁", pinyin: "shuí", reason: "‘谁家’中的谁读 shuí；修正标点后的逐字对齐。" },
+        { path: "line-2.token-12", char: "家", pinyin: "jiā", reason: "‘谁家’中的家读 jiā；修正标点后的逐字对齐。" },
+        { path: "line-2.token-13", char: "翁", pinyin: "wēng", reason: "‘翁媪’中的翁读 wēng；修正标点后的逐字对齐。" },
+        { path: "line-2.token-14", char: "媪", pinyin: "ǎo", reason: "‘翁媪’中的媪读 ǎo；修正标点后的逐字对齐。" },
+        { path: "line-3.token-8", char: "中", pinyin: "zhōng", reason: "‘中儿’指排行居中的儿子，中读 zhōng；修正标点后的逐字对齐。" },
+        { path: "line-3.token-9", char: "儿", pinyin: "ér", reason: "‘中儿’中的儿读 ér；修正标点后的逐字对齐。" },
+        { path: "line-3.token-10", char: "正", pinyin: "zhèng", reason: "‘正织’表示正在编织，正读 zhèng；修正标点后的逐字对齐。" },
+        { path: "line-3.token-11", char: "织", pinyin: "zhī", reason: "‘织鸡笼’中的织读 zhī；修正标点后的逐字对齐。" },
+        { path: "line-3.token-12", char: "鸡", pinyin: "jī", reason: "‘鸡笼’中的鸡读 jī；修正标点后的逐字对齐。" },
+        { path: "line-3.token-13", char: "笼", pinyin: "lóng", reason: "‘鸡笼’中的笼读 lóng，指笼子；修正标点后的逐字对齐。" },
+        { path: "line-4.token-5", char: "亡", pinyin: "wú", reason: "‘亡赖’通‘无赖’，表示顽皮自在，亡读 wú。" },
+        { path: "line-4.token-8", char: "溪", pinyin: "xī", reason: "‘溪头’中的溪读 xī；修正标点后的逐字对齐。" },
+        { path: "line-4.token-9", char: "头", pinyin: "tóu", reason: "‘溪头’中的头读 tóu；修正标点后的逐字对齐。" },
+        { path: "line-4.token-10", char: "卧", pinyin: "wò", reason: "‘卧剥’中的卧读 wò；修正标点后的逐字对齐。" },
+        { path: "line-4.token-11", char: "剥", pinyin: "bāo", reason: "‘剥莲蓬’意为剥开，剥读 bāo；修正标点后的逐字对齐。" },
+        { path: "line-4.token-12", char: "莲", pinyin: "lián", reason: "‘莲蓬’中的莲读 lián；修正标点后的逐字对齐。" },
+        { path: "line-4.token-13", char: "蓬", pinyin: "péng", reason: "‘莲蓬’中的蓬读 péng；修正标点后的逐字对齐。" },
+      ],
+      spatialLearning: {
+        coreRelation: "streamside-family-yard",
+        observation: "空间从溪边茅檐和青草展开，经过老人说笑、溪东锄豆和编笼，最后落到溪头小儿剥莲蓬的近景。",
+        mapAction: "画‘茅檐—溪水—溪东田地—溪头莲蓬’的家庭生活关系，不把吴音扩写成精确历史居所。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "一家人的位置和动作连在一起，普通的村居也能成为有层次的生活地图。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-wan-chun": {
+    overrideReason: "第十一批内容复核：暮春将尽、百花争芳与杨花榆荚飞絮的拟人链已人工确认；斗、解按语境校正。",
+    ...catalogReview({
+      reviewNotes: "《晚春》写泛化暮春植物景象，没有可核定的单一地点；不把花木的拟人想象当作地理事实。",
+      pinyinOverrides: [
+        { path: "line-2.token-5", char: "斗", pinyin: "dòu", reason: "‘斗芳菲’意为争相展示芳香和颜色，斗读 dòu。" },
+        { path: "line-4.token-2", char: "解", pinyin: "jiě", reason: "‘惟解’意为只会、只懂得，解读 jiě。" },
+      ],
+      spatialLearning: {
+        coreRelation: "late-spring-flower-and-seed-flight",
+        observation: "视线先看百花的颜色和芳香，再转向不起眼的杨花、榆荚，最后追踪它们漫天飞散的动作。",
+        mapAction: "画‘花枝—杨花—榆荚—空中飞絮’的暮春观察层级，不创建虚构的诗人行走路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "普通植物也会用自己的方式参与季节，观察不只要看最显眼的花。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
   "child-lu-chai": {
     text: "空山不见人，但闻人语响。\n返景入深林，复照青苔上。",
     overrideReason: "修正候选快照把‘但闻人语响’误录为‘但余钟磬音’的问题；保留原始快照，由人工 override 覆盖运行时。",

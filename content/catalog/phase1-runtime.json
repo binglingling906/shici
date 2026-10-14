@@ -38562,19 +38562,61 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-052",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十二批内容复核：暗月高雁、单于夜遁、轻骑追逐和大雪弓刀的边塞行动关系已人工确认；单、遁、将、骑按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-2.token-1",
+          "char": "单",
+          "pinyin": "chán",
+          "reason": "‘单于’是古代北方首领称号，单读 chán。"
+        },
+        {
+          "path": "line-2.token-4",
+          "char": "遁",
+          "pinyin": "dùn",
+          "reason": "‘夜遁逃’意为趁夜逃走，遁读 dùn。"
+        },
+        {
+          "path": "line-3.token-2",
+          "char": "将",
+          "pinyin": "jiāng",
+          "reason": "‘欲将轻骑’意为想要带领骑兵，将读 jiāng。"
+        },
+        {
+          "path": "line-3.token-4",
+          "char": "骑",
+          "pinyin": "jì",
+          "reason": "‘轻骑’指轻装骑兵，骑读 jì，不是骑马动作的 qí。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "frontier-night-pursuit-and-snow",
+        "observation": "夜色中的雁群和逃敌先在远处出现，轻骑把视线带向追击方向，最后大雪落到弓刀的近景。",
+        "mapAction": "用‘暗月—雁群—逃遁方向—骑兵—雪中弓刀’表现边塞行动关系，不指定未经诗句确认的关隘坐标。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "困难环境不能代替判断，清楚目标并彼此配合，才能继续行动。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗用月黑、雁群、大雪和弓刀构成泛化边塞夜战画面，没有可核定的单一关隘；不把它当作具体军情或个人路线。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -38627,7 +38669,8 @@
             {
               "char": "单",
               "pinyin": "chán",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘单于’是古代北方首领称号，单读 chán。"
             },
             {
               "char": "于",
@@ -38642,7 +38685,8 @@
             {
               "char": "遁",
               "pinyin": "dùn",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘夜遁逃’意为趁夜逃走，遁读 dùn。"
             },
             {
               "char": "逃",
@@ -38667,7 +38711,8 @@
             {
               "char": "将",
               "pinyin": "jiāng",
-              "tone": 5
+              "tone": 1,
+              "pronunciationReview": "‘欲将轻骑’意为想要带领骑兵，将读 jiāng。"
             },
             {
               "char": "轻",
@@ -38676,8 +38721,9 @@
             },
             {
               "char": "骑",
-              "pinyin": "qí",
-              "tone": 5
+              "pinyin": "jì",
+              "tone": 4,
+              "pronunciationReview": "‘轻骑’指轻装骑兵，骑读 jì，不是骑马动作的 qí。"
             },
             {
               "char": "逐",
@@ -38727,73 +38773,111 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-sai-xia-lulun-line-1",
-              "meaning": "先从原句找出大雪和夜战：这句写了“月黑雁飞高，”，再用自己的话说说画面怎样变化。",
+              "meaning": "月色昏暗，雁群在高空飞过，夜晚的边地显得深沉而警觉。",
               "keywords": [
-                "大雪",
-                "夜战",
-                "勇气"
+                "月黑",
+                "雁飞高"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“月黑雁飞高，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘月黑’写月光昏暗或无月的夜色，不是月亮变成黑色；高飞的雁群也可能提示有人经过。",
+              "picture": "暗色天空里雁阵迅速升高，地面和边塞都藏在夜色中。",
+              "prompt": "诗人先让我们看见什么天空线索？",
+              "childMeaning": "月色昏暗，雁群在高空飞过，夜晚的边地显得深沉而警觉。",
+              "keyWords": [
+                "月黑",
+                "雁飞高"
+              ],
+              "commonMisunderstanding": "‘月黑’写月光昏暗或无月的夜色，不是月亮变成黑色；高飞的雁群也可能提示有人经过。",
+              "imagePrompt": "暗色天空里雁阵迅速升高，地面和边塞都藏在夜色中。"
             },
             {
               "lineId": "child-sai-xia-lulun-line-2",
-              "meaning": "先从原句找出大雪和夜战：这句写了“单于夜遁逃。”，再用自己的话说说画面怎样变化。",
+              "meaning": "单于趁着夜色逃走了，边地的追击已经开始。",
               "keywords": [
-                "大雪",
-                "夜战",
-                "勇气"
+                "单于",
+                "夜遁逃"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“单于夜遁逃。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘单于’是古代北方少数民族首领的称号，读 chán yú；‘遁’读 dùn，意为逃走。",
+              "picture": "远处的身影趁黑夜撤退，守军从动静中判断方向。",
+              "prompt": "谁在夜色里逃走？",
+              "childMeaning": "单于趁着夜色逃走了，边地的追击已经开始。",
+              "keyWords": [
+                "单于",
+                "夜遁逃"
+              ],
+              "commonMisunderstanding": "‘单于’是古代北方少数民族首领的称号，读 chán yú；‘遁’读 dùn，意为逃走。",
+              "imagePrompt": "远处的身影趁黑夜撤退，守军从动静中判断方向。"
             },
             {
               "lineId": "child-sai-xia-lulun-line-3",
-              "meaning": "先从原句找出大雪和夜战：这句写了“欲将轻骑逐，”，再用自己的话说说画面怎样变化。",
+              "meaning": "将领想带领轻装骑兵追赶逃走的敌人。",
               "keywords": [
-                "大雪",
-                "夜战",
-                "勇气"
+                "欲将",
+                "轻骑",
+                "逐"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“欲将轻骑逐，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘将’读 jiāng，意为带领；‘骑’在‘轻骑’中读 jì，指骑兵，不是骑马动作的 qí；‘逐’是追赶。",
+              "picture": "骑兵整装待发，轻快的马队沿着雪地追向夜色深处。",
+              "prompt": "这一句中‘轻骑’指人、马，还是骑马这个动作？",
+              "childMeaning": "将领想带领轻装骑兵追赶逃走的敌人。",
+              "keyWords": [
+                "欲将",
+                "轻骑",
+                "逐"
+              ],
+              "commonMisunderstanding": "‘将’读 jiāng，意为带领；‘骑’在‘轻骑’中读 jì，指骑兵，不是骑马动作的 qí；‘逐’是追赶。",
+              "imagePrompt": "骑兵整装待发，轻快的马队沿着雪地追向夜色深处。"
             },
             {
               "lineId": "child-sai-xia-lulun-line-4",
-              "meaning": "先从原句找出大雪和夜战：这句写了“大雪满弓刀。”，再用自己的话说说画面怎样变化。",
+              "meaning": "大雪落满弓和刀，严寒中的兵器也成为追击画面的一部分。",
               "keywords": [
                 "大雪",
-                "夜战",
-                "勇气"
+                "满",
+                "弓刀"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“大雪满弓刀。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘满’写雪覆盖弓刀，不是说弓和刀装满了雪水；诗用冷景增强行动的艰苦和气势。",
+              "picture": "雪花落在弓背和刀鞘上，战士仍握住兵器，准备在风雪中行动。",
+              "prompt": "大雪怎样让追击显得更艰苦、更有力量？",
+              "childMeaning": "大雪落满弓和刀，严寒中的兵器也成为追击画面的一部分。",
+              "keyWords": [
+                "大雪",
+                "满",
+                "弓刀"
+              ],
+              "commonMisunderstanding": "‘满’写雪覆盖弓刀，不是说弓和刀装满了雪水；诗用冷景增强行动的艰苦和气势。",
+              "imagePrompt": "雪花落在弓背和刀鞘上，战士仍握住兵器，准备在风雪中行动。"
             }
           ],
-          "wholeMeaning": "这首诗围绕大雪、夜战、勇气展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过大雪、夜战、勇气写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "月色昏暗，雁群飞得很高，单于趁夜逃走。将领想带领轻骑追赶，可大雪已经铺满弓和刀。诗写边地夜战后的追击气势，也让雪、月和兵器共同构成紧张而冷峻的画面。",
+          "mainContent": "诗先写暗月高雁和敌军夜遁，再转入轻骑追逐与大雪满弓刀，视线由远处敌情收紧到战士手中的兵器。",
           "evidenceLines": [
             "child-sai-xia-lulun-line-1",
             "child-sai-xia-lulun-line-2",
             "child-sai-xia-lulun-line-3",
             "child-sai-xia-lulun-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过大雪、夜战、勇气表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写暗月高雁和敌军夜遁，再转入轻骑追逐与大雪满弓刀，视线由远处敌情收紧到战士手中的兵器。",
+          "emotion": "紧张、果断和边地守卫者勇于追击的力量。",
+          "centralIdea": "勇气不只是冲上去，也包含在艰苦环境中继续判断和行动；大雪、夜色和远逃的敌人共同衬出守边士兵的坚毅。",
           "evidenceLines": [
             "child-sai-xia-lulun-line-1",
             "child-sai-xia-lulun-line-2",
             "child-sai-xia-lulun-line-3",
             "child-sai-xia-lulun-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -38801,53 +38885,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "大雪",
-              "夜战"
-            ],
-            [
-              "大雪",
-              "夜战"
-            ],
-            [
-              "大雪",
-              "夜战"
-            ],
-            [
-              "大雪",
-              "夜战"
-            ]
+            {
+              "lineId": "child-sai-xia-lulun-line-1",
+              "keywords": [
+                "月黑",
+                "雁飞高"
+              ],
+              "cue": "暗月高雁报夜情"
+            },
+            {
+              "lineId": "child-sai-xia-lulun-line-2",
+              "keywords": [
+                "单于",
+                "夜遁逃"
+              ],
+              "cue": "敌首趁夜逃走"
+            },
+            {
+              "lineId": "child-sai-xia-lulun-line-3",
+              "keywords": [
+                "欲将",
+                "轻骑逐"
+              ],
+              "cue": "轻骑准备追赶"
+            },
+            {
+              "lineId": "child-sai-xia-lulun-line-4",
+              "keywords": [
+                "大雪",
+                "弓刀"
+              ],
+              "cue": "风雪覆盖兵器"
+            }
           ],
           "firstCharacterHints": [
-            "月",
-            "单",
-            "欲",
-            "大"
+            {
+              "lineId": "child-sai-xia-lulun-line-1",
+              "character": "月",
+              "cue": "月黑雁飞"
+            },
+            {
+              "lineId": "child-sai-xia-lulun-line-2",
+              "character": "单",
+              "cue": "单于夜遁"
+            },
+            {
+              "lineId": "child-sai-xia-lulun-line-3",
+              "character": "欲",
+              "cue": "欲将轻骑"
+            },
+            {
+              "lineId": "child-sai-xia-lulun-line-4",
+              "character": "大",
+              "cue": "大雪满弓"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "月色昏暗，雁群飞得很高，单于趁夜逃走。将领想带领轻骑追赶，可大雪已经铺满弓和刀。诗写边地夜战后的追击气势，也让雪、月和兵器共同构成紧张而冷峻的画面。",
+        "lineMeanings": [
+          {
+            "lineId": "child-sai-xia-lulun-line-1",
+            "meaning": "月色昏暗，雁群在高空飞过，夜晚的边地显得深沉而警觉。"
+          },
+          {
+            "lineId": "child-sai-xia-lulun-line-2",
+            "meaning": "单于趁着夜色逃走了，边地的追击已经开始。"
+          },
+          {
+            "lineId": "child-sai-xia-lulun-line-3",
+            "meaning": "将领想带领轻装骑兵追赶逃走的敌人。"
+          },
+          {
+            "lineId": "child-sai-xia-lulun-line-4",
+            "meaning": "大雪落满弓和刀，严寒中的兵器也成为追击画面的一部分。"
+          }
+        ],
+        "extension": {
+          "title": "在困难里保持行动力",
+          "text": "诗里的追击并不发生在晴朗平坦的白天，而是在暗月、逃敌和大雪中。孩子可以把它理解成：困难会让行动更费力，但清楚目标、彼此配合，仍然可以继续向前。",
+          "prompt": "当一件事比预想更困难时，你会怎样把目标拆成一个下一步可做的小动作？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -48701,19 +48864,74 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-069",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十二批内容复核：黑云白雨、卷地风和望湖楼雨后水天的天气变化链已人工确认；遮、跳、卷、散按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
-      "placeRelations": null,
-      "canonicalPlaceIds": [],
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-6",
+          "char": "遮",
+          "pinyin": "zhē",
+          "reason": "‘未遮山’意为乌云尚未完全遮住山，遮读 zhē。"
+        },
+        {
+          "path": "line-2.token-3",
+          "char": "跳",
+          "pinyin": "tiào",
+          "reason": "‘跳珠’写雨点弹跳，跳读 tiào。"
+        },
+        {
+          "path": "line-3.token-1",
+          "char": "卷",
+          "pinyin": "juǎn",
+          "reason": "‘卷地风’写风势卷过地面和湖面，卷读 juǎn。"
+        },
+        {
+          "path": "line-3.token-7",
+          "char": "散",
+          "pinyin": "sàn",
+          "reason": "‘吹散’意为云雨散开，散读 sàn。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "west-lake-storm-and-clearing",
+        "observation": "西湖望湖楼下先见乌云压山和白雨入船，风来后云雨迅速散开，最后湖面重新与天空相接。",
+        "mapAction": "以西湖和望湖楼作观察参照，画‘山—湖—船—风—开阔水天’的天气变化，不扩写成苏轼完整游览路线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "把云、雨、风和水面的连续变化连起来，才能读懂阵雨的节奏。"
+      },
+      "placeRelations": [
+        {
+          "targetId": "west-lake",
+          "type": "lake_observation",
+          "confidence": "high",
+          "assertion": "题目直接写望湖楼，诗中水面和天气观察以西湖为参照。",
+          "childMeaning": "诗人在西湖望湖楼附近看一场来得急、去得快的阵雨。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        }
+      ],
+      "canonicalPlaceIds": [
+        "west-lake"
+      ],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "望湖楼与西湖是诗题和诗境直接提供的观察参照；诗写一场阵雨的短时变化，不据此推断苏轼完整游踪。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -48756,7 +48974,8 @@
             {
               "char": "遮",
               "pinyin": "zhē",
-              "tone": 5
+              "tone": 1,
+              "pronunciationReview": "‘未遮山’意为乌云尚未完全遮住山，遮读 zhē。"
             },
             {
               "char": "山",
@@ -48786,7 +49005,8 @@
             {
               "char": "跳",
               "pinyin": "tiào",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘跳珠’写雨点弹跳，跳读 tiào。"
             },
             {
               "char": "珠",
@@ -48820,8 +49040,9 @@
           "tokens": [
             {
               "char": "卷",
-              "pinyin": "juàn",
-              "tone": 5
+              "pinyin": "juǎn",
+              "tone": 3,
+              "pronunciationReview": "‘卷地风’写风势卷过地面和湖面，卷读 juǎn。"
             },
             {
               "char": "地",
@@ -48851,7 +49072,8 @@
             {
               "char": "散",
               "pinyin": "sàn",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘吹散’意为云雨散开，散读 sàn。"
             },
             {
               "char": "，",
@@ -48906,73 +49128,111 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-wang-hu-lou-zui-shu-line-1",
-              "meaning": "先从原句找出西湖和风雨：这句写了“黑云翻墨未遮山，”，再用自己的话说说画面怎样变化。",
+              "meaning": "黑色的云像翻倒的墨汁涌来，却还没有完全遮住远山。",
               "keywords": [
-                "西湖",
-                "风雨",
-                "天气"
+                "黑云",
+                "翻墨",
+                "未遮山"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“黑云翻墨未遮山，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘翻墨’是乌云浓重翻涌的比喻，不是天上真的有墨水；‘未遮山’写雨云还在推进。",
+              "picture": "乌云压向山头，山的轮廓仍从云层下露出来，暴雨像将要发生。",
+              "prompt": "乌云和山之间谁正在移动、谁还看得见？",
+              "childMeaning": "黑色的云像翻倒的墨汁涌来，却还没有完全遮住远山。",
+              "keyWords": [
+                "黑云",
+                "翻墨",
+                "未遮山"
+              ],
+              "commonMisunderstanding": "‘翻墨’是乌云浓重翻涌的比喻，不是天上真的有墨水；‘未遮山’写雨云还在推进。",
+              "imagePrompt": "乌云压向山头，山的轮廓仍从云层下露出来，暴雨像将要发生。"
             },
             {
               "lineId": "child-wang-hu-lou-zui-shu-line-2",
-              "meaning": "先从原句找出西湖和风雨：这句写了“白雨跳珠乱入船。”，再用自己的话说说画面怎样变化。",
+              "meaning": "白亮的雨点像跳动的珍珠，纷乱地落进船里。",
               "keywords": [
-                "西湖",
-                "风雨",
-                "天气"
+                "白雨",
+                "跳珠",
+                "乱入船"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“白雨跳珠乱入船。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘跳珠’写雨点打在船面、水面上弹跳的样子，不是珍珠真的落船；‘乱’写阵雨来得密急。",
+              "picture": "大颗雨点在船篷和湖面上跳动，白亮的雨线把视线填满。",
+              "prompt": "雨点为什么像在‘跳’？",
+              "childMeaning": "白亮的雨点像跳动的珍珠，纷乱地落进船里。",
+              "keyWords": [
+                "白雨",
+                "跳珠",
+                "乱入船"
+              ],
+              "commonMisunderstanding": "‘跳珠’写雨点打在船面、水面上弹跳的样子，不是珍珠真的落船；‘乱’写阵雨来得密急。",
+              "imagePrompt": "大颗雨点在船篷和湖面上跳动，白亮的雨线把视线填满。"
             },
             {
               "lineId": "child-wang-hu-lou-zui-shu-line-3",
-              "meaning": "先从原句找出西湖和风雨：这句写了“卷地风来忽吹散，”，再用自己的话说说画面怎样变化。",
+              "meaning": "一阵从地面卷起的风突然吹来，把乌云和雨吹散。",
               "keywords": [
-                "西湖",
-                "风雨",
-                "天气"
+                "卷地风",
+                "忽吹散"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“卷地风来忽吹散，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘卷地’写风势贴着地面、湖面卷来；‘散’读 sàn，指云雨散开，不是把风吹散。",
+              "picture": "风从湖面横扫，云脚被拉开，刚才密集的雨幕迅速变薄。",
+              "prompt": "哪一个词写出了天气变化的突然？",
+              "childMeaning": "一阵从地面卷起的风突然吹来，把乌云和雨吹散。",
+              "keyWords": [
+                "卷地风",
+                "忽吹散"
+              ],
+              "commonMisunderstanding": "‘卷地’写风势贴着地面、湖面卷来；‘散’读 sàn，指云雨散开，不是把风吹散。",
+              "imagePrompt": "风从湖面横扫，云脚被拉开，刚才密集的雨幕迅速变薄。"
             },
             {
               "lineId": "child-wang-hu-lou-zui-shu-line-4",
-              "meaning": "先从原句找出西湖和风雨：这句写了“望湖楼下水如天。”，再用自己的话说说画面怎样变化。",
+              "meaning": "站在望湖楼下看去，雨后的湖水明亮开阔，仿佛与天空一样无边。",
               "keywords": [
-                "西湖",
-                "风雨",
-                "天气"
+                "望湖楼",
+                "水如天"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“望湖楼下水如天。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘水如天’是雨后湖面开阔、明亮的比喻，不是湖水真的变成天空；望湖楼是观察位置参照。",
+              "picture": "云散后的西湖铺到远处，水面和天空的颜色接在一起。",
+              "prompt": "雨停以后，湖面从拥挤变成了怎样的空间？",
+              "childMeaning": "站在望湖楼下看去，雨后的湖水明亮开阔，仿佛与天空一样无边。",
+              "keyWords": [
+                "望湖楼",
+                "水如天"
+              ],
+              "commonMisunderstanding": "‘水如天’是雨后湖面开阔、明亮的比喻，不是湖水真的变成天空；望湖楼是观察位置参照。",
+              "imagePrompt": "云散后的西湖铺到远处，水面和天空的颜色接在一起。"
             }
           ],
-          "wholeMeaning": "这首诗围绕西湖、风雨、天气展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过西湖、风雨、天气写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "黑云像翻倒的墨汁，还没有遮住山；白亮的雨点像跳动的珍珠，乱纷纷落进船里。忽然一阵卷地风把乌云和雨吹散，望湖楼下的水面重新开阔，像和天空连成一片。诗捕捉西湖夏日阵雨来去极快的变化。",
+          "mainContent": "诗按乌云、白雨、卷地风和雨后湖水的顺序展开，镜头从山和船上的近景，迅速切到风散云开后的开阔湖面。",
           "evidenceLines": [
             "child-wang-hu-lou-zui-shu-line-1",
             "child-wang-hu-lou-zui-shu-line-2",
             "child-wang-hu-lou-zui-shu-line-3",
             "child-wang-hu-lou-zui-shu-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过西湖、风雨、天气表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗按乌云、白雨、卷地风和雨后湖水的顺序展开，镜头从山和船上的近景，迅速切到风散云开后的开阔湖面。",
+          "emotion": "惊喜、轻快和对夏日风雨变化的敏锐观察。",
+          "centralIdea": "自然天气可以在很短时间里改变画面；观察云、雨、风和水的连续动作，就能看见一场阵雨完整的来去过程。",
           "evidenceLines": [
             "child-wang-hu-lou-zui-shu-line-1",
             "child-wang-hu-lou-zui-shu-line-2",
             "child-wang-hu-lou-zui-shu-line-3",
             "child-wang-hu-lou-zui-shu-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -48980,53 +49240,134 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "西湖",
-              "风雨"
-            ],
-            [
-              "西湖",
-              "风雨"
-            ],
-            [
-              "西湖",
-              "风雨"
-            ],
-            [
-              "西湖",
-              "风雨"
-            ]
+            {
+              "lineId": "child-wang-hu-lou-zui-shu-line-1",
+              "keywords": [
+                "黑云",
+                "翻墨",
+                "未遮山"
+              ],
+              "cue": "乌云压山未全遮"
+            },
+            {
+              "lineId": "child-wang-hu-lou-zui-shu-line-2",
+              "keywords": [
+                "白雨",
+                "跳珠",
+                "入船"
+              ],
+              "cue": "雨点跳进船里"
+            },
+            {
+              "lineId": "child-wang-hu-lou-zui-shu-line-3",
+              "keywords": [
+                "卷地风",
+                "忽吹散"
+              ],
+              "cue": "一阵风突然散云雨"
+            },
+            {
+              "lineId": "child-wang-hu-lou-zui-shu-line-4",
+              "keywords": [
+                "望湖楼",
+                "水如天"
+              ],
+              "cue": "雨后湖水接天空"
+            }
           ],
           "firstCharacterHints": [
-            "黑",
-            "白",
-            "卷",
-            "望"
+            {
+              "lineId": "child-wang-hu-lou-zui-shu-line-1",
+              "character": "黑",
+              "cue": "黑云翻墨"
+            },
+            {
+              "lineId": "child-wang-hu-lou-zui-shu-line-2",
+              "character": "白",
+              "cue": "白雨跳珠"
+            },
+            {
+              "lineId": "child-wang-hu-lou-zui-shu-line-3",
+              "character": "卷",
+              "cue": "卷地风来"
+            },
+            {
+              "lineId": "child-wang-hu-lou-zui-shu-line-4",
+              "character": "望",
+              "cue": "望湖楼下"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "黑云像翻倒的墨汁，还没有遮住山；白亮的雨点像跳动的珍珠，乱纷纷落进船里。忽然一阵卷地风把乌云和雨吹散，望湖楼下的水面重新开阔，像和天空连成一片。诗捕捉西湖夏日阵雨来去极快的变化。",
+        "lineMeanings": [
+          {
+            "lineId": "child-wang-hu-lou-zui-shu-line-1",
+            "meaning": "黑色的云像翻倒的墨汁涌来，却还没有完全遮住远山。"
+          },
+          {
+            "lineId": "child-wang-hu-lou-zui-shu-line-2",
+            "meaning": "白亮的雨点像跳动的珍珠，纷乱地落进船里。"
+          },
+          {
+            "lineId": "child-wang-hu-lou-zui-shu-line-3",
+            "meaning": "一阵从地面卷起的风突然吹来，把乌云和雨吹散。"
+          },
+          {
+            "lineId": "child-wang-hu-lou-zui-shu-line-4",
+            "meaning": "站在望湖楼下看去，雨后的湖水明亮开阔，仿佛与天空一样无边。"
+          }
+        ],
+        "extension": {
+          "title": "给一场阵雨画四格动画",
+          "text": "这首诗很像四格天气动画：乌云靠近、白雨落船、风吹云散、湖水接天。观察自然时，把前后变化连起来，比只说‘下过雨’更能看见事件的节奏。",
+          "prompt": "下一次遇到一场短雨，记录它开始前、下雨时、风来时和雨后各是什么样。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -52483,19 +52824,43 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-076",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十一批内容复核：山原河川、子规烟雨与养蚕插田的四月农事顺序已人工确认；了按完成义校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-4.token-2",
+          "char": "了",
+          "pinyin": "liǎo",
+          "reason": "‘才了蚕桑’意为刚完成养蚕采桑，了读 liǎo。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "spring-rural-landscape-and-farm-work",
+        "observation": "远景从绿山原、白河川和烟雨展开，再收进乡村道路与连续农事，景物和人的动作共同构成四月。",
+        "mapAction": "画‘山原—河川—村庄—桑蚕—水田’的乡村观察层级，不虚构诗人的精确写作地点。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "春雨让乡村变得清润，季节也安排着人们一项接一项的劳动。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《乡村四月》是泛化的江南乡村农事与春雨画面，没有可核定的单一地点；不把候选地点扩写成作者行程。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -52652,8 +53017,9 @@
             },
             {
               "char": "了",
-              "pinyin": "le",
-              "tone": 5
+              "pinyin": "liǎo",
+              "tone": 3,
+              "pronunciationReview": "‘才了蚕桑’意为刚完成养蚕采桑，了读 liǎo。"
             },
             {
               "char": "蚕",
@@ -52688,73 +53054,113 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-xiang-cun-si-yue-line-1",
-              "meaning": "先从原句找出乡村和农事：这句写了“绿遍山原白满川，”，再用自己的话说说画面怎样变化。",
+              "meaning": "山坡原野都被绿色铺满，河水也映着白亮的水光。",
               "keywords": [
-                "乡村",
-                "农事",
-                "春雨"
+                "绿遍",
+                "山原",
+                "白满川"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“绿遍山原白满川，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘山原’指山坡和平原，‘川’可指河流或河谷；‘白满川’写水光、雨光充满视野，不是河水变成白色。",
+              "picture": "从山坡到田野都是新绿，河面在天光下铺开一片亮色。",
+              "prompt": "诗人先从哪些大片景物写乡村春色？",
+              "childMeaning": "山坡原野都被绿色铺满，河水也映着白亮的水光。",
+              "keyWords": [
+                "绿遍",
+                "山原",
+                "白满川"
+              ],
+              "commonMisunderstanding": "‘山原’指山坡和平原，‘川’可指河流或河谷；‘白满川’写水光、雨光充满视野，不是河水变成白色。",
+              "imagePrompt": "从山坡到田野都是新绿，河面在天光下铺开一片亮色。"
             },
             {
               "lineId": "child-xiang-cun-si-yue-line-2",
-              "meaning": "先从原句找出乡村和农事：这句写了“子规声里雨如烟。”，再用自己的话说说画面怎样变化。",
+              "meaning": "子规的叫声传来，细雨把乡村笼在像烟一样的朦胧里。",
               "keywords": [
-                "乡村",
-                "农事",
-                "春雨"
+                "子规",
+                "声里",
+                "雨如烟"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“子规声里雨如烟。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘子规’是鸟名，也叫杜鹃；‘雨如烟’是细雨迷蒙的比喻，不是空中真的有烟。",
+              "picture": "鸟声从绿色田野传出，雨丝轻轻落下，远处轮廓变得朦胧。",
+              "prompt": "这一句让你同时听见了什么、看见了什么？",
+              "childMeaning": "子规的叫声传来，细雨把乡村笼在像烟一样的朦胧里。",
+              "keyWords": [
+                "子规",
+                "声里",
+                "雨如烟"
+              ],
+              "commonMisunderstanding": "‘子规’是鸟名，也叫杜鹃；‘雨如烟’是细雨迷蒙的比喻，不是空中真的有烟。",
+              "imagePrompt": "鸟声从绿色田野传出，雨丝轻轻落下，远处轮廓变得朦胧。"
             },
             {
               "lineId": "child-xiang-cun-si-yue-line-3",
-              "meaning": "先从原句找出乡村和农事：这句写了“乡村四月闲人少，”，再用自己的话说说画面怎样变化。",
+              "meaning": "四月的乡村几乎没有闲着的人，大家都在忙农事。",
               "keywords": [
-                "乡村",
-                "农事",
-                "春雨"
+                "乡村四月",
+                "闲人少"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“乡村四月闲人少，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘闲人少’不是说村民没有休息权，而是写农忙时节大多数人都有事情要做。",
+              "picture": "田间小路上来往的是干活的人，四月的村庄充满劳动的节奏。",
+              "prompt": "为什么四月的乡村闲人很少？",
+              "childMeaning": "四月的乡村几乎没有闲着的人，大家都在忙农事。",
+              "keyWords": [
+                "乡村四月",
+                "闲人少"
+              ],
+              "commonMisunderstanding": "‘闲人少’不是说村民没有休息权，而是写农忙时节大多数人都有事情要做。",
+              "imagePrompt": "田间小路上来往的是干活的人，四月的村庄充满劳动的节奏。"
             },
             {
               "lineId": "child-xiang-cun-si-yue-line-4",
-              "meaning": "先从原句找出乡村和农事：这句写了“才了蚕桑又插田。”，再用自己的话说说画面怎样变化。",
+              "meaning": "刚忙完养蚕和采桑，又赶着到田里插秧种田。",
               "keywords": [
-                "乡村",
-                "农事",
-                "春雨"
+                "才了",
+                "蚕桑",
+                "又插田"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“才了蚕桑又插田。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘了’在‘才了蚕桑’中是完成，读 liǎo；‘才……又……’写农事一件接一件，不是事情很少。",
+              "picture": "人们放下养蚕采桑的活计，马上又走向水田，手上的劳动没有停下。",
+              "prompt": "‘才’和‘又’怎样写出农事的连续？",
+              "childMeaning": "刚忙完养蚕和采桑，又赶着到田里插秧种田。",
+              "keyWords": [
+                "才了",
+                "蚕桑",
+                "又插田"
+              ],
+              "commonMisunderstanding": "‘了’在‘才了蚕桑’中是完成，读 liǎo；‘才……又……’写农事一件接一件，不是事情很少。",
+              "imagePrompt": "人们放下养蚕采桑的活计，马上又走向水田，手上的劳动没有停下。"
             }
           ],
-          "wholeMeaning": "这首诗围绕乡村、农事、春雨展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过乡村、农事、春雨写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "四月的乡村，山坡原野一片绿色，河水映着白光；子规声中细雨如烟。村里闲人很少，刚忙完养蚕采桑，又赶紧插秧种田。诗把早春雨景和农人的忙碌放在了一起。",
+          "mainContent": "诗先铺开山原、河川、子规和细雨的乡村远景，再把镜头收进四月农事，写出自然清润和人们忙而有序的生活。",
           "evidenceLines": [
             "child-xiang-cun-si-yue-line-1",
             "child-xiang-cun-si-yue-line-2",
             "child-xiang-cun-si-yue-line-3",
             "child-xiang-cun-si-yue-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过乡村、农事、春雨表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先铺开山原、河川、子规和细雨的乡村远景，再把镜头收进四月农事，写出自然清润和人们忙而有序的生活。",
+          "emotion": "对乡村春景的喜爱，以及对劳动者勤劳生活的欣赏。",
+          "centralIdea": "乡村的美不只是绿色和烟雨，也来自人们顺着季节安排劳动；景物和人的行动共同组成四月的生命节奏。",
           "evidenceLines": [
             "child-xiang-cun-si-yue-line-1",
             "child-xiang-cun-si-yue-line-2",
             "child-xiang-cun-si-yue-line-3",
             "child-xiang-cun-si-yue-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -52762,53 +53168,133 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "乡村",
-              "农事"
-            ],
-            [
-              "乡村",
-              "农事"
-            ],
-            [
-              "乡村",
-              "农事"
-            ],
-            [
-              "乡村",
-              "农事"
-            ]
+            {
+              "lineId": "child-xiang-cun-si-yue-line-1",
+              "keywords": [
+                "绿遍",
+                "山原",
+                "白满川"
+              ],
+              "cue": "绿山原映亮河川"
+            },
+            {
+              "lineId": "child-xiang-cun-si-yue-line-2",
+              "keywords": [
+                "子规",
+                "雨如烟"
+              ],
+              "cue": "鸟声和烟雨"
+            },
+            {
+              "lineId": "child-xiang-cun-si-yue-line-3",
+              "keywords": [
+                "四月",
+                "闲人少"
+              ],
+              "cue": "农忙少有闲人"
+            },
+            {
+              "lineId": "child-xiang-cun-si-yue-line-4",
+              "keywords": [
+                "蚕桑",
+                "又插田"
+              ],
+              "cue": "一项农活接一项"
+            }
           ],
           "firstCharacterHints": [
-            "绿",
-            "子",
-            "乡",
-            "才"
+            {
+              "lineId": "child-xiang-cun-si-yue-line-1",
+              "character": "绿",
+              "cue": "绿遍山原"
+            },
+            {
+              "lineId": "child-xiang-cun-si-yue-line-2",
+              "character": "子",
+              "cue": "子规声里"
+            },
+            {
+              "lineId": "child-xiang-cun-si-yue-line-3",
+              "character": "乡",
+              "cue": "乡村四月"
+            },
+            {
+              "lineId": "child-xiang-cun-si-yue-line-4",
+              "character": "才",
+              "cue": "才了蚕桑"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "四月的乡村，山坡原野一片绿色，河水映着白光；子规声中细雨如烟。村里闲人很少，刚忙完养蚕采桑，又赶紧插秧种田。诗把早春雨景和农人的忙碌放在了一起。",
+        "lineMeanings": [
+          {
+            "lineId": "child-xiang-cun-si-yue-line-1",
+            "meaning": "山坡原野都被绿色铺满，河水也映着白亮的水光。"
+          },
+          {
+            "lineId": "child-xiang-cun-si-yue-line-2",
+            "meaning": "子规的叫声传来，细雨把乡村笼在像烟一样的朦胧里。"
+          },
+          {
+            "lineId": "child-xiang-cun-si-yue-line-3",
+            "meaning": "四月的乡村几乎没有闲着的人，大家都在忙农事。"
+          },
+          {
+            "lineId": "child-xiang-cun-si-yue-line-4",
+            "meaning": "刚忙完养蚕和采桑，又赶着到田里插秧种田。"
+          }
+        ],
+        "extension": {
+          "title": "把季节读成一张劳动日历",
+          "text": "乡村四月的画面不是静止的：雨落、鸟鸣、养蚕、采桑、插田，一件事接着一件事。季节会给人们安排节奏，景物和劳动因此连在一起。",
+          "prompt": "选一个季节，写下这个季节里自然发生的一件事和人们会做的一件事。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -53393,19 +53879,55 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-078",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十一批内容复核：儿童垂钓、远处招手与怕惊鱼的安静动作链已人工确认；纶、应按语境校正，不附会具体地点。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-7",
+          "char": "纶",
+          "pinyin": "lún",
+          "reason": "‘垂纶’指垂下钓线，纶读 lún。"
+        },
+        {
+          "path": "line-4.token-5",
+          "char": "不",
+          "pinyin": "bù",
+          "reason": "‘不应人’中不后接一声 yìng，按词语本调读 bù。"
+        },
+        {
+          "path": "line-4.token-6",
+          "char": "应",
+          "pinyin": "yìng",
+          "reason": "‘不应人’意为不回应路人，应读 yìng。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "waterside-child-and-quiet-attention",
+        "observation": "视线从孩子的蓬头、钓线和莓苔近景，移到远处路人，再回到孩子怕惊鱼而保持安静的动作。",
+        "mapAction": "画‘水边—孩子—钓线—远处路人’的观察关系，不标注诗人或孩子的实际地点。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "地图可以帮助我们安排观察位置，诗句让我们理解一个孩子为什么选择安静。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《小儿垂钓》只提供泛化的水边儿童观察场景，没有可核定的单一地理地点；保留儿童行为和水边尺度，不生成虚构路线。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -53453,7 +53975,8 @@
             {
               "char": "纶",
               "pinyin": "lún",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘垂纶’指垂下钓线，纶读 lún。"
             },
             {
               "char": "，",
@@ -53577,13 +54100,15 @@
             },
             {
               "char": "不",
-              "pinyin": "bú",
-              "tone": 5
+              "pinyin": "bù",
+              "tone": 4,
+              "pronunciationReview": "‘不应人’中不后接一声 yìng，按词语本调读 bù。"
             },
             {
               "char": "应",
               "pinyin": "yìng",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘不应人’意为不回应路人，应读 yìng。"
             },
             {
               "char": "人",
@@ -53598,73 +54123,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-xiao-er-chui-diao-line-1",
-              "meaning": "先从原句找出儿童和钓鱼：这句写了“蓬头稚子学垂纶，”，再用自己的话说说画面怎样变化。",
+              "meaning": "一个头发蓬乱的孩子正在学习钓鱼。",
               "keywords": [
-                "儿童",
-                "钓鱼",
-                "动作"
+                "蓬头",
+                "稚子",
+                "垂纶"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“蓬头稚子学垂纶，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘垂纶’指垂下钓线钓鱼，纶读 lún，不是把丝带随便垂下来。",
+              "picture": "孩子低头守着钓线，蓬松的头发和小小的身影先进入视线。",
+              "prompt": "诗人先写孩子的什么外貌和动作？",
+              "childMeaning": "一个头发蓬乱的孩子正在学习钓鱼。",
+              "keyWords": [
+                "蓬头",
+                "稚子",
+                "垂纶"
+              ],
+              "commonMisunderstanding": "‘垂纶’指垂下钓线钓鱼，纶读 lún，不是把丝带随便垂下来。",
+              "imagePrompt": "孩子低头守着钓线，蓬松的头发和小小的身影先进入视线。"
             },
             {
               "lineId": "child-xiao-er-chui-diao-line-2",
-              "meaning": "先从原句找出儿童和钓鱼：这句写了“侧坐莓苔草映身。”，再用自己的话说说画面怎样变化。",
+              "meaning": "孩子侧身坐在长满莓苔的地方，青草映着他的身体。",
               "keywords": [
-                "儿童",
-                "钓鱼",
-                "动作"
+                "侧坐",
+                "莓苔",
+                "映身"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“侧坐莓苔草映身。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘莓苔’是水边或石上的苔藓，‘侧坐’写姿势，不表示孩子正面对着路人。",
+              "picture": "水边的苔藓和青草把孩子的身影半遮半映，钓鱼需要保持安静。",
+              "prompt": "孩子坐在什么样的水边环境里？",
+              "childMeaning": "孩子侧身坐在长满莓苔的地方，青草映着他的身体。",
+              "keyWords": [
+                "侧坐",
+                "莓苔",
+                "映身"
+              ],
+              "commonMisunderstanding": "‘莓苔’是水边或石上的苔藓，‘侧坐’写姿势，不表示孩子正面对着路人。",
+              "imagePrompt": "水边的苔藓和青草把孩子的身影半遮半映，钓鱼需要保持安静。"
             },
             {
               "lineId": "child-xiao-er-chui-diao-line-3",
-              "meaning": "先从原句找出儿童和钓鱼：这句写了“路人借问遥招手，”，再用自己的话说说画面怎样变化。",
+              "meaning": "过路人向孩子打听事情，孩子从远处向他招了招手。",
               "keywords": [
-                "儿童",
-                "钓鱼",
-                "动作"
+                "路人",
+                "借问",
+                "遥招手"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“路人借问遥招手，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘借问’是请问、打听，不是借走一个问题；‘遥’写相隔一段距离。",
+              "picture": "路人停在远处询问，孩子不靠近，只抬手示意。",
+              "prompt": "路人和孩子之间隔着怎样的距离？",
+              "childMeaning": "过路人向孩子打听事情，孩子从远处向他招了招手。",
+              "keyWords": [
+                "路人",
+                "借问",
+                "遥招手"
+              ],
+              "commonMisunderstanding": "‘借问’是请问、打听，不是借走一个问题；‘遥’写相隔一段距离。",
+              "imagePrompt": "路人停在远处询问，孩子不靠近，只抬手示意。"
             },
             {
               "lineId": "child-xiao-er-chui-diao-line-4",
-              "meaning": "先从原句找出儿童和钓鱼：这句写了“怕得鱼惊不应人。”，再用自己的话说说画面怎样变化。",
+              "meaning": "孩子担心回答会惊动鱼儿，所以不出声回应。",
               "keywords": [
-                "儿童",
-                "钓鱼",
-                "动作"
+                "怕得",
+                "鱼惊",
+                "不应人"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“怕得鱼惊不应人。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘应’在这里是回应，读 yìng；‘不应人’不是没有听见，而是为了不惊鱼而保持安静。",
+              "picture": "孩子把声音压低，目光还守着水面，专注没有被路人打断。",
+              "prompt": "孩子为什么不直接回答路人？",
+              "childMeaning": "孩子担心回答会惊动鱼儿，所以不出声回应。",
+              "keyWords": [
+                "怕得",
+                "鱼惊",
+                "不应人"
+              ],
+              "commonMisunderstanding": "‘应’在这里是回应，读 yìng；‘不应人’不是没有听见，而是为了不惊鱼而保持安静。",
+              "imagePrompt": "孩子把声音压低，目光还守着水面，专注没有被路人打断。"
             }
           ],
-          "wholeMeaning": "这首诗围绕儿童、钓鱼、动作展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过儿童、钓鱼、动作写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "一个头发蓬乱的孩子坐在水边学钓鱼。过路人向他打听事情，他只是远远招手，因为害怕说话会惊动水里的鱼。诗写出孩子专注、机灵又有童趣的样子。",
+          "mainContent": "诗先近看孩子的头发、坐姿和钓鱼动作，再写路人的询问与孩子的安静回应；画面从外貌推进到专注的心情。",
           "evidenceLines": [
             "child-xiao-er-chui-diao-line-1",
             "child-xiao-er-chui-diao-line-2",
             "child-xiao-er-chui-diao-line-3",
             "child-xiao-er-chui-diao-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过儿童、钓鱼、动作表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先近看孩子的头发、坐姿和钓鱼动作，再写路人的询问与孩子的安静回应；画面从外貌推进到专注的心情。",
+          "emotion": "天真、专注和轻快的儿童趣味。",
+          "centralIdea": "孩子对眼前事情的专注会让动作变得细腻；不喧哗、会观察，也是一种可爱的智慧。",
           "evidenceLines": [
             "child-xiao-er-chui-diao-line-1",
             "child-xiao-er-chui-diao-line-2",
             "child-xiao-er-chui-diao-line-3",
             "child-xiao-er-chui-diao-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -53672,53 +54239,134 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "儿童",
-              "钓鱼"
-            ],
-            [
-              "儿童",
-              "钓鱼"
-            ],
-            [
-              "儿童",
-              "钓鱼"
-            ],
-            [
-              "儿童",
-              "钓鱼"
-            ]
+            {
+              "lineId": "child-xiao-er-chui-diao-line-1",
+              "keywords": [
+                "蓬头",
+                "稚子",
+                "垂纶"
+              ],
+              "cue": "蓬头孩子学钓鱼"
+            },
+            {
+              "lineId": "child-xiao-er-chui-diao-line-2",
+              "keywords": [
+                "侧坐",
+                "莓苔",
+                "映身"
+              ],
+              "cue": "苔边侧坐被草映"
+            },
+            {
+              "lineId": "child-xiao-er-chui-diao-line-3",
+              "keywords": [
+                "路人",
+                "遥招手"
+              ],
+              "cue": "远处有人来问"
+            },
+            {
+              "lineId": "child-xiao-er-chui-diao-line-4",
+              "keywords": [
+                "鱼惊",
+                "不应人"
+              ],
+              "cue": "怕惊鱼所以不出声"
+            }
           ],
           "firstCharacterHints": [
-            "蓬",
-            "侧",
-            "路",
-            "怕"
+            {
+              "lineId": "child-xiao-er-chui-diao-line-1",
+              "character": "蓬",
+              "cue": "蓬头稚子"
+            },
+            {
+              "lineId": "child-xiao-er-chui-diao-line-2",
+              "character": "侧",
+              "cue": "侧坐莓苔"
+            },
+            {
+              "lineId": "child-xiao-er-chui-diao-line-3",
+              "character": "路",
+              "cue": "路人借问"
+            },
+            {
+              "lineId": "child-xiao-er-chui-diao-line-4",
+              "character": "怕",
+              "cue": "怕得鱼惊"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "一个头发蓬乱的孩子坐在水边学钓鱼。过路人向他打听事情，他只是远远招手，因为害怕说话会惊动水里的鱼。诗写出孩子专注、机灵又有童趣的样子。",
+        "lineMeanings": [
+          {
+            "lineId": "child-xiao-er-chui-diao-line-1",
+            "meaning": "一个头发蓬乱的孩子正在学习钓鱼。"
+          },
+          {
+            "lineId": "child-xiao-er-chui-diao-line-2",
+            "meaning": "孩子侧身坐在长满莓苔的地方，青草映着他的身体。"
+          },
+          {
+            "lineId": "child-xiao-er-chui-diao-line-3",
+            "meaning": "过路人向孩子打听事情，孩子从远处向他招了招手。"
+          },
+          {
+            "lineId": "child-xiao-er-chui-diao-line-4",
+            "meaning": "孩子担心回答会惊动鱼儿，所以不出声回应。"
+          }
+        ],
+        "extension": {
+          "title": "安静也是一种专注",
+          "text": "孩子没有急着回答路人，而是先保护正在进行的钓鱼。专注不是把世界关掉，而是知道此刻最重要的事情，并用合适的动作回应别人。",
+          "prompt": "你做一件需要安静的事情时，会怎样告诉别人你正在专心？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -53774,19 +54422,68 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-079",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十二批内容复核：长安街雨、远近草色、早春时节和烟柳皇都的比较关系已人工确认；酥、处、胜按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
-      "placeRelations": null,
-      "canonicalPlaceIds": [],
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-7",
+          "char": "酥",
+          "pinyin": "sū",
+          "reason": "‘润如酥’用酥油比喻细雨滋润，酥读 sū。"
+        },
+        {
+          "path": "line-3.token-7",
+          "char": "处",
+          "pinyin": "chù",
+          "reason": "‘春好处’指美好的时节或景处，处读 chù。"
+        },
+        {
+          "path": "line-4.token-2",
+          "char": "胜",
+          "pinyin": "shèng",
+          "reason": "‘绝胜’意为远远胜过，胜读 shèng。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "chang-an-street-and-early-spring-distance",
+        "observation": "长安街上的细雨润地，远处草色若有若无，皇都烟柳成为晚春参照；诗用远近和时序观察早春。",
+        "mapAction": "以长安城作城市参照，画‘天街—远处草色—皇都烟柳’的视线与季节关系，不虚构诗人行走路线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "刚发生的细微变化值得慢慢观察，早春的美不一定最浓烈才最好。"
+      },
+      "placeRelations": [
+        {
+          "targetId": "chang-an",
+          "type": "city_observation",
+          "confidence": "high",
+          "assertion": "‘天街’和‘皇都’直接构成长安城市参照，诗写城中早春观察。",
+          "childMeaning": "长安街上的细雨和草色让人发现春天刚刚开始。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        }
+      ],
+      "canonicalPlaceIds": [
+        "chang-an"
+      ],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "天街、皇都构成长安城市参照，诗重点在早春雨色和远近观察；不把诗句解释成韩愈的完整城市路线。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -53834,7 +54531,8 @@
             {
               "char": "酥",
               "pinyin": "sū",
-              "tone": 5
+              "tone": 1,
+              "pronunciationReview": "‘润如酥’用酥油比喻细雨滋润，酥读 sū。"
             },
             {
               "char": "，",
@@ -53924,7 +54622,8 @@
             {
               "char": "处",
               "pinyin": "chù",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘春好处’指美好的时节或景处，处读 chù。"
             },
             {
               "char": "，",
@@ -53944,7 +54643,8 @@
             {
               "char": "胜",
               "pinyin": "shèng",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘绝胜’意为远远胜过，胜读 shèng。"
             },
             {
               "char": "烟",
@@ -53979,73 +54679,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-zao-chun-shui-bu-line-1",
-              "meaning": "先从原句找出早春和小雨：这句写了“天街小雨润如酥，”，再用自己的话说说画面怎样变化。",
+              "meaning": "天街落着细细的小雨，滋润柔和，像酥油一样轻润。",
               "keywords": [
-                "早春",
+                "天街",
                 "小雨",
-                "远近"
+                "润如酥"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“天街小雨润如酥，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘天街’是京城街道的称呼；‘酥’读 sū，写雨水细润的感觉，不是说天空下酥油。",
+              "picture": "长安街道蒙着一层细雨，雨丝很轻，却把地面和植物润醒。",
+              "prompt": "这场小雨的特点是大还是细？",
+              "childMeaning": "天街落着细细的小雨，滋润柔和，像酥油一样轻润。",
+              "keyWords": [
+                "天街",
+                "小雨",
+                "润如酥"
+              ],
+              "commonMisunderstanding": "‘天街’是京城街道的称呼；‘酥’读 sū，写雨水细润的感觉，不是说天空下酥油。",
+              "imagePrompt": "长安街道蒙着一层细雨，雨丝很轻，却把地面和植物润醒。"
             },
             {
               "lineId": "child-zao-chun-shui-bu-line-2",
-              "meaning": "先从原句找出早春和小雨：这句写了“草色遥看近却无。”，再用自己的话说说画面怎样变化。",
+              "meaning": "远远看去草色似乎已经出现，走近后却发现还很淡，几乎看不见。",
               "keywords": [
-                "早春",
-                "小雨",
-                "远近"
+                "草色",
+                "遥看",
+                "近却无"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“草色遥看近却无。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘遥看’是远处观察；远看和近看产生错觉，写草芽刚冒、颜色若有若无，不是草突然消失。",
+              "picture": "远处地面泛出一层浅绿，走近时绿色融进泥土，必须慢慢观察。",
+              "prompt": "为什么远处反而比近处更容易看见草色？",
+              "childMeaning": "远远看去草色似乎已经出现，走近后却发现还很淡，几乎看不见。",
+              "keyWords": [
+                "草色",
+                "遥看",
+                "近却无"
+              ],
+              "commonMisunderstanding": "‘遥看’是远处观察；远看和近看产生错觉，写草芽刚冒、颜色若有若无，不是草突然消失。",
+              "imagePrompt": "远处地面泛出一层浅绿，走近时绿色融进泥土，必须慢慢观察。"
             },
             {
               "lineId": "child-zao-chun-shui-bu-line-3",
-              "meaning": "先从原句找出早春和小雨：这句写了“最是一年春好处，”，再用自己的话说说画面怎样变化。",
+              "meaning": "一年里最值得珍惜的春天好时节，正是这样初醒的早春。",
               "keywords": [
-                "早春",
-                "小雨",
-                "远近"
+                "最是",
+                "一年",
+                "春好处"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“最是一年春好处，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘好处’读 hǎo chù，指好时节、好地方，不是好处利益；‘最是’表达强烈赞美。",
+              "picture": "细雨和嫩草把春天的开端写得柔和，诗人提醒人们留意它。",
+              "prompt": "诗人说一年春天最好的地方在哪里？",
+              "childMeaning": "一年里最值得珍惜的春天好时节，正是这样初醒的早春。",
+              "keyWords": [
+                "最是",
+                "一年",
+                "春好处"
+              ],
+              "commonMisunderstanding": "‘好处’读 hǎo chù，指好时节、好地方，不是好处利益；‘最是’表达强烈赞美。",
+              "imagePrompt": "细雨和嫩草把春天的开端写得柔和，诗人提醒人们留意它。"
             },
             {
               "lineId": "child-zao-chun-shui-bu-line-4",
-              "meaning": "先从原句找出早春和小雨：这句写了“绝胜烟柳满皇都。”，再用自己的话说说画面怎样变化。",
+              "meaning": "这种早春嫩色远远胜过烟雾般的柳色充满皇城的晚春景象。",
               "keywords": [
-                "早春",
-                "小雨",
-                "远近"
+                "绝胜",
+                "烟柳",
+                "皇都"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“绝胜烟柳满皇都。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘绝胜’是远远胜过；‘烟柳’写柳色浓密、如烟的景象；‘皇都’指京城，诗中是长安参照。",
+              "picture": "早春的浅绿铺在街边，和晚春浓绿柳色相比，别有轻盈清新的气息。",
+              "prompt": "为什么诗人更喜欢刚出现的草色？",
+              "childMeaning": "这种早春嫩色远远胜过烟雾般的柳色充满皇城的晚春景象。",
+              "keyWords": [
+                "绝胜",
+                "烟柳",
+                "皇都"
+              ],
+              "commonMisunderstanding": "‘绝胜’是远远胜过；‘烟柳’写柳色浓密、如烟的景象；‘皇都’指京城，诗中是长安参照。",
+              "imagePrompt": "早春的浅绿铺在街边，和晚春浓绿柳色相比，别有轻盈清新的气息。"
             }
           ],
-          "wholeMeaning": "这首诗围绕早春、小雨、远近展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过早春、小雨、远近写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "长安街上的小雨像酥油一样细润，远看草色仿佛有了，走近却又看不清；一年中最好的春天正在开始，远胜烟雾般的柳色铺满皇都。诗用远近错觉和细雨嫩色写早春刚刚苏醒的轻盈。",
+          "mainContent": "诗先写街雨和若有若无的草色，再由远近视线转向一年最好的春景，最后把早春嫩绿与晚春烟柳作比较。",
           "evidenceLines": [
             "child-zao-chun-shui-bu-line-1",
             "child-zao-chun-shui-bu-line-2",
             "child-zao-chun-shui-bu-line-3",
             "child-zao-chun-shui-bu-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过早春、小雨、远近表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写街雨和若有若无的草色，再由远近视线转向一年最好的春景，最后把早春嫩绿与晚春烟柳作比较。",
+          "emotion": "清新、惊喜和对早春细微变化的珍惜。",
+          "centralIdea": "早春的美不一定浓烈显眼，它藏在细雨、嫩草和远近视线的变化里；刚刚发生的微小变化，也可能比繁盛景色更有生命力。",
           "evidenceLines": [
             "child-zao-chun-shui-bu-line-1",
             "child-zao-chun-shui-bu-line-2",
             "child-zao-chun-shui-bu-line-3",
             "child-zao-chun-shui-bu-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -54053,53 +54795,134 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "早春",
-              "小雨"
-            ],
-            [
-              "早春",
-              "小雨"
-            ],
-            [
-              "早春",
-              "小雨"
-            ],
-            [
-              "早春",
-              "小雨"
-            ]
+            {
+              "lineId": "child-zao-chun-shui-bu-line-1",
+              "keywords": [
+                "天街",
+                "小雨",
+                "如酥"
+              ],
+              "cue": "细雨润街"
+            },
+            {
+              "lineId": "child-zao-chun-shui-bu-line-2",
+              "keywords": [
+                "遥看",
+                "近却无"
+              ],
+              "cue": "远近看到嫩草差异"
+            },
+            {
+              "lineId": "child-zao-chun-shui-bu-line-3",
+              "keywords": [
+                "一年",
+                "春好处"
+              ],
+              "cue": "早春是一年好时节"
+            },
+            {
+              "lineId": "child-zao-chun-shui-bu-line-4",
+              "keywords": [
+                "绝胜",
+                "烟柳",
+                "皇都"
+              ],
+              "cue": "嫩草胜过满城烟柳"
+            }
           ],
           "firstCharacterHints": [
-            "天",
-            "草",
-            "最",
-            "绝"
+            {
+              "lineId": "child-zao-chun-shui-bu-line-1",
+              "character": "天",
+              "cue": "天街小雨"
+            },
+            {
+              "lineId": "child-zao-chun-shui-bu-line-2",
+              "character": "草",
+              "cue": "草色遥看"
+            },
+            {
+              "lineId": "child-zao-chun-shui-bu-line-3",
+              "character": "最",
+              "cue": "最是一年"
+            },
+            {
+              "lineId": "child-zao-chun-shui-bu-line-4",
+              "character": "绝",
+              "cue": "绝胜烟柳"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "长安街上的小雨像酥油一样细润，远看草色仿佛有了，走近却又看不清；一年中最好的春天正在开始，远胜烟雾般的柳色铺满皇都。诗用远近错觉和细雨嫩色写早春刚刚苏醒的轻盈。",
+        "lineMeanings": [
+          {
+            "lineId": "child-zao-chun-shui-bu-line-1",
+            "meaning": "天街落着细细的小雨，滋润柔和，像酥油一样轻润。"
+          },
+          {
+            "lineId": "child-zao-chun-shui-bu-line-2",
+            "meaning": "远远看去草色似乎已经出现，走近后却发现还很淡，几乎看不见。"
+          },
+          {
+            "lineId": "child-zao-chun-shui-bu-line-3",
+            "meaning": "一年里最值得珍惜的春天好时节，正是这样初醒的早春。"
+          },
+          {
+            "lineId": "child-zao-chun-shui-bu-line-4",
+            "meaning": "这种早春嫩色远远胜过烟雾般的柳色充满皇城的晚春景象。"
+          }
+        ],
+        "extension": {
+          "title": "慢一点看见刚发生的变化",
+          "text": "早春草色远看有、近看无，说明有些变化还没有浓到一眼可见。学习和成长也常常这样：先有一点点迹象，等我们持续观察，才发现它已经在发生。",
+          "prompt": "最近你发现自己有哪一点小小的进步？它是怎样慢慢出现的？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -54154,19 +54977,49 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-080",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十一批内容复核：暮春将尽、百花争芳与杨花榆荚飞絮的拟人链已人工确认；斗、解按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-2.token-5",
+          "char": "斗",
+          "pinyin": "dòu",
+          "reason": "‘斗芳菲’意为争相展示芳香和颜色，斗读 dòu。"
+        },
+        {
+          "path": "line-4.token-2",
+          "char": "解",
+          "pinyin": "jiě",
+          "reason": "‘惟解’意为只会、只懂得，解读 jiě。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "late-spring-flower-and-seed-flight",
+        "observation": "视线先看百花的颜色和芳香，再转向不起眼的杨花、榆荚，最后追踪它们漫天飞散的动作。",
+        "mapAction": "画‘花枝—杨花—榆荚—空中飞絮’的暮春观察层级，不创建虚构的诗人行走路线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "普通植物也会用自己的方式参与季节，观察不只要看最显眼的花。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《晚春》写泛化暮春植物景象，没有可核定的单一地点；不把花木的拟人想象当作地理事实。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -54249,7 +55102,8 @@
             {
               "char": "斗",
               "pinyin": "dòu",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘斗芳菲’意为争相展示芳香和颜色，斗读 dòu。"
             },
             {
               "char": "芳",
@@ -54324,7 +55178,8 @@
             {
               "char": "解",
               "pinyin": "jiě",
-              "tone": 5
+              "tone": 3,
+              "pronunciationReview": "‘惟解’意为只会、只懂得，解读 jiě。"
             },
             {
               "char": "漫",
@@ -54359,73 +55214,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-wan-chun-line-1",
-              "meaning": "先从原句找出暮春和花草：这句写了“草木知春不久归，”，再用自己的话说说画面怎样变化。",
+              "meaning": "草木仿佛知道春天很快就要归去、结束了。",
               "keywords": [
-                "暮春",
-                "花草",
-                "想象"
+                "草木",
+                "知春",
+                "不久归"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“草木知春不久归，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘知’和‘归’把草木、春天写得像有人的感觉，是拟人和诗意想象，不是植物真的会说话。",
+              "picture": "枝叶和花朵在暮春里抓住最后的时光，空气里有将别的感觉。",
+              "prompt": "哪些字让春天像一个会离开的人？",
+              "childMeaning": "草木仿佛知道春天很快就要归去、结束了。",
+              "keyWords": [
+                "草木",
+                "知春",
+                "不久归"
+              ],
+              "commonMisunderstanding": "‘知’和‘归’把草木、春天写得像有人的感觉，是拟人和诗意想象，不是植物真的会说话。",
+              "imagePrompt": "枝叶和花朵在暮春里抓住最后的时光，空气里有将别的感觉。"
             },
             {
               "lineId": "child-wan-chun-line-2",
-              "meaning": "先从原句找出暮春和花草：这句写了“百般红紫斗芳菲。”，再用自己的话说说画面怎样变化。",
+              "meaning": "各种红花紫花争相开放，竞相展示芬芳。",
               "keywords": [
-                "暮春",
-                "花草",
-                "想象"
+                "百般",
+                "红紫",
+                "斗芳菲"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“百般红紫斗芳菲。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘斗’读 dòu，写花朵争着展示美和香，不是花朵真的打架；‘百般’写种类和姿态很多。",
+              "picture": "红的、紫的花在枝头此开彼盛，把暮春装扮得热闹。",
+              "prompt": "花朵在争什么？",
+              "childMeaning": "各种红花紫花争相开放，竞相展示芬芳。",
+              "keyWords": [
+                "百般",
+                "红紫",
+                "斗芳菲"
+              ],
+              "commonMisunderstanding": "‘斗’读 dòu，写花朵争着展示美和香，不是花朵真的打架；‘百般’写种类和姿态很多。",
+              "imagePrompt": "红的、紫的花在枝头此开彼盛，把暮春装扮得热闹。"
             },
             {
               "lineId": "child-wan-chun-line-3",
-              "meaning": "先从原句找出暮春和花草：这句写了“杨花榆荚无才思，”，再用自己的话说说画面怎样变化。",
+              "meaning": "杨花和榆荚好像没有写诗作文的才思，样子很普通。",
               "keywords": [
-                "暮春",
-                "花草",
-                "想象"
+                "杨花",
+                "榆荚",
+                "无才思"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“杨花榆荚无才思，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘无才思’是拟人的幽默说法，不是批评植物没有用；榆荚是榆树的果实。",
+              "picture": "轻小的杨花和圆圆的榆荚也被诗人注意到，准备加入暮春的舞台。",
+              "prompt": "诗人为什么把植物说成‘有才思’或‘无才思’？",
+              "childMeaning": "杨花和榆荚好像没有写诗作文的才思，样子很普通。",
+              "keyWords": [
+                "杨花",
+                "榆荚",
+                "无才思"
+              ],
+              "commonMisunderstanding": "‘无才思’是拟人的幽默说法，不是批评植物没有用；榆荚是榆树的果实。",
+              "imagePrompt": "轻小的杨花和圆圆的榆荚也被诗人注意到，准备加入暮春的舞台。"
             },
             {
               "lineId": "child-wan-chun-line-4",
-              "meaning": "先从原句找出暮春和花草：这句写了“惟解漫天作雪飞。”，再用自己的话说说画面怎样变化。",
+              "meaning": "它们只会把自己撒向漫天，像雪一样到处飞舞。",
               "keywords": [
-                "暮春",
-                "花草",
-                "想象"
+                "惟解",
+                "漫天",
+                "作雪飞"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“惟解漫天作雪飞。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘解’读 jiě，是只懂得、只会；‘作雪飞’是把飞散的杨花比作雪，不是夏天真的下雪。",
+              "picture": "白色絮状的杨花和轻小的榆荚随风飞散，给暮春添上一场轻盈的雪。",
+              "prompt": "普通的杨花、榆荚用什么方式加入春景？",
+              "childMeaning": "它们只会把自己撒向漫天，像雪一样到处飞舞。",
+              "keyWords": [
+                "惟解",
+                "漫天",
+                "作雪飞"
+              ],
+              "commonMisunderstanding": "‘解’读 jiě，是只懂得、只会；‘作雪飞’是把飞散的杨花比作雪，不是夏天真的下雪。",
+              "imagePrompt": "白色絮状的杨花和轻小的榆荚随风飞散，给暮春添上一场轻盈的雪。"
             }
           ],
-          "wholeMeaning": "这首诗围绕暮春、花草、想象展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过暮春、花草、想象写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "草木知道春天不久就要离开，各种红花紫花争着开放、争着散发香气。杨花和榆荚好像没有什么才思，只会把自己漫天撒开，像雪一样飞舞。诗用拟人的口吻写暮春万物各自努力留下春色。",
+          "mainContent": "诗先写春天将尽和百花争芳，再把不起眼的杨花、榆荚写成有性格的参与者；结尾的飞舞让暮春不只是衰退，也有活泼的想象。",
           "evidenceLines": [
             "child-wan-chun-line-1",
             "child-wan-chun-line-2",
             "child-wan-chun-line-3",
             "child-wan-chun-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过暮春、花草、想象表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写春天将尽和百花争芳，再把不起眼的杨花、榆荚写成有性格的参与者；结尾的飞舞让暮春不只是衰退，也有活泼的想象。",
+          "emotion": "轻快、诙谐，以及对暮春万物生命力的欣赏。",
+          "centralIdea": "春天快结束时，每种植物都用自己的方式参与春景；不必只有名花才有价值，普通事物也能创造独特的美。",
           "evidenceLines": [
             "child-wan-chun-line-1",
             "child-wan-chun-line-2",
             "child-wan-chun-line-3",
             "child-wan-chun-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -54433,53 +55330,133 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "暮春",
-              "花草"
-            ],
-            [
-              "暮春",
-              "花草"
-            ],
-            [
-              "暮春",
-              "花草"
-            ],
-            [
-              "暮春",
-              "花草"
-            ]
+            {
+              "lineId": "child-wan-chun-line-1",
+              "keywords": [
+                "草木",
+                "春归"
+              ],
+              "cue": "草木知道春将尽"
+            },
+            {
+              "lineId": "child-wan-chun-line-2",
+              "keywords": [
+                "红紫",
+                "斗芳菲"
+              ],
+              "cue": "百花争芳"
+            },
+            {
+              "lineId": "child-wan-chun-line-3",
+              "keywords": [
+                "杨花",
+                "榆荚",
+                "无才思"
+              ],
+              "cue": "普通植物也入诗"
+            },
+            {
+              "lineId": "child-wan-chun-line-4",
+              "keywords": [
+                "漫天",
+                "作雪飞"
+              ],
+              "cue": "飞絮像一场春雪"
+            }
           ],
           "firstCharacterHints": [
-            "草",
-            "百",
-            "杨",
-            "惟"
+            {
+              "lineId": "child-wan-chun-line-1",
+              "character": "草",
+              "cue": "草木知春"
+            },
+            {
+              "lineId": "child-wan-chun-line-2",
+              "character": "百",
+              "cue": "百般红紫"
+            },
+            {
+              "lineId": "child-wan-chun-line-3",
+              "character": "杨",
+              "cue": "杨花榆荚"
+            },
+            {
+              "lineId": "child-wan-chun-line-4",
+              "character": "惟",
+              "cue": "惟解漫天"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "草木知道春天不久就要离开，各种红花紫花争着开放、争着散发香气。杨花和榆荚好像没有什么才思，只会把自己漫天撒开，像雪一样飞舞。诗用拟人的口吻写暮春万物各自努力留下春色。",
+        "lineMeanings": [
+          {
+            "lineId": "child-wan-chun-line-1",
+            "meaning": "草木仿佛知道春天很快就要归去、结束了。"
+          },
+          {
+            "lineId": "child-wan-chun-line-2",
+            "meaning": "各种红花紫花争相开放，竞相展示芬芳。"
+          },
+          {
+            "lineId": "child-wan-chun-line-3",
+            "meaning": "杨花和榆荚好像没有写诗作文的才思，样子很普通。"
+          },
+          {
+            "lineId": "child-wan-chun-line-4",
+            "meaning": "它们只会把自己撒向漫天，像雪一样到处飞舞。"
+          }
+        ],
+        "extension": {
+          "title": "普通事物也能创造春天",
+          "text": "晚春不是只有名花才值得被看见。杨花、榆荚用飞舞的方式参与春景，提醒我们：每种事物都可以用自己的特点留下痕迹。",
+          "prompt": "你身边有没有一个不起眼却很有特点的东西？它会用什么方式让一个地方变得有趣？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -55045,19 +56022,49 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-082",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十一批内容复核：荷尽菊残、傲霜枝与橙黄橘绿的晚秋观察和勉励寓意已人工确认；擎、傲按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-5",
+          "char": "擎",
+          "pinyin": "qíng",
+          "reason": "‘擎雨盖’意为托起雨水，擎读 qíng。"
+        },
+        {
+          "path": "line-2.token-5",
+          "char": "傲",
+          "pinyin": "ào",
+          "reason": "‘傲霜枝’写菊枝不怕霜，傲读 ào。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "late-autumn-pond-and-fruit-color",
+        "observation": "视线从荷尽的池面移到霜中的菊枝，再转向橙黄橘绿的果树，写出晚秋由衰到盛的另一种层次。",
+        "mapAction": "画‘池塘—菊枝—果树’的晚秋观察关系，不标定诗人的具体观景位置。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "同一个季节也有不同阶段，花叶退去之后，枝条和果实仍然可以成为好景。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《赠刘景文》以泛化的晚秋池塘和果树为背景，没有可核定的单一地理地点；不将季节景物误写成作者路线。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -55095,7 +56102,8 @@
             {
               "char": "擎",
               "pinyin": "qíng",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘擎雨盖’意为托起雨水，擎读 qíng。"
             },
             {
               "char": "雨",
@@ -55140,7 +56148,8 @@
             {
               "char": "傲",
               "pinyin": "ào",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘傲霜枝’写菊枝不怕霜，傲读 ào。"
             },
             {
               "char": "霜",
@@ -55250,73 +56259,109 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-zeng-liu-jing-wen-line-1",
-              "meaning": "先从原句找出秋天和荷菊：这句写了“荷尽已无擎雨盖，”，再用自己的话说说画面怎样变化。",
+              "meaning": "荷花已经凋谢，荷叶也没有了能够托住雨水的样子。",
               "keywords": [
-                "秋天",
-                "荷菊",
-                "勉励"
+                "荷尽",
+                "擎雨盖"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“荷尽已无擎雨盖，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘尽’写花期结束，‘擎雨盖’把荷叶比作举起的伞，不是荷叶真的在举伞。",
+              "picture": "池塘里的荷叶变少、变残，秋天让夏日的绿色退去。",
+              "prompt": "诗人先写哪一种夏日景物已经结束？",
+              "childMeaning": "荷花已经凋谢，荷叶也没有了能够托住雨水的样子。",
+              "keyWords": [
+                "荷尽",
+                "擎雨盖"
+              ],
+              "commonMisunderstanding": "‘尽’写花期结束，‘擎雨盖’把荷叶比作举起的伞，不是荷叶真的在举伞。",
+              "imagePrompt": "池塘里的荷叶变少、变残，秋天让夏日的绿色退去。"
             },
             {
               "lineId": "child-zeng-liu-jing-wen-line-2",
-              "meaning": "先从原句找出秋天和荷菊：这句写了“菊残犹有傲霜枝。”，再用自己的话说说画面怎样变化。",
+              "meaning": "菊花虽然残败，枝条却还在霜中挺立。",
               "keywords": [
-                "秋天",
-                "荷菊",
-                "勉励"
+                "菊残",
+                "傲霜枝"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“菊残犹有傲霜枝。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘傲霜’写菊枝不怕霜、仍有姿态，不是骄傲地看不起霜；‘犹有’写仍然留下。",
+              "picture": "霜气中的菊枝没有完全倒下，冷色里仍有一处坚韧。",
+              "prompt": "菊花残了，诗人还看见了什么？",
+              "childMeaning": "菊花虽然残败，枝条却还在霜中挺立。",
+              "keyWords": [
+                "菊残",
+                "傲霜枝"
+              ],
+              "commonMisunderstanding": "‘傲霜’写菊枝不怕霜、仍有姿态，不是骄傲地看不起霜；‘犹有’写仍然留下。",
+              "imagePrompt": "霜气中的菊枝没有完全倒下，冷色里仍有一处坚韧。"
             },
             {
               "lineId": "child-zeng-liu-jing-wen-line-3",
-              "meaning": "先从原句找出秋天和荷菊：这句写了“一年好景君须记，”，再用自己的话说说画面怎样变化。",
+              "meaning": "朋友，一年中最值得记住的好景色，你一定要记住。",
               "keywords": [
-                "秋天",
-                "荷菊",
-                "勉励"
+                "一年好景",
+                "君须记"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“一年好景君须记，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘君’是对朋友的称呼，‘须’是一定、应该；这不是命令背诵，而是亲切的提醒。",
+              "picture": "诗人把秋日景物递给朋友，邀请他记住眼前的好时节。",
+              "prompt": "诗人为什么要请朋友记住？",
+              "childMeaning": "朋友，一年中最值得记住的好景色，你一定要记住。",
+              "keyWords": [
+                "一年好景",
+                "君须记"
+              ],
+              "commonMisunderstanding": "‘君’是对朋友的称呼，‘须’是一定、应该；这不是命令背诵，而是亲切的提醒。",
+              "imagePrompt": "诗人把秋日景物递给朋友，邀请他记住眼前的好时节。"
             },
             {
               "lineId": "child-zeng-liu-jing-wen-line-4",
-              "meaning": "先从原句找出秋天和荷菊：这句写了“最是橙黄橘绿时。”，再用自己的话说说画面怎样变化。",
+              "meaning": "最好的秋景，正是橙子金黄、橘子青绿的时节。",
               "keywords": [
-                "秋天",
-                "荷菊",
-                "勉励"
+                "橙黄",
+                "橘绿",
+                "好景"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“最是橙黄橘绿时。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘橙黄橘绿’写果实成熟前后的颜色层次，不是说所有橙子和橘子必须同时完全成熟。",
+              "picture": "金黄和青绿的果实挂在枝头，晚秋有自己的明亮颜色。",
+              "prompt": "晚秋用哪些颜色证明自己也很美？",
+              "childMeaning": "最好的秋景，正是橙子金黄、橘子青绿的时节。",
+              "keyWords": [
+                "橙黄",
+                "橘绿",
+                "好景"
+              ],
+              "commonMisunderstanding": "‘橙黄橘绿’写果实成熟前后的颜色层次，不是说所有橙子和橘子必须同时完全成熟。",
+              "imagePrompt": "金黄和青绿的果实挂在枝头，晚秋有自己的明亮颜色。"
             }
           ],
-          "wholeMeaning": "这首诗围绕秋天、荷菊、勉励展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过秋天、荷菊、勉励写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "秋天的荷花已经凋谢，荷叶也不能再像伞一样托住雨水；菊花虽然残败，仍留下傲霜的枝条。朋友啊，要记住一年中最好的景色，正是橙子金黄、橘子青绿的深秋时节。诗从衰败中看见坚韧，也写出对朋友的勉励。",
+          "mainContent": "诗先写荷尽菊残的秋日近景，再把目光转向仍然挺立的菊枝和橙橘果实，最后由‘君须记’把景物变成温和的劝勉。",
           "evidenceLines": [
             "child-zeng-liu-jing-wen-line-1",
             "child-zeng-liu-jing-wen-line-2",
             "child-zeng-liu-jing-wen-line-3",
             "child-zeng-liu-jing-wen-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过秋天、荷菊、勉励表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写荷尽菊残的秋日近景，再把目光转向仍然挺立的菊枝和橙橘果实，最后由‘君须记’把景物变成温和的劝勉。",
+          "emotion": "温暖的勉励、对晚秋生命力的欣赏和对朋友的关心。",
+          "centralIdea": "不要只看见花叶凋零；晚秋仍有傲霜的枝条和成熟的果实，换一个时间和角度，就能发现另一种好景。",
           "evidenceLines": [
             "child-zeng-liu-jing-wen-line-1",
             "child-zeng-liu-jing-wen-line-2",
             "child-zeng-liu-jing-wen-line-3",
             "child-zeng-liu-jing-wen-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -55324,53 +56369,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "秋天",
-              "荷菊"
-            ],
-            [
-              "秋天",
-              "荷菊"
-            ],
-            [
-              "秋天",
-              "荷菊"
-            ],
-            [
-              "秋天",
-              "荷菊"
-            ]
+            {
+              "lineId": "child-zeng-liu-jing-wen-line-1",
+              "keywords": [
+                "荷尽",
+                "无擎雨盖"
+              ],
+              "cue": "荷叶荷花退场"
+            },
+            {
+              "lineId": "child-zeng-liu-jing-wen-line-2",
+              "keywords": [
+                "菊残",
+                "傲霜枝"
+              ],
+              "cue": "残菊仍有坚枝"
+            },
+            {
+              "lineId": "child-zeng-liu-jing-wen-line-3",
+              "keywords": [
+                "一年好景",
+                "君须记"
+              ],
+              "cue": "请朋友记住好景"
+            },
+            {
+              "lineId": "child-zeng-liu-jing-wen-line-4",
+              "keywords": [
+                "橙黄",
+                "橘绿"
+              ],
+              "cue": "果实写出晚秋颜色"
+            }
           ],
           "firstCharacterHints": [
-            "荷",
-            "菊",
-            "一",
-            "最"
+            {
+              "lineId": "child-zeng-liu-jing-wen-line-1",
+              "character": "荷",
+              "cue": "荷尽已无"
+            },
+            {
+              "lineId": "child-zeng-liu-jing-wen-line-2",
+              "character": "菊",
+              "cue": "菊残犹有"
+            },
+            {
+              "lineId": "child-zeng-liu-jing-wen-line-3",
+              "character": "一",
+              "cue": "一年好景"
+            },
+            {
+              "lineId": "child-zeng-liu-jing-wen-line-4",
+              "character": "最",
+              "cue": "最是橙黄"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "秋天的荷花已经凋谢，荷叶也不能再像伞一样托住雨水；菊花虽然残败，仍留下傲霜的枝条。朋友啊，要记住一年中最好的景色，正是橙子金黄、橘子青绿的深秋时节。诗从衰败中看见坚韧，也写出对朋友的勉励。",
+        "lineMeanings": [
+          {
+            "lineId": "child-zeng-liu-jing-wen-line-1",
+            "meaning": "荷花已经凋谢，荷叶也没有了能够托住雨水的样子。"
+          },
+          {
+            "lineId": "child-zeng-liu-jing-wen-line-2",
+            "meaning": "菊花虽然残败，枝条却还在霜中挺立。"
+          },
+          {
+            "lineId": "child-zeng-liu-jing-wen-line-3",
+            "meaning": "朋友，一年中最值得记住的好景色，你一定要记住。"
+          },
+          {
+            "lineId": "child-zeng-liu-jing-wen-line-4",
+            "meaning": "最好的秋景，正是橙子金黄、橘子青绿的时节。"
+          }
+        ],
+        "extension": {
+          "title": "在变化里找到另一种好",
+          "text": "诗人没有停在‘荷尽’和‘菊残’的失落里，而是看见傲霜枝和橙橘果实。面对变化时，可以问自己：原来的样子退去后，新的美好在哪里？",
+          "prompt": "当一个喜欢的季节或活动结束时，你还能找到哪一种新的好景？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -57268,19 +58392,55 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-087",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十二批内容复核：千锤万凿、烈火、粉骨碎身与清白品格的物我关系已人工确认；凿、焚、浑按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-4",
+          "char": "凿",
+          "pinyin": "záo",
+          "reason": "‘千锤万凿’中的凿指开凿，读 záo。"
+        },
+        {
+          "path": "line-2.token-3",
+          "char": "焚",
+          "pinyin": "fén",
+          "reason": "‘焚烧’意为用火烧炼，焚读 fén。"
+        },
+        {
+          "path": "line-3.token-5",
+          "char": "浑",
+          "pinyin": "hún",
+          "reason": "‘浑不怕’意为完全不怕，浑读 hún。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "mountain-stone-fire-and-clear-integrity",
+        "observation": "石灰从深山岩石出发，经锤凿、烈火和粉碎，最后把白色清白留在人间；空间过程对应品格选择。",
+        "mapAction": "画‘深山—开凿—火炉—人间’的材料路径，再把它转译成‘考验—选择—清白’的学习关系，不标具体矿山。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "清白不是没有经历困难，而是在困难和代价面前仍守住原则。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗以石灰开采和烧炼过程承载品格象征，没有可核定的单一地点；深山是泛化材料来源，不虚构矿山坐标。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -57313,7 +58473,8 @@
             {
               "char": "凿",
               "pinyin": "záo",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘千锤万凿’中的凿指开凿，读 záo。"
             },
             {
               "char": "出",
@@ -57353,7 +58514,8 @@
             {
               "char": "焚",
               "pinyin": "fén",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘焚烧’意为用火烧炼，焚读 fén。"
             },
             {
               "char": "烧",
@@ -57408,7 +58570,8 @@
             {
               "char": "浑",
               "pinyin": "hún",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘浑不怕’意为完全不怕，浑读 hún。"
             },
             {
               "char": "不",
@@ -57473,73 +58636,111 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-shi-hui-yin-line-1",
-              "meaning": "先从原句找出石灰和品格：这句写了“千锤万凿出深山，”，再用自己的话说说画面怎样变化。",
+              "meaning": "石灰石经过千百次锤打和开凿，才从深山中被取出。",
               "keywords": [
-                "石灰",
-                "品格",
-                "选择"
+                "千锤万凿",
+                "出深山"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“千锤万凿出深山，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘千’和‘万’是夸张，写锤凿次数很多；‘凿’读 záo；诗写石灰开采过程，不是普通登山。",
+              "picture": "深山岩石被反复凿开，石灰从山体内部显露出来。",
+              "prompt": "石灰从深山出来经历了哪些动作？",
+              "childMeaning": "石灰石经过千百次锤打和开凿，才从深山中被取出。",
+              "keyWords": [
+                "千锤万凿",
+                "出深山"
+              ],
+              "commonMisunderstanding": "‘千’和‘万’是夸张，写锤凿次数很多；‘凿’读 záo；诗写石灰开采过程，不是普通登山。",
+              "imagePrompt": "深山岩石被反复凿开，石灰从山体内部显露出来。"
             },
             {
               "lineId": "child-shi-hui-yin-line-2",
-              "meaning": "先从原句找出石灰和品格：这句写了“烈火焚烧若等闲。”，再用自己的话说说画面怎样变化。",
+              "meaning": "面对烈火焚烧，石灰把它当作平常，并不显出畏惧。",
               "keywords": [
-                "石灰",
-                "品格",
-                "选择"
+                "烈火",
+                "焚烧",
+                "若等闲"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“烈火焚烧若等闲。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘焚’读 fén；‘若等闲’是把艰难看得平常，不是说火真的没有温度或危险。",
+              "picture": "石灰石在炉火中发生变化，诗人却用平静语气写它的坚定。",
+              "prompt": "什么词表现出面对烈火的镇定？",
+              "childMeaning": "面对烈火焚烧，石灰把它当作平常，并不显出畏惧。",
+              "keyWords": [
+                "烈火",
+                "焚烧",
+                "若等闲"
+              ],
+              "commonMisunderstanding": "‘焚’读 fén；‘若等闲’是把艰难看得平常，不是说火真的没有温度或危险。",
+              "imagePrompt": "石灰石在炉火中发生变化，诗人却用平静语气写它的坚定。"
             },
             {
               "lineId": "child-shi-hui-yin-line-3",
-              "meaning": "先从原句找出石灰和品格：这句写了“粉骨碎身浑不怕，”，再用自己的话说说画面怎样变化。",
+              "meaning": "即使最后粉身碎骨、变得破碎，也完全不害怕。",
               "keywords": [
-                "石灰",
-                "品格",
-                "选择"
+                "粉骨碎身",
+                "浑不怕"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“粉骨碎身浑不怕，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘浑’在这里是完全、全然；‘粉骨碎身’是夸张地写付出很大，不是鼓励孩子伤害身体。",
+              "picture": "石灰被敲碎、烧炼，外形失去完整，但它代表的选择没有改变。",
+              "prompt": "诗人把什么代价写得很重？",
+              "childMeaning": "即使最后粉身碎骨、变得破碎，也完全不害怕。",
+              "keyWords": [
+                "粉骨碎身",
+                "浑不怕"
+              ],
+              "commonMisunderstanding": "‘浑’在这里是完全、全然；‘粉骨碎身’是夸张地写付出很大，不是鼓励孩子伤害身体。",
+              "imagePrompt": "石灰被敲碎、烧炼，外形失去完整，但它代表的选择没有改变。"
             },
             {
               "lineId": "child-shi-hui-yin-line-4",
-              "meaning": "先从原句找出石灰和品格：这句写了“要留清白在人间。”，再用自己的话说说画面怎样变化。",
+              "meaning": "只希望把清白的品格留在人世之间。",
               "keywords": [
-                "石灰",
-                "品格",
-                "选择"
+                "要留",
+                "清白",
+                "人间"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“要留清白在人间。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘清白’既指石灰颜色洁白，也象征人的清正廉洁；‘人间’是人们共同生活的世界。",
+              "picture": "白色石灰进入人间生活，外在洁白被提升为不受污损的品格。",
+              "prompt": "石灰的白色在最后变成了什么精神意义？",
+              "childMeaning": "只希望把清白的品格留在人世之间。",
+              "keyWords": [
+                "要留",
+                "清白",
+                "人间"
+              ],
+              "commonMisunderstanding": "‘清白’既指石灰颜色洁白，也象征人的清正廉洁；‘人间’是人们共同生活的世界。",
+              "imagePrompt": "白色石灰进入人间生活，外在洁白被提升为不受污损的品格。"
             }
           ],
-          "wholeMeaning": "这首诗围绕石灰、品格、选择展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过石灰、品格、选择写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "石灰石经过千锤万凿才从深山里被开采出来，又经过烈火焚烧，却把这一切看得平常。即使粉身碎骨，也不害怕，只愿把清白留在人间。诗借石灰的制作过程表达宁守清白、不怕磨难的品格。",
+          "mainContent": "诗先写石灰从深山出、经历锤凿和烈火，再把材料的破碎转成品格选择：即使粉骨碎身，也要留下清白。",
           "evidenceLines": [
             "child-shi-hui-yin-line-1",
             "child-shi-hui-yin-line-2",
             "child-shi-hui-yin-line-3",
             "child-shi-hui-yin-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过石灰、品格、选择表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写石灰从深山出、经历锤凿和烈火，再把材料的破碎转成品格选择：即使粉骨碎身，也要留下清白。",
+          "emotion": "坚定、无畏和守护清白的昂扬。",
+          "centralIdea": "清白不是轻松得到的名声，而是在反复锤炼、烈火和代价面前仍坚持原则；石灰的经历是人格选择的象征。",
           "evidenceLines": [
             "child-shi-hui-yin-line-1",
             "child-shi-hui-yin-line-2",
             "child-shi-hui-yin-line-3",
             "child-shi-hui-yin-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -57547,53 +58748,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "石灰",
-              "品格"
-            ],
-            [
-              "石灰",
-              "品格"
-            ],
-            [
-              "石灰",
-              "品格"
-            ],
-            [
-              "石灰",
-              "品格"
-            ]
+            {
+              "lineId": "child-shi-hui-yin-line-1",
+              "keywords": [
+                "千锤万凿",
+                "深山"
+              ],
+              "cue": "从深山经锤凿出来"
+            },
+            {
+              "lineId": "child-shi-hui-yin-line-2",
+              "keywords": [
+                "烈火",
+                "等闲"
+              ],
+              "cue": "烈火也从容面对"
+            },
+            {
+              "lineId": "child-shi-hui-yin-line-3",
+              "keywords": [
+                "粉骨碎身",
+                "不怕"
+              ],
+              "cue": "付出代价也不怕"
+            },
+            {
+              "lineId": "child-shi-hui-yin-line-4",
+              "keywords": [
+                "清白",
+                "人间"
+              ],
+              "cue": "把清白留在人间"
+            }
           ],
           "firstCharacterHints": [
-            "千",
-            "烈",
-            "粉",
-            "要"
+            {
+              "lineId": "child-shi-hui-yin-line-1",
+              "character": "千",
+              "cue": "千锤万凿"
+            },
+            {
+              "lineId": "child-shi-hui-yin-line-2",
+              "character": "烈",
+              "cue": "烈火焚烧"
+            },
+            {
+              "lineId": "child-shi-hui-yin-line-3",
+              "character": "粉",
+              "cue": "粉骨碎身"
+            },
+            {
+              "lineId": "child-shi-hui-yin-line-4",
+              "character": "要",
+              "cue": "要留清白"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "石灰石经过千锤万凿才从深山里被开采出来，又经过烈火焚烧，却把这一切看得平常。即使粉身碎骨，也不害怕，只愿把清白留在人间。诗借石灰的制作过程表达宁守清白、不怕磨难的品格。",
+        "lineMeanings": [
+          {
+            "lineId": "child-shi-hui-yin-line-1",
+            "meaning": "石灰石经过千百次锤打和开凿，才从深山中被取出。"
+          },
+          {
+            "lineId": "child-shi-hui-yin-line-2",
+            "meaning": "面对烈火焚烧，石灰把它当作平常，并不显出畏惧。"
+          },
+          {
+            "lineId": "child-shi-hui-yin-line-3",
+            "meaning": "即使最后粉身碎骨、变得破碎，也完全不害怕。"
+          },
+          {
+            "lineId": "child-shi-hui-yin-line-4",
+            "meaning": "只希望把清白的品格留在人世之间。"
+          }
+        ],
+        "extension": {
+          "title": "选择比外表更重的东西",
+          "text": "石灰最后留下的是清白，诗人借它提醒我们：真正重要的品格，常常要在困难和诱惑中选择。孩子可以把‘清白’翻译成诚实、守信、愿意承担责任等具体行动。",
+          "prompt": "当没有人监督时，你愿意坚持哪一件诚实的小事？它为什么重要？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -58194,19 +59474,60 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-089",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十二批内容复核：枯藤老树、桥水人家、古道瘦马与天涯断肠人的秋日旅途画面已人工确认；藤、瘦、肠、涯按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-2",
+          "char": "藤",
+          "pinyin": "téng",
+          "reason": "‘枯藤’指枯萎的藤蔓，藤读 téng。"
+        },
+        {
+          "path": "line-2.token-5",
+          "char": "瘦",
+          "pinyin": "shòu",
+          "reason": "‘瘦马’写旅途劳顿，瘦读 shòu。"
+        },
+        {
+          "path": "line-3.token-7",
+          "char": "肠",
+          "pinyin": "cháng",
+          "reason": "‘断肠人’是极度悲伤的夸张表达，肠读 cháng。"
+        },
+        {
+          "path": "line-3.token-11",
+          "char": "涯",
+          "pinyin": "yá",
+          "reason": "‘天涯’指遥远的地方，涯读 yá。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "autumn-road-and-distant-home",
+        "observation": "景物从枯藤老树和小桥流水的近远并置，经过古道西风瘦马，最后在夕阳和天涯旅人处收束为漂泊心情。",
+        "mapAction": "画‘树藤—桥水人家—古道—瘦马—夕阳—天涯’的旅途镜头，不把散曲虚构成作者实际路线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3"
+        ],
+        "childTakeaway": "具体景物可以共同表达没有直接说出的心情，观察顺序会改变阅读感受。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "散曲提供的是泛化秋日旅途空间，没有可核定的单一地理地点；景物串联表达漂泊心情，不生成虚构路线。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -58229,7 +59550,8 @@
             {
               "char": "藤",
               "pinyin": "téng",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘枯藤’指枯萎的藤蔓，藤读 téng。"
             },
             {
               "char": "老",
@@ -58318,7 +59640,8 @@
             {
               "char": "瘦",
               "pinyin": "shòu",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘瘦马’写旅途劳顿，瘦读 shòu。"
             },
             {
               "char": "马",
@@ -58366,8 +59689,9 @@
             },
             {
               "char": "肠",
-              "pinyin": "duàn",
-              "tone": 5
+              "pinyin": "cháng",
+              "tone": 2,
+              "pronunciationReview": "‘断肠人’是极度悲伤的夸张表达，肠读 cháng。"
             },
             {
               "char": "人",
@@ -58386,8 +59710,9 @@
             },
             {
               "char": "涯",
-              "pinyin": "tiān",
-              "tone": 5
+              "pinyin": "yá",
+              "tone": 2,
+              "pronunciationReview": "‘天涯’指遥远的地方，涯读 yá。"
             },
             {
               "char": "。",
@@ -58397,60 +59722,95 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-tian-jing-sha-qiu-si-line-1",
-              "meaning": "先从原句找出秋天和旅途：这句写了“枯藤老树昏鸦，小桥流水人家。”，再用自己的话说说画面怎样变化。",
+              "meaning": "枯藤缠着老树，黄昏时乌鸦停在枝头；远处还有小桥、流水和人家。",
               "keywords": [
-                "秋天",
-                "旅途",
-                "远方"
+                "枯藤",
+                "老树",
+                "昏鸦",
+                "小桥流水人家"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“枯藤老树昏鸦，小桥流水人家。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "这一句把多组秋日景物并置，不是说所有景物都在同一棵树上；‘昏鸦’是黄昏的乌鸦。",
+              "picture": "近处是枯藤老树和乌鸦，视线移开又看见小桥、流水与有人居住的屋舍。",
+              "prompt": "这一句为什么既有冷落景物，也有流水人家？",
+              "childMeaning": "枯藤缠着老树，黄昏时乌鸦停在枝头；远处还有小桥、流水和人家。",
+              "keyWords": [
+                "枯藤",
+                "老树",
+                "昏鸦",
+                "小桥流水人家"
+              ],
+              "commonMisunderstanding": "这一句把多组秋日景物并置，不是说所有景物都在同一棵树上；‘昏鸦’是黄昏的乌鸦。",
+              "imagePrompt": "近处是枯藤老树和乌鸦，视线移开又看见小桥、流水与有人居住的屋舍。"
             },
             {
               "lineId": "child-tian-jing-sha-qiu-si-line-2",
-              "meaning": "先从原句找出秋天和旅途：这句写了“古道西风瘦马。”，再用自己的话说说画面怎样变化。",
+              "meaning": "古老的道路上吹着秋风，一匹瘦马驮着旅人继续走。",
               "keywords": [
-                "秋天",
-                "旅途",
-                "远方"
+                "古道",
+                "西风",
+                "瘦马"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“古道西风瘦马。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘西风’是秋风，不一定强调风来自正西；‘瘦马’写旅途劳顿和马匹疲弱，也暗示人的困顿。",
+              "picture": "古道延伸到远处，秋风吹过马背，旅人没有停下却显得疲惫。",
+              "prompt": "哪些景物让你感到旅途很久、很累？",
+              "childMeaning": "古老的道路上吹着秋风，一匹瘦马驮着旅人继续走。",
+              "keyWords": [
+                "古道",
+                "西风",
+                "瘦马"
+              ],
+              "commonMisunderstanding": "‘西风’是秋风，不一定强调风来自正西；‘瘦马’写旅途劳顿和马匹疲弱，也暗示人的困顿。",
+              "imagePrompt": "古道延伸到远处，秋风吹过马背，旅人没有停下却显得疲惫。"
             },
             {
               "lineId": "child-tian-jing-sha-qiu-si-line-3",
-              "meaning": "先从原句找出秋天和旅途：这句写了“夕阳西下，断肠人在天涯。”，再用自己的话说说画面怎样变化。",
+              "meaning": "夕阳向西落下，漂泊在天涯的旅人心中极其悲痛。",
               "keywords": [
-                "秋天",
-                "旅途",
-                "远方"
+                "夕阳西下",
+                "断肠人",
+                "天涯"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“夕阳西下，断肠人在天涯。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘断肠’是极度悲伤的夸张说法，不是身体真的断裂；‘天涯’写远离故乡的地方和心理距离。",
+              "picture": "落日把旅人的影子拉长，他在遥远的路上独自承受思乡和漂泊。",
+              "prompt": "最后是谁把前面的景物串成了情绪？",
+              "childMeaning": "夕阳向西落下，漂泊在天涯的旅人心中极其悲痛。",
+              "keyWords": [
+                "夕阳西下",
+                "断肠人",
+                "天涯"
+              ],
+              "commonMisunderstanding": "‘断肠’是极度悲伤的夸张说法，不是身体真的断裂；‘天涯’写远离故乡的地方和心理距离。",
+              "imagePrompt": "落日把旅人的影子拉长，他在遥远的路上独自承受思乡和漂泊。"
             }
           ],
-          "wholeMeaning": "这首诗围绕秋天、旅途、远方展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过秋天、旅途、远方写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "枯藤缠着老树，黄昏乌鸦停在枝头；小桥、流水和人家组成远处的生活画面。古道上秋风吹着一匹瘦马，夕阳向西落下，漂泊在天涯的游子感到断肠。曲子用一串景物从近到远拼出秋日旅途的孤寂。",
+          "mainContent": "散曲把枯藤、老树、昏鸦、小桥流水人家、古道西风瘦马和夕阳连成移动的旅途镜头，最后点出人的身份和愁绪。",
           "evidenceLines": [
             "child-tian-jing-sha-qiu-si-line-1",
             "child-tian-jing-sha-qiu-si-line-2",
             "child-tian-jing-sha-qiu-si-line-3"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过秋天、旅途、远方表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "散曲把枯藤、老树、昏鸦、小桥流水人家、古道西风瘦马和夕阳连成移动的旅途镜头，最后点出人的身份和愁绪。",
+          "emotion": "萧瑟、孤独和远行者思乡无依的愁苦。",
+          "centralIdea": "景物本身没有直接说‘我很悲伤’，但衰老、冷落、秋风、瘦马和落日排列在一起，就让漂泊者的心情自然显现。",
           "evidenceLines": [
             "child-tian-jing-sha-qiu-si-line-1",
             "child-tian-jing-sha-qiu-si-line-2",
             "child-tian-jing-sha-qiu-si-line-3"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -58458,48 +59818,118 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "秋天",
-              "旅途"
-            ],
-            [
-              "秋天",
-              "旅途"
-            ],
-            [
-              "秋天",
-              "旅途"
-            ]
+            {
+              "lineId": "child-tian-jing-sha-qiu-si-line-1",
+              "keywords": [
+                "枯藤老树",
+                "昏鸦",
+                "小桥流水人家"
+              ],
+              "cue": "一串秋日景物"
+            },
+            {
+              "lineId": "child-tian-jing-sha-qiu-si-line-2",
+              "keywords": [
+                "古道",
+                "西风",
+                "瘦马"
+              ],
+              "cue": "疲惫旅途继续"
+            },
+            {
+              "lineId": "child-tian-jing-sha-qiu-si-line-3",
+              "keywords": [
+                "夕阳",
+                "断肠人",
+                "天涯"
+              ],
+              "cue": "落日点出漂泊愁"
+            }
           ],
           "firstCharacterHints": [
-            "枯",
-            "古",
-            "夕"
+            {
+              "lineId": "child-tian-jing-sha-qiu-si-line-1",
+              "character": "枯",
+              "cue": "枯藤老树"
+            },
+            {
+              "lineId": "child-tian-jing-sha-qiu-si-line-2",
+              "character": "古",
+              "cue": "古道西风"
+            },
+            {
+              "lineId": "child-tian-jing-sha-qiu-si-line-3",
+              "character": "夕",
+              "cue": "夕阳西下"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "枯藤缠着老树，黄昏乌鸦停在枝头；小桥、流水和人家组成远处的生活画面。古道上秋风吹着一匹瘦马，夕阳向西落下，漂泊在天涯的游子感到断肠。曲子用一串景物从近到远拼出秋日旅途的孤寂。",
+        "lineMeanings": [
+          {
+            "lineId": "child-tian-jing-sha-qiu-si-line-1",
+            "meaning": "枯藤缠着老树，黄昏时乌鸦停在枝头；远处还有小桥、流水和人家。"
+          },
+          {
+            "lineId": "child-tian-jing-sha-qiu-si-line-2",
+            "meaning": "古老的道路上吹着秋风，一匹瘦马驮着旅人继续走。"
+          },
+          {
+            "lineId": "child-tian-jing-sha-qiu-si-line-3",
+            "meaning": "夕阳向西落下，漂泊在天涯的旅人心中极其悲痛。"
+          }
+        ],
+        "extension": {
+          "title": "用景物拼出一种心情",
+          "text": "这首曲几乎没有直接说‘我想家’，而是让枯藤、老树、秋风、瘦马和夕阳依次出现。写心情时，也可以先选择几个具体景物，让读者从景物之间的关系感受到你的心事。",
+          "prompt": "如果用三个景物表达‘想家’，你会选择什么？它们为什么能让人感受到这份心情？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -59221,19 +60651,175 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-091",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十一批内容复核：溪边茅檐、吴音翁媪、三子分工与小儿剥莲蓬的家庭空间已人工确认；亡、剥及标点后的逐字拼音按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-6",
+          "char": "溪",
+          "pinyin": "xī",
+          "reason": "‘溪上’中的溪读 xī；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-1.token-7",
+          "char": "上",
+          "pinyin": "shàng",
+          "reason": "‘溪上’表示溪水上方或溪边，读 shàng；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-1.token-8",
+          "char": "青",
+          "pinyin": "qīng",
+          "reason": "‘青青草’中青读 qīng；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-1.token-10",
+          "char": "草",
+          "pinyin": "cǎo",
+          "reason": "‘青草’中的草读 cǎo；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-9",
+          "char": "白",
+          "pinyin": "bái",
+          "reason": "‘白发’中的白读 bái；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-10",
+          "char": "发",
+          "pinyin": "fà",
+          "reason": "‘白发’指头发，发读 fà；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-11",
+          "char": "谁",
+          "pinyin": "shuí",
+          "reason": "‘谁家’中的谁读 shuí；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-12",
+          "char": "家",
+          "pinyin": "jiā",
+          "reason": "‘谁家’中的家读 jiā；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-13",
+          "char": "翁",
+          "pinyin": "wēng",
+          "reason": "‘翁媪’中的翁读 wēng；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-14",
+          "char": "媪",
+          "pinyin": "ǎo",
+          "reason": "‘翁媪’中的媪读 ǎo；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-3.token-8",
+          "char": "中",
+          "pinyin": "zhōng",
+          "reason": "‘中儿’指排行居中的儿子，中读 zhōng；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-3.token-9",
+          "char": "儿",
+          "pinyin": "ér",
+          "reason": "‘中儿’中的儿读 ér；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-3.token-10",
+          "char": "正",
+          "pinyin": "zhèng",
+          "reason": "‘正织’表示正在编织，正读 zhèng；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-3.token-11",
+          "char": "织",
+          "pinyin": "zhī",
+          "reason": "‘织鸡笼’中的织读 zhī；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-3.token-12",
+          "char": "鸡",
+          "pinyin": "jī",
+          "reason": "‘鸡笼’中的鸡读 jī；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-3.token-13",
+          "char": "笼",
+          "pinyin": "lóng",
+          "reason": "‘鸡笼’中的笼读 lóng，指笼子；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-4.token-5",
+          "char": "亡",
+          "pinyin": "wú",
+          "reason": "‘亡赖’通‘无赖’，表示顽皮自在，亡读 wú。"
+        },
+        {
+          "path": "line-4.token-8",
+          "char": "溪",
+          "pinyin": "xī",
+          "reason": "‘溪头’中的溪读 xī；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-4.token-9",
+          "char": "头",
+          "pinyin": "tóu",
+          "reason": "‘溪头’中的头读 tóu；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-4.token-10",
+          "char": "卧",
+          "pinyin": "wò",
+          "reason": "‘卧剥’中的卧读 wò；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-4.token-11",
+          "char": "剥",
+          "pinyin": "bāo",
+          "reason": "‘剥莲蓬’意为剥开，剥读 bāo；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-4.token-12",
+          "char": "莲",
+          "pinyin": "lián",
+          "reason": "‘莲蓬’中的莲读 lián；修正标点后的逐字对齐。"
+        },
+        {
+          "path": "line-4.token-13",
+          "char": "蓬",
+          "pinyin": "péng",
+          "reason": "‘莲蓬’中的蓬读 péng；修正标点后的逐字对齐。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "streamside-family-yard",
+        "observation": "空间从溪边茅檐和青草展开，经过老人说笑、溪东锄豆和编笼，最后落到溪头小儿剥莲蓬的近景。",
+        "mapAction": "画‘茅檐—溪水—溪东田地—溪头莲蓬’的家庭生活关系，不把吴音扩写成精确历史居所。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "一家人的位置和动作连在一起，普通的村居也能成为有层次的生活地图。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《清平乐·村居》保留泛化村居家庭空间，不把吴地口音直接等同于作者或词作的精确居所；现代地图不生成虚构坐标。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -59274,18 +60860,21 @@
             },
             {
               "char": "溪",
-              "pinyin": "，",
-              "tone": 5
+              "pinyin": "xī",
+              "tone": 1,
+              "pronunciationReview": "‘溪上’中的溪读 xī；修正标点后的逐字对齐。"
             },
             {
               "char": "上",
-              "pinyin": "xī",
-              "tone": 5
+              "pinyin": "shàng",
+              "tone": 4,
+              "pronunciationReview": "‘溪上’表示溪水上方或溪边，读 shàng；修正标点后的逐字对齐。"
             },
             {
               "char": "青",
-              "pinyin": "shàng",
-              "tone": 5
+              "pinyin": "qīng",
+              "tone": 1,
+              "pronunciationReview": "‘青青草’中青读 qīng；修正标点后的逐字对齐。"
             },
             {
               "char": "青",
@@ -59294,8 +60883,9 @@
             },
             {
               "char": "草",
-              "pinyin": "qīng",
-              "tone": 5
+              "pinyin": "cǎo",
+              "tone": 3,
+              "pronunciationReview": "‘青草’中的草读 cǎo；修正标点后的逐字对齐。"
             },
             {
               "char": "。",
@@ -59348,33 +60938,39 @@
             },
             {
               "char": "白",
-              "pinyin": "，",
-              "tone": 5
+              "pinyin": "bái",
+              "tone": 2,
+              "pronunciationReview": "‘白发’中的白读 bái；修正标点后的逐字对齐。"
             },
             {
               "char": "发",
-              "pinyin": "bái",
-              "tone": 5
+              "pinyin": "fà",
+              "tone": 4,
+              "pronunciationReview": "‘白发’指头发，发读 fà；修正标点后的逐字对齐。"
             },
             {
               "char": "谁",
-              "pinyin": "fà",
-              "tone": 5
+              "pinyin": "shuí",
+              "tone": 2,
+              "pronunciationReview": "‘谁家’中的谁读 shuí；修正标点后的逐字对齐。"
             },
             {
               "char": "家",
-              "pinyin": "shuí",
-              "tone": 5
+              "pinyin": "jiā",
+              "tone": 1,
+              "pronunciationReview": "‘谁家’中的家读 jiā；修正标点后的逐字对齐。"
             },
             {
               "char": "翁",
-              "pinyin": "jiā",
-              "tone": 5
+              "pinyin": "wēng",
+              "tone": 1,
+              "pronunciationReview": "‘翁媪’中的翁读 wēng；修正标点后的逐字对齐。"
             },
             {
               "char": "媪",
-              "pinyin": "wēng",
-              "tone": 5
+              "pinyin": "ǎo",
+              "tone": 3,
+              "pronunciationReview": "‘翁媪’中的媪读 ǎo；修正标点后的逐字对齐。"
             },
             {
               "char": "？",
@@ -59422,33 +61018,39 @@
             },
             {
               "char": "中",
-              "pinyin": "，",
-              "tone": 5
+              "pinyin": "zhōng",
+              "tone": 1,
+              "pronunciationReview": "‘中儿’指排行居中的儿子，中读 zhōng；修正标点后的逐字对齐。"
             },
             {
               "char": "儿",
-              "pinyin": "zhōng",
-              "tone": 5
+              "pinyin": "ér",
+              "tone": 2,
+              "pronunciationReview": "‘中儿’中的儿读 ér；修正标点后的逐字对齐。"
             },
             {
               "char": "正",
-              "pinyin": "ér",
-              "tone": 5
+              "pinyin": "zhèng",
+              "tone": 4,
+              "pronunciationReview": "‘正织’表示正在编织，正读 zhèng；修正标点后的逐字对齐。"
             },
             {
               "char": "织",
-              "pinyin": "zhèng",
-              "tone": 5
+              "pinyin": "zhī",
+              "tone": 1,
+              "pronunciationReview": "‘织鸡笼’中的织读 zhī；修正标点后的逐字对齐。"
             },
             {
               "char": "鸡",
-              "pinyin": "zhī",
-              "tone": 5
+              "pinyin": "jī",
+              "tone": 1,
+              "pronunciationReview": "‘鸡笼’中的鸡读 jī；修正标点后的逐字对齐。"
             },
             {
               "char": "笼",
-              "pinyin": "jī",
-              "tone": 5
+              "pinyin": "lóng",
+              "tone": 2,
+              "pronunciationReview": "‘鸡笼’中的笼读 lóng，指笼子；修正标点后的逐字对齐。"
             },
             {
               "char": "。",
@@ -59482,8 +61084,9 @@
             },
             {
               "char": "亡",
-              "pinyin": "wáng",
-              "tone": 5
+              "pinyin": "wú",
+              "tone": 2,
+              "pronunciationReview": "‘亡赖’通‘无赖’，表示顽皮自在，亡读 wú。"
             },
             {
               "char": "赖",
@@ -59496,33 +61099,39 @@
             },
             {
               "char": "溪",
-              "pinyin": "，",
-              "tone": 5
+              "pinyin": "xī",
+              "tone": 1,
+              "pronunciationReview": "‘溪头’中的溪读 xī；修正标点后的逐字对齐。"
             },
             {
               "char": "头",
-              "pinyin": "xī",
-              "tone": 5
+              "pinyin": "tóu",
+              "tone": 2,
+              "pronunciationReview": "‘溪头’中的头读 tóu；修正标点后的逐字对齐。"
             },
             {
               "char": "卧",
-              "pinyin": "tóu",
-              "tone": 5
+              "pinyin": "wò",
+              "tone": 4,
+              "pronunciationReview": "‘卧剥’中的卧读 wò；修正标点后的逐字对齐。"
             },
             {
               "char": "剥",
-              "pinyin": "wò",
-              "tone": 5
+              "pinyin": "bāo",
+              "tone": 1,
+              "pronunciationReview": "‘剥莲蓬’意为剥开，剥读 bāo；修正标点后的逐字对齐。"
             },
             {
               "char": "莲",
-              "pinyin": "bāo",
-              "tone": 5
+              "pinyin": "lián",
+              "tone": 2,
+              "pronunciationReview": "‘莲蓬’中的莲读 lián；修正标点后的逐字对齐。"
             },
             {
               "char": "蓬",
-              "pinyin": "lián",
-              "tone": 5
+              "pinyin": "péng",
+              "tone": 2,
+              "pronunciationReview": "‘莲蓬’中的蓬读 péng；修正标点后的逐字对齐。"
             },
             {
               "char": "。",
@@ -59532,73 +61141,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-qing-ping-le-cun-ju-line-1",
-              "meaning": "先从原句找出乡村和家庭：这句写了“茅檐低小，溪上青青草。”，再用自己的话说说画面怎样变化。",
+              "meaning": "茅屋屋檐低矮而小巧，溪水旁的青草长得青翠。",
               "keywords": [
-                "乡村",
-                "家庭",
-                "儿童"
+                "茅檐",
+                "溪上",
+                "青青草"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“茅檐低小，溪上青青草。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘茅檐低小’写屋舍朴素小巧，不是房子压得孩子无法进出；‘青青草’写溪边的生机。",
+              "picture": "低低的茅檐靠着溪水，门外一片青绿的草地。",
+              "prompt": "词一开始把村居放在什么样的环境中？",
+              "childMeaning": "茅屋屋檐低矮而小巧，溪水旁的青草长得青翠。",
+              "keyWords": [
+                "茅檐",
+                "溪上",
+                "青青草"
+              ],
+              "commonMisunderstanding": "‘茅檐低小’写屋舍朴素小巧，不是房子压得孩子无法进出；‘青青草’写溪边的生机。",
+              "imagePrompt": "低低的茅檐靠着溪水，门外一片青绿的草地。"
             },
             {
               "lineId": "child-qing-ping-le-cun-ju-line-2",
-              "meaning": "先从原句找出乡村和家庭：这句写了“醉里吴音相媚好，白发谁家翁媪？”，再用自己的话说说画面怎样变化。",
+              "meaning": "老夫妻喝得有些醉，说着吴地口音，亲亲热热地聊天；他们是谁家的翁媪呢？",
               "keywords": [
-                "乡村",
-                "家庭",
-                "儿童"
+                "吴音",
+                "相媚好",
+                "翁媪"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“醉里吴音相媚好，白发谁家翁媪？”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘吴音’是吴地口音，‘相媚好’写夫妻彼此亲爱，‘翁媪’指老翁和老妇，不是两个孩子的称呼。",
+              "picture": "白发夫妻坐在屋檐下，带着地方口音说笑，生活气息从声音里出来。",
+              "prompt": "你从哪些声音和称呼听出这是一对老人？",
+              "childMeaning": "老夫妻喝得有些醉，说着吴地口音，亲亲热热地聊天；他们是谁家的翁媪呢？",
+              "keyWords": [
+                "吴音",
+                "相媚好",
+                "翁媪"
+              ],
+              "commonMisunderstanding": "‘吴音’是吴地口音，‘相媚好’写夫妻彼此亲爱，‘翁媪’指老翁和老妇，不是两个孩子的称呼。",
+              "imagePrompt": "白发夫妻坐在屋檐下，带着地方口音说笑，生活气息从声音里出来。"
             },
             {
               "lineId": "child-qing-ping-le-cun-ju-line-3",
-              "meaning": "先从原句找出乡村和家庭：这句写了“大儿锄豆溪东，中儿正织鸡笼。”，再用自己的话说说画面怎样变化。",
+              "meaning": "大儿子在溪水东边锄豆，中儿子正在编织鸡笼。",
               "keywords": [
-                "乡村",
-                "家庭",
-                "儿童"
+                "大儿",
+                "锄豆",
+                "织鸡笼"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“大儿锄豆溪东，中儿正织鸡笼。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘锄豆’是给豆苗除草、松土，不是用锄头挖豆子出来；‘中儿’是第二个儿子。",
+              "picture": "溪东有锄地的动作，屋边又有编笼子的手工，一家人各有事情。",
+              "prompt": "两个较大的孩子分别在做什么？",
+              "childMeaning": "大儿子在溪水东边锄豆，中儿子正在编织鸡笼。",
+              "keyWords": [
+                "大儿",
+                "锄豆",
+                "织鸡笼"
+              ],
+              "commonMisunderstanding": "‘锄豆’是给豆苗除草、松土，不是用锄头挖豆子出来；‘中儿’是第二个儿子。",
+              "imagePrompt": "溪东有锄地的动作，屋边又有编笼子的手工，一家人各有事情。"
             },
             {
               "lineId": "child-qing-ping-le-cun-ju-line-4",
-              "meaning": "先从原句找出乡村和家庭：这句写了“最喜小儿亡赖，溪头卧剥莲蓬。”，再用自己的话说说画面怎样变化。",
+              "meaning": "最让人喜欢的是小儿子，他淘气可爱，正躺在溪边剥莲蓬。",
               "keywords": [
-                "乡村",
-                "家庭",
-                "儿童"
+                "最喜",
+                "亡赖",
+                "剥莲蓬"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“最喜小儿亡赖，溪头卧剥莲蓬。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘亡赖’通‘无赖’，这里是顽皮、自在的可爱样子；‘剥’读 bāo，是剥开莲蓬，不是剥夺。",
+              "picture": "小儿子躺在溪头，一边晒着太阳，一边把莲蓬剥开吃莲子。",
+              "prompt": "最小的孩子为什么特别可爱？",
+              "childMeaning": "最让人喜欢的是小儿子，他淘气可爱，正躺在溪边剥莲蓬。",
+              "keyWords": [
+                "最喜",
+                "亡赖",
+                "剥莲蓬"
+              ],
+              "commonMisunderstanding": "‘亡赖’通‘无赖’，这里是顽皮、自在的可爱样子；‘剥’读 bāo，是剥开莲蓬，不是剥夺。",
+              "imagePrompt": "小儿子躺在溪头，一边晒着太阳，一边把莲蓬剥开吃莲子。"
             }
           ],
-          "wholeMeaning": "这首诗围绕乡村、家庭、儿童展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过乡村、家庭、儿童写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "溪边有一间低矮的小茅屋，绿草青青。白发的老夫妻说着吴地口音，亲亲热热地聊天；大儿子在溪东锄豆，中儿子编鸡笼，最可爱的小儿子躺在溪边剥莲蓬。词写一家人的生活各有动作，安静又热闹。",
+          "mainContent": "词先写茅檐、溪水和青草的村居环境，再写老夫妻的声音和三个孩子的劳动、玩耍，镜头由屋外推进到一家人的日常。",
           "evidenceLines": [
             "child-qing-ping-le-cun-ju-line-1",
             "child-qing-ping-le-cun-ju-line-2",
             "child-qing-ping-le-cun-ju-line-3",
             "child-qing-ping-le-cun-ju-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过乡村、家庭、儿童表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "词先写茅檐、溪水和青草的村居环境，再写老夫妻的声音和三个孩子的劳动、玩耍，镜头由屋外推进到一家人的日常。",
+          "emotion": "温暖、亲切和对乡村家庭生活的喜爱。",
+          "centralIdea": "幸福的村居不靠宏大场面，而在家人各做各的事、彼此相伴的日常；每个人的动作都让家变得有生命。",
           "evidenceLines": [
             "child-qing-ping-le-cun-ju-line-1",
             "child-qing-ping-le-cun-ju-line-2",
             "child-qing-ping-le-cun-ju-line-3",
             "child-qing-ping-le-cun-ju-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -59606,53 +61257,136 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "乡村",
-              "家庭"
-            ],
-            [
-              "乡村",
-              "家庭"
-            ],
-            [
-              "乡村",
-              "家庭"
-            ],
-            [
-              "乡村",
-              "家庭"
-            ]
+            {
+              "lineId": "child-qing-ping-le-cun-ju-line-1",
+              "keywords": [
+                "茅檐",
+                "溪上",
+                "青草"
+              ],
+              "cue": "小屋临溪草色青"
+            },
+            {
+              "lineId": "child-qing-ping-le-cun-ju-line-2",
+              "keywords": [
+                "吴音",
+                "翁媪"
+              ],
+              "cue": "白发夫妻话家常"
+            },
+            {
+              "lineId": "child-qing-ping-le-cun-ju-line-3",
+              "keywords": [
+                "大儿",
+                "中儿",
+                "锄豆",
+                "鸡笼"
+              ],
+              "cue": "两个孩子各自劳动"
+            },
+            {
+              "lineId": "child-qing-ping-le-cun-ju-line-4",
+              "keywords": [
+                "小儿",
+                "亡赖",
+                "莲蓬"
+              ],
+              "cue": "小儿躺着剥莲蓬"
+            }
           ],
           "firstCharacterHints": [
-            "茅",
-            "醉",
-            "大",
-            "最"
+            {
+              "lineId": "child-qing-ping-le-cun-ju-line-1",
+              "character": "茅",
+              "cue": "茅檐低小"
+            },
+            {
+              "lineId": "child-qing-ping-le-cun-ju-line-2",
+              "character": "醉",
+              "cue": "醉里吴音"
+            },
+            {
+              "lineId": "child-qing-ping-le-cun-ju-line-3",
+              "character": "大",
+              "cue": "大儿锄豆"
+            },
+            {
+              "lineId": "child-qing-ping-le-cun-ju-line-4",
+              "character": "最",
+              "cue": "最喜小儿"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "溪边有一间低矮的小茅屋，绿草青青。白发的老夫妻说着吴地口音，亲亲热热地聊天；大儿子在溪东锄豆，中儿子编鸡笼，最可爱的小儿子躺在溪边剥莲蓬。词写一家人的生活各有动作，安静又热闹。",
+        "lineMeanings": [
+          {
+            "lineId": "child-qing-ping-le-cun-ju-line-1",
+            "meaning": "茅屋屋檐低矮而小巧，溪水旁的青草长得青翠。"
+          },
+          {
+            "lineId": "child-qing-ping-le-cun-ju-line-2",
+            "meaning": "老夫妻喝得有些醉，说着吴地口音，亲亲热热地聊天；他们是谁家的翁媪呢？"
+          },
+          {
+            "lineId": "child-qing-ping-le-cun-ju-line-3",
+            "meaning": "大儿子在溪水东边锄豆，中儿子正在编织鸡笼。"
+          },
+          {
+            "lineId": "child-qing-ping-le-cun-ju-line-4",
+            "meaning": "最让人喜欢的是小儿子，他淘气可爱，正躺在溪边剥莲蓬。"
+          }
+        ],
+        "extension": {
+          "title": "把一家人的动作画成一幅图",
+          "text": "《清平乐·村居》没有把幸福写成抽象口号，而是写屋檐、溪水、说话、锄豆、织笼和剥莲蓬。看见每个人在做什么，就能感到一家人如何互相陪伴。",
+          "prompt": "如果画一幅你熟悉的家庭生活图，你会画出谁在做什么动作？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
