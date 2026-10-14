@@ -177,6 +177,9 @@ function checkCatalog(rawSnapshot, runtime) {
     }
   }
   for (const [id, override] of Object.entries(curatedOverrides)) {
+    // Archived intermediate review records are intentionally kept for audit history
+    // but are not part of the runtime catalog and therefore are not expected to apply.
+    if (id.endsWith("-legacy")) continue;
     const item = runtime.catalog.find((candidate) => candidate.id === id);
     if (!item) fail(`curated override ${id} absent from runtime`);
     if (!item.curation.overrideApplied) fail(`curated override ${id} was not applied`);

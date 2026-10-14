@@ -820,6 +820,40 @@
         }
       ]
     },
+    "child-qi-bu-shi": {
+      "lines": [
+        {
+          "lineId": "child-qi-bu-shi-line-1",
+          "src": "./assets/audio/readings/child-qi-bu-shi/line-1.mp3",
+          "durationMs": 1330
+        },
+        {
+          "lineId": "child-qi-bu-shi-line-2",
+          "src": "./assets/audio/readings/child-qi-bu-shi/line-2.mp3",
+          "durationMs": 1242
+        },
+        {
+          "lineId": "child-qi-bu-shi-line-3",
+          "src": "./assets/audio/readings/child-qi-bu-shi/line-3.mp3",
+          "durationMs": 1478
+        },
+        {
+          "lineId": "child-qi-bu-shi-line-4",
+          "src": "./assets/audio/readings/child-qi-bu-shi/line-4.mp3",
+          "durationMs": 1301
+        },
+        {
+          "lineId": "child-qi-bu-shi-line-5",
+          "src": "./assets/audio/readings/child-qi-bu-shi/line-5.mp3",
+          "durationMs": 1367
+        },
+        {
+          "lineId": "child-qi-bu-shi-line-6",
+          "src": "./assets/audio/readings/child-qi-bu-shi/line-6.mp3",
+          "durationMs": 1533
+        }
+      ]
+    },
     "child-chile-ge": {
       "lines": [
         {
@@ -1000,6 +1034,30 @@
           "lineId": "child-cong-jun-xing-line-4",
           "src": "./assets/audio/readings/child-cong-jun-xing/line-4.mp3",
           "durationMs": 1831
+        }
+      ]
+    },
+    "child-lu-chai": {
+      "lines": [
+        {
+          "lineId": "child-lu-chai-line-1",
+          "src": "./assets/audio/readings/child-lu-chai/line-1.mp3",
+          "durationMs": 1358
+        },
+        {
+          "lineId": "child-lu-chai-line-2",
+          "src": "./assets/audio/readings/child-lu-chai/line-2.mp3",
+          "durationMs": 1289
+        },
+        {
+          "lineId": "child-lu-chai-line-3",
+          "src": "./assets/audio/readings/child-lu-chai/line-3.mp3",
+          "durationMs": 1440
+        },
+        {
+          "lineId": "child-lu-chai-line-4",
+          "src": "./assets/audio/readings/child-lu-chai/line-4.mp3",
+          "durationMs": 1480
         }
       ]
     },
@@ -1251,6 +1309,50 @@
         }
       ]
     },
+    "child-deng-gao": {
+      "lines": [
+        {
+          "lineId": "child-deng-gao-line-1",
+          "src": "./assets/audio/readings/child-deng-gao/line-1.mp3",
+          "durationMs": 2101
+        },
+        {
+          "lineId": "child-deng-gao-line-2",
+          "src": "./assets/audio/readings/child-deng-gao/line-2.mp3",
+          "durationMs": 1946
+        },
+        {
+          "lineId": "child-deng-gao-line-3",
+          "src": "./assets/audio/readings/child-deng-gao/line-3.mp3",
+          "durationMs": 1813
+        },
+        {
+          "lineId": "child-deng-gao-line-4",
+          "src": "./assets/audio/readings/child-deng-gao/line-4.mp3",
+          "durationMs": 1842
+        },
+        {
+          "lineId": "child-deng-gao-line-5",
+          "src": "./assets/audio/readings/child-deng-gao/line-5.mp3",
+          "durationMs": 1894
+        },
+        {
+          "lineId": "child-deng-gao-line-6",
+          "src": "./assets/audio/readings/child-deng-gao/line-6.mp3",
+          "durationMs": 1842
+        },
+        {
+          "lineId": "child-deng-gao-line-7",
+          "src": "./assets/audio/readings/child-deng-gao/line-7.mp3",
+          "durationMs": 1919
+        },
+        {
+          "lineId": "child-deng-gao-line-8",
+          "src": "./assets/audio/readings/child-deng-gao/line-8.mp3",
+          "durationMs": 1860
+        }
+      ]
+    },
     "child-jiang-pan-du-bu-xun-hua": {
       "lines": [
         {
@@ -1296,6 +1398,74 @@
           "lineId": "child-jueju-chi-ri-line-4",
           "src": "./assets/audio/readings/child-jueju-chi-ri/line-4.mp3",
           "durationMs": 1450
+        }
+      ]
+    },
+    "child-wen-guan-jun-shou-he-nan-he-bei": {
+      "lines": [
+        {
+          "lineId": "child-wen-guan-jun-shou-he-nan-he-bei-line-1",
+          "src": "./assets/audio/readings/child-wen-guan-jun-shou-he-nan-he-bei/line-1.mp3",
+          "durationMs": 1977
+        },
+        {
+          "lineId": "child-wen-guan-jun-shou-he-nan-he-bei-line-2",
+          "src": "./assets/audio/readings/child-wen-guan-jun-shou-he-nan-he-bei/line-2.mp3",
+          "durationMs": 1726
+        },
+        {
+          "lineId": "child-wen-guan-jun-shou-he-nan-he-bei-line-3",
+          "src": "./assets/audio/readings/child-wen-guan-jun-shou-he-nan-he-bei/line-3.mp3",
+          "durationMs": 1932
+        },
+        {
+          "lineId": "child-wen-guan-jun-shou-he-nan-he-bei-line-4",
+          "src": "./assets/audio/readings/child-wen-guan-jun-shou-he-nan-he-bei/line-4.mp3",
+          "durationMs": 1952
+        },
+        {
+          "lineId": "child-wen-guan-jun-shou-he-nan-he-bei-line-5",
+          "src": "./assets/audio/readings/child-wen-guan-jun-shou-he-nan-he-bei/line-5.mp3",
+          "durationMs": 1761
+        },
+        {
+          "lineId": "child-wen-guan-jun-shou-he-nan-he-bei-line-6",
+          "src": "./assets/audio/readings/child-wen-guan-jun-shou-he-nan-he-bei/line-6.mp3",
+          "durationMs": 2058
+        },
+        {
+          "lineId": "child-wen-guan-jun-shou-he-nan-he-bei-line-7",
+          "src": "./assets/audio/readings/child-wen-guan-jun-shou-he-nan-he-bei/line-7.mp3",
+          "durationMs": 2014
+        },
+        {
+          "lineId": "child-wen-guan-jun-shou-he-nan-he-bei-line-8",
+          "src": "./assets/audio/readings/child-wen-guan-jun-shou-he-nan-he-bei/line-8.mp3",
+          "durationMs": 1924
+        }
+      ]
+    },
+    "child-jiang-nan-feng-li-guinian": {
+      "lines": [
+        {
+          "lineId": "child-jiang-nan-feng-li-guinian-line-1",
+          "src": "./assets/audio/readings/child-jiang-nan-feng-li-guinian/line-1.mp3",
+          "durationMs": 1965
+        },
+        {
+          "lineId": "child-jiang-nan-feng-li-guinian-line-2",
+          "src": "./assets/audio/readings/child-jiang-nan-feng-li-guinian/line-2.mp3",
+          "durationMs": 2061
+        },
+        {
+          "lineId": "child-jiang-nan-feng-li-guinian-line-3",
+          "src": "./assets/audio/readings/child-jiang-nan-feng-li-guinian/line-3.mp3",
+          "durationMs": 1900
+        },
+        {
+          "lineId": "child-jiang-nan-feng-li-guinian-line-4",
+          "src": "./assets/audio/readings/child-jiang-nan-feng-li-guinian/line-4.mp3",
+          "durationMs": 1962
         }
       ]
     },
@@ -1632,6 +1802,164 @@
         }
       ]
     },
+    "child-guan-yi-mai": {
+      "lines": [
+        {
+          "lineId": "child-guan-yi-mai-line-1",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-1.mp3",
+          "durationMs": 1430
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-2",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-2.mp3",
+          "durationMs": 1221
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-3",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-3.mp3",
+          "durationMs": 1313
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-4",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-4.mp3",
+          "durationMs": 1487
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-5",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-5.mp3",
+          "durationMs": 1352
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-6",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-6.mp3",
+          "durationMs": 1417
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-7",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-7.mp3",
+          "durationMs": 1591
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-8",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-8.mp3",
+          "durationMs": 1348
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-9",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-9.mp3",
+          "durationMs": 1302
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-10",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-10.mp3",
+          "durationMs": 1402
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-11",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-11.mp3",
+          "durationMs": 1141
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-12",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-12.mp3",
+          "durationMs": 1452
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-13",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-13.mp3",
+          "durationMs": 1399
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-14",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-14.mp3",
+          "durationMs": 1529
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-15",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-15.mp3",
+          "durationMs": 1336
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-16",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-16.mp3",
+          "durationMs": 1476
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-17",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-17.mp3",
+          "durationMs": 1442
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-18",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-18.mp3",
+          "durationMs": 1256
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-19",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-19.mp3",
+          "durationMs": 1372
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-20",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-20.mp3",
+          "durationMs": 1520
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-21",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-21.mp3",
+          "durationMs": 1282
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-22",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-22.mp3",
+          "durationMs": 1243
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-23",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-23.mp3",
+          "durationMs": 1361
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-24",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-24.mp3",
+          "durationMs": 1417
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-25",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-25.mp3",
+          "durationMs": 1351
+        },
+        {
+          "lineId": "child-guan-yi-mai-line-26",
+          "src": "./assets/audio/readings/child-guan-yi-mai/line-26.mp3",
+          "durationMs": 1187
+        }
+      ]
+    },
+    "child-shu-hu-yin-xian-sheng-bi": {
+      "lines": [
+        {
+          "lineId": "child-shu-hu-yin-xian-sheng-bi-line-1",
+          "src": "./assets/audio/readings/child-shu-hu-yin-xian-sheng-bi/line-1.mp3",
+          "durationMs": 1976
+        },
+        {
+          "lineId": "child-shu-hu-yin-xian-sheng-bi-line-2",
+          "src": "./assets/audio/readings/child-shu-hu-yin-xian-sheng-bi/line-2.mp3",
+          "durationMs": 1969
+        },
+        {
+          "lineId": "child-shu-hu-yin-xian-sheng-bi-line-3",
+          "src": "./assets/audio/readings/child-shu-hu-yin-xian-sheng-bi/line-3.mp3",
+          "durationMs": 1858
+        },
+        {
+          "lineId": "child-shu-hu-yin-xian-sheng-bi-line-4",
+          "src": "./assets/audio/readings/child-shu-hu-yin-xian-sheng-bi/line-4.mp3",
+          "durationMs": 2069
+        }
+      ]
+    },
     "child-bo-chuan-gua-zhou": {
       "lines": [
         {
@@ -1773,6 +2101,195 @@
           "lineId": "child-wang-hu-lou-zui-shu-line-4",
           "src": "./assets/audio/readings/child-wang-hu-lou-zui-shu/line-4.mp3",
           "durationMs": 1905
+        }
+      ]
+    },
+    "child-shui-diao-ge-tou": {
+      "lines": [
+        {
+          "lineId": "child-shui-diao-ge-tou-line-1",
+          "src": "./assets/audio/readings/child-shui-diao-ge-tou/line-1.mp3",
+          "durationMs": 4640
+        },
+        {
+          "lineId": "child-shui-diao-ge-tou-line-2",
+          "src": "./assets/audio/readings/child-shui-diao-ge-tou/line-2.mp3",
+          "durationMs": 2603
+        },
+        {
+          "lineId": "child-shui-diao-ge-tou-line-3",
+          "src": "./assets/audio/readings/child-shui-diao-ge-tou/line-3.mp3",
+          "durationMs": 2968
+        },
+        {
+          "lineId": "child-shui-diao-ge-tou-line-4",
+          "src": "./assets/audio/readings/child-shui-diao-ge-tou/line-4.mp3",
+          "durationMs": 4402
+        },
+        {
+          "lineId": "child-shui-diao-ge-tou-line-5",
+          "src": "./assets/audio/readings/child-shui-diao-ge-tou/line-5.mp3",
+          "durationMs": 2650
+        },
+        {
+          "lineId": "child-shui-diao-ge-tou-line-6",
+          "src": "./assets/audio/readings/child-shui-diao-ge-tou/line-6.mp3",
+          "durationMs": 2399
+        },
+        {
+          "lineId": "child-shui-diao-ge-tou-line-7",
+          "src": "./assets/audio/readings/child-shui-diao-ge-tou/line-7.mp3",
+          "durationMs": 2980
+        },
+        {
+          "lineId": "child-shui-diao-ge-tou-line-8",
+          "src": "./assets/audio/readings/child-shui-diao-ge-tou/line-8.mp3",
+          "durationMs": 4449
+        },
+        {
+          "lineId": "child-shui-diao-ge-tou-line-9",
+          "src": "./assets/audio/readings/child-shui-diao-ge-tou/line-9.mp3",
+          "durationMs": 2752
+        }
+      ]
+    },
+    "child-huan-xi-sha-qishui": {
+      "lines": [
+        {
+          "lineId": "child-huan-xi-sha-qishui-line-1",
+          "src": "./assets/audio/readings/child-huan-xi-sha-qishui/line-1.mp3",
+          "durationMs": 3775
+        },
+        {
+          "lineId": "child-huan-xi-sha-qishui-line-2",
+          "src": "./assets/audio/readings/child-huan-xi-sha-qishui/line-2.mp3",
+          "durationMs": 3203
+        },
+        {
+          "lineId": "child-huan-xi-sha-qishui-line-3",
+          "src": "./assets/audio/readings/child-huan-xi-sha-qishui/line-3.mp3",
+          "durationMs": 1939
+        },
+        {
+          "lineId": "child-huan-xi-sha-qishui-line-4",
+          "src": "./assets/audio/readings/child-huan-xi-sha-qishui/line-4.mp3",
+          "durationMs": 5560
+        }
+      ]
+    },
+    "child-bu-suan-zi-yong-mei": {
+      "lines": [
+        {
+          "lineId": "child-bu-suan-zi-yong-mei-line-1",
+          "src": "./assets/audio/readings/child-bu-suan-zi-yong-mei/line-1.mp3",
+          "durationMs": 2554
+        },
+        {
+          "lineId": "child-bu-suan-zi-yong-mei-line-2",
+          "src": "./assets/audio/readings/child-bu-suan-zi-yong-mei/line-2.mp3",
+          "durationMs": 2997
+        },
+        {
+          "lineId": "child-bu-suan-zi-yong-mei-line-3",
+          "src": "./assets/audio/readings/child-bu-suan-zi-yong-mei/line-3.mp3",
+          "durationMs": 2405
+        },
+        {
+          "lineId": "child-bu-suan-zi-yong-mei-line-4",
+          "src": "./assets/audio/readings/child-bu-suan-zi-yong-mei/line-4.mp3",
+          "durationMs": 3090
+        }
+      ]
+    },
+    "child-shi-er": {
+      "lines": [
+        {
+          "lineId": "child-shi-er-line-1",
+          "src": "./assets/audio/readings/child-shi-er/line-1.mp3",
+          "durationMs": 1985
+        },
+        {
+          "lineId": "child-shi-er-line-2",
+          "src": "./assets/audio/readings/child-shi-er/line-2.mp3",
+          "durationMs": 1870
+        },
+        {
+          "lineId": "child-shi-er-line-3",
+          "src": "./assets/audio/readings/child-shi-er/line-3.mp3",
+          "durationMs": 1801
+        },
+        {
+          "lineId": "child-shi-er-line-4",
+          "src": "./assets/audio/readings/child-shi-er/line-4.mp3",
+          "durationMs": 1745
+        }
+      ]
+    },
+    "child-you-shan-xi-cun": {
+      "lines": [
+        {
+          "lineId": "child-you-shan-xi-cun-line-1",
+          "src": "./assets/audio/readings/child-you-shan-xi-cun/line-1.mp3",
+          "durationMs": 1859
+        },
+        {
+          "lineId": "child-you-shan-xi-cun-line-2",
+          "src": "./assets/audio/readings/child-you-shan-xi-cun/line-2.mp3",
+          "durationMs": 1985
+        },
+        {
+          "lineId": "child-you-shan-xi-cun-line-3",
+          "src": "./assets/audio/readings/child-you-shan-xi-cun/line-3.mp3",
+          "durationMs": 1787
+        },
+        {
+          "lineId": "child-you-shan-xi-cun-line-4",
+          "src": "./assets/audio/readings/child-you-shan-xi-cun/line-4.mp3",
+          "durationMs": 1825
+        },
+        {
+          "lineId": "child-you-shan-xi-cun-line-5",
+          "src": "./assets/audio/readings/child-you-shan-xi-cun/line-5.mp3",
+          "durationMs": 1997
+        },
+        {
+          "lineId": "child-you-shan-xi-cun-line-6",
+          "src": "./assets/audio/readings/child-you-shan-xi-cun/line-6.mp3",
+          "durationMs": 1951
+        },
+        {
+          "lineId": "child-you-shan-xi-cun-line-7",
+          "src": "./assets/audio/readings/child-you-shan-xi-cun/line-7.mp3",
+          "durationMs": 1967
+        },
+        {
+          "lineId": "child-you-shan-xi-cun-line-8",
+          "src": "./assets/audio/readings/child-you-shan-xi-cun/line-8.mp3",
+          "durationMs": 1831
+        }
+      ]
+    },
+    "child-dong-ye-du-shu": {
+      "lines": [
+        {
+          "lineId": "child-dong-ye-du-shu-line-1",
+          "src": "./assets/audio/readings/child-dong-ye-du-shu/line-1.mp3",
+          "durationMs": 1610
+        },
+        {
+          "lineId": "child-dong-ye-du-shu-line-2",
+          "src": "./assets/audio/readings/child-dong-ye-du-shu/line-2.mp3",
+          "durationMs": 2019
+        },
+        {
+          "lineId": "child-dong-ye-du-shu-line-3",
+          "src": "./assets/audio/readings/child-dong-ye-du-shu/line-3.mp3",
+          "durationMs": 1900
+        },
+        {
+          "lineId": "child-dong-ye-du-shu-line-4",
+          "src": "./assets/audio/readings/child-dong-ye-du-shu/line-4.mp3",
+          "durationMs": 1875
         }
       ]
     },
@@ -1944,6 +2461,30 @@
         }
       ]
     },
+    "child-ti-lin-an-di": {
+      "lines": [
+        {
+          "lineId": "child-ti-lin-an-di-line-1",
+          "src": "./assets/audio/readings/child-ti-lin-an-di/line-1.mp3",
+          "durationMs": 1996
+        },
+        {
+          "lineId": "child-ti-lin-an-di-line-2",
+          "src": "./assets/audio/readings/child-ti-lin-an-di/line-2.mp3",
+          "durationMs": 1800
+        },
+        {
+          "lineId": "child-ti-lin-an-di-line-3",
+          "src": "./assets/audio/readings/child-ti-lin-an-di/line-3.mp3",
+          "durationMs": 1838
+        },
+        {
+          "lineId": "child-ti-lin-an-di-line-4",
+          "src": "./assets/audio/readings/child-ti-lin-an-di/line-4.mp3",
+          "durationMs": 1842
+        }
+      ]
+    },
     "child-guan-shu-you-gan": {
       "lines": [
         {
@@ -1965,6 +2506,30 @@
           "lineId": "child-guan-shu-you-gan-line-4",
           "src": "./assets/audio/readings/child-guan-shu-you-gan/line-4.mp3",
           "durationMs": 1848
+        }
+      ]
+    },
+    "child-chun-ri-zhu-xi": {
+      "lines": [
+        {
+          "lineId": "child-chun-ri-zhu-xi-line-1",
+          "src": "./assets/audio/readings/child-chun-ri-zhu-xi/line-1.mp3",
+          "durationMs": 1972
+        },
+        {
+          "lineId": "child-chun-ri-zhu-xi-line-2",
+          "src": "./assets/audio/readings/child-chun-ri-zhu-xi/line-2.mp3",
+          "durationMs": 1824
+        },
+        {
+          "lineId": "child-chun-ri-zhu-xi-line-3",
+          "src": "./assets/audio/readings/child-chun-ri-zhu-xi/line-3.mp3",
+          "durationMs": 1836
+        },
+        {
+          "lineId": "child-chun-ri-zhu-xi-line-4",
+          "src": "./assets/audio/readings/child-chun-ri-zhu-xi/line-4.mp3",
+          "durationMs": 1883
         }
       ]
     },
@@ -2104,6 +2669,118 @@
           "lineId": "child-qing-ping-le-cun-ju-line-4",
           "src": "./assets/audio/readings/child-qing-ping-le-cun-ju/line-4.mp3",
           "durationMs": 3264
+        }
+      ]
+    },
+    "child-xi-jiang-yue-huang-sha": {
+      "lines": [
+        {
+          "lineId": "child-xi-jiang-yue-huang-sha-line-1",
+          "src": "./assets/audio/readings/child-xi-jiang-yue-huang-sha/line-1.mp3",
+          "durationMs": 3218
+        },
+        {
+          "lineId": "child-xi-jiang-yue-huang-sha-line-2",
+          "src": "./assets/audio/readings/child-xi-jiang-yue-huang-sha/line-2.mp3",
+          "durationMs": 3391
+        },
+        {
+          "lineId": "child-xi-jiang-yue-huang-sha-line-3",
+          "src": "./assets/audio/readings/child-xi-jiang-yue-huang-sha/line-3.mp3",
+          "durationMs": 3300
+        },
+        {
+          "lineId": "child-xi-jiang-yue-huang-sha-line-4",
+          "src": "./assets/audio/readings/child-xi-jiang-yue-huang-sha/line-4.mp3",
+          "durationMs": 3533
+        }
+      ]
+    },
+    "child-nan-xiang-zi-beigu": {
+      "lines": [
+        {
+          "lineId": "child-nan-xiang-zi-beigu-line-1",
+          "src": "./assets/audio/readings/child-nan-xiang-zi-beigu/line-1.mp3",
+          "durationMs": 3081
+        },
+        {
+          "lineId": "child-nan-xiang-zi-beigu-line-2",
+          "src": "./assets/audio/readings/child-nan-xiang-zi-beigu/line-2.mp3",
+          "durationMs": 2314
+        },
+        {
+          "lineId": "child-nan-xiang-zi-beigu-line-3",
+          "src": "./assets/audio/readings/child-nan-xiang-zi-beigu/line-3.mp3",
+          "durationMs": 1877
+        },
+        {
+          "lineId": "child-nan-xiang-zi-beigu-line-4",
+          "src": "./assets/audio/readings/child-nan-xiang-zi-beigu/line-4.mp3",
+          "durationMs": 3127
+        },
+        {
+          "lineId": "child-nan-xiang-zi-beigu-line-5",
+          "src": "./assets/audio/readings/child-nan-xiang-zi-beigu/line-5.mp3",
+          "durationMs": 2579
+        },
+        {
+          "lineId": "child-nan-xiang-zi-beigu-line-6",
+          "src": "./assets/audio/readings/child-nan-xiang-zi-beigu/line-6.mp3",
+          "durationMs": 1914
+        }
+      ]
+    },
+    "child-yin-jiu-tao-yuanming": {
+      "lines": [
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-1",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-1.mp3",
+          "durationMs": 1350
+        },
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-2",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-2.mp3",
+          "durationMs": 1327
+        },
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-3",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-3.mp3",
+          "durationMs": 1313
+        },
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-4",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-4.mp3",
+          "durationMs": 1475
+        },
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-5",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-5.mp3",
+          "durationMs": 1330
+        },
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-6",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-6.mp3",
+          "durationMs": 1393
+        },
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-7",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-7.mp3",
+          "durationMs": 1450
+        },
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-8",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-8.mp3",
+          "durationMs": 1440
+        },
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-9",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-9.mp3",
+          "durationMs": 1259
+        },
+        {
+          "lineId": "child-yin-jiu-tao-yuanming-line-10",
+          "src": "./assets/audio/readings/child-yin-jiu-tao-yuanming/line-10.mp3",
+          "durationMs": 1301
         }
       ]
     },
