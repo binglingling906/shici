@@ -27,6 +27,8 @@
 
 默认版本不连接在线大模型，不需要登录或 API Key。Tutor 使用可解释的本地规则和已审核内容，确保 Demo 在断网时仍可运行。代码中预留了 `remote-grounded-tutor` Provider 接口，但当前没有配置远端服务，也不会把儿童自由表达自动发送到外部模型。
 
+如果未来由家长明确开启远端 Tutor，页面只能通过 `data-tutor-endpoint` 指向一个由服务端保护密钥的 HTTPS 代理。代理接收 `poemId`、年龄模式、回合和最多 160 字的回答，必须返回有限字段（`kind`、`message`、可选 `microHint`）；前端会再次限长、去 HTML、禁止 `revealAnswer`，失败时回退到本地 Tutor。GitHub Pages 公开 Demo 不启用该入口。
+
 ## 内容成熟度
 
 100 首不是同等审核等级：10 首是人工完整审核的 Gold Standard，其余 90 首标记为 `machine-assisted-candidate`，已具备正文、拼音、学习契约和关系元数据，但仍需逐首编辑复核。教材关系候选也不会被展示为已确认教材事实。

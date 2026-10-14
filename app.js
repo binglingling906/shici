@@ -684,7 +684,11 @@ function ageCompletionCopy(modeId) {
 
 function sourceSummary(poem, place) {
   const sourceTitles = (poem.provenance?.sources || []).slice(0, 2).map((source) => source.title || source.collection || source.repository).filter(Boolean).join("；");
-  return `${poem.background} 位置精度：${place.precision || "unknown"}。${sourceTitles ? `来源：${sourceTitles}。` : "来源关系仍在审核。"}`;
+  const timeBoundary = place.validTime?.label ? `时间层：${place.validTime.label}。` : "";
+  const routeBoundary = /route|journey|travel/u.test(`${place.provenance?.method || ""} ${poem.spatialLearning?.mapAction || ""}`)
+    ? "地图线用于理解方向与关系，不等同于诗人的确切历史行程。"
+    : "";
+  return `${poem.background} 位置精度：${place.precision || "unknown"}。${timeBoundary}${routeBoundary}${sourceTitles ? `来源：${sourceTitles}。` : "来源关系仍在审核。"}`;
 }
 
 function renderInterpretation(poem, ageMode) {
