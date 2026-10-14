@@ -1058,6 +1058,200 @@ export const curatedOverrides = {
     }),
   },
 
+  "child-chuzhou-xijian": {
+    overrideReason: "第十批内容复核：涧边幽草、深树黄鹂、春潮晚雨与无人野渡的空间层次已人工确认；怜、涧、鹂、横按语境校正。",
+    ...catalogReview({
+      reviewNotes: "滁州西涧是诗题直接提供的水岸参照；诗句写涧、野渡与春潮的局部关系，不据此推断韦应物的完整行程。",
+      pinyinOverrides: [
+        { path: "line-1.token-2", char: "怜", pinyin: "lián", reason: "‘独怜’意为独自喜爱，怜读 lián。" },
+        { path: "line-1.token-5", char: "涧", pinyin: "jiàn", reason: "‘涧边’指山间小水流边，涧读 jiàn。" },
+        { path: "line-2.token-4", char: "鹂", pinyin: "lí", reason: "‘黄鹂’是鸟名，鹂读 lí。" },
+        { path: "line-4.token-7", char: "横", pinyin: "héng", reason: "‘舟自横’意为小船自然横在水面，横读 héng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "creek-bank-and-empty-ferry",
+        observation: "近处是涧边幽草与深树鸟声，远处转入晚来的春潮和雨，最后收束到没有人的野渡与横舟。",
+        mapAction: "以滁州西涧作水岸参照，画‘涧边—深树—春潮—野渡—横舟’的观察路径，不绘制未经诗句确认的行程。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "无人处也有草、鸟、潮和船的动作，安静不等于空白。",
+      },
+      placeRelations: [
+        { targetId: "chuzhou", type: "waterway_scene", confidence: "high", assertion: "诗题直接点出滁州西涧，是涧边、野渡和春潮的现代地理参照。", childMeaning: "诗人观察滁州一处水边小涧和渡口。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["chuzhou"],
+    }),
+  },
+
+  "child-cong-jun-xing": {
+    overrideReason: "第九批内容复核：青海雪山、孤城玉门关、黄沙战甲与楼兰誓言的边塞空间已人工确认；长、还按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗中青海、玉门关和楼兰构成唐代西北边塞文化地理；玉门关作为现代参考地点，楼兰保留为历史地名与诗中指代，不把诗句绘成将士的已证实路线。",
+      pinyinOverrides: [
+        { path: "line-1.token-3", char: "长", pinyin: "cháng", reason: "‘长云’指绵延的云层，长读 cháng。" },
+        { path: "line-4.token-7", char: "还", pinyin: "huán", reason: "‘终不还’意为最终不回来，还读 huán。" },
+      ],
+      spatialLearning: {
+        coreRelation: "frontier-pass-and-distant-vow",
+        observation: "视线从青海、长云和雪山的远景收束到孤城，再指向玉门关；黄沙和磨穿战甲把宏大边塞落到人的经历，楼兰成为誓言的历史指代。",
+        mapAction: "以青海、玉门关作西北边塞文化参照，另标出楼兰历史地名；只画‘雪山—孤城—关口—远方’关系，不虚构个人行军路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "地图让我们看见边塞距离，诗句让我们理解守护和回家的愿望。",
+      },
+      placeRelations: [
+        { targetId: "yumen-pass", type: "frontier_pass", confidence: "high", assertion: "‘玉门关’是诗句直接写出的边关地名。", childMeaning: "孤城把目光投向遥远的关口。", sourceKeys: ["chinesePoetry"] },
+        { targetId: "loulan", type: "historical_place_reference", confidence: "medium", assertion: "‘楼兰’是诗中直接出现的古代西域地名和边塞历史指代，不等同于现代行政路线。", childMeaning: "誓言把边关任务指向遥远的历史地名。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["yumen-pass"],
+    }),
+  },
+
+  "child-shan-ju-qiu-ming": {
+    overrideReason: "第九批内容复核：雨后秋山、月松泉石、浣女渔舟与可留山居的声景关系已人工确认；浣按语境校正。",
+    ...catalogReview({
+      reviewNotes: "《山居秋暝》写泛化的山居秋景，没有可核定的单一地理地点；不把王维的诗中山居推断为某个具体景区。",
+      pinyinOverrides: [
+        { path: "line-5.token-4", char: "浣", pinyin: "huàn", reason: "‘浣女’指洗衣女子，浣读 huàn。" },
+      ],
+      spatialLearning: {
+        coreRelation: "rain-washed-mountain-and-living-soundscape",
+        observation: "空间从雨后空山和晚秋天气，推进到松间月光、石上清泉，再由竹林浣女和荷间渔舟引入人的声音与动作。",
+        mapAction: "画‘空山—松间—石上—竹林—荷塘’的声景关系，不绑定诗人的历史住址或旅行路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8"],
+        childTakeaway: "安静的自然和人的生活声音可以同时存在，构成值得停留的地方。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-jiang-pan-du-bu-xun-hua": {
+    overrideReason: "第九批内容复核：成都江畔花路、压枝花朵、流连戏蝶与娇莺声景已人工确认；蹊按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗题与作者经历使成都可作为现代区域参照，但黄四娘家不是可核定的具体地址；不把花路绘成杜甫的精确行走轨迹。",
+      pinyinOverrides: [
+        { path: "line-1.token-7", char: "蹊", pinyin: "qī", reason: "‘花满蹊’中的蹊指小路，按教材常读 qī。" },
+      ],
+      spatialLearning: {
+        coreRelation: "chengdu-riverside-spring-soundscape",
+        observation: "江畔小路从黄四娘家花满蹊展开，花枝低垂形成近景，视线再转向戏蝶和娇莺的动作与声音。",
+        mapAction: "以成都江畔作现代区域参照，画‘花路—低枝—蝴蝶—黄莺’的观察链；不标出黄四娘家的虚构坐标。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "一个地方的春天既可以用颜色看，也可以用动作和声音听见。",
+      },
+      placeRelations: [
+        { targetId: "chengdu", type: "regional_association", confidence: "medium", assertion: "诗题和杜甫成都时期创作背景可作成都江畔的现代区域参照，不证明黄四娘家的确切位置。", childMeaning: "把花路和鸟声放回成都的江畔春景中。", sourceKeys: ["chinesePoetry", "chengduOverview"] },
+      ],
+      canonicalPlaceIds: ["chengdu"],
+    }),
+  },
+
+  "child-jueju-chi-ri": {
+    overrideReason: "第九批内容复核：春日江山、花草香、泥融飞燕与暖沙鸳鸯的动静关系已人工确认；燕按语境校正。",
+    ...catalogReview({
+      reviewNotes: "《绝句·迟日江山丽》写泛化的春日江山与水岸动物，没有可核定的单一地点；不把诗句强行绑定到杜甫某一处行迹。",
+      pinyinOverrides: [
+        { path: "line-3.token-4", char: "燕", pinyin: "yàn", reason: "‘飞燕子’中的燕指燕子，读 yàn。" },
+      ],
+      spatialLearning: {
+        coreRelation: "spring-riverbank-and-animal-rhythm",
+        observation: "视线从江山和春风花草的远景收进泥地、飞燕、暖沙与安睡鸳鸯，动景和静景相互衬托。",
+        mapAction: "画‘江山—花草—泥地—沙岸’的春日观察层级，不创建诗人具体站位或路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "春天既有飞翔和香气，也有暖沙上安静休息的生命。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-fu-de-gu-yuan-cao": {
+    overrideReason: "第十批内容复核：古原草的荣枯、野火再生、古道荒城与送别情绪的时间空间链已人工确认；尽、侵、萋按语境校正。",
+    ...catalogReview({
+      reviewNotes: "古原、古道、荒城是诗中的泛化田野与历史景观，不对应一个可核定的单一地名；自然循环与送别关系优先于虚构路线。",
+      pinyinOverrides: [
+        { path: "line-3.token-5", char: "尽", pinyin: "jìn", reason: "‘烧不尽’意为不能烧光草根和生命力，尽读 jìn。" },
+        { path: "line-5.token-3", char: "侵", pinyin: "qīn", reason: "‘侵古道’意为芳草蔓延到古道边，侵读 qīn。" },
+        { path: "line-8.token-1", char: "萋", pinyin: "qī", reason: "‘萋萋’形容草木茂盛，萋读 qī。" },
+      ],
+      spatialLearning: {
+        coreRelation: "grass-cycle-and-parting-road",
+        observation: "草从古原近景延伸到古道和荒城，春风使它重新生长，朋友沿着被芳草侵近的道路远行。",
+        mapAction: "画‘古原—古道—荒城—送别方向’的关系和‘枯—烧—生—荣’时间环，不绑定具体历史路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8"],
+        childTakeaway: "自然有再生的时间节奏，人的离别也会被眼前景物保存和表达。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-da-lin-si-taohua": {
+    overrideReason: "第十批内容复核：人间与山寺桃花花期错位、寻找春天与意外发现的空间转折已人工确认；尽、盛、觅、转按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗只提供人间与山寺的相对高度和花期对照，没有可核定的寺院坐标；不把大林寺桃花误绘成完整登山路线。",
+      pinyinOverrides: [
+        { path: "line-1.token-7", char: "尽", pinyin: "jìn", reason: "‘芳菲尽’意为花期将尽，尽读 jìn。" },
+        { path: "line-2.token-6", char: "盛", pinyin: "shèng", reason: "‘始盛开’意为开始盛放，盛读 shèng。" },
+        { path: "line-3.token-6", char: "觅", pinyin: "mì", reason: "‘无觅处’意为寻找不到，觅读 mì。" },
+        { path: "line-4.token-3", char: "转", pinyin: "zhuǎn", reason: "‘转入此中’写春色换到山寺，转读 zhuǎn。" },
+      ],
+      spatialLearning: {
+        coreRelation: "human-world-and-mountain-temple-season",
+        observation: "人间四月花期将尽，视线向山寺抬高却发现桃花正盛；‘春归’的疑问在另一处空间得到回答。",
+        mapAction: "用‘人间—山路—山寺桃花’表示高度与花期差异，不把诗意发现扩写成作者的精确登山轨迹。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "换一个位置和观察角度，可能找到以为已经消失的美好。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-mo-mei": {
+    overrideReason: "第十批内容复核：洗砚池梅树、淡墨花痕、拒绝外在夸赞与清气品格的象征关系已人工确认；砚、夸、乾按语境校正。",
+    ...catalogReview({
+      reviewNotes: "洗砚池和梅树构成诗人的书斋近景，没有可核定的单一地理地点；不把池头树推断为具体名园或历史遗址。",
+      pinyinOverrides: [
+        { path: "line-1.token-4", char: "砚", pinyin: "yàn", reason: "‘洗砚池’中的砚指写字磨墨的砚台，读 yàn。" },
+        { path: "line-3.token-4", char: "夸", pinyin: "kuā", reason: "‘人夸’意为别人夸赞，夸读 kuā。" },
+        { path: "line-4.token-6", char: "乾", pinyin: "qián", reason: "‘乾坤’指天地，乾读 qián。" },
+        { path: "line-4.token-7", char: "坤", pinyin: "kūn", reason: "‘乾坤’指天地，坤读 kūn。" },
+      ],
+      spatialLearning: {
+        coreRelation: "ink-wash-pool-and-moral-fragrance",
+        observation: "梅树从洗砚池边的书斋生活近景展开，墨色花痕转向不求人夸的选择，最后把清气扩展到天地。",
+        mapAction: "画‘洗砚池—梅树—花痕—天地清气’的由近及远关系，不附会具体园林坐标。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "外在颜色会被看见，内在清正也值得坚持，不必只靠别人夸奖确认价值。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-guan-canghai": {
+    overrideReason: "第十批内容复核：碣石登临、沧海水岛、秋风洪波与日月星汉宇宙想象的空间递进已人工确认；碣、澹、竦、峙、萧、灿、咏按语境校正。",
+    ...catalogReview({
+      reviewNotes: "碣石是题句直接提供的登临山地参照，海景和宇宙想象从此处展开；不把诗歌的夸张空间当作实测海岸或天文说明。",
+      pinyinOverrides: [
+        { path: "line-1.token-3", char: "碣", pinyin: "jié", reason: "‘碣石’是山名参照，碣读 jié。" },
+        { path: "line-3.token-3", char: "澹", pinyin: "dàn", reason: "‘澹澹’写水波浩荡，澹读 dàn。" },
+        { path: "line-3.token-4", char: "澹", pinyin: "dàn", reason: "‘澹澹’为叠词，第二个澹同样读 dàn。" },
+        { path: "line-4.token-3", char: "竦", pinyin: "sǒng", reason: "‘竦峙’写山岛高耸，竦读 sǒng。" },
+        { path: "line-4.token-4", char: "峙", pinyin: "zhì", reason: "‘竦峙’写山岛直立，峙读 zhì。" },
+        { path: "line-7.token-3", char: "萧", pinyin: "xiāo", reason: "‘萧瑟’写秋风吹动草木的声响和气氛，萧读 xiāo。" },
+        { path: "line-11.token-3", char: "灿", pinyin: "càn", reason: "‘灿烂’写星光明亮，灿读 càn。" },
+        { path: "line-14.token-3", char: "咏", pinyin: "yǒng", reason: "‘咏志’意为歌咏志向，咏读 yǒng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "mountain-coast-to-cosmic-horizon",
+        observation: "视线从碣石山上的登临位置落到海水、山岛、树草和洪波，再抬向日月星汉，最后回到诗人的志向。",
+        mapAction: "以碣石山作海岸文化地理参照，画‘山—海—岛—浪—天空—星汉’的层级递进，不把夸张想象当作精确天文路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8", "line-9", "line-10", "line-11", "line-12", "line-13", "line-14"],
+        childTakeaway: "站在山海之间，视野可以从眼前景物扩展到整个天地，再回到自己的志向。",
+      },
+      placeRelations: [
+        { targetId: "jieshi-mountain", type: "coastal_mountain", confidence: "high", assertion: "‘东临碣石’直接写登临碣石，是观看沧海的地理起点。", childMeaning: "诗人站在碣石山上，从高处看海和天地。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["jieshi-mountain"],
+    }),
+  },
+
   "child-lu-chai": {
     text: "空山不见人，但闻人语响。\n返景入深林，复照青苔上。",
     overrideReason: "修正候选快照把‘但闻人语响’误录为‘但余钟磬音’的问题；保留原始快照，由人工 override 覆盖运行时。",
