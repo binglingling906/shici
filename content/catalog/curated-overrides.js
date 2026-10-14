@@ -375,6 +375,114 @@ export const curatedOverrides = {
     }),
   },
 
+  "child-xiao-chi": {
+    overrideReason: "第三批内容复核：泉眼、树阴、小荷与蜻蜓的推近观察、拟人和初夏生命画面已人工确认；不把西湖候选误写成诗人精确观景地。",
+    ...catalogReview({
+      reviewNotes: "《小池》是小水面观察诗。运行时保留西湖作为候选水面参照，但诗句不点名西湖，地图只展示现代参考关系，不断言杨万里写作或观景位置。",
+      pinyinOverrides: [
+        { path: "line-3.token-4", char: "露", pinyin: "lù", reason: "‘才露尖尖角’中为露出、显现，读 lù；不是名词‘露水’之外的误读。" },
+      ],
+      spatialLearning: {
+        coreRelation: "small-water-and-close-observation",
+        observation: "视线从泉眼和树影推近到刚露尖角的小荷，最后停在荷尖上的蜻蜓；这是小池内部的近景关系。",
+        mapAction: "把小池作为西湖水面意象的候选参照，但优先用‘泉眼—荷叶—蜻蜓’读近景，不绑定现代西湖具体位置。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "慢慢靠近小景，也能发现一整个有动作的自然世界。",
+      },
+      placeRelations: [
+        { targetId: "west-lake", type: "interpretive_association", confidence: "low", assertion: "候选目录将西湖作为水面参照，但诗题与诗句只写小池，不直接点名西湖。", childMeaning: "先把它当作一方小池来观察。", sourceKeys: ["chinesePoetry"] },
+      ],
+    }),
+  },
+
+  "child-chile-ge": {
+    overrideReason: "第三批内容复核：敕勒川、阴山、穹庐和风吹草低见牛羊的空间镜头与多音字已人工确认；保留历史地理边界。",
+    ...catalogReview({
+      reviewNotes: "诗中直接写敕勒川与阴山下的草原场景；阴山只作历史地理参照，不把敕勒川自动等同某个现代行政区或给出精确坐标。",
+      pinyinOverrides: [
+        { path: "line-4.token-1", char: "笼", pinyin: "lǒng", reason: "‘笼盖四野’是覆盖、包住，读 lǒng，不是灯笼的 lóng。" },
+        { path: "line-7.token-5", char: "见", pinyin: "xiàn", reason: "‘风吹草低见牛羊’是牛羊显现，读 xiàn，不是看见的 jiàn。" },
+      ],
+      spatialLearning: {
+        coreRelation: "grassland-horizon-and-wind",
+        observation: "先看阴山脚下的草原和穹庐般的天空，再让风把草压低，使牛羊从视野中显现。",
+        mapAction: "用阴山作历史区域参照，重点呈现‘山下—四野—风吹草低’的尺度变化，不绘制未经核定的敕勒川现代边界。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7"],
+        childTakeaway: "风让原本辽阔而安静的草原显出生命。",
+      },
+      placeRelations: [
+        { targetId: "yinshan", type: "landscape_mentioned", confidence: "medium", assertion: "第二句直接写阴山下，是诗中草原的地理参照；历史地域范围不自动等同现代行政区。", childMeaning: "阴山在草原一侧，帮助我们感受天地的远近。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["yinshan"],
+    }),
+  },
+
+  "child-wang-dong-ting": {
+    overrideReason: "第三批内容复核：湖光秋月、无风如镜和白银盘青螺比喻已人工确认；地理层只保留洞庭湖参照，不把比喻当测量事实。",
+    ...catalogReview({
+      reviewNotes: "题目直接点名洞庭，湖面是明确的诗境参照；‘白银盘’与‘青螺’属于形色比喻，不自动指认具体山体或诗人精确站位。",
+      pinyinOverrides: [
+        { path: "line-1.token-7", char: "和", pinyin: "hé", reason: "‘两相和’表示湖光与秋月和谐相融，读 hé。" },
+        { path: "line-2.token-7", char: "磨", pinyin: "mó", reason: "‘镜未磨’是打磨镜面的磨，读 mó。" },
+        { path: "line-4.token-5", char: "一", pinyin: "yì", reason: "‘一青螺’后接第一声 qīng，连续朗读取 yì。" },
+      ],
+      spatialLearning: {
+        coreRelation: "lake-moon-and-mountain-metaphor",
+        observation: "视线从月光与湖面移到远望洞庭的青山，再用银盘和青螺把湖山关系缩成清晰形状。",
+        mapAction: "以洞庭湖作现代区域参照，先观察湖面—远山的关系；不把青螺比喻直接标成未经诗句确认的具体山名。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "比喻能把很大的湖山关系变成眼前看得见的形状。",
+      },
+      placeRelations: [
+        { targetId: "dongting-lake", type: "lake", confidence: "high", assertion: "题目直接写洞庭，第三句再次写遥望洞庭；湖面是诗境的明确区域参照。", childMeaning: "月光照在洞庭湖面，远山像湖上的小景。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["dongting-lake"],
+    }),
+  },
+
+  "child-wang-tian-men-shan": {
+    overrideReason: "第三批内容复核：江水穿山、回旋、两岸相对与孤帆来处的空间关系已人工确认；不把诗意夸张当作地貌测量。",
+    ...catalogReview({
+      reviewNotes: "题目与首句把天门山、楚江作为山水参照；地图可以呈现两山夹江的现代相对位置，但不推断李白的精确观景坐标。",
+      pinyinOverrides: [
+        { path: "line-2.token-7", char: "回", pinyin: "huí", reason: "‘至此回’写江水在此回旋、转弯，读 huí，不是返回某处的固定路线。" },
+        { path: "line-4.token-3", char: "一", pinyin: "yí", reason: "‘一片’后接去声 piàn，连续朗读取 yí。" },
+      ],
+      spatialLearning: {
+        coreRelation: "river-through-mountains-and-approaching-sail",
+        observation: "江水从两山之间穿过并回旋，两岸青山向行舟展开，远处孤帆沿日边驶来。",
+        mapAction: "把天门山两岸与楚江画成‘山—江—山’的相对关系，再用箭头表示水流和帆船来向；不替诗人补写路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "方向、远近和动作能让一张山水图变成正在发生的行舟。",
+      },
+      placeRelations: [
+        { targetId: "tianmen-mountain", type: "mountain_river", confidence: "high", assertion: "题目直接点名天门山，首句写楚江穿山，山水关系明确；不将夸张表达当作地貌测量。", childMeaning: "两山夹江，船从水道中望见山势展开。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["tianmen-mountain"],
+    }),
+  },
+
+  "child-feng-qiao-ye-bo": {
+    overrideReason: "第三批内容复核：月落、江枫渔火、寒山寺钟声的视听层次与姑苏古称已人工确认；不把文化地理关系升级为精确泊船位置。",
+    ...catalogReview({
+      reviewNotes: "诗中直接写姑苏城外寒山寺与客船；苏州只作文化地理参照，钟声传到客船是诗中听觉关系，不证明具体泊位。",
+      pinyinOverrides: [
+        { path: "line-1.token-2", char: "落", pinyin: "luò", reason: "‘月落’写月亮落下，读 luò，不是落下物品之外的其他语境。" },
+      ],
+      spatialLearning: {
+        coreRelation: "night-waterway-and-sound",
+        observation: "客船停在江夜，视觉从月、霜、枫树和渔火推向远处寺院，最后由钟声跨越水面抵达船上。",
+        mapAction: "以苏州水网和寒山寺作文化地理参照，重点用‘寺—水道—客船—钟声’理解距离，不标注未经证实的精确泊位。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "声音能连接看不见的地方，让夜晚的地图有了方向。",
+      },
+      placeRelations: [
+        { targetId: "suzhou", type: "cultural_association", confidence: "high", assertion: "‘姑苏’是苏州的古称，诗句直接写姑苏城外寒山寺；这说明文化地理场景，不等同精确泊船点。", childMeaning: "客船在苏州水网的夜色中听见寺钟。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["suzhou"],
+    }),
+  },
+
   "child-lu-chai": {
     text: "空山不见人，但闻人语响。\n返景入深林，复照青苔上。",
     overrideReason: "修正候选快照把‘但闻人语响’误录为‘但余钟磬音’的问题；保留原始快照，由人工 override 覆盖运行时。",

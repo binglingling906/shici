@@ -467,6 +467,30 @@
         }
       ]
     },
+    "child-xiao-chi": {
+      "lines": [
+        {
+          "lineId": "child-xiao-chi-line-1",
+          "src": "./assets/audio/readings/child-xiao-chi/line-1.mp3",
+          "durationMs": 1921
+        },
+        {
+          "lineId": "child-xiao-chi-line-2",
+          "src": "./assets/audio/readings/child-xiao-chi/line-2.mp3",
+          "durationMs": 1868
+        },
+        {
+          "lineId": "child-xiao-chi-line-3",
+          "src": "./assets/audio/readings/child-xiao-chi/line-3.mp3",
+          "durationMs": 1974
+        },
+        {
+          "lineId": "child-xiao-chi-line-4",
+          "src": "./assets/audio/readings/child-xiao-chi/line-4.mp3",
+          "durationMs": 1928
+        }
+      ]
+    },
     "child-zao-fa-bai-di-cheng": {
       "lines": [
         {
@@ -488,6 +512,69 @@
           "lineId": "child-zao-fa-bai-di-cheng-line-4",
           "src": "./assets/audio/readings/child-zao-fa-bai-di-cheng/line-4.mp3",
           "durationMs": 1884
+        }
+      ]
+    },
+    "child-wang-tian-men-shan": {
+      "lines": [
+        {
+          "lineId": "child-wang-tian-men-shan-line-1",
+          "src": "./assets/audio/readings/child-wang-tian-men-shan/line-1.mp3",
+          "durationMs": 2022
+        },
+        {
+          "lineId": "child-wang-tian-men-shan-line-2",
+          "src": "./assets/audio/readings/child-wang-tian-men-shan/line-2.mp3",
+          "durationMs": 1807
+        },
+        {
+          "lineId": "child-wang-tian-men-shan-line-3",
+          "src": "./assets/audio/readings/child-wang-tian-men-shan/line-3.mp3",
+          "durationMs": 1964
+        },
+        {
+          "lineId": "child-wang-tian-men-shan-line-4",
+          "src": "./assets/audio/readings/child-wang-tian-men-shan/line-4.mp3",
+          "durationMs": 1888
+        }
+      ]
+    },
+    "child-chile-ge": {
+      "lines": [
+        {
+          "lineId": "child-chile-ge-line-1",
+          "src": "./assets/audio/readings/child-chile-ge/line-1.mp3",
+          "durationMs": 970
+        },
+        {
+          "lineId": "child-chile-ge-line-2",
+          "src": "./assets/audio/readings/child-chile-ge/line-2.mp3",
+          "durationMs": 838
+        },
+        {
+          "lineId": "child-chile-ge-line-3",
+          "src": "./assets/audio/readings/child-chile-ge/line-3.mp3",
+          "durationMs": 1221
+        },
+        {
+          "lineId": "child-chile-ge-line-4",
+          "src": "./assets/audio/readings/child-chile-ge/line-4.mp3",
+          "durationMs": 999
+        },
+        {
+          "lineId": "child-chile-ge-line-5",
+          "src": "./assets/audio/readings/child-chile-ge/line-5.mp3",
+          "durationMs": 1012
+        },
+        {
+          "lineId": "child-chile-ge-line-6",
+          "src": "./assets/audio/readings/child-chile-ge/line-6.mp3",
+          "durationMs": 826
+        },
+        {
+          "lineId": "child-chile-ge-line-7",
+          "src": "./assets/audio/readings/child-chile-ge/line-7.mp3",
+          "durationMs": 1939
         }
       ]
     },
@@ -560,6 +647,54 @@
           "lineId": "child-jiu-yue-jiu-ri-line-4",
           "src": "./assets/audio/readings/child-jiu-yue-jiu-ri/line-4.mp3",
           "durationMs": 1808
+        }
+      ]
+    },
+    "child-feng-qiao-ye-bo": {
+      "lines": [
+        {
+          "lineId": "child-feng-qiao-ye-bo-line-1",
+          "src": "./assets/audio/readings/child-feng-qiao-ye-bo/line-1.mp3",
+          "durationMs": 1998
+        },
+        {
+          "lineId": "child-feng-qiao-ye-bo-line-2",
+          "src": "./assets/audio/readings/child-feng-qiao-ye-bo/line-2.mp3",
+          "durationMs": 2047
+        },
+        {
+          "lineId": "child-feng-qiao-ye-bo-line-3",
+          "src": "./assets/audio/readings/child-feng-qiao-ye-bo/line-3.mp3",
+          "durationMs": 1819
+        },
+        {
+          "lineId": "child-feng-qiao-ye-bo-line-4",
+          "src": "./assets/audio/readings/child-feng-qiao-ye-bo/line-4.mp3",
+          "durationMs": 1987
+        }
+      ]
+    },
+    "child-wang-dong-ting": {
+      "lines": [
+        {
+          "lineId": "child-wang-dong-ting-line-1",
+          "src": "./assets/audio/readings/child-wang-dong-ting/line-1.mp3",
+          "durationMs": 1935
+        },
+        {
+          "lineId": "child-wang-dong-ting-line-2",
+          "src": "./assets/audio/readings/child-wang-dong-ting/line-2.mp3",
+          "durationMs": 1788
+        },
+        {
+          "lineId": "child-wang-dong-ting-line-3",
+          "src": "./assets/audio/readings/child-wang-dong-ting/line-3.mp3",
+          "durationMs": 1916
+        },
+        {
+          "lineId": "child-wang-dong-ting-line-4",
+          "src": "./assets/audio/readings/child-wang-dong-ting/line-4.mp3",
+          "durationMs": 1738
         }
       ]
     },
