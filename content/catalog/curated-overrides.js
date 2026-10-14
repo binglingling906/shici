@@ -886,6 +886,178 @@ export const curatedOverrides = {
     }),
   },
 
+  "child-mu-jiang-yin": {
+    overrideReason: "第八批内容复核：残阳铺江、半江青红、九月初三夜与露月比喻的时间和光色关系已人工确认；似按‘像’的语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗写江边从夕阳到秋夜的感官观察，没有可核定的单一地理地点；江水是诗境，不应被强行绑定到某条具体河流。",
+      pinyinOverrides: [
+        { path: "line-2.token-3", char: "瑟", pinyin: "sè", reason: "‘瑟瑟’在此写江水的青绿色，瑟读 sè。" },
+        { path: "line-4.token-2", char: "似", pinyin: "sì", reason: "‘露似真珠’表示像珍珠，似读 sì。" },
+        { path: "line-4.token-6", char: "似", pinyin: "sì", reason: "‘月似弓’表示像弯弓，似读 sì。" },
+      ],
+      spatialLearning: {
+        coreRelation: "river-sunset-to-autumn-moon",
+        observation: "视线从江面上将落的夕阳和青红色水面，转到九月初三的露珠与弯月，时间推进带来感官焦点变化。",
+        mapAction: "画‘江面—夕阳—露珠—弯月’的时间观察链，不把江水定位成未经诗句确认的具体河流。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "同一处自然景物会随时间改变颜色和形状，观察要留意光线。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-yuan-ri": {
+    overrideReason: "第八批内容复核：爆竹、屠苏、曈曈日和桃符构成的除旧迎新生活场景已人工确认；屠、曈按节日语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗写古代春节的家庭与街巷习俗，没有可核定的单一地理地点；千门万户是共同生活场景，不是现代行政范围。",
+      pinyinOverrides: [
+        { path: "line-2.token-6", char: "屠", pinyin: "tú", reason: "‘屠苏’是春节酒名或习俗，屠读 tú。" },
+        { path: "line-2.token-7", char: "苏", pinyin: "sū", reason: "‘屠苏’中的苏读 sū，保留专名语境。" },
+        { path: "line-3.token-5", char: "曈", pinyin: "tóng", reason: "‘曈曈’写初升太阳明亮，曈读 tóng。" },
+        { path: "line-3.token-6", char: "曈", pinyin: "tóng", reason: "‘曈曈’为叠词，第二个曈同样读 tóng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "household-new-year-and-shared-custom",
+        observation: "诗从一家的爆竹声和屠苏酒，扩展到千门万户的阳光与桃符，节日空间由屋内、门口延伸到整条街巷。",
+        mapAction: "画‘家中—门口—街巷—千家万户’的习俗扩散关系，不把千门万户画成精确地理边界。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "节日文化由许多家庭共同实践，再通过物件和动作传给下一代。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-ma-shi": {
+    overrideReason: "第八批内容复核：大漠、燕山月色、金络脑与骏马奔驰的边地空间和志向隐喻已人工确认；燕、似按语境校正。",
+    ...catalogReview({
+      reviewNotes: "大漠与燕山构成北方边地文化地理参照，金络脑与快走是骏马和志向的诗意想象；不把诗句解释成李贺的个人行军路线。",
+      pinyinOverrides: [
+        { path: "line-2.token-1", char: "燕", pinyin: "yān", reason: "‘燕山’是北方山脉名称，燕读 yān，不是燕子的 yàn。" },
+        { path: "line-2.token-4", char: "似", pinyin: "sì", reason: "‘月似钩’表示像弯钩，似读 sì。" },
+      ],
+      spatialLearning: {
+        coreRelation: "desert-mountain-moon-and-racing-horse",
+        observation: "空间从大漠沙地抬到燕山弯月，再从夜景转入想象中的骏马和秋日奔驰，边地的空旷成为行动舞台。",
+        mapAction: "以燕山和敦煌作边地文化参照，表达‘大漠—山月—骏马—秋风’的关系；不绘制未经证实的诗人路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "自然景物既能建立空间，也能承载一个人等待机会、施展力量的愿望。",
+      },
+      placeRelations: [
+        { targetId: "yan-mountain", type: "mountain_association", confidence: "high", assertion: "第二句直接写燕山，是边地山脉参照；燕读 yān。", childMeaning: "弯月挂在北方燕山上，构成诗中的夜景。", sourceKeys: ["chinesePoetry"] },
+        { targetId: "dunhuang", type: "desert_region", confidence: "medium", assertion: "大漠意象可用敦煌作北方西部沙漠文化参照，诗句未直接点名敦煌。", childMeaning: "大漠是辽阔的沙地空间，不等于某一条已经确认的行军路线。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["yan-mountain", "dunhuang"],
+    }),
+  },
+
+  "child-guan-shu-you-gan": {
+    overrideReason: "第八批内容复核：方塘镜面、天光云影、追问清澈原因与源头活水的学习隐喻已人工确认；渠、那、为按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗以方塘和源头活水构成学习与思考的象征性空间，没有可核定的单一地点；不把方塘推断为朱熹的具体居所。",
+      pinyinOverrides: [
+        { path: "line-1.token-6", char: "鉴", pinyin: "jiàn", reason: "‘一鉴’指一面镜子，鉴读 jiàn。" },
+        { path: "line-3.token-2", char: "渠", pinyin: "qú", reason: "‘问渠’指问池水或水体，渠读 qú。" },
+        { path: "line-3.token-3", char: "那", pinyin: "nǎ", reason: "‘那得’表示怎么能、从哪里得到，那读 nǎ。" },
+        { path: "line-4.token-1", char: "为", pinyin: "wèi", reason: "‘为有源头’表示因为有，读 wèi。" },
+      ],
+      spatialLearning: {
+        coreRelation: "clear-pond-and-living-source",
+        observation: "方塘承接天光云影，诗人从池面清澈追问源头；空间从眼前镜面推向看不见但持续流入的源头。",
+        mapAction: "画‘源头—活水—方塘—天光云影’的关系图，再把它转译为‘新知识—思考—清楚表达’的学习链。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "保持清楚需要持续接触活水般的新知识，也要主动追问原因。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-su-jiande-jiang": {
+    overrideReason: "第八批内容复核：移舟停渚、日暮客愁、旷野低天与清江近月的空间视线已人工确认；泊、渚按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗写旅夜江边的小尺度观察，没有可核定的单一地理地点；建德江是诗题参照，但不据此推断孟浩然的完整行程。",
+      pinyinOverrides: [
+        { path: "line-1.token-3", char: "泊", pinyin: "bó", reason: "‘泊烟渚’意为停船，泊读 bó。" },
+        { path: "line-1.token-5", char: "渚", pinyin: "zhǔ", reason: "‘烟渚’指烟雾中的水中小洲，渚读 zhǔ。" },
+      ],
+      spatialLearning: {
+        coreRelation: "moored-boat-and-near-moon",
+        observation: "旅舟从移动变为停在烟渚，视线由日暮的客愁拉到旷野低天，再收回清江中的月影和人。",
+        mapAction: "画‘舟—烟渚—旷野—树—江月’的由近及远再回收关系，不虚构诗人的具体航行路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "陌生旅途中，开阔的空间和清亮的月色也可以成为安静的陪伴。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-gu-lang-yue-xing": {
+    overrideReason: "内容复核：月亮意象、想象推进与儿童可理解的夸张表达已人工确认；不把传说性月宫想象当作天文学事实。",
+    ...catalogReview({
+      reviewNotes: "《古朗月行》以儿童视角写月亮的形状变化和神话想象，保留无确定地点关系，不把月宫叙事解释为地理事实。",
+    }),
+  },
+
+  "child-zhu-li-guan": {
+    overrideReason: "内容复核：独坐、幽篁、明月和琴声的静谧空间关系已人工确认；不绑定诗人精确隐居地点。",
+    ...catalogReview({
+      reviewNotes: "《竹里馆》重在竹林独处的声音与光线，地理只保留竹林场景尺度，不把传说性居所当作确证地点。",
+    }),
+  },
+
+  "child-you-zi-yin": {
+    overrideReason: "内容复核：游子出门、慈母缝衣与归期难定的时间情感已人工确认；不推断具体行旅路线。",
+    ...catalogReview({
+      reviewNotes: "《游子吟》以家庭关系和离别时间为核心，没有可核定的单一地点，保留 unassigned 地理状态。",
+    }),
+  },
+
+  "child-qian-tang-hu-chun-xing": {
+    overrideReason: "第七批内容复核：西湖地标、湖天视线、早春鸟花草与湖东白沙堤的行走关系已人工确认；燕、啄、没、行按语境校正。",
+    ...catalogReview({
+      reviewNotes: "诗题与景物明确指向钱塘湖（今杭州西湖）一带；地图只呈现现代参考位置和湖边观察关系，不自动等同白居易当日的完整历史路线。",
+      pinyinOverrides: [
+        { path: "line-4.token-4", char: "燕", pinyin: "yàn", reason: "‘新燕’指燕子，燕读 yàn。" },
+        { path: "line-4.token-5", char: "啄", pinyin: "zhuó", reason: "‘啄春泥’指燕子用嘴取泥，啄读 zhuó。" },
+        { path: "line-6.token-5", char: "没", pinyin: "mò", reason: "‘没马蹄’意为遮住、淹没马蹄，没读 mò。" },
+        { path: "line-7.token-5", char: "行", pinyin: "xíng", reason: "‘行不足’意为行走不够、看不够，行读 xíng。" },
+      ],
+      spatialLearning: {
+        coreRelation: "west-lake-spring-walk",
+        observation: "视线从孤山寺、贾亭的湖边地标出发，经过湖面低云、早莺新燕、乱花浅草，最后抵达湖东绿杨阴里的白沙堤。",
+        mapAction: "在现代西湖地图上连出‘孤山寺—贾亭—湖东白沙堤’的参考观察链，再用鸟、花、草复述一路春景；不把连线当作已核实的唐代行程。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8", "line-9", "line-10", "line-11", "line-12", "line-13", "line-14", "line-15", "line-16"],
+        childTakeaway: "地图先帮我们找到地方，诗句再让地方长出水云、鸟花和脚步的春天。",
+      },
+      placeRelations: [
+        { targetId: "west-lake", type: "depicts_place", confidence: "high", assertion: "钱塘湖是诗题和诗境的直接湖泊参照，现代西湖是其常用对应地点。", childMeaning: "沿着今天西湖一带的湖边参照，理解诗人的早春观察。", sourceKeys: ["chinesePoetry", "westLakeHangzhou"] },
+        { targetId: "hangzhou", type: "city_context", confidence: "medium", assertion: "西湖位于杭州；城市关系用于现代地图定位，不推断诗人的精确站位。", childMeaning: "把湖边春景放回杭州的山水城市背景。", sourceKeys: ["westLakeHangzhou"] },
+      ],
+      canonicalPlaceIds: ["west-lake"],
+    }),
+  },
+
+  "child-deng-fei-lai-feng": {
+    overrideReason: "第七批内容复核：飞来山、千寻塔、鸡鸣日升与浮云最高层的登高视线已人工确认；畏、缘按语境校正。",
+    ...catalogReview({
+      reviewNotes: "飞来峰（飞来山）与杭州灵隐一带存在常见文化地理对应，但诗句不能单独证明王安石的具体登临路线；地图仅作现代区域参照。",
+      pinyinOverrides: [
+        { path: "line-3.token-2", char: "畏", pinyin: "wèi", reason: "‘不畏’意为不害怕，畏读 wèi。" },
+        { path: "line-4.token-2", char: "缘", pinyin: "yuán", reason: "‘自缘’意为只是因为，缘读 yuán。" },
+      ],
+      spatialLearning: {
+        coreRelation: "mountain-tower-and-wide-view",
+        observation: "登山到塔的高处，视线从山体和塔身推向鸡鸣日升，再回到浮云遮眼与最高层的上下关系。",
+        mapAction: "以杭州飞来峰（飞来山）作现代区域参照，画出‘山—塔—日升—浮云—高层’的视线关系，不绘制未经证实的历史路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8"],
+        childTakeaway: "换到更高、更清楚的位置，才能看见眼前遮挡之外的关系。",
+      },
+      placeRelations: [
+        { targetId: "hangzhou", type: "mountain_association", confidence: "medium", assertion: "飞来峰（飞来山）常与杭州灵隐区域关联，作为现代地域参照，不等同于已证实的诗人路线。", childMeaning: "把登高诗境放进杭州山地文化的现代参照中。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["hangzhou"],
+    }),
+  },
+
   "child-lu-chai": {
     text: "空山不见人，但闻人语响。\n返景入深林，复照青苔上。",
     overrideReason: "修正候选快照把‘但闻人语响’误录为‘但余钟磬音’的问题；保留原始快照，由人工 override 覆盖运行时。",

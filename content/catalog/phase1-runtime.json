@@ -23231,19 +23231,25 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-026",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "内容复核：月亮意象、想象推进与儿童可理解的夸张表达已人工确认；不把传说性月宫想象当作天文学事实。",
         "overrideSource": null
       },
-      "reviewFlags": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
       "pronunciationOverrides": [],
       "spatialLearning": null,
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《古朗月行》以儿童视角写月亮的形状变化和神话想象，保留无确定地点关系，不把月宫叙事解释为地理事实。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -23536,100 +23542,156 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-gu-lang-yue-xing-line-1",
-              "meaning": "先从原句找出月亮和神话：这句写了“小时不识月，”，再用自己的话说说画面怎样变化。",
+              "meaning": "小时候还不认识月亮。",
               "keywords": [
-                "月亮",
-                "神话",
-                "想象"
+                "小时",
+                "不识月"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“小时不识月，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘小时’指小时候，不是时钟上的小时；‘不识’是不了解、认不出。",
+              "picture": "孩子抬头看一个从未认真认识过的圆月。",
+              "prompt": "孩子第一次看见圆月时，会先注意它的什么？",
+              "childMeaning": "小时候还不认识月亮。",
+              "keyWords": [
+                "小时",
+                "不识月"
+              ],
+              "commonMisunderstanding": "‘小时’指小时候，不是时钟上的小时；‘不识’是不了解、认不出。",
+              "imagePrompt": "孩子抬头看一个从未认真认识过的圆月。"
             },
             {
               "lineId": "child-gu-lang-yue-xing-line-2",
-              "meaning": "先从原句找出月亮和神话：这句写了“呼作白玉盘。”，再用自己的话说说画面怎样变化。",
+              "meaning": "把月亮叫作白玉做的盘子。",
               "keywords": [
-                "月亮",
-                "神话",
-                "想象"
+                "呼作",
+                "白玉盘"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“呼作白玉盘。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘白玉盘’是把月亮比作白玉盘子的想象，不是月亮真的由玉制成。",
+              "picture": "孩子用熟悉的圆盘来给月亮取一个可爱的名字。",
+              "prompt": "为什么圆月会让人想到盘子？",
+              "childMeaning": "把月亮叫作白玉做的盘子。",
+              "keyWords": [
+                "呼作",
+                "白玉盘"
+              ],
+              "commonMisunderstanding": "‘白玉盘’是把月亮比作白玉盘子的想象，不是月亮真的由玉制成。",
+              "imagePrompt": "孩子用熟悉的圆盘来给月亮取一个可爱的名字。"
             },
             {
               "lineId": "child-gu-lang-yue-xing-line-3",
-              "meaning": "先从原句找出月亮和神话：这句写了“又疑瑶台镜，”，再用自己的话说说画面怎样变化。",
+              "meaning": "又怀疑它是瑶台上的镜子。",
               "keywords": [
-                "月亮",
-                "神话",
-                "想象"
+                "又疑",
+                "瑶台镜"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“又疑瑶台镜，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘瑶台’是神话中的仙境高台；‘疑’是猜想，不是已经证明月亮真是镜子。",
+              "picture": "圆月又变成仙宫里珍贵的宝镜。",
+              "prompt": "月亮和镜子有哪些相似的地方？",
+              "childMeaning": "又怀疑它是瑶台上的镜子。",
+              "keyWords": [
+                "又疑",
+                "瑶台镜"
+              ],
+              "commonMisunderstanding": "‘瑶台’是神话中的仙境高台；‘疑’是猜想，不是已经证明月亮真是镜子。",
+              "imagePrompt": "圆月又变成仙宫里珍贵的宝镜。"
             },
             {
               "lineId": "child-gu-lang-yue-xing-line-4",
-              "meaning": "先从原句找出月亮和神话：这句写了“飞在青云端。”，再用自己的话说说画面怎样变化。",
+              "meaning": "想象这面镜子飞在高高的青云尽头。",
               "keywords": [
-                "月亮",
-                "神话",
-                "想象"
+                "飞在",
+                "青云端"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“飞在青云端。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘飞’写想象中的高远位置，不是镜子真的会飞；‘端’是尽头、边际。",
+              "picture": "宝镜悬在青色云层的最高处，离地面很远。",
+              "prompt": "哪一个词让月亮显得特别高远？",
+              "childMeaning": "想象这面镜子飞在高高的青云尽头。",
+              "keyWords": [
+                "飞在",
+                "青云端"
+              ],
+              "commonMisunderstanding": "‘飞’写想象中的高远位置，不是镜子真的会飞；‘端’是尽头、边际。",
+              "imagePrompt": "宝镜悬在青色云层的最高处，离地面很远。"
             },
             {
               "lineId": "child-gu-lang-yue-xing-line-5",
-              "meaning": "先从原句找出月亮和神话：这句写了“仙人垂两足，”，再用自己的话说说画面怎样变化。",
+              "meaning": "想象月宫里的仙人垂下两只脚。",
               "keywords": [
-                "月亮",
-                "神话",
-                "想象"
+                "仙人",
+                "垂两足"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“仙人垂两足，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "这是神话想象中的月宫画面，不是从地面真的看见仙人的脚。",
+              "picture": "仙人坐在月宫高处，双脚从台边垂下来。",
+              "prompt": "这句把月亮里面想象成了什么地方？",
+              "childMeaning": "想象月宫里的仙人垂下两只脚。",
+              "keyWords": [
+                "仙人",
+                "垂两足"
+              ],
+              "commonMisunderstanding": "这是神话想象中的月宫画面，不是从地面真的看见仙人的脚。",
+              "imagePrompt": "仙人坐在月宫高处，双脚从台边垂下来。"
             },
             {
               "lineId": "child-gu-lang-yue-xing-line-6",
-              "meaning": "先从原句找出月亮和神话：这句写了“桂树何团团。”，再用自己的话说说画面怎样变化。",
+              "meaning": "月宫里的桂树长得圆圆满满。",
               "keywords": [
-                "月亮",
-                "神话",
-                "想象"
+                "桂树",
+                "何团团"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“桂树何团团。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘团团’写圆满、茂盛的形态，不是说桂树一定被剪成圆球；‘何’在这里加强赞叹。",
+              "picture": "桂树枝叶聚成圆团，和圆月的形状互相呼应。",
+              "prompt": "桂树的‘团团’和月亮有什么联系？",
+              "childMeaning": "月宫里的桂树长得圆圆满满。",
+              "keyWords": [
+                "桂树",
+                "何团团"
+              ],
+              "commonMisunderstanding": "‘团团’写圆满、茂盛的形态，不是说桂树一定被剪成圆球；‘何’在这里加强赞叹。",
+              "imagePrompt": "桂树枝叶聚成圆团，和圆月的形状互相呼应。"
             },
             {
               "lineId": "child-gu-lang-yue-xing-line-7",
-              "meaning": "先从原句找出月亮和神话：这句写了“白兔捣药成，”，再用自己的话说说画面怎样变化。",
+              "meaning": "月宫白兔把药捣制完成。",
               "keywords": [
-                "月亮",
-                "神话",
-                "想象"
+                "白兔",
+                "捣药成"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“白兔捣药成，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘捣药’来自月宫神话；这是传说中的想象，不是普通兔子在地面制药。",
+              "picture": "白兔在月宫中忙着捣药，故事继续向神话深处走。",
+              "prompt": "月宫里除了仙人和桂树，还有谁在做什么？",
+              "childMeaning": "月宫白兔把药捣制完成。",
+              "keyWords": [
+                "白兔",
+                "捣药成"
+              ],
+              "commonMisunderstanding": "‘捣药’来自月宫神话；这是传说中的想象，不是普通兔子在地面制药。",
+              "imagePrompt": "白兔在月宫中忙着捣药，故事继续向神话深处走。"
             },
             {
               "lineId": "child-gu-lang-yue-xing-line-8",
-              "meaning": "先从原句找出月亮和神话：这句写了“问言与谁餐。”，再用自己的话说说画面怎样变化。",
+              "meaning": "诗人问：白兔捣好的药是给谁吃的呢？",
               "keywords": [
-                "月亮",
-                "神话",
-                "想象"
+                "问言",
+                "与谁餐"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“问言与谁餐。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘餐’在这里是吃，读 cān；结尾用问句保留好奇，不是交代药真的给了谁。",
+              "picture": "白兔停在月宫故事里，诗人的问题把想象留给读者继续完成。",
+              "prompt": "结尾的问句让你想继续知道什么？",
+              "childMeaning": "诗人问：白兔捣好的药是给谁吃的呢？",
+              "keyWords": [
+                "问言",
+                "与谁餐"
+              ],
+              "commonMisunderstanding": "‘餐’在这里是吃，读 cān；结尾用问句保留好奇，不是交代药真的给了谁。",
+              "imagePrompt": "白兔停在月宫故事里，诗人的问题把想象留给读者继续完成。"
             }
           ],
-          "wholeMeaning": "这首诗围绕月亮、神话、想象展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过月亮、神话、想象写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "小时候的孩子不认识月亮，把它叫作白玉盘；又觉得它像瑶台的镜子，飞在青云之上。诗人继续想象月中仙人、桂树和捣药的白兔，把普通的月亮写成一个充满神话和好奇的天空世界。",
+          "mainContent": "诗从孩子的直觉命名开始，再把月亮想象成瑶台镜，最后进入月宫神话；画面由眼前的圆月一步步打开到高远的青云和月宫。",
           "evidenceLines": [
             "child-gu-lang-yue-xing-line-1",
             "child-gu-lang-yue-xing-line-2",
@@ -23640,12 +23702,13 @@
             "child-gu-lang-yue-xing-line-7",
             "child-gu-lang-yue-xing-line-8"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过月亮、神话、想象表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗从孩子的直觉命名开始，再把月亮想象成瑶台镜，最后进入月宫神话；画面由眼前的圆月一步步打开到高远的青云和月宫。",
+          "emotion": "天真好奇、惊喜和自由想象。",
+          "centralIdea": "孩子面对陌生事物时会先用熟悉的东西理解它；诗把这种童真的观察变成想象，让月亮成为可以探索的神奇世界。",
           "evidenceLines": [
             "child-gu-lang-yue-xing-line-1",
             "child-gu-lang-yue-xing-line-2",
@@ -23655,6 +23718,11 @@
             "child-gu-lang-yue-xing-line-6",
             "child-gu-lang-yue-xing-line-7",
             "child-gu-lang-yue-xing-line-8"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -23662,73 +23730,196 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "月亮",
-              "神话"
-            ],
-            [
-              "月亮",
-              "神话"
-            ],
-            [
-              "月亮",
-              "神话"
-            ],
-            [
-              "月亮",
-              "神话"
-            ],
-            [
-              "月亮",
-              "神话"
-            ],
-            [
-              "月亮",
-              "神话"
-            ],
-            [
-              "月亮",
-              "神话"
-            ],
-            [
-              "月亮",
-              "神话"
-            ]
+            {
+              "lineId": "child-gu-lang-yue-xing-line-1",
+              "keywords": [
+                "小时",
+                "不识月"
+              ],
+              "cue": "先写孩子还不认识月亮"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-2",
+              "keywords": [
+                "白玉盘"
+              ],
+              "cue": "把圆月叫作白玉盘"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-3",
+              "keywords": [
+                "瑶台镜"
+              ],
+              "cue": "又猜是仙宫宝镜"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-4",
+              "keywords": [
+                "青云端"
+              ],
+              "cue": "宝镜飞到青云高处"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-5",
+              "keywords": [
+                "仙人",
+                "两足"
+              ],
+              "cue": "月宫出现垂脚仙人"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-6",
+              "keywords": [
+                "桂树",
+                "团团"
+              ],
+              "cue": "桂树枝叶圆满"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-7",
+              "keywords": [
+                "白兔",
+                "捣药"
+              ],
+              "cue": "白兔完成捣药"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-8",
+              "keywords": [
+                "谁餐"
+              ],
+              "cue": "问药要给谁吃"
+            }
           ],
           "firstCharacterHints": [
-            "小",
-            "呼",
-            "又",
-            "飞",
-            "仙",
-            "桂",
-            "白",
-            "问"
+            {
+              "lineId": "child-gu-lang-yue-xing-line-1",
+              "character": "小",
+              "cue": "小时不识月"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-2",
+              "character": "呼",
+              "cue": "呼作白玉盘"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-3",
+              "character": "又",
+              "cue": "又疑瑶台镜"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-4",
+              "character": "飞",
+              "cue": "飞在青云端"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-5",
+              "character": "仙",
+              "cue": "仙人垂两足"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-6",
+              "character": "桂",
+              "cue": "桂树何团团"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-7",
+              "character": "白",
+              "cue": "白兔捣药成"
+            },
+            {
+              "lineId": "child-gu-lang-yue-xing-line-8",
+              "character": "问",
+              "cue": "问言与谁餐"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "小时候的孩子不认识月亮，把它叫作白玉盘；又觉得它像瑶台的镜子，飞在青云之上。诗人继续想象月中仙人、桂树和捣药的白兔，把普通的月亮写成一个充满神话和好奇的天空世界。",
+        "lineMeanings": [
+          {
+            "lineId": "child-gu-lang-yue-xing-line-1",
+            "meaning": "小时候还不认识月亮。"
+          },
+          {
+            "lineId": "child-gu-lang-yue-xing-line-2",
+            "meaning": "把月亮叫作白玉做的盘子。"
+          },
+          {
+            "lineId": "child-gu-lang-yue-xing-line-3",
+            "meaning": "又怀疑它是瑶台上的镜子。"
+          },
+          {
+            "lineId": "child-gu-lang-yue-xing-line-4",
+            "meaning": "想象这面镜子飞在高高的青云尽头。"
+          },
+          {
+            "lineId": "child-gu-lang-yue-xing-line-5",
+            "meaning": "想象月宫里的仙人垂下两只脚。"
+          },
+          {
+            "lineId": "child-gu-lang-yue-xing-line-6",
+            "meaning": "月宫里的桂树长得圆圆满满。"
+          },
+          {
+            "lineId": "child-gu-lang-yue-xing-line-7",
+            "meaning": "月宫白兔把药捣制完成。"
+          },
+          {
+            "lineId": "child-gu-lang-yue-xing-line-8",
+            "meaning": "诗人问：白兔捣好的药是给谁吃的呢？"
+          }
+        ],
+        "extension": {
+          "title": "给未知事物画一扇想象的门",
+          "text": "《古朗月行》没有急着给月亮一个科学答案，而是保留孩子第一次看见它时的惊奇。想象不是胡乱编造，也可以从形状、颜色和传说一步步长出来。",
+          "prompt": "选一个你还不熟悉的自然景物，先写下你看见的样子，再为它编一个不违背观察的想象故事。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -30084,19 +30275,25 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-038",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "内容复核：独坐、幽篁、明月和琴声的静谧空间关系已人工确认；不绑定诗人精确隐居地点。",
         "overrideSource": null
       },
-      "reviewFlags": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
       "pronunciationOverrides": [],
       "spatialLearning": null,
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《竹里馆》重在竹林独处的声音与光线，地理只保留竹林场景尺度，不把传说性居所当作确证地点。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -30249,73 +30446,113 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-zhu-li-guan-line-1",
-              "meaning": "先从原句找出竹林和月亮：这句写了“独坐幽篁里，”，再用自己的话说说画面怎样变化。",
+              "meaning": "独自坐在幽深茂密的竹林里。",
               "keywords": [
-                "竹林",
-                "月亮",
-                "独处"
+                "独坐",
+                "幽篁",
+                "里"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“独坐幽篁里，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘篁’读 huáng，指竹林；‘独坐’是独自安坐，不是被迫受罚。",
+              "picture": "竹子高密幽静，诗人坐在林子深处，和热闹人群暂时隔开。",
+              "prompt": "竹林给人的第一感觉是怎样的？",
+              "childMeaning": "独自坐在幽深茂密的竹林里。",
+              "keyWords": [
+                "独坐",
+                "幽篁",
+                "里"
+              ],
+              "commonMisunderstanding": "‘篁’读 huáng，指竹林；‘独坐’是独自安坐，不是被迫受罚。",
+              "imagePrompt": "竹子高密幽静，诗人坐在林子深处，和热闹人群暂时隔开。"
             },
             {
               "lineId": "child-zhu-li-guan-line-2",
-              "meaning": "先从原句找出竹林和月亮：这句写了“弹琴复长啸。”，再用自己的话说说画面怎样变化。",
+              "meaning": "一边弹琴，一边发出长长的啸声。",
               "keywords": [
-                "竹林",
-                "月亮",
-                "独处"
+                "弹琴",
+                "复",
+                "长啸"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“弹琴复长啸。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘复’是又、还；‘长啸’是拉长声音的吟啸，‘长’读 cháng，不是身高或长度。",
+              "picture": "琴声和啸声在竹林里回荡，独处的人用声音陪伴自己。",
+              "prompt": "竹林里除了竹子，还有哪些声音？",
+              "childMeaning": "一边弹琴，一边发出长长的啸声。",
+              "keyWords": [
+                "弹琴",
+                "复",
+                "长啸"
+              ],
+              "commonMisunderstanding": "‘复’是又、还；‘长啸’是拉长声音的吟啸，‘长’读 cháng，不是身高或长度。",
+              "imagePrompt": "琴声和啸声在竹林里回荡，独处的人用声音陪伴自己。"
             },
             {
               "lineId": "child-zhu-li-guan-line-3",
-              "meaning": "先从原句找出竹林和月亮：这句写了“深林人不知，”，再用自己的话说说画面怎样变化。",
+              "meaning": "深深的树林里没有人知道我在这里。",
               "keywords": [
-                "竹林",
-                "月亮",
-                "独处"
+                "深林",
+                "人不知"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“深林人不知，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘人不知’写没有别人知道诗人的位置和活动，不表示诗人害怕所有人。",
+              "picture": "竹林很深，外面的人听不清、看不见里面的人。",
+              "prompt": "深林为什么能让诗人安静地独处？",
+              "childMeaning": "深深的树林里没有人知道我在这里。",
+              "keyWords": [
+                "深林",
+                "人不知"
+              ],
+              "commonMisunderstanding": "‘人不知’写没有别人知道诗人的位置和活动，不表示诗人害怕所有人。",
+              "imagePrompt": "竹林很深，外面的人听不清、看不见里面的人。"
             },
             {
               "lineId": "child-zhu-li-guan-line-4",
-              "meaning": "先从原句找出竹林和月亮：这句写了“明月来相照。”，再用自己的话说说画面怎样变化。",
+              "meaning": "明亮的月光像特意来到林中，照着独坐的诗人。",
               "keywords": [
-                "竹林",
-                "月亮",
-                "独处"
+                "明月",
+                "来",
+                "相照"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“明月来相照。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘来相照’是拟人和诗意想象，月亮不会真的走路；‘相’读 xiāng，表示彼此、相互。",
+              "picture": "月光穿过竹叶落在诗人身上，自然成为不说话的朋友。",
+              "prompt": "没有人陪伴时，谁照亮了诗人？",
+              "childMeaning": "明亮的月光像特意来到林中，照着独坐的诗人。",
+              "keyWords": [
+                "明月",
+                "来",
+                "相照"
+              ],
+              "commonMisunderstanding": "‘来相照’是拟人和诗意想象，月亮不会真的走路；‘相’读 xiāng，表示彼此、相互。",
+              "imagePrompt": "月光穿过竹叶落在诗人身上，自然成为不说话的朋友。"
             }
           ],
-          "wholeMeaning": "这首诗围绕竹林、月亮、独处展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过竹林、月亮、独处写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "王维独自坐在幽深的竹林里，弹琴、长啸，没有人知道他的安静；但明亮的月光来到林中照着他。诗写一个人在自然里独处，却并不空虚，竹林、琴声、长啸和月光组成了温柔的陪伴。",
+          "mainContent": "前两句写诗人在竹林里的独坐和声音，后两句写深林无人知与明月相照；人从热闹的人群中退到自然，得到另一种安静的回应。",
           "evidenceLines": [
             "child-zhu-li-guan-line-1",
             "child-zhu-li-guan-line-2",
             "child-zhu-li-guan-line-3",
             "child-zhu-li-guan-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过竹林、月亮、独处表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "前两句写诗人在竹林里的独坐和声音，后两句写深林无人知与明月相照；人从热闹的人群中退到自然，得到另一种安静的回应。",
+          "emotion": "清幽、自在和独处时的宁静满足。",
+          "centralIdea": "独处不一定等于孤单；人在安静的自然中，也能通过琴声、长啸和月光与世界保持联系。",
           "evidenceLines": [
             "child-zhu-li-guan-line-1",
             "child-zhu-li-guan-line-2",
             "child-zhu-li-guan-line-3",
             "child-zhu-li-guan-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -30323,53 +30560,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "竹林",
-              "月亮"
-            ],
-            [
-              "竹林",
-              "月亮"
-            ],
-            [
-              "竹林",
-              "月亮"
-            ],
-            [
-              "竹林",
-              "月亮"
-            ]
+            {
+              "lineId": "child-zhu-li-guan-line-1",
+              "keywords": [
+                "独坐",
+                "幽篁"
+              ],
+              "cue": "先到幽深竹林独坐"
+            },
+            {
+              "lineId": "child-zhu-li-guan-line-2",
+              "keywords": [
+                "弹琴",
+                "长啸"
+              ],
+              "cue": "琴声啸声在林中回荡"
+            },
+            {
+              "lineId": "child-zhu-li-guan-line-3",
+              "keywords": [
+                "深林",
+                "人不知"
+              ],
+              "cue": "深林把人声隔开"
+            },
+            {
+              "lineId": "child-zhu-li-guan-line-4",
+              "keywords": [
+                "明月",
+                "相照"
+              ],
+              "cue": "月光成为安静陪伴"
+            }
           ],
           "firstCharacterHints": [
-            "独",
-            "弹",
-            "深",
-            "明"
+            {
+              "lineId": "child-zhu-li-guan-line-1",
+              "character": "独",
+              "cue": "独坐幽篁里"
+            },
+            {
+              "lineId": "child-zhu-li-guan-line-2",
+              "character": "弹",
+              "cue": "弹琴复长啸"
+            },
+            {
+              "lineId": "child-zhu-li-guan-line-3",
+              "character": "深",
+              "cue": "深林人不知"
+            },
+            {
+              "lineId": "child-zhu-li-guan-line-4",
+              "character": "明",
+              "cue": "明月来相照"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "王维独自坐在幽深的竹林里，弹琴、长啸，没有人知道他的安静；但明亮的月光来到林中照着他。诗写一个人在自然里独处，却并不空虚，竹林、琴声、长啸和月光组成了温柔的陪伴。",
+        "lineMeanings": [
+          {
+            "lineId": "child-zhu-li-guan-line-1",
+            "meaning": "独自坐在幽深茂密的竹林里。"
+          },
+          {
+            "lineId": "child-zhu-li-guan-line-2",
+            "meaning": "一边弹琴，一边发出长长的啸声。"
+          },
+          {
+            "lineId": "child-zhu-li-guan-line-3",
+            "meaning": "深深的树林里没有人知道我在这里。"
+          },
+          {
+            "lineId": "child-zhu-li-guan-line-4",
+            "meaning": "明亮的月光像特意来到林中，照着独坐的诗人。"
+          }
+        ],
+        "extension": {
+          "title": "给独处找一个温柔的陪伴",
+          "text": "《竹里馆》没有把独处写成被排斥，而是让琴声、长啸和月光组成一个安静的关系。孩子也可以发现，独处时的专注活动和自然声音，会帮助自己安定下来。",
+          "prompt": "当你需要一个人安静一会儿时，什么声音、物件或活动会陪伴你？请说说它为什么让你安心。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -37685,19 +38001,25 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-053",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "内容复核：游子出门、慈母缝衣与归期难定的时间情感已人工确认；不推断具体行旅路线。",
         "overrideSource": null
       },
-      "reviewFlags": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
       "pronunciationOverrides": [],
       "spatialLearning": null,
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《游子吟》以家庭关系和离别时间为核心，没有可核定的单一地点，保留 unassigned 地理状态。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -37920,78 +38242,128 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-you-zi-yin-line-1",
-              "meaning": "先从原句找出母爱和离别：这句写了“慈母手中线，”，再用自己的话说说画面怎样变化。",
+              "meaning": "慈爱的母亲手里拿着针线。",
               "keywords": [
-                "母爱",
-                "离别",
-                "感恩"
+                "慈母",
+                "手中",
+                "线"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“慈母手中线，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘慈母’是疼爱孩子的母亲，不只是泛指所有母亲；诗先从一件普通物品写起。",
+              "picture": "母亲坐在灯下，手指牵着细线，准备为孩子缝衣。",
+              "prompt": "诗人先让我们看见母亲手中的什么？",
+              "childMeaning": "慈爱的母亲手里拿着针线。",
+              "keyWords": [
+                "慈母",
+                "手中",
+                "线"
+              ],
+              "commonMisunderstanding": "‘慈母’是疼爱孩子的母亲，不只是泛指所有母亲；诗先从一件普通物品写起。",
+              "imagePrompt": "母亲坐在灯下，手指牵着细线，准备为孩子缝衣。"
             },
             {
               "lineId": "child-you-zi-yin-line-2",
-              "meaning": "先从原句找出母爱和离别：这句写了“游子身上衣。”，再用自己的话说说画面怎样变化。",
+              "meaning": "远行的孩子身上穿着母亲缝制的衣服。",
               "keywords": [
-                "母爱",
-                "离别",
-                "感恩"
+                "游子",
+                "身上",
+                "衣"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“游子身上衣。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘游子’指离家在外、将要远行的人，不是去游玩的孩子；衣服连接母亲的手和孩子的身体。",
+              "picture": "母亲的针线变成穿在远行孩子身上的衣服，陪他走远。",
+              "prompt": "母亲的线怎样来到孩子身上？",
+              "childMeaning": "远行的孩子身上穿着母亲缝制的衣服。",
+              "keyWords": [
+                "游子",
+                "身上",
+                "衣"
+              ],
+              "commonMisunderstanding": "‘游子’指离家在外、将要远行的人，不是去游玩的孩子；衣服连接母亲的手和孩子的身体。",
+              "imagePrompt": "母亲的针线变成穿在远行孩子身上的衣服，陪他走远。"
             },
             {
               "lineId": "child-you-zi-yin-line-3",
-              "meaning": "先从原句找出母爱和离别：这句写了“临行密密缝，”，再用自己的话说说画面怎样变化。",
+              "meaning": "临近出发时，母亲把衣缝得又密又细。",
               "keywords": [
-                "母爱",
-                "离别",
-                "感恩"
+                "临行",
+                "密密",
+                "缝"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“临行密密缝，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘行’在‘临行’中读 xíng，指出发；‘缝’读 féng，指缝制，不是裂缝的 fèng。",
+              "picture": "出发时间越近，母亲越认真地把每一针缝牢。",
+              "prompt": "母亲为什么把针脚缝得这样密？",
+              "childMeaning": "临近出发时，母亲把衣缝得又密又细。",
+              "keyWords": [
+                "临行",
+                "密密",
+                "缝"
+              ],
+              "commonMisunderstanding": "‘行’在‘临行’中读 xíng，指出发；‘缝’读 féng，指缝制，不是裂缝的 fèng。",
+              "imagePrompt": "出发时间越近，母亲越认真地把每一针缝牢。"
             },
             {
               "lineId": "child-you-zi-yin-line-4",
-              "meaning": "先从原句找出母爱和离别：这句写了“意恐迟迟归。”，再用自己的话说说画面怎样变化。",
+              "meaning": "她担心孩子迟迟不能回来。",
               "keywords": [
-                "母爱",
-                "离别",
-                "感恩"
+                "意恐",
+                "迟迟",
+                "归"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“意恐迟迟归。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘意恐’是心里担心；‘迟迟’写回来得晚、时间长，不是走路动作缓慢。",
+              "picture": "母亲一边缝衣，一边想象孩子在远方，心里盼他早日归来。",
+              "prompt": "母亲在担心什么事情？",
+              "childMeaning": "她担心孩子迟迟不能回来。",
+              "keyWords": [
+                "意恐",
+                "迟迟",
+                "归"
+              ],
+              "commonMisunderstanding": "‘意恐’是心里担心；‘迟迟’写回来得晚、时间长，不是走路动作缓慢。",
+              "imagePrompt": "母亲一边缝衣，一边想象孩子在远方，心里盼他早日归来。"
             },
             {
               "lineId": "child-you-zi-yin-line-5",
-              "meaning": "先从原句找出母爱和离别：这句写了“谁言寸草心，”，再用自己的话说说画面怎样变化。",
+              "meaning": "谁能说孩子像小草一样的心意，可以报答完母亲的恩情呢？",
               "keywords": [
-                "母爱",
-                "离别",
-                "感恩"
+                "谁言",
+                "寸草心"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“谁言寸草心，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘寸草心’是比喻孩子微小的孝心，不是说孩子心里真的长草；‘谁言’是反问。",
+              "picture": "小草的心意很小，面对春天的光和热，显得远远不够。",
+              "prompt": "诗人把孩子的心意比作什么？",
+              "childMeaning": "谁能说孩子像小草一样的心意，可以报答完母亲的恩情呢？",
+              "keyWords": [
+                "谁言",
+                "寸草心"
+              ],
+              "commonMisunderstanding": "‘寸草心’是比喻孩子微小的孝心，不是说孩子心里真的长草；‘谁言’是反问。",
+              "imagePrompt": "小草的心意很小，面对春天的光和热，显得远远不够。"
             },
             {
               "lineId": "child-you-zi-yin-line-6",
-              "meaning": "先从原句找出母爱和离别：这句写了“报得三春晖。”，再用自己的话说说画面怎样变化。",
+              "meaning": "母亲的恩情像春天阳光一样广大深厚，孩子很难完全报答。",
               "keywords": [
-                "母爱",
-                "离别",
-                "感恩"
+                "报得",
+                "三春晖"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“报得三春晖。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘三春’指春季，‘晖’读 huī，是阳光；不是具体三束阳光，也不是一次礼物就能还清。",
+              "picture": "春光照在草上，像母亲的爱持续滋养孩子成长。",
+              "prompt": "为什么春天的阳光能比喻母爱？",
+              "childMeaning": "母亲的恩情像春天阳光一样广大深厚，孩子很难完全报答。",
+              "keyWords": [
+                "报得",
+                "三春晖"
+              ],
+              "commonMisunderstanding": "‘三春’指春季，‘晖’读 huī，是阳光；不是具体三束阳光，也不是一次礼物就能还清。",
+              "imagePrompt": "春光照在草上，像母亲的爱持续滋养孩子成长。"
             }
           ],
-          "wholeMeaning": "这首诗围绕母爱、离别、感恩展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过母爱、离别、感恩写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "慈爱的母亲用手中的线给将要远行的孩子缝衣服，一针一线都很细密，因为担心孩子很久才回来。孩子的孝心像小草一样微小，却很难报答春天阳光般深厚的母爱。",
+          "mainContent": "诗先写母亲缝衣的具体动作，再写她担心孩子迟归，最后用小草和春晖的比喻抬高母爱的深厚与难报。",
           "evidenceLines": [
             "child-you-zi-yin-line-1",
             "child-you-zi-yin-line-2",
@@ -38000,12 +38372,13 @@
             "child-you-zi-yin-line-5",
             "child-you-zi-yin-line-6"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过母爱、离别、感恩表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写母亲缝衣的具体动作，再写她担心孩子迟归，最后用小草和春晖的比喻抬高母爱的深厚与难报。",
+          "emotion": "对母亲的感恩、依恋和离别前的不舍。",
+          "centralIdea": "母爱藏在日常而具体的照料里；孩子应当看见这份深厚心意，用力所能及的行动表达感恩。",
           "evidenceLines": [
             "child-you-zi-yin-line-1",
             "child-you-zi-yin-line-2",
@@ -38013,6 +38386,11 @@
             "child-you-zi-yin-line-4",
             "child-you-zi-yin-line-5",
             "child-you-zi-yin-line-6"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -38020,63 +38398,166 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "母爱",
-              "离别"
-            ],
-            [
-              "母爱",
-              "离别"
-            ],
-            [
-              "母爱",
-              "离别"
-            ],
-            [
-              "母爱",
-              "离别"
-            ],
-            [
-              "母爱",
-              "离别"
-            ],
-            [
-              "母爱",
-              "离别"
-            ]
+            {
+              "lineId": "child-you-zi-yin-line-1",
+              "keywords": [
+                "慈母",
+                "手中线"
+              ],
+              "cue": "先看母亲手里的针线"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-2",
+              "keywords": [
+                "游子",
+                "身上衣"
+              ],
+              "cue": "针线变成孩子身上的衣"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-3",
+              "keywords": [
+                "临行",
+                "密密缝"
+              ],
+              "cue": "出发前把衣缝牢"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-4",
+              "keywords": [
+                "意恐",
+                "迟迟归"
+              ],
+              "cue": "母亲担心孩子晚归"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-5",
+              "keywords": [
+                "谁言",
+                "寸草心"
+              ],
+              "cue": "孩子心意像小草"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-6",
+              "keywords": [
+                "三春",
+                "晖"
+              ],
+              "cue": "母爱像春日阳光深厚"
+            }
           ],
           "firstCharacterHints": [
-            "慈",
-            "游",
-            "临",
-            "意",
-            "谁",
-            "报"
+            {
+              "lineId": "child-you-zi-yin-line-1",
+              "character": "慈",
+              "cue": "慈母手中线"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-2",
+              "character": "游",
+              "cue": "游子身上衣"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-3",
+              "character": "临",
+              "cue": "临行密密缝"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-4",
+              "character": "意",
+              "cue": "意恐迟迟归"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-5",
+              "character": "谁",
+              "cue": "谁言寸草心"
+            },
+            {
+              "lineId": "child-you-zi-yin-line-6",
+              "character": "报",
+              "cue": "报得三春晖"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "慈爱的母亲用手中的线给将要远行的孩子缝衣服，一针一线都很细密，因为担心孩子很久才回来。孩子的孝心像小草一样微小，却很难报答春天阳光般深厚的母爱。",
+        "lineMeanings": [
+          {
+            "lineId": "child-you-zi-yin-line-1",
+            "meaning": "慈爱的母亲手里拿着针线。"
+          },
+          {
+            "lineId": "child-you-zi-yin-line-2",
+            "meaning": "远行的孩子身上穿着母亲缝制的衣服。"
+          },
+          {
+            "lineId": "child-you-zi-yin-line-3",
+            "meaning": "临近出发时，母亲把衣缝得又密又细。"
+          },
+          {
+            "lineId": "child-you-zi-yin-line-4",
+            "meaning": "她担心孩子迟迟不能回来。"
+          },
+          {
+            "lineId": "child-you-zi-yin-line-5",
+            "meaning": "谁能说孩子像小草一样的心意，可以报答完母亲的恩情呢？"
+          },
+          {
+            "lineId": "child-you-zi-yin-line-6",
+            "meaning": "母亲的恩情像春天阳光一样广大深厚，孩子很难完全报答。"
+          }
+        ],
+        "extension": {
+          "title": "把感谢缝进日常小事",
+          "text": "诗没有写一件昂贵礼物，而是从母亲缝衣服的细节写出长久的牵挂。感恩也可以落在每天的小事里：认真回应、主动分担、记得说谢谢，都是让家人看见心意的方式。",
+          "prompt": "最近家人为你做过哪一件细小却费心的事？你准备怎样用一个具体行动回应？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -40903,19 +41384,55 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-060",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第八批内容复核：残阳铺江、半江青红、九月初三夜与露月比喻的时间和光色关系已人工确认；似按‘像’的语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-2.token-3",
+          "char": "瑟",
+          "pinyin": "sè",
+          "reason": "‘瑟瑟’在此写江水的青绿色，瑟读 sè。"
+        },
+        {
+          "path": "line-4.token-2",
+          "char": "似",
+          "pinyin": "sì",
+          "reason": "‘露似真珠’表示像珍珠，似读 sì。"
+        },
+        {
+          "path": "line-4.token-6",
+          "char": "似",
+          "pinyin": "sì",
+          "reason": "‘月似弓’表示像弯弓，似读 sì。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "river-sunset-to-autumn-moon",
+        "observation": "视线从江面上将落的夕阳和青红色水面，转到九月初三的露珠与弯月，时间推进带来感官焦点变化。",
+        "mapAction": "画‘江面—夕阳—露珠—弯月’的时间观察链，不把江水定位成未经诗句确认的具体河流。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "同一处自然景物会随时间改变颜色和形状，观察要留意光线。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗写江边从夕阳到秋夜的感官观察，没有可核定的单一地理地点；江水是诗境，不应被强行绑定到某条具体河流。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -40988,7 +41505,8 @@
             {
               "char": "瑟",
               "pinyin": "sè",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘瑟瑟’在此写江水的青绿色，瑟读 sè。"
             },
             {
               "char": "瑟",
@@ -41073,7 +41591,8 @@
             {
               "char": "似",
               "pinyin": "sì",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘露似真珠’表示像珍珠，似读 sì。"
             },
             {
               "char": "真",
@@ -41093,7 +41612,8 @@
             {
               "char": "似",
               "pinyin": "sì",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘月似弓’表示像弯弓，似读 sì。"
             },
             {
               "char": "弓",
@@ -41108,73 +41628,111 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-mu-jiang-yin-line-1",
-              "meaning": "先从原句找出夕阳和江水：这句写了“一道残阳铺水中，”，再用自己的话说说画面怎样变化。",
+              "meaning": "一道残缺而柔和的夕阳斜照在江水中，像把金色铺开。",
               "keywords": [
-                "夕阳",
-                "江水",
-                "秋夜"
+                "一道",
+                "残阳",
+                "铺水中"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“一道残阳铺水中，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘残阳’是将落的夕阳，不是破损的太阳；‘铺’写光线铺在水面上的形态。",
+              "picture": "落日贴近地平线，光带从江面一端铺到另一端。",
+              "prompt": "夕阳在水面上做了什么动作？",
+              "childMeaning": "一道残缺而柔和的夕阳斜照在江水中，像把金色铺开。",
+              "keyWords": [
+                "一道",
+                "残阳",
+                "铺水中"
+              ],
+              "commonMisunderstanding": "‘残阳’是将落的夕阳，不是破损的太阳；‘铺’写光线铺在水面上的形态。",
+              "imagePrompt": "落日贴近地平线，光带从江面一端铺到另一端。"
             },
             {
               "lineId": "child-mu-jiang-yin-line-2",
-              "meaning": "先从原句找出夕阳和江水：这句写了“半江瑟瑟半江红。”，再用自己的话说说画面怎样变化。",
+              "meaning": "江水一半呈现青绿色，一半被夕阳染成红色。",
               "keywords": [
-                "夕阳",
-                "江水",
-                "秋夜"
+                "半江",
+                "瑟瑟",
+                "半江红"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“半江瑟瑟半江红。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘瑟瑟’在这里写碧绿的江色，不是形容冷得发抖；诗用重复的‘半江’突出两种颜色。",
+              "picture": "江面像一幅被光线分开的画，一边青碧，一边绯红。",
+              "prompt": "同一条江为什么会出现两种颜色？",
+              "childMeaning": "江水一半呈现青绿色，一半被夕阳染成红色。",
+              "keyWords": [
+                "半江",
+                "瑟瑟",
+                "半江红"
+              ],
+              "commonMisunderstanding": "‘瑟瑟’在这里写碧绿的江色，不是形容冷得发抖；诗用重复的‘半江’突出两种颜色。",
+              "imagePrompt": "江面像一幅被光线分开的画，一边青碧，一边绯红。"
             },
             {
               "lineId": "child-mu-jiang-yin-line-3",
-              "meaning": "先从原句找出夕阳和江水：这句写了“可怜九月初三夜，”，再用自己的话说说画面怎样变化。",
+              "meaning": "九月初三的夜晚可爱又清凉，诗人把夜色当成值得珍惜的时刻。",
               "keywords": [
-                "夕阳",
-                "江水",
-                "秋夜"
+                "可怜",
+                "九月初三夜"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“可怜九月初三夜，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘可怜’在这里是可爱、可喜，不是值得同情；日期让诗境带上秋夜的节奏。",
+              "picture": "夕阳退去后，秋夜安静展开，空气里有清凉的露意。",
+              "prompt": "‘可怜’表达的是怎样的感情？",
+              "childMeaning": "九月初三的夜晚可爱又清凉，诗人把夜色当成值得珍惜的时刻。",
+              "keyWords": [
+                "可怜",
+                "九月初三夜"
+              ],
+              "commonMisunderstanding": "‘可怜’在这里是可爱、可喜，不是值得同情；日期让诗境带上秋夜的节奏。",
+              "imagePrompt": "夕阳退去后，秋夜安静展开，空气里有清凉的露意。"
             },
             {
               "lineId": "child-mu-jiang-yin-line-4",
-              "meaning": "先从原句找出夕阳和江水：这句写了“露似真珠月似弓。”，再用自己的话说说画面怎样变化。",
+              "meaning": "露珠像圆润的珍珠，月亮像一张弯弓，夜色由两种明亮形状组成。",
               "keywords": [
-                "夕阳",
-                "江水",
-                "秋夜"
+                "露似真珠",
+                "月似弓"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“露似真珠月似弓。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "两个‘似’都是‘像’的意思；露珠和月亮是比喻，不是真的珍珠和弓。",
+              "picture": "草叶上的露珠闪光，弯月挂在天边，近处和远处互相照应。",
+              "prompt": "诗人用哪两个比喻写秋夜？",
+              "childMeaning": "露珠像圆润的珍珠，月亮像一张弯弓，夜色由两种明亮形状组成。",
+              "keyWords": [
+                "露似真珠",
+                "月似弓"
+              ],
+              "commonMisunderstanding": "两个‘似’都是‘像’的意思；露珠和月亮是比喻，不是真的珍珠和弓。",
+              "imagePrompt": "草叶上的露珠闪光，弯月挂在天边，近处和远处互相照应。"
             }
           ],
-          "wholeMeaning": "这首诗围绕夕阳、江水、秋夜展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过夕阳、江水、秋夜写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "夕阳斜照在江水上，把一半江面铺成瑟瑟的青绿色，另一半染成红色。到了九月初三的夜晚，露珠像珍珠，月亮像弯弓；诗从日落写到月升，捕捉秋江一天中最清丽的光色。",
+          "mainContent": "诗按时间从残阳到秋夜推进，先用江面颜色写夕照，再用露珠和弯月写夜色，视觉从远处江面收束到细小的露珠。",
           "evidenceLines": [
             "child-mu-jiang-yin-line-1",
             "child-mu-jiang-yin-line-2",
             "child-mu-jiang-yin-line-3",
             "child-mu-jiang-yin-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过夕阳、江水、秋夜表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗按时间从残阳到秋夜推进，先用江面颜色写夕照，再用露珠和弯月写夜色，视觉从远处江面收束到细小的露珠。",
+          "emotion": "清新、宁静和对秋江暮夜光色的喜爱。",
+          "centralIdea": "自然的美常在光线变化中出现：同一条江先被夕阳分成两种颜色，夜里又由露珠和月亮换一种方式闪光。",
           "evidenceLines": [
             "child-mu-jiang-yin-line-1",
             "child-mu-jiang-yin-line-2",
             "child-mu-jiang-yin-line-3",
             "child-mu-jiang-yin-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -41182,53 +41740,133 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "夕阳",
-              "江水"
-            ],
-            [
-              "夕阳",
-              "江水"
-            ],
-            [
-              "夕阳",
-              "江水"
-            ],
-            [
-              "夕阳",
-              "江水"
-            ]
+            {
+              "lineId": "child-mu-jiang-yin-line-1",
+              "keywords": [
+                "残阳",
+                "铺水中"
+              ],
+              "cue": "夕阳铺在江面"
+            },
+            {
+              "lineId": "child-mu-jiang-yin-line-2",
+              "keywords": [
+                "半江",
+                "瑟瑟",
+                "半江红"
+              ],
+              "cue": "江面分出两种颜色"
+            },
+            {
+              "lineId": "child-mu-jiang-yin-line-3",
+              "keywords": [
+                "九月初三",
+                "可怜"
+              ],
+              "cue": "秋夜可爱清凉"
+            },
+            {
+              "lineId": "child-mu-jiang-yin-line-4",
+              "keywords": [
+                "真珠",
+                "弓"
+              ],
+              "cue": "露珠和弯月作比喻"
+            }
           ],
           "firstCharacterHints": [
-            "一",
-            "半",
-            "可",
-            "露"
+            {
+              "lineId": "child-mu-jiang-yin-line-1",
+              "character": "一",
+              "cue": "一道残阳"
+            },
+            {
+              "lineId": "child-mu-jiang-yin-line-2",
+              "character": "半",
+              "cue": "半江瑟瑟"
+            },
+            {
+              "lineId": "child-mu-jiang-yin-line-3",
+              "character": "可",
+              "cue": "可怜九月"
+            },
+            {
+              "lineId": "child-mu-jiang-yin-line-4",
+              "character": "露",
+              "cue": "露似真珠"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "夕阳斜照在江水上，把一半江面铺成瑟瑟的青绿色，另一半染成红色。到了九月初三的夜晚，露珠像珍珠，月亮像弯弓；诗从日落写到月升，捕捉秋江一天中最清丽的光色。",
+        "lineMeanings": [
+          {
+            "lineId": "child-mu-jiang-yin-line-1",
+            "meaning": "一道残缺而柔和的夕阳斜照在江水中，像把金色铺开。"
+          },
+          {
+            "lineId": "child-mu-jiang-yin-line-2",
+            "meaning": "江水一半呈现青绿色，一半被夕阳染成红色。"
+          },
+          {
+            "lineId": "child-mu-jiang-yin-line-3",
+            "meaning": "九月初三的夜晚可爱又清凉，诗人把夜色当成值得珍惜的时刻。"
+          },
+          {
+            "lineId": "child-mu-jiang-yin-line-4",
+            "meaning": "露珠像圆润的珍珠，月亮像一张弯弓，夜色由两种明亮形状组成。"
+          }
+        ],
+        "extension": {
+          "title": "给一天的光线做记录",
+          "text": "这首诗像一份光线观察笔记：傍晚的江面先有青红两色，夜里又换成露珠和弯月。孩子可以发现，同一个地方在不同时间会呈现完全不同的样子。",
+          "prompt": "选一个熟悉的地方，分别在早晨、傍晚或夜里观察一次，记录它的颜色变化。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -41284,19 +41922,97 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-061",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第七批内容复核：西湖地标、湖天视线、早春鸟花草与湖东白沙堤的行走关系已人工确认；燕、啄、没、行按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
-      "placeRelations": null,
-      "canonicalPlaceIds": [],
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-4.token-4",
+          "char": "燕",
+          "pinyin": "yàn",
+          "reason": "‘新燕’指燕子，燕读 yàn。"
+        },
+        {
+          "path": "line-4.token-5",
+          "char": "啄",
+          "pinyin": "zhuó",
+          "reason": "‘啄春泥’指燕子用嘴取泥，啄读 zhuó。"
+        },
+        {
+          "path": "line-6.token-5",
+          "char": "没",
+          "pinyin": "mò",
+          "reason": "‘没马蹄’意为遮住、淹没马蹄，没读 mò。"
+        },
+        {
+          "path": "line-7.token-5",
+          "char": "行",
+          "pinyin": "xíng",
+          "reason": "‘行不足’意为行走不够、看不够，行读 xíng。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "west-lake-spring-walk",
+        "observation": "视线从孤山寺、贾亭的湖边地标出发，经过湖面低云、早莺新燕、乱花浅草，最后抵达湖东绿杨阴里的白沙堤。",
+        "mapAction": "在现代西湖地图上连出‘孤山寺—贾亭—湖东白沙堤’的参考观察链，再用鸟、花、草复述一路春景；不把连线当作已核实的唐代行程。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4",
+          "line-5",
+          "line-6",
+          "line-7",
+          "line-8",
+          "line-9",
+          "line-10",
+          "line-11",
+          "line-12",
+          "line-13",
+          "line-14",
+          "line-15",
+          "line-16"
+        ],
+        "childTakeaway": "地图先帮我们找到地方，诗句再让地方长出水云、鸟花和脚步的春天。"
+      },
+      "placeRelations": [
+        {
+          "targetId": "west-lake",
+          "type": "depicts_place",
+          "confidence": "high",
+          "assertion": "钱塘湖是诗题和诗境的直接湖泊参照，现代西湖是其常用对应地点。",
+          "childMeaning": "沿着今天西湖一带的湖边参照，理解诗人的早春观察。",
+          "sourceKeys": [
+            "chinesePoetry",
+            "westLakeHangzhou"
+          ]
+        },
+        {
+          "targetId": "hangzhou",
+          "type": "city_context",
+          "confidence": "medium",
+          "assertion": "西湖位于杭州；城市关系用于现代地图定位，不推断诗人的精确站位。",
+          "childMeaning": "把湖边春景放回杭州的山水城市背景。",
+          "sourceKeys": [
+            "westLakeHangzhou"
+          ]
+        }
+      ],
+      "canonicalPlaceIds": [
+        "west-lake"
+      ],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗题与景物明确指向钱塘湖（今杭州西湖）一带；地图只呈现现代参考位置和湖边观察关系，不自动等同白居易当日的完整历史路线。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -41464,12 +42180,14 @@
             {
               "char": "燕",
               "pinyin": "yàn",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘新燕’指燕子，燕读 yàn。"
             },
             {
               "char": "啄",
               "pinyin": "zhuó",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘啄春泥’指燕子用嘴取泥，啄读 zhuó。"
             },
             {
               "char": "春",
@@ -41558,8 +42276,9 @@
             },
             {
               "char": "没",
-              "pinyin": "méi",
-              "tone": 5
+              "pinyin": "mò",
+              "tone": 4,
+              "pronunciationReview": "‘没马蹄’意为遮住、淹没马蹄，没读 mò。"
             },
             {
               "char": "马",
@@ -41604,7 +42323,8 @@
             {
               "char": "行",
               "pinyin": "xíng",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘行不足’意为行走不够、看不够，行读 xíng。"
             },
             {
               "char": "不",
@@ -41669,100 +42389,156 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-qian-tang-hu-chun-xing-line-1",
-              "meaning": "先从原句找出西湖和春天：这句写了“孤山寺北贾亭西，”，再用自己的话说说画面怎样变化。",
+              "meaning": "孤山寺北、贾亭西是行走时首先定位的湖边空间。",
               "keywords": [
-                "西湖",
-                "春天",
-                "行走"
+                "孤山寺",
+                "贾亭"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“孤山寺北贾亭西，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "这是方位地标，不是两个无关地点。",
+              "picture": "从湖边地标开始定位。",
+              "prompt": "诗人先用哪些地标定位？",
+              "childMeaning": "孤山寺北、贾亭西是行走时首先定位的湖边空间。",
+              "keyWords": [
+                "孤山寺",
+                "贾亭"
+              ],
+              "commonMisunderstanding": "这是方位地标，不是两个无关地点。",
+              "imagePrompt": "从湖边地标开始定位。"
             },
             {
               "lineId": "child-qian-tang-hu-chun-xing-line-2",
-              "meaning": "先从原句找出西湖和春天：这句写了“水面初平云脚低。”，再用自己的话说说画面怎样变化。",
+              "meaning": "春水初涨，水面平阔，云层下缘仿佛贴近湖面。",
               "keywords": [
-                "西湖",
-                "春天",
-                "行走"
+                "水面",
+                "云脚"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“水面初平云脚低。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "云脚是云层下缘的形象说法。",
+              "picture": "湖水和低云相接。",
+              "prompt": "水面与云层怎样相接？",
+              "childMeaning": "春水初涨，水面平阔，云层下缘仿佛贴近湖面。",
+              "keyWords": [
+                "水面",
+                "云脚"
+              ],
+              "commonMisunderstanding": "云脚是云层下缘的形象说法。",
+              "imagePrompt": "湖水和低云相接。"
             },
             {
               "lineId": "child-qian-tang-hu-chun-xing-line-3",
-              "meaning": "先从原句找出西湖和春天：这句写了“几处早莺争暖树，”，再用自己的话说说画面怎样变化。",
+              "meaning": "几处早来的黄莺争着飞到温暖的树上。",
               "keywords": [
-                "西湖",
-                "春天",
-                "行走"
+                "早莺",
+                "暖树"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“几处早莺争暖树，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "争暖树写寻找向阳枝头，不一定是打架。",
+              "picture": "黄莺在树枝间跳跃。",
+              "prompt": "早莺为什么找暖树？",
+              "childMeaning": "几处早来的黄莺争着飞到温暖的树上。",
+              "keyWords": [
+                "早莺",
+                "暖树"
+              ],
+              "commonMisunderstanding": "争暖树写寻找向阳枝头，不一定是打架。",
+              "imagePrompt": "黄莺在树枝间跳跃。"
             },
             {
               "lineId": "child-qian-tang-hu-chun-xing-line-4",
-              "meaning": "先从原句找出西湖和春天：这句写了“谁家新燕啄春泥。”，再用自己的话说说画面怎样变化。",
+              "meaning": "不知道哪家的新燕正在啄取春泥筑巢。",
               "keywords": [
-                "西湖",
-                "春天",
-                "行走"
+                "新燕",
+                "春泥"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“谁家新燕啄春泥。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "啄读 zhuó，谁家是好奇的问语。",
+              "picture": "燕子从泥地取泥飞向屋檐。",
+              "prompt": "燕子啄泥准备做什么？",
+              "childMeaning": "不知道哪家的新燕正在啄取春泥筑巢。",
+              "keyWords": [
+                "新燕",
+                "春泥"
+              ],
+              "commonMisunderstanding": "啄读 zhuó，谁家是好奇的问语。",
+              "imagePrompt": "燕子从泥地取泥飞向屋檐。"
             },
             {
               "lineId": "child-qian-tang-hu-chun-xing-line-5",
-              "meaning": "先从原句找出西湖和春天：这句写了“乱花渐欲迷人眼，”，再用自己的话说说画面怎样变化。",
+              "meaning": "各色野花渐渐开放，多得快让人看花了眼。",
               "keywords": [
-                "西湖",
-                "春天",
-                "行走"
+                "乱花",
+                "迷人眼"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“乱花渐欲迷人眼，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "乱花是各色花错落，不是坏的杂乱。",
+              "picture": "路边花色一片接一片。",
+              "prompt": "花多怎样影响视线？",
+              "childMeaning": "各色野花渐渐开放，多得快让人看花了眼。",
+              "keyWords": [
+                "乱花",
+                "迷人眼"
+              ],
+              "commonMisunderstanding": "乱花是各色花错落，不是坏的杂乱。",
+              "imagePrompt": "路边花色一片接一片。"
             },
             {
               "lineId": "child-qian-tang-hu-chun-xing-line-6",
-              "meaning": "先从原句找出西湖和春天：这句写了“浅草才能没马蹄。”，再用自己的话说说画面怎样变化。",
+              "meaning": "浅浅的春草刚刚能够遮住马蹄。",
               "keywords": [
-                "西湖",
-                "春天",
-                "行走"
+                "浅草",
+                "马蹄"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“浅草才能没马蹄。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "没读 mò，是遮住；浅草写早春还不深密。",
+              "picture": "嫩草只到马蹄附近。",
+              "prompt": "马蹄能帮助判断草高吗？",
+              "childMeaning": "浅浅的春草刚刚能够遮住马蹄。",
+              "keyWords": [
+                "浅草",
+                "马蹄"
+              ],
+              "commonMisunderstanding": "没读 mò，是遮住；浅草写早春还不深密。",
+              "imagePrompt": "嫩草只到马蹄附近。"
             },
             {
               "lineId": "child-qian-tang-hu-chun-xing-line-7",
-              "meaning": "先从原句找出西湖和春天：这句写了“最爱湖东行不足，”，再用自己的话说说画面怎样变化。",
+              "meaning": "最喜欢湖东，沿湖走还觉得没有走够。",
               "keywords": [
-                "西湖",
-                "春天",
-                "行走"
+                "最爱",
+                "湖东"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“最爱湖东行不足，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "行不足是走不够、看不够，不是体力不足。",
+              "picture": "脚步到了湖东仍想停留。",
+              "prompt": "为什么一路还没看够？",
+              "childMeaning": "最喜欢湖东，沿湖走还觉得没有走够。",
+              "keyWords": [
+                "最爱",
+                "湖东"
+              ],
+              "commonMisunderstanding": "行不足是走不够、看不够，不是体力不足。",
+              "imagePrompt": "脚步到了湖东仍想停留。"
             },
             {
               "lineId": "child-qian-tang-hu-chun-xing-line-8",
-              "meaning": "先从原句找出西湖和春天：这句写了“绿杨阴里白沙堤。”，再用自己的话说说画面怎样变化。",
+              "meaning": "绿杨树的树荫覆盖着湖东的白沙堤。",
               "keywords": [
-                "西湖",
-                "春天",
-                "行走"
+                "绿杨",
+                "白沙堤"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“绿杨阴里白沙堤。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "白沙堤是堤岸参照，阴读 yīn 指树荫。",
+              "picture": "绿杨遮出清凉堤岸。",
+              "prompt": "最后停在怎样的堤岸？",
+              "childMeaning": "绿杨树的树荫覆盖着湖东的白沙堤。",
+              "keyWords": [
+                "绿杨",
+                "白沙堤"
+              ],
+              "commonMisunderstanding": "白沙堤是堤岸参照，阴读 yīn 指树荫。",
+              "imagePrompt": "绿杨遮出清凉堤岸。"
             }
           ],
-          "wholeMeaning": "这首诗围绕西湖、春天、行走展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过西湖、春天、行走写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "沿西湖早春行走，看到水云、鸟花草和白沙堤。",
+          "mainContent": "诗按行走视线推进，从地标写到湖东堤岸。",
           "evidenceLines": [
             "child-qian-tang-hu-chun-xing-line-1",
             "child-qian-tang-hu-chun-xing-line-2",
@@ -41773,12 +42549,13 @@
             "child-qian-tang-hu-chun-xing-line-7",
             "child-qian-tang-hu-chun-xing-line-8"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过西湖、春天、行走表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗按行走视线推进，从地标写到湖东堤岸。",
+          "emotion": "对早春西湖景色的喜爱。",
+          "centralIdea": "沿着一条路观察，景物可以连成完整的地方记忆。",
           "evidenceLines": [
             "child-qian-tang-hu-chun-xing-line-1",
             "child-qian-tang-hu-chun-xing-line-2",
@@ -41788,6 +42565,11 @@
             "child-qian-tang-hu-chun-xing-line-6",
             "child-qian-tang-hu-chun-xing-line-7",
             "child-qian-tang-hu-chun-xing-line-8"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -41795,73 +42577,200 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "西湖",
-              "春天"
-            ],
-            [
-              "西湖",
-              "春天"
-            ],
-            [
-              "西湖",
-              "春天"
-            ],
-            [
-              "西湖",
-              "春天"
-            ],
-            [
-              "西湖",
-              "春天"
-            ],
-            [
-              "西湖",
-              "春天"
-            ],
-            [
-              "西湖",
-              "春天"
-            ],
-            [
-              "西湖",
-              "春天"
-            ]
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-1",
+              "keywords": [
+                "孤山寺",
+                "贾亭"
+              ],
+              "cue": "用湖边地标定位"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-2",
+              "keywords": [
+                "水面",
+                "云脚"
+              ],
+              "cue": "湖天开阔而云低"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-3",
+              "keywords": [
+                "早莺",
+                "暖树"
+              ],
+              "cue": "黄莺争向暖树"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-4",
+              "keywords": [
+                "新燕",
+                "春泥"
+              ],
+              "cue": "燕子啄泥筑巢"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-5",
+              "keywords": [
+                "乱花",
+                "迷人眼"
+              ],
+              "cue": "花多花美看不尽"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-6",
+              "keywords": [
+                "浅草",
+                "马蹄"
+              ],
+              "cue": "嫩草刚没马蹄"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-7",
+              "keywords": [
+                "最爱",
+                "湖东"
+              ],
+              "cue": "湖东是最喜欢的方向"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-8",
+              "keywords": [
+                "绿杨",
+                "白沙堤"
+              ],
+              "cue": "绿杨阴里的白沙堤"
+            }
           ],
           "firstCharacterHints": [
-            "孤",
-            "水",
-            "几",
-            "谁",
-            "乱",
-            "浅",
-            "最",
-            "绿"
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-1",
+              "character": "孤",
+              "cue": "孤山寺北贾亭西"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-2",
+              "character": "水",
+              "cue": "水面初平云脚低"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-3",
+              "character": "几",
+              "cue": "几处早莺争暖树"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-4",
+              "character": "谁",
+              "cue": "谁家新燕啄春泥"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-5",
+              "character": "乱",
+              "cue": "乱花渐欲迷人眼"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-6",
+              "character": "浅",
+              "cue": "浅草才能没马蹄"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-7",
+              "character": "最",
+              "cue": "最爱湖东行不足"
+            },
+            {
+              "lineId": "child-qian-tang-hu-chun-xing-line-8",
+              "character": "绿",
+              "cue": "绿杨阴里白沙堤"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "沿西湖早春行走，看到水云、鸟花草和白沙堤。",
+        "lineMeanings": [
+          {
+            "lineId": "child-qian-tang-hu-chun-xing-line-1",
+            "meaning": "孤山寺北、贾亭西是行走时首先定位的湖边空间。"
+          },
+          {
+            "lineId": "child-qian-tang-hu-chun-xing-line-2",
+            "meaning": "春水初涨，水面平阔，云层下缘仿佛贴近湖面。"
+          },
+          {
+            "lineId": "child-qian-tang-hu-chun-xing-line-3",
+            "meaning": "几处早来的黄莺争着飞到温暖的树上。"
+          },
+          {
+            "lineId": "child-qian-tang-hu-chun-xing-line-4",
+            "meaning": "不知道哪家的新燕正在啄取春泥筑巢。"
+          },
+          {
+            "lineId": "child-qian-tang-hu-chun-xing-line-5",
+            "meaning": "各色野花渐渐开放，多得快让人看花了眼。"
+          },
+          {
+            "lineId": "child-qian-tang-hu-chun-xing-line-6",
+            "meaning": "浅浅的春草刚刚能够遮住马蹄。"
+          },
+          {
+            "lineId": "child-qian-tang-hu-chun-xing-line-7",
+            "meaning": "最喜欢湖东，沿湖走还觉得没有走够。"
+          },
+          {
+            "lineId": "child-qian-tang-hu-chun-xing-line-8",
+            "meaning": "绿杨树的树荫覆盖着湖东的白沙堤。"
+          }
+        ],
+        "extension": {
+          "title": "沿着一条路认识一个地方",
+          "text": "诗人沿湖行走，把水云鸟花草串成西湖的早春记忆。",
+          "prompt": "写下你熟悉的一条散步路线和三个景物。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -44371,19 +45280,61 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-065",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第八批内容复核：爆竹、屠苏、曈曈日和桃符构成的除旧迎新生活场景已人工确认；屠、曈按节日语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-2.token-6",
+          "char": "屠",
+          "pinyin": "tú",
+          "reason": "‘屠苏’是春节酒名或习俗，屠读 tú。"
+        },
+        {
+          "path": "line-2.token-7",
+          "char": "苏",
+          "pinyin": "sū",
+          "reason": "‘屠苏’中的苏读 sū，保留专名语境。"
+        },
+        {
+          "path": "line-3.token-5",
+          "char": "曈",
+          "pinyin": "tóng",
+          "reason": "‘曈曈’写初升太阳明亮，曈读 tóng。"
+        },
+        {
+          "path": "line-3.token-6",
+          "char": "曈",
+          "pinyin": "tóng",
+          "reason": "‘曈曈’为叠词，第二个曈同样读 tóng。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "household-new-year-and-shared-custom",
+        "observation": "诗从一家的爆竹声和屠苏酒，扩展到千门万户的阳光与桃符，节日空间由屋内、门口延伸到整条街巷。",
+        "mapAction": "画‘家中—门口—街巷—千家万户’的习俗扩散关系，不把千门万户画成精确地理边界。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "节日文化由许多家庭共同实践，再通过物件和动作传给下一代。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗写古代春节的家庭与街巷习俗，没有可核定的单一地理地点；千门万户是共同生活场景，不是现代行政范围。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -44471,12 +45422,14 @@
             {
               "char": "屠",
               "pinyin": "tú",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘屠苏’是春节酒名或习俗，屠读 tú。"
             },
             {
               "char": "苏",
               "pinyin": "sū",
-              "tone": 5
+              "tone": 1,
+              "pronunciationReview": "‘屠苏’中的苏读 sū，保留专名语境。"
             },
             {
               "char": "。",
@@ -44511,12 +45464,14 @@
             {
               "char": "曈",
               "pinyin": "tóng",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘曈曈’写初升太阳明亮，曈读 tóng。"
             },
             {
               "char": "曈",
               "pinyin": "tóng",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘曈曈’为叠词，第二个曈同样读 tóng。"
             },
             {
               "char": "日",
@@ -44576,73 +45531,111 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-yuan-ri-line-1",
-              "meaning": "先从原句找出新年和习俗：这句写了“爆竹声中一岁除，”，再用自己的话说说画面怎样变化。",
+              "meaning": "在爆竹的声响中，旧的一年过去了。",
               "keywords": [
-                "新年",
-                "习俗",
-                "声音"
+                "爆竹声中",
+                "一岁除"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“爆竹声中一岁除，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘除’是除去、过去，不是把年节扔掉；爆竹声先用听觉写出节日气氛。",
+              "picture": "夜空和街巷响起爆竹，人们用声音宣布旧岁结束。",
+              "prompt": "哪一种声音告诉大家旧年已经过去？",
+              "childMeaning": "在爆竹的声响中，旧的一年过去了。",
+              "keyWords": [
+                "爆竹声中",
+                "一岁除"
+              ],
+              "commonMisunderstanding": "‘除’是除去、过去，不是把年节扔掉；爆竹声先用听觉写出节日气氛。",
+              "imagePrompt": "夜空和街巷响起爆竹，人们用声音宣布旧岁结束。"
             },
             {
               "lineId": "child-yuan-ri-line-2",
-              "meaning": "先从原句找出新年和习俗：这句写了“春风送暖入屠苏。”，再用自己的话说说画面怎样变化。",
+              "meaning": "春风送来暖意，也把屠苏酒的节日气息带到人们身边。",
               "keywords": [
-                "新年",
-                "习俗",
-                "声音"
+                "春风",
+                "送暖",
+                "屠苏"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“春风送暖入屠苏。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘屠苏’是古代春节饮用的酒，也可指屠苏草制成的酒，不是一个人的姓名；‘入’写暖意进入生活。",
+              "picture": "春风吹过家门，桌上的屠苏酒和家人团聚一起迎接新年。",
+              "prompt": "春风带来的不只是温度，还有什么年节记忆？",
+              "childMeaning": "春风送来暖意，也把屠苏酒的节日气息带到人们身边。",
+              "keyWords": [
+                "春风",
+                "送暖",
+                "屠苏"
+              ],
+              "commonMisunderstanding": "‘屠苏’是古代春节饮用的酒，也可指屠苏草制成的酒，不是一个人的姓名；‘入’写暖意进入生活。",
+              "imagePrompt": "春风吹过家门，桌上的屠苏酒和家人团聚一起迎接新年。"
             },
             {
               "lineId": "child-yuan-ri-line-3",
-              "meaning": "先从原句找出新年和习俗：这句写了“千门万户曈曈日，”，再用自己的话说说画面怎样变化。",
+              "meaning": "千家万户都迎着明亮的阳光，天地像被照得通透明亮。",
               "keywords": [
-                "新年",
-                "习俗",
-                "声音"
+                "千门万户",
+                "曈曈日"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“千门万户曈曈日，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘曈曈’读 tóng tóng，写太阳初升、光亮温暖的样子；‘千门万户’是许多家庭，不是精确数一千家。",
+              "picture": "阳光照过一扇扇门窗，家家户户都沐浴在新年的亮色里。",
+              "prompt": "阳光怎样让新年的范围从一家扩展到千家万户？",
+              "childMeaning": "千家万户都迎着明亮的阳光，天地像被照得通透明亮。",
+              "keyWords": [
+                "千门万户",
+                "曈曈日"
+              ],
+              "commonMisunderstanding": "‘曈曈’读 tóng tóng，写太阳初升、光亮温暖的样子；‘千门万户’是许多家庭，不是精确数一千家。",
+              "imagePrompt": "阳光照过一扇扇门窗，家家户户都沐浴在新年的亮色里。"
             },
             {
               "lineId": "child-yuan-ri-line-4",
-              "meaning": "先从原句找出新年和习俗：这句写了“总把新桃换旧符。”，再用自己的话说说画面怎样变化。",
+              "meaning": "家家把新的桃符换上门，把旧的桃符换下来。",
               "keywords": [
-                "新年",
-                "习俗",
-                "声音"
+                "总把",
+                "新桃",
+                "旧符"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“总把新桃换旧符。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘桃符’是古代春节挂在门上的吉祥物或门神图像；‘新’和‘旧’写更新，不是普通桃树枝。",
+              "picture": "门框上旧符被取下，新桃符换上，祝福从一家门口传向整条街。",
+              "prompt": "最后一个动作怎样把‘新年’变成看得见的变化？",
+              "childMeaning": "家家把新的桃符换上门，把旧的桃符换下来。",
+              "keyWords": [
+                "总把",
+                "新桃",
+                "旧符"
+              ],
+              "commonMisunderstanding": "‘桃符’是古代春节挂在门上的吉祥物或门神图像；‘新’和‘旧’写更新，不是普通桃树枝。",
+              "imagePrompt": "门框上旧符被取下，新桃符换上，祝福从一家门口传向整条街。"
             }
           ],
-          "wholeMeaning": "这首诗围绕新年、习俗、声音展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过新年、习俗、声音写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "爆竹声送走旧的一年，春风把温暖送进屠苏酒；千家万户沐浴在明亮的阳光里，人们把新桃符换下旧桃符。诗从声音、温度、光线和门上习俗写出新年的更新与喜气。",
+          "mainContent": "诗按除旧迎新的顺序展开：先听爆竹、送走旧岁，再感到春风和阳光，最后落到千家万户换桃符的共同动作。",
           "evidenceLines": [
             "child-yuan-ri-line-1",
             "child-yuan-ri-line-2",
             "child-yuan-ri-line-3",
             "child-yuan-ri-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过新年、习俗、声音表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗按除旧迎新的顺序展开：先听爆竹、送走旧岁，再感到春风和阳光，最后落到千家万户换桃符的共同动作。",
+          "emotion": "明亮、喜庆和对新生活的期待。",
+          "centralIdea": "新年不只是日期变化，也由许多共同的生活动作组成：送走旧岁、迎来温暖、家家换上新的祝福。",
           "evidenceLines": [
             "child-yuan-ri-line-1",
             "child-yuan-ri-line-2",
             "child-yuan-ri-line-3",
             "child-yuan-ri-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -44650,53 +45643,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "新年",
-              "习俗"
-            ],
-            [
-              "新年",
-              "习俗"
-            ],
-            [
-              "新年",
-              "习俗"
-            ],
-            [
-              "新年",
-              "习俗"
-            ]
+            {
+              "lineId": "child-yuan-ri-line-1",
+              "keywords": [
+                "爆竹",
+                "一岁除"
+              ],
+              "cue": "声音送走旧岁"
+            },
+            {
+              "lineId": "child-yuan-ri-line-2",
+              "keywords": [
+                "春风",
+                "屠苏"
+              ],
+              "cue": "暖意和年酒进门"
+            },
+            {
+              "lineId": "child-yuan-ri-line-3",
+              "keywords": [
+                "千门万户",
+                "曈曈日"
+              ],
+              "cue": "阳光照亮家家户户"
+            },
+            {
+              "lineId": "child-yuan-ri-line-4",
+              "keywords": [
+                "新桃",
+                "旧符"
+              ],
+              "cue": "换上新的门上祝福"
+            }
           ],
           "firstCharacterHints": [
-            "爆",
-            "春",
-            "千",
-            "总"
+            {
+              "lineId": "child-yuan-ri-line-1",
+              "character": "爆",
+              "cue": "爆竹声中"
+            },
+            {
+              "lineId": "child-yuan-ri-line-2",
+              "character": "春",
+              "cue": "春风送暖"
+            },
+            {
+              "lineId": "child-yuan-ri-line-3",
+              "character": "千",
+              "cue": "千门万户"
+            },
+            {
+              "lineId": "child-yuan-ri-line-4",
+              "character": "总",
+              "cue": "总把新桃"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "爆竹声送走旧的一年，春风把温暖送进屠苏酒；千家万户沐浴在明亮的阳光里，人们把新桃符换下旧桃符。诗从声音、温度、光线和门上习俗写出新年的更新与喜气。",
+        "lineMeanings": [
+          {
+            "lineId": "child-yuan-ri-line-1",
+            "meaning": "在爆竹的声响中，旧的一年过去了。"
+          },
+          {
+            "lineId": "child-yuan-ri-line-2",
+            "meaning": "春风送来暖意，也把屠苏酒的节日气息带到人们身边。"
+          },
+          {
+            "lineId": "child-yuan-ri-line-3",
+            "meaning": "千家万户都迎着明亮的阳光，天地像被照得通透明亮。"
+          },
+          {
+            "lineId": "child-yuan-ri-line-4",
+            "meaning": "家家把新的桃符换上门，把旧的桃符换下来。"
+          }
+        ],
+        "extension": {
+          "title": "一条街上的共同新年",
+          "text": "诗没有只写诗人自己的家，而是把爆竹、春风、阳光和桃符扩展到千门万户。节日的文化记忆正是这样由许多家庭共同完成，再一代代传下去。",
+          "prompt": "你家过年时有哪些动作或物件让你一看就知道‘新年到了’？选一个讲给别人听。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -45244,19 +46316,66 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-067",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第七批内容复核：飞来山、千寻塔、鸡鸣日升与浮云最高层的登高视线已人工确认；畏、缘按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
-      "placeRelations": null,
-      "canonicalPlaceIds": [],
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-3.token-2",
+          "char": "畏",
+          "pinyin": "wèi",
+          "reason": "‘不畏’意为不害怕，畏读 wèi。"
+        },
+        {
+          "path": "line-4.token-2",
+          "char": "缘",
+          "pinyin": "yuán",
+          "reason": "‘自缘’意为只是因为，缘读 yuán。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "mountain-tower-and-wide-view",
+        "observation": "登山到塔的高处，视线从山体和塔身推向鸡鸣日升，再回到浮云遮眼与最高层的上下关系。",
+        "mapAction": "以杭州飞来峰（飞来山）作现代区域参照，画出‘山—塔—日升—浮云—高层’的视线关系，不绘制未经证实的历史路线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4",
+          "line-5",
+          "line-6",
+          "line-7",
+          "line-8"
+        ],
+        "childTakeaway": "换到更高、更清楚的位置，才能看见眼前遮挡之外的关系。"
+      },
+      "placeRelations": [
+        {
+          "targetId": "hangzhou",
+          "type": "mountain_association",
+          "confidence": "medium",
+          "assertion": "飞来峰（飞来山）常与杭州灵隐区域关联，作为现代地域参照，不等同于已证实的诗人路线。",
+          "childMeaning": "把登高诗境放进杭州山地文化的现代参照中。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        }
+      ],
+      "canonicalPlaceIds": [
+        "hangzhou"
+      ],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "飞来峰（飞来山）与杭州灵隐一带存在常见文化地理对应，但诗句不能单独证明王安石的具体登临路线；地图仅作现代区域参照。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -45369,7 +46488,8 @@
             {
               "char": "畏",
               "pinyin": "wèi",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘不畏’意为不害怕，畏读 wèi。"
             },
             {
               "char": "浮",
@@ -45414,7 +46534,8 @@
             {
               "char": "缘",
               "pinyin": "yuán",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘自缘’意为只是因为，缘读 yuán。"
             },
             {
               "char": "身",
@@ -45449,73 +46570,111 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-deng-fei-lai-feng-line-1",
-              "meaning": "先从原句找出登高和视野：这句写了“飞来山上千寻塔，”，再用自己的话说说画面怎样变化。",
+              "meaning": "登上飞来山，山上有一座高耸的千寻塔。",
               "keywords": [
-                "登高",
-                "视野",
-                "志向"
+                "飞来山",
+                "千寻塔"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“飞来山上千寻塔，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "飞来山是山名或地名参照，不是山真的从天上飞来；‘千寻’是夸张写塔高，不是精确测量。",
+              "picture": "登山者抬头看塔，山势和塔身把视线一起推向高处。",
+              "prompt": "诗人登上哪里，又看见了什么高处建筑？",
+              "childMeaning": "登上飞来山，山上有一座高耸的千寻塔。",
+              "keyWords": [
+                "飞来山",
+                "千寻塔"
+              ],
+              "commonMisunderstanding": "飞来山是山名或地名参照，不是山真的从天上飞来；‘千寻’是夸张写塔高，不是精确测量。",
+              "imagePrompt": "登山者抬头看塔，山势和塔身把视线一起推向高处。"
             },
             {
               "lineId": "child-deng-fei-lai-feng-line-2",
-              "meaning": "先从原句找出登高和视野：这句写了“闻说鸡鸣见日升。”，再用自己的话说说画面怎样变化。",
+              "meaning": "听说站在高塔上，能看见鸡鸣时太阳从东方升起。",
               "keywords": [
-                "登高",
-                "视野",
-                "志向"
+                "闻说",
+                "鸡鸣",
+                "日升"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“闻说鸡鸣见日升。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘闻说’表示听说，不表示已经现场验证；鸡鸣提示清晨，不能理解成鸡叫把太阳叫出来。",
+              "picture": "高塔临近天边，晨光随着鸡鸣从远方亮起。",
+              "prompt": "这一句把什么声音和什么天象连在一起？",
+              "childMeaning": "听说站在高塔上，能看见鸡鸣时太阳从东方升起。",
+              "keyWords": [
+                "闻说",
+                "鸡鸣",
+                "日升"
+              ],
+              "commonMisunderstanding": "‘闻说’表示听说，不表示已经现场验证；鸡鸣提示清晨，不能理解成鸡叫把太阳叫出来。",
+              "imagePrompt": "高塔临近天边，晨光随着鸡鸣从远方亮起。"
             },
             {
               "lineId": "child-deng-fei-lai-feng-line-3",
-              "meaning": "先从原句找出登高和视野：这句写了“不畏浮云遮望眼，”，再用自己的话说说画面怎样变化。",
+              "meaning": "不怕浮云暂时遮住远望的视线。",
               "keywords": [
-                "登高",
-                "视野",
-                "志向"
+                "不畏",
+                "浮云",
+                "遮望眼"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“不畏浮云遮望眼，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘浮云’既写眼前云层，也可寄托暂时遮挡视野的困难；不是所有云都代表坏事。",
+              "picture": "云层从眼前掠过，但登高者没有因此退回山下。",
+              "prompt": "诗人面对遮挡时是什么态度？",
+              "childMeaning": "不怕浮云暂时遮住远望的视线。",
+              "keyWords": [
+                "不畏",
+                "浮云",
+                "遮望眼"
+              ],
+              "commonMisunderstanding": "‘浮云’既写眼前云层，也可寄托暂时遮挡视野的困难；不是所有云都代表坏事。",
+              "imagePrompt": "云层从眼前掠过，但登高者没有因此退回山下。"
             },
             {
               "lineId": "child-deng-fei-lai-feng-line-4",
-              "meaning": "先从原句找出登高和视野：这句写了“自缘身在最高层。”，再用自己的话说说画面怎样变化。",
+              "meaning": "只是因为自己站在最高一层，所以能把视线放得更远。",
               "keywords": [
-                "登高",
-                "视野",
-                "志向"
+                "自缘",
+                "最高层"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“自缘身在最高层。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘自缘’是只是因为；‘最高层’既是登塔高度，也带有提升眼界的比喻意味。",
+              "picture": "登得更高，云层和远景有了新的上下关系，眼前遮挡不再包住全部世界。",
+              "prompt": "为什么站到高处会看得更远？",
+              "childMeaning": "只是因为自己站在最高一层，所以能把视线放得更远。",
+              "keyWords": [
+                "自缘",
+                "最高层"
+              ],
+              "commonMisunderstanding": "‘自缘’是只是因为；‘最高层’既是登塔高度，也带有提升眼界的比喻意味。",
+              "imagePrompt": "登得更高，云层和远景有了新的上下关系，眼前遮挡不再包住全部世界。"
             }
           ],
-          "wholeMeaning": "这首诗围绕登高、视野、志向展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过登高、视野、志向写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "王安石登上飞来山，仰望山上的高塔，听说站到塔上能看见鸡鸣时升起的太阳。后两句从眼前的浮云写到内心的视野：不怕浮云遮眼，是因为自己站在最高层。诗既有登高看远的画面，也有站得高、看得远的思考。",
+          "mainContent": "诗从飞来山和千寻塔的高度写起，再用日升建立高远视野，最后把浮云、望眼和最高层连成一种突破遮挡、提升眼界的志向。",
           "evidenceLines": [
             "child-deng-fei-lai-feng-line-1",
             "child-deng-fei-lai-feng-line-2",
             "child-deng-fei-lai-feng-line-3",
             "child-deng-fei-lai-feng-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过登高、视野、志向表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗从飞来山和千寻塔的高度写起，再用日升建立高远视野，最后把浮云、望眼和最高层连成一种突破遮挡、提升眼界的志向。",
+          "emotion": "登高远望的开阔、坚定和积极进取。",
+          "centralIdea": "站到更高处，视野会超越眼前遮挡；面对困难要主动提升位置和认识，而不是只被一时的‘浮云’困住。",
           "evidenceLines": [
             "child-deng-fei-lai-feng-line-1",
             "child-deng-fei-lai-feng-line-2",
             "child-deng-fei-lai-feng-line-3",
             "child-deng-fei-lai-feng-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -45523,53 +46682,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "登高",
-              "视野"
-            ],
-            [
-              "登高",
-              "视野"
-            ],
-            [
-              "登高",
-              "视野"
-            ],
-            [
-              "登高",
-              "视野"
-            ]
+            {
+              "lineId": "child-deng-fei-lai-feng-line-1",
+              "keywords": [
+                "飞来山",
+                "千寻塔"
+              ],
+              "cue": "山上高塔拔地而起"
+            },
+            {
+              "lineId": "child-deng-fei-lai-feng-line-2",
+              "keywords": [
+                "鸡鸣",
+                "日升"
+              ],
+              "cue": "听说高处接近清晨"
+            },
+            {
+              "lineId": "child-deng-fei-lai-feng-line-3",
+              "keywords": [
+                "不畏",
+                "浮云"
+              ],
+              "cue": "不怕暂时遮挡"
+            },
+            {
+              "lineId": "child-deng-fei-lai-feng-line-4",
+              "keywords": [
+                "自缘",
+                "最高层"
+              ],
+              "cue": "站得高所以看得远"
+            }
           ],
           "firstCharacterHints": [
-            "飞",
-            "闻",
-            "不",
-            "自"
+            {
+              "lineId": "child-deng-fei-lai-feng-line-1",
+              "character": "飞",
+              "cue": "飞来山上千寻塔"
+            },
+            {
+              "lineId": "child-deng-fei-lai-feng-line-2",
+              "character": "闻",
+              "cue": "闻说鸡鸣见日升"
+            },
+            {
+              "lineId": "child-deng-fei-lai-feng-line-3",
+              "character": "不",
+              "cue": "不畏浮云遮望眼"
+            },
+            {
+              "lineId": "child-deng-fei-lai-feng-line-4",
+              "character": "自",
+              "cue": "自缘身在最高层"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "王安石登上飞来山，仰望山上的高塔，听说站到塔上能看见鸡鸣时升起的太阳。后两句从眼前的浮云写到内心的视野：不怕浮云遮眼，是因为自己站在最高层。诗既有登高看远的画面，也有站得高、看得远的思考。",
+        "lineMeanings": [
+          {
+            "lineId": "child-deng-fei-lai-feng-line-1",
+            "meaning": "登上飞来山，山上有一座高耸的千寻塔。"
+          },
+          {
+            "lineId": "child-deng-fei-lai-feng-line-2",
+            "meaning": "听说站在高塔上，能看见鸡鸣时太阳从东方升起。"
+          },
+          {
+            "lineId": "child-deng-fei-lai-feng-line-3",
+            "meaning": "不怕浮云暂时遮住远望的视线。"
+          },
+          {
+            "lineId": "child-deng-fei-lai-feng-line-4",
+            "meaning": "只是因为自己站在最高一层，所以能把视线放得更远。"
+          }
+        ],
+        "extension": {
+          "title": "换一个高度再看问题",
+          "text": "《登飞来峰》先让孩子看见山、塔、云和日升，再把‘站得高’变成一种认识方法：眼前的遮挡可能很大，但位置、信息和思考方式改变后，远处的关系会重新出现。",
+          "prompt": "遇到一个看不清或想不明白的问题时，你可以怎样‘站高一点’？写出一个具体的换角度方法。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -51997,19 +53235,73 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-081",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第八批内容复核：大漠、燕山月色、金络脑与骏马奔驰的边地空间和志向隐喻已人工确认；燕、似按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
-      "placeRelations": null,
-      "canonicalPlaceIds": [],
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-2.token-1",
+          "char": "燕",
+          "pinyin": "yān",
+          "reason": "‘燕山’是北方山脉名称，燕读 yān，不是燕子的 yàn。"
+        },
+        {
+          "path": "line-2.token-4",
+          "char": "似",
+          "pinyin": "sì",
+          "reason": "‘月似钩’表示像弯钩，似读 sì。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "desert-mountain-moon-and-racing-horse",
+        "observation": "空间从大漠沙地抬到燕山弯月，再从夜景转入想象中的骏马和秋日奔驰，边地的空旷成为行动舞台。",
+        "mapAction": "以燕山和敦煌作边地文化参照，表达‘大漠—山月—骏马—秋风’的关系；不绘制未经证实的诗人路线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "自然景物既能建立空间，也能承载一个人等待机会、施展力量的愿望。"
+      },
+      "placeRelations": [
+        {
+          "targetId": "yan-mountain",
+          "type": "mountain_association",
+          "confidence": "high",
+          "assertion": "第二句直接写燕山，是边地山脉参照；燕读 yān。",
+          "childMeaning": "弯月挂在北方燕山上，构成诗中的夜景。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        },
+        {
+          "targetId": "dunhuang",
+          "type": "desert_region",
+          "confidence": "medium",
+          "assertion": "大漠意象可用敦煌作北方西部沙漠文化参照，诗句未直接点名敦煌。",
+          "childMeaning": "大漠是辽阔的沙地空间，不等于某一条已经确认的行军路线。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        }
+      ],
+      "canonicalPlaceIds": [
+        "yan-mountain",
+        "dunhuang"
+      ],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "大漠与燕山构成北方边地文化地理参照，金络脑与快走是骏马和志向的诗意想象；不把诗句解释成李贺的个人行军路线。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -52062,7 +53354,8 @@
             {
               "char": "燕",
               "pinyin": "yān",
-              "tone": 5
+              "tone": 1,
+              "pronunciationReview": "‘燕山’是北方山脉名称，燕读 yān，不是燕子的 yàn。"
             },
             {
               "char": "山",
@@ -52077,7 +53370,8 @@
             {
               "char": "似",
               "pinyin": "sì",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘月似钩’表示像弯钩，似读 sì。"
             },
             {
               "char": "钩",
@@ -52162,73 +53456,107 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-ma-shi-line-1",
-              "meaning": "先从原句找出大漠和骏马：这句写了“大漠沙如雪，”，再用自己的话说说画面怎样变化。",
+              "meaning": "大漠里的沙粒在月光下洁白闪亮，好像铺了一层雪。",
               "keywords": [
                 "大漠",
-                "骏马",
-                "秋天"
+                "沙如雪"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“大漠沙如雪，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘如雪’是月光下的颜色比喻，不是沙漠真的下雪；‘漠’读 mò。",
+              "picture": "无边沙漠在夜色中泛白，沙粒和雪一样反射着冷光。",
+              "prompt": "诗人用什么景物比喻沙子的颜色？",
+              "childMeaning": "大漠里的沙粒在月光下洁白闪亮，好像铺了一层雪。",
+              "keyWords": [
+                "大漠",
+                "沙如雪"
+              ],
+              "commonMisunderstanding": "‘如雪’是月光下的颜色比喻，不是沙漠真的下雪；‘漠’读 mò。",
+              "imagePrompt": "无边沙漠在夜色中泛白，沙粒和雪一样反射着冷光。"
             },
             {
               "lineId": "child-ma-shi-line-2",
-              "meaning": "先从原句找出大漠和骏马：这句写了“燕山月似钩。”，再用自己的话说说画面怎样变化。",
+              "meaning": "燕山上空的月亮弯弯的，像一只金色的弯钩。",
               "keywords": [
-                "大漠",
-                "骏马",
-                "秋天"
+                "燕山",
+                "月似钩"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“燕山月似钩。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘燕山’是北方山脉的地理参照，‘燕’读 yān；‘似钩’是月形比喻，不是山上挂着钩子。",
+              "picture": "山脉勾勒出暗色轮廓，弯月像钩子悬在边地夜空。",
+              "prompt": "燕山和月亮怎样组成边塞夜景？",
+              "childMeaning": "燕山上空的月亮弯弯的，像一只金色的弯钩。",
+              "keyWords": [
+                "燕山",
+                "月似钩"
+              ],
+              "commonMisunderstanding": "‘燕山’是北方山脉的地理参照，‘燕’读 yān；‘似钩’是月形比喻，不是山上挂着钩子。",
+              "imagePrompt": "山脉勾勒出暗色轮廓，弯月像钩子悬在边地夜空。"
             },
             {
               "lineId": "child-ma-shi-line-3",
-              "meaning": "先从原句找出大漠和骏马：这句写了“何当金络脑，”，再用自己的话说说画面怎样变化。",
+              "meaning": "什么时候才能给这匹马配上金色的络脑，让它真正成为可用的骏马？",
               "keywords": [
-                "大漠",
-                "骏马",
-                "秋天"
+                "何当",
+                "金络脑"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“何当金络脑，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘何当’是何时能够；‘络脑’是套在马头上的装饰和驾驭用具，不是马的脑袋变成金子。",
+              "picture": "骏马昂首等待，金络脑象征被看见、被任用的机会。",
+              "prompt": "诗人为什么写马戴上金络脑？",
+              "childMeaning": "什么时候才能给这匹马配上金色的络脑，让它真正成为可用的骏马？",
+              "keyWords": [
+                "何当",
+                "金络脑"
+              ],
+              "commonMisunderstanding": "‘何当’是何时能够；‘络脑’是套在马头上的装饰和驾驭用具，不是马的脑袋变成金子。",
+              "imagePrompt": "骏马昂首等待，金络脑象征被看见、被任用的机会。"
             },
             {
               "lineId": "child-ma-shi-line-4",
-              "meaning": "先从原句找出大漠和骏马：这句写了“快走踏清秋。”，再用自己的话说说画面怎样变化。",
+              "meaning": "让骏马在清爽的秋天快速奔驰，尽情施展力量。",
               "keywords": [
-                "大漠",
-                "骏马",
-                "秋天"
+                "快走",
+                "踏清秋"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“快走踏清秋。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘走’在古汉语中常指跑；‘踏清秋’是奔驰在清爽秋色中，不是慢慢散步。",
+              "picture": "马蹄掠过秋草和沙地，速度把边地的空旷变成行动的舞台。",
+              "prompt": "这一句最想表现马的哪一种状态？",
+              "childMeaning": "让骏马在清爽的秋天快速奔驰，尽情施展力量。",
+              "keyWords": [
+                "快走",
+                "踏清秋"
+              ],
+              "commonMisunderstanding": "‘走’在古汉语中常指跑；‘踏清秋’是奔驰在清爽秋色中，不是慢慢散步。",
+              "imagePrompt": "马蹄掠过秋草和沙地，速度把边地的空旷变成行动的舞台。"
             }
           ],
-          "wholeMeaning": "这首诗围绕大漠、骏马、秋天展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过大漠、骏马、秋天写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "大漠里的沙在月光下像白雪，燕山上弯月像金钩。诗人希望有一天能给骏马配上金络脑，让它在清爽的秋天尽情奔驰。荒凉边地的景物，寄托了渴望施展才华、驰骋疆场的愿望。",
+          "mainContent": "诗先写大漠、燕山和月色，把边地画得冷峻辽阔；后两句转向想象中的骏马，用金络脑和快走表达等待机会的志向。",
           "evidenceLines": [
             "child-ma-shi-line-1",
             "child-ma-shi-line-2",
             "child-ma-shi-line-3",
             "child-ma-shi-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过大漠、骏马、秋天表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写大漠、燕山和月色，把边地画得冷峻辽阔；后两句转向想象中的骏马，用金络脑和快走表达等待机会的志向。",
+          "emotion": "雄健、期待和渴望建功立业的力量。",
+          "centralIdea": "骏马不只是动物，也是诗人自我才能的象征；真正的愿望不是装饰，而是希望得到机会在辽阔天地中奔跑和担当。",
           "evidenceLines": [
             "child-ma-shi-line-1",
             "child-ma-shi-line-2",
             "child-ma-shi-line-3",
             "child-ma-shi-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -52236,53 +53564,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "大漠",
-              "骏马"
-            ],
-            [
-              "大漠",
-              "骏马"
-            ],
-            [
-              "大漠",
-              "骏马"
-            ],
-            [
-              "大漠",
-              "骏马"
-            ]
+            {
+              "lineId": "child-ma-shi-line-1",
+              "keywords": [
+                "大漠",
+                "沙如雪"
+              ],
+              "cue": "沙在月光下像雪"
+            },
+            {
+              "lineId": "child-ma-shi-line-2",
+              "keywords": [
+                "燕山",
+                "月似钩"
+              ],
+              "cue": "燕山弯月如钩"
+            },
+            {
+              "lineId": "child-ma-shi-line-3",
+              "keywords": [
+                "何当",
+                "金络脑"
+              ],
+              "cue": "等待被任用"
+            },
+            {
+              "lineId": "child-ma-shi-line-4",
+              "keywords": [
+                "快走",
+                "清秋"
+              ],
+              "cue": "秋日奔驰施展力量"
+            }
           ],
           "firstCharacterHints": [
-            "大",
-            "燕",
-            "何",
-            "快"
+            {
+              "lineId": "child-ma-shi-line-1",
+              "character": "大",
+              "cue": "大漠沙如雪"
+            },
+            {
+              "lineId": "child-ma-shi-line-2",
+              "character": "燕",
+              "cue": "燕山月似钩"
+            },
+            {
+              "lineId": "child-ma-shi-line-3",
+              "character": "何",
+              "cue": "何当金络脑"
+            },
+            {
+              "lineId": "child-ma-shi-line-4",
+              "character": "快",
+              "cue": "快走踏清秋"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "大漠里的沙在月光下像白雪，燕山上弯月像金钩。诗人希望有一天能给骏马配上金络脑，让它在清爽的秋天尽情奔驰。荒凉边地的景物，寄托了渴望施展才华、驰骋疆场的愿望。",
+        "lineMeanings": [
+          {
+            "lineId": "child-ma-shi-line-1",
+            "meaning": "大漠里的沙粒在月光下洁白闪亮，好像铺了一层雪。"
+          },
+          {
+            "lineId": "child-ma-shi-line-2",
+            "meaning": "燕山上空的月亮弯弯的，像一只金色的弯钩。"
+          },
+          {
+            "lineId": "child-ma-shi-line-3",
+            "meaning": "什么时候才能给这匹马配上金色的络脑，让它真正成为可用的骏马？"
+          },
+          {
+            "lineId": "child-ma-shi-line-4",
+            "meaning": "让骏马在清爽的秋天快速奔驰，尽情施展力量。"
+          }
+        ],
+        "extension": {
+          "title": "给等待中的力量一条路",
+          "text": "诗里的马已经有速度和力量，却还在等待真正奔跑的机会。孩子可以把它理解成一种‘准备好了’的状态：愿望不是空想，也需要在机会到来时承担任务、跑出自己的方向。",
+          "prompt": "你有没有一项已经准备练习很久、正在等待展示机会的本领？你准备怎样把它用起来？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -53099,19 +54506,61 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-084",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第八批内容复核：方塘镜面、天光云影、追问清澈原因与源头活水的学习隐喻已人工确认；渠、那、为按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-6",
+          "char": "鉴",
+          "pinyin": "jiàn",
+          "reason": "‘一鉴’指一面镜子，鉴读 jiàn。"
+        },
+        {
+          "path": "line-3.token-2",
+          "char": "渠",
+          "pinyin": "qú",
+          "reason": "‘问渠’指问池水或水体，渠读 qú。"
+        },
+        {
+          "path": "line-3.token-3",
+          "char": "那",
+          "pinyin": "nǎ",
+          "reason": "‘那得’表示怎么能、从哪里得到，那读 nǎ。"
+        },
+        {
+          "path": "line-4.token-1",
+          "char": "为",
+          "pinyin": "wèi",
+          "reason": "‘为有源头’表示因为有，读 wèi。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "clear-pond-and-living-source",
+        "observation": "方塘承接天光云影，诗人从池面清澈追问源头；空间从眼前镜面推向看不见但持续流入的源头。",
+        "mapAction": "画‘源头—活水—方塘—天光云影’的关系图，再把它转译为‘新知识—思考—清楚表达’的学习链。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "保持清楚需要持续接触活水般的新知识，也要主动追问原因。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗以方塘和源头活水构成学习与思考的象征性空间，没有可核定的单一地点；不把方塘推断为朱熹的具体居所。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -53154,7 +54603,8 @@
             {
               "char": "鉴",
               "pinyin": "jiàn",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘一鉴’指一面镜子，鉴读 jiàn。"
             },
             {
               "char": "开",
@@ -53224,12 +54674,14 @@
             {
               "char": "渠",
               "pinyin": "qú",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘问渠’指问池水或水体，渠读 qú。"
             },
             {
               "char": "那",
-              "pinyin": "nà",
-              "tone": 5
+              "pinyin": "nǎ",
+              "tone": 3,
+              "pronunciationReview": "‘那得’表示怎么能、从哪里得到，那读 nǎ。"
             },
             {
               "char": "得",
@@ -53264,7 +54716,8 @@
             {
               "char": "为",
               "pinyin": "wèi",
-              "tone": 5
+              "tone": 4,
+              "pronunciationReview": "‘为有源头’表示因为有，读 wèi。"
             },
             {
               "char": "有",
@@ -53304,73 +54757,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-guan-shu-you-gan-line-1",
-              "meaning": "先从原句找出池塘和学习：这句写了“半亩方塘一鉴开，”，再用自己的话说说画面怎样变化。",
+              "meaning": "半亩方形池塘像一面镜子一样打开，水面清澈平整。",
               "keywords": [
-                "池塘",
-                "学习",
-                "源头"
+                "半亩",
+                "方塘",
+                "一鉴开"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“半亩方塘一鉴开，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘鉴’读 jiàn，是镜子的意思；‘开’写水面像镜子铺展开，不是池塘被打开了盖子。",
+              "picture": "小小的方塘映在眼前，水面平静得像一面刚擦亮的镜子。",
+              "prompt": "诗人把池塘比作什么？",
+              "childMeaning": "半亩方形池塘像一面镜子一样打开，水面清澈平整。",
+              "keyWords": [
+                "半亩",
+                "方塘",
+                "一鉴开"
+              ],
+              "commonMisunderstanding": "‘鉴’读 jiàn，是镜子的意思；‘开’写水面像镜子铺展开，不是池塘被打开了盖子。",
+              "imagePrompt": "小小的方塘映在眼前，水面平静得像一面刚擦亮的镜子。"
             },
             {
               "lineId": "child-guan-shu-you-gan-line-2",
-              "meaning": "先从原句找出池塘和学习：这句写了“天光云影共徘徊。”，再用自己的话说说画面怎样变化。",
+              "meaning": "天空的光和云朵的影子一起倒映在水面上，仿佛来回徘徊。",
               "keywords": [
-                "池塘",
-                "学习",
-                "源头"
+                "天光",
+                "云影",
+                "徘徊"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“天光云影共徘徊。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘徘徊’写光影在水面摇曳、映照，不是天空中的人走来走去；水面清澈才容得下这些倒影。",
+              "picture": "云朵在水中留下影子，光线随着水波轻轻变化。",
+              "prompt": "水面清澈时，能看见哪些来自天空的东西？",
+              "childMeaning": "天空的光和云朵的影子一起倒映在水面上，仿佛来回徘徊。",
+              "keyWords": [
+                "天光",
+                "云影",
+                "徘徊"
+              ],
+              "commonMisunderstanding": "‘徘徊’写光影在水面摇曳、映照，不是天空中的人走来走去；水面清澈才容得下这些倒影。",
+              "imagePrompt": "云朵在水中留下影子，光线随着水波轻轻变化。"
             },
             {
               "lineId": "child-guan-shu-you-gan-line-3",
-              "meaning": "先从原句找出池塘和学习：这句写了“问渠那得清如许？”，再用自己的话说说画面怎样变化。",
+              "meaning": "诗人问：池水怎么能够一直清澈成这样？",
               "keywords": [
-                "池塘",
-                "学习",
-                "源头"
+                "问渠",
+                "那得",
+                "清如许"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“问渠那得清如许？”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘渠’在这里指池水或它本身，不是水沟；‘那得’读 nǎ dé，意思是怎么能、从哪里得到；‘如许’是这样。",
+              "picture": "诗人面对清水发问，把眼前的景物转成一次寻找原因的思考。",
+              "prompt": "这句不是只赞美池水，还在追问什么？",
+              "childMeaning": "诗人问：池水怎么能够一直清澈成这样？",
+              "keyWords": [
+                "问渠",
+                "那得",
+                "清如许"
+              ],
+              "commonMisunderstanding": "‘渠’在这里指池水或它本身，不是水沟；‘那得’读 nǎ dé，意思是怎么能、从哪里得到；‘如许’是这样。",
+              "imagePrompt": "诗人面对清水发问，把眼前的景物转成一次寻找原因的思考。"
             },
             {
               "lineId": "child-guan-shu-you-gan-line-4",
-              "meaning": "先从原句找出池塘和学习：这句写了“为有源头活水来。”，再用自己的话说说画面怎样变化。",
+              "meaning": "因为有源头不断流来的活水，所以池塘能够保持清澈。",
               "keywords": [
-                "池塘",
-                "学习",
-                "源头"
+                "为有",
+                "源头",
+                "活水"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“为有源头活水来。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘为有’读 wèi yǒu，是因为有；‘活水’是流动更新的水，不是池里有一条活着的鱼。",
+              "picture": "细小水流从源头注入方塘，水面因此不会变成一潭死水。",
+              "prompt": "什么东西让池水一直保持清明？",
+              "childMeaning": "因为有源头不断流来的活水，所以池塘能够保持清澈。",
+              "keyWords": [
+                "为有",
+                "源头",
+                "活水"
+              ],
+              "commonMisunderstanding": "‘为有’读 wèi yǒu，是因为有；‘活水’是流动更新的水，不是池里有一条活着的鱼。",
+              "imagePrompt": "细小水流从源头注入方塘，水面因此不会变成一潭死水。"
             }
           ],
-          "wholeMeaning": "这首诗围绕池塘、学习、源头展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过池塘、学习、源头写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "半亩方形池塘像一面镜子打开，天空的光和云朵的影子在水面徘徊。诗人问池水为什么能这样清澈，回答说因为有源头不断流来的活水。清澈的池塘也成为持续学习、保持思想更新的比喻。",
+          "mainContent": "诗先写池塘像镜子、映出天光云影，再由问答转向原因：源头活水不断进入，才让水保持清明。",
           "evidenceLines": [
             "child-guan-shu-you-gan-line-1",
             "child-guan-shu-you-gan-line-2",
             "child-guan-shu-you-gan-line-3",
             "child-guan-shu-you-gan-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过池塘、学习、源头表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写池塘像镜子、映出天光云影，再由问答转向原因：源头活水不断进入，才让水保持清明。",
+          "emotion": "清澈、思考和发现规律后的明朗。",
+          "centralIdea": "清明的状态需要不断获得新的活水；学习和思考也要持续阅读、观察和更新，不能只靠封存旧知识。",
           "evidenceLines": [
             "child-guan-shu-you-gan-line-1",
             "child-guan-shu-you-gan-line-2",
             "child-guan-shu-you-gan-line-3",
             "child-guan-shu-you-gan-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -53378,53 +54873,133 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "池塘",
-              "学习"
-            ],
-            [
-              "池塘",
-              "学习"
-            ],
-            [
-              "池塘",
-              "学习"
-            ],
-            [
-              "池塘",
-              "学习"
-            ]
+            {
+              "lineId": "child-guan-shu-you-gan-line-1",
+              "keywords": [
+                "方塘",
+                "一鉴开"
+              ],
+              "cue": "池塘像镜子"
+            },
+            {
+              "lineId": "child-guan-shu-you-gan-line-2",
+              "keywords": [
+                "天光",
+                "云影",
+                "徘徊"
+              ],
+              "cue": "光影倒映水面"
+            },
+            {
+              "lineId": "child-guan-shu-you-gan-line-3",
+              "keywords": [
+                "问渠",
+                "清如许"
+              ],
+              "cue": "追问清澈原因"
+            },
+            {
+              "lineId": "child-guan-shu-you-gan-line-4",
+              "keywords": [
+                "源头",
+                "活水"
+              ],
+              "cue": "流动更新带来清明"
+            }
           ],
           "firstCharacterHints": [
-            "半",
-            "天",
-            "问",
-            "为"
+            {
+              "lineId": "child-guan-shu-you-gan-line-1",
+              "character": "半",
+              "cue": "半亩方塘"
+            },
+            {
+              "lineId": "child-guan-shu-you-gan-line-2",
+              "character": "天",
+              "cue": "天光云影"
+            },
+            {
+              "lineId": "child-guan-shu-you-gan-line-3",
+              "character": "问",
+              "cue": "问渠那得"
+            },
+            {
+              "lineId": "child-guan-shu-you-gan-line-4",
+              "character": "为",
+              "cue": "为有源头"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "半亩方形池塘像一面镜子打开，天空的光和云朵的影子在水面徘徊。诗人问池水为什么能这样清澈，回答说因为有源头不断流来的活水。清澈的池塘也成为持续学习、保持思想更新的比喻。",
+        "lineMeanings": [
+          {
+            "lineId": "child-guan-shu-you-gan-line-1",
+            "meaning": "半亩方形池塘像一面镜子一样打开，水面清澈平整。"
+          },
+          {
+            "lineId": "child-guan-shu-you-gan-line-2",
+            "meaning": "天空的光和云朵的影子一起倒映在水面上，仿佛来回徘徊。"
+          },
+          {
+            "lineId": "child-guan-shu-you-gan-line-3",
+            "meaning": "诗人问：池水怎么能够一直清澈成这样？"
+          },
+          {
+            "lineId": "child-guan-shu-you-gan-line-4",
+            "meaning": "因为有源头不断流来的活水，所以池塘能够保持清澈。"
+          }
+        ],
+        "extension": {
+          "title": "给思想引一股活水",
+          "text": "诗人从一面清澈的池塘想到源头活水，后来人们也常用它比喻学习和思想：要保持清楚，就要持续接触新知识、提出新问题，并把它们和已有经验连起来。",
+          "prompt": "最近哪一本书、一次观察或一个问题，像一股‘活水’让你想得更清楚？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
@@ -60587,19 +62162,49 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-098",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第八批内容复核：移舟停渚、日暮客愁、旷野低天与清江近月的空间视线已人工确认；泊、渚按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-3",
+          "char": "泊",
+          "pinyin": "bó",
+          "reason": "‘泊烟渚’意为停船，泊读 bó。"
+        },
+        {
+          "path": "line-1.token-5",
+          "char": "渚",
+          "pinyin": "zhǔ",
+          "reason": "‘烟渚’指烟雾中的水中小洲，渚读 zhǔ。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "moored-boat-and-near-moon",
+        "observation": "旅舟从移动变为停在烟渚，视线由日暮的客愁拉到旷野低天，再收回清江中的月影和人。",
+        "mapAction": "画‘舟—烟渚—旷野—树—江月’的由近及远再回收关系，不虚构诗人的具体航行路线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "陌生旅途中，开阔的空间和清亮的月色也可以成为安静的陪伴。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "诗写旅夜江边的小尺度观察，没有可核定的单一地理地点；建德江是诗题参照，但不据此推断孟浩然的完整行程。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -60627,7 +62232,8 @@
             {
               "char": "泊",
               "pinyin": "bó",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘泊烟渚’意为停船，泊读 bó。"
             },
             {
               "char": "烟",
@@ -60637,7 +62243,8 @@
             {
               "char": "渚",
               "pinyin": "zhǔ",
-              "tone": 5
+              "tone": 3,
+              "pronunciationReview": "‘烟渚’指烟雾中的水中小洲，渚读 zhǔ。"
             },
             {
               "char": "，",
@@ -60752,73 +62359,113 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-su-jiande-jiang-line-1",
-              "meaning": "先从原句找出江夜和月亮：这句写了“移舟泊烟渚，”，再用自己的话说说画面怎样变化。",
+              "meaning": "把船移到烟雾笼罩的小洲边停泊下来。",
               "keywords": [
-                "江夜",
-                "月亮",
-                "孤独"
+                "移舟",
+                "泊",
+                "烟渚"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“移舟泊烟渚，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘泊’读 bó，是停船；‘渚’读 zhǔ，是水中的小洲或沙洲，不是雾里的普通小岛。",
+              "picture": "暮色和水烟笼住小洲，船靠岸后，旅人的行动暂时停下来。",
+              "prompt": "船停在什么样的水边空间？",
+              "childMeaning": "把船移到烟雾笼罩的小洲边停泊下来。",
+              "keyWords": [
+                "移舟",
+                "泊",
+                "烟渚"
+              ],
+              "commonMisunderstanding": "‘泊’读 bó，是停船；‘渚’读 zhǔ，是水中的小洲或沙洲，不是雾里的普通小岛。",
+              "imagePrompt": "暮色和水烟笼住小洲，船靠岸后，旅人的行动暂时停下来。"
             },
             {
               "lineId": "child-su-jiande-jiang-line-2",
-              "meaning": "先从原句找出江夜和月亮：这句写了“日暮客愁新。”，再用自己的话说说画面怎样变化。",
+              "meaning": "天快黑了，客居他乡的愁绪又新添一层。",
               "keywords": [
-                "江夜",
-                "月亮",
-                "孤独"
+                "日暮",
+                "客愁",
+                "新"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“日暮客愁新。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘客’指旅居在外的人；‘新’写日暮触发新的愁，不是说以前完全没有烦恼。",
+              "picture": "太阳落下，烟渚更安静，独自停舟的人更清楚地感到远离家乡。",
+              "prompt": "什么时间变化让客愁变得更明显？",
+              "childMeaning": "天快黑了，客居他乡的愁绪又新添一层。",
+              "keyWords": [
+                "日暮",
+                "客愁",
+                "新"
+              ],
+              "commonMisunderstanding": "‘客’指旅居在外的人；‘新’写日暮触发新的愁，不是说以前完全没有烦恼。",
+              "imagePrompt": "太阳落下，烟渚更安静，独自停舟的人更清楚地感到远离家乡。"
             },
             {
               "lineId": "child-su-jiande-jiang-line-3",
-              "meaning": "先从原句找出江夜和月亮：这句写了“野旷天低树，”，再用自己的话说说画面怎样变化。",
+              "meaning": "旷野辽阔，天空仿佛压低到比岸边树木还低。",
               "keywords": [
-                "江夜",
-                "月亮",
-                "孤独"
+                "野旷",
+                "天低",
+                "树"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“野旷天低树，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘天低’是开阔旷野造成的视觉感觉，不是天空真的下沉；树成为判断远近和高低的参照。",
+              "picture": "平坦的野地没有遮挡，远天与树梢连成一线，空间显得特别开阔。",
+              "prompt": "为什么越开阔，天空反而像越低？",
+              "childMeaning": "旷野辽阔，天空仿佛压低到比岸边树木还低。",
+              "keyWords": [
+                "野旷",
+                "天低",
+                "树"
+              ],
+              "commonMisunderstanding": "‘天低’是开阔旷野造成的视觉感觉，不是天空真的下沉；树成为判断远近和高低的参照。",
+              "imagePrompt": "平坦的野地没有遮挡，远天与树梢连成一线，空间显得特别开阔。"
             },
             {
               "lineId": "child-su-jiande-jiang-line-4",
-              "meaning": "先从原句找出江夜和月亮：这句写了“江清月近人。”，再用自己的话说说画面怎样变化。",
+              "meaning": "江水清澈，水中的月影仿佛靠近了船上的人。",
               "keywords": [
-                "江夜",
-                "月亮",
-                "孤独"
+                "江清",
+                "月近人"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“江清月近人。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘月近人’是水清、月影近的诗意感觉，不是月亮真的落到身边；清江把远处月光带近。",
+              "picture": "清亮江面托住月影，旅人独坐船边，仿佛有一轮月亮来陪伴。",
+              "prompt": "最后是谁从远处来到诗人身边？",
+              "childMeaning": "江水清澈，水中的月影仿佛靠近了船上的人。",
+              "keyWords": [
+                "江清",
+                "月近人"
+              ],
+              "commonMisunderstanding": "‘月近人’是水清、月影近的诗意感觉，不是月亮真的落到身边；清江把远处月光带近。",
+              "imagePrompt": "清亮江面托住月影，旅人独坐船边，仿佛有一轮月亮来陪伴。"
             }
           ],
-          "wholeMeaning": "这首诗围绕江夜、月亮、孤独展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过江夜、月亮、孤独写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "诗人把船停在烟雾笼罩的小洲，天色将晚，旅人的新愁升起。旷野让天空显得比树还低，清澈的江水让月亮仿佛靠近人。诗从羁旅的愁绪写到江夜中获得的清幽陪伴。",
+          "mainContent": "前两句写停舟和日暮的孤独，后两句把镜头拉开到旷野低天，再拉回清江近月，空间尺度和情绪一起发生变化。",
           "evidenceLines": [
             "child-su-jiande-jiang-line-1",
             "child-su-jiande-jiang-line-2",
             "child-su-jiande-jiang-line-3",
             "child-su-jiande-jiang-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过江夜、月亮、孤独表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "前两句写停舟和日暮的孤独，后两句把镜头拉开到旷野低天，再拉回清江近月，空间尺度和情绪一起发生变化。",
+          "emotion": "羁旅中的孤独、清冷和被月色温柔陪伴的安静。",
+          "centralIdea": "人在陌生旅途中会感到愁苦，但开阔的天地和清亮的月色也能提供陪伴；诗的情绪不是只有悲伤，而是由愁转入清幽。",
           "evidenceLines": [
             "child-su-jiande-jiang-line-1",
             "child-su-jiande-jiang-line-2",
             "child-su-jiande-jiang-line-3",
             "child-su-jiande-jiang-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -60826,53 +62473,132 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "江夜",
-              "月亮"
-            ],
-            [
-              "江夜",
-              "月亮"
-            ],
-            [
-              "江夜",
-              "月亮"
-            ],
-            [
-              "江夜",
-              "月亮"
-            ]
+            {
+              "lineId": "child-su-jiande-jiang-line-1",
+              "keywords": [
+                "移舟",
+                "烟渚"
+              ],
+              "cue": "烟洲边停船"
+            },
+            {
+              "lineId": "child-su-jiande-jiang-line-2",
+              "keywords": [
+                "日暮",
+                "客愁"
+              ],
+              "cue": "暮色添旅愁"
+            },
+            {
+              "lineId": "child-su-jiande-jiang-line-3",
+              "keywords": [
+                "野旷",
+                "天低树"
+              ],
+              "cue": "旷野让天显低"
+            },
+            {
+              "lineId": "child-su-jiande-jiang-line-4",
+              "keywords": [
+                "江清",
+                "月近人"
+              ],
+              "cue": "清江把月影带近"
+            }
           ],
           "firstCharacterHints": [
-            "移",
-            "日",
-            "野",
-            "江"
+            {
+              "lineId": "child-su-jiande-jiang-line-1",
+              "character": "移",
+              "cue": "移舟泊烟渚"
+            },
+            {
+              "lineId": "child-su-jiande-jiang-line-2",
+              "character": "日",
+              "cue": "日暮客愁"
+            },
+            {
+              "lineId": "child-su-jiande-jiang-line-3",
+              "character": "野",
+              "cue": "野旷天低"
+            },
+            {
+              "lineId": "child-su-jiande-jiang-line-4",
+              "character": "江",
+              "cue": "江清月近"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "诗人把船停在烟雾笼罩的小洲，天色将晚，旅人的新愁升起。旷野让天空显得比树还低，清澈的江水让月亮仿佛靠近人。诗从羁旅的愁绪写到江夜中获得的清幽陪伴。",
+        "lineMeanings": [
+          {
+            "lineId": "child-su-jiande-jiang-line-1",
+            "meaning": "把船移到烟雾笼罩的小洲边停泊下来。"
+          },
+          {
+            "lineId": "child-su-jiande-jiang-line-2",
+            "meaning": "天快黑了，客居他乡的愁绪又新添一层。"
+          },
+          {
+            "lineId": "child-su-jiande-jiang-line-3",
+            "meaning": "旷野辽阔，天空仿佛压低到比岸边树木还低。"
+          },
+          {
+            "lineId": "child-su-jiande-jiang-line-4",
+            "meaning": "江水清澈，水中的月影仿佛靠近了船上的人。"
+          }
+        ],
+        "extension": {
+          "title": "在陌生地方找到陪伴",
+          "text": "诗人停舟时有客愁，但旷野和月亮没有把他完全留在孤独里：开阔的天空、清江和月影一起成为安静的陪伴。孩子也可以学着在陌生环境里寻找让自己安定的景物。",
+          "prompt": "当你到了一个不熟悉的地方，什么景物、声音或物件会让你觉得安心？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }
