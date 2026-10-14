@@ -32,7 +32,7 @@
 ## 当前状态
 
 - 已完整人工审核：10 首；
-- 本队列：0/10 完成；
-- 其余候选：不因进入队列而改变审核等级。
+- 本队列：8/10 已完成第一批内容复核；`child-deng-guan-que-lou`、`child-zao-fa-bai-di-cheng`、`child-liang-zhou-ci`、`child-song-yuan-er-an-xi`、`child-jiu-yue-jiu-ri`、`child-bo-chuan-gua-zhou`、`child-ci-bei-gu-shan-xia`、`child-le-you-yuan` 已标记 `curated_content_v1`；
+- 剩余队列中的诗仍保持原审核等级，其余候选也不因进入队列而自动升级。
 
 候选排序来自运行时目录的机器辅助评分，只用于安排人工工作，不是内容质量证明。
