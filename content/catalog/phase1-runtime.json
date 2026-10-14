@@ -32849,19 +32849,66 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-042",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十三批内容复核：出使边地、居延历史地名、大漠孤烟、长河落日与候骑燕然的远近空间已人工确认；属、骑按历史语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
-      "placeRelations": null,
-      "canonicalPlaceIds": [],
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-2.token-1",
+          "char": "属",
+          "pinyin": "shǔ",
+          "reason": "‘属国’是古代官职或使者身份称谓，属读 shǔ。"
+        },
+        {
+          "path": "line-7.token-5",
+          "char": "骑",
+          "pinyin": "qí",
+          "reason": "‘候骑’指巡察骑兵，骑读 qí。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "frontier-mission-and-desert-horizon",
+        "observation": "视线从使车和历史地名推进到蓬草、归雁、大漠、长河和落日，最后在萧关遇到候骑并指向燕然。",
+        "mapAction": "以玉门关作西北边地文化参照，画‘使车—居延—大漠—长河—萧关—燕然’的历史空间关系，不画个人出使路线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4",
+          "line-5",
+          "line-6",
+          "line-7",
+          "line-8"
+        ],
+        "childTakeaway": "地名给出边塞尺度，烟、雁、落日和人物行动让辽阔空间变得可以观察。"
+      },
+      "placeRelations": [
+        {
+          "targetId": "yumen-pass",
+          "type": "frontier_region",
+          "confidence": "medium",
+          "assertion": "居延、萧关、燕然构成历史边塞文化空间，可用玉门关作西北区域参照，不等同于诗中每个地名。",
+          "childMeaning": "把大漠、关口和远方长河放回西北边地的尺度。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        }
+      ],
+      "canonicalPlaceIds": [
+        "yumen-pass"
+      ],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《使至塞上》直接提供居延、萧关、燕然等历史边塞参照；现代地图只用玉门关作西北边地文化参照，不把出使诗句扩写为已证实的个人军行路线。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -32914,7 +32961,8 @@
             {
               "char": "属",
               "pinyin": "shǔ",
-              "tone": 5
+              "tone": 3,
+              "pronunciationReview": "‘属国’是古代官职或使者身份称谓，属读 shǔ。"
             },
             {
               "char": "国",
@@ -33109,7 +33157,8 @@
             {
               "char": "骑",
               "pinyin": "qí",
-              "tone": 5
+              "tone": 2,
+              "pronunciationReview": "‘候骑’指巡察骑兵，骑读 qí。"
             },
             {
               "char": "，",
@@ -33154,100 +33203,160 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-shi-zhi-sai-shang-line-1",
-              "meaning": "先从原句找出大漠和边塞：这句写了“单车欲问边，”，再用自己的话说说画面怎样变化。",
+              "meaning": "我乘着一辆轻车，准备到边地去问候、察看边情。",
               "keywords": [
-                "大漠",
-                "边塞",
-                "落日"
+                "单车",
+                "欲问边"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“单车欲问边，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘单车’是轻车、使者的车，不是今天的单人汽车；‘问边’是到边地察看、问候边情。",
+              "picture": "一辆使车驶向远方，身后的城市渐渐退到视线之外。",
+              "prompt": "诗人为什么要到边地去？",
+              "childMeaning": "我乘着一辆轻车，准备到边地去问候、察看边情。",
+              "keyWords": [
+                "单车",
+                "欲问边"
+              ],
+              "commonMisunderstanding": "‘单车’是轻车、使者的车，不是今天的单人汽车；‘问边’是到边地察看、问候边情。",
+              "imagePrompt": "一辆使车驶向远方，身后的城市渐渐退到视线之外。"
             },
             {
               "lineId": "child-shi-zhi-sai-shang-line-2",
-              "meaning": "先从原句找出大漠和边塞：这句写了“属国过居延。”，再用自己的话说说画面怎样变化。",
+              "meaning": "作为出使边地的官员，诗人经过居延一带。",
               "keywords": [
-                "大漠",
-                "边塞",
-                "落日"
+                "属国",
+                "居延"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“属国过居延。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘属国’在这里是古代官职或使者身份的称谓，不是一个国家隶属另一个国家；居延是诗中的历史地名参照。",
+              "picture": "道路穿过边地，居延成为行程中的远方地名。",
+              "prompt": "这句出现了哪一个历史地名？",
+              "childMeaning": "作为出使边地的官员，诗人经过居延一带。",
+              "keyWords": [
+                "属国",
+                "居延"
+              ],
+              "commonMisunderstanding": "‘属国’在这里是古代官职或使者身份的称谓，不是一个国家隶属另一个国家；居延是诗中的历史地名参照。",
+              "imagePrompt": "道路穿过边地，居延成为行程中的远方地名。"
             },
             {
               "lineId": "child-shi-zhi-sai-shang-line-3",
-              "meaning": "先从原句找出大漠和边塞：这句写了“征蓬出汉塞，”，再用自己的话说说画面怎样变化。",
+              "meaning": "飘飞的蓬草离开汉地边塞，诗人借它写自己像蓬草一样远行。",
               "keywords": [
-                "大漠",
-                "边塞",
-                "落日"
+                "征蓬",
+                "出汉塞"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“征蓬出汉塞，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘征蓬’不是出征的军队，而是被风吹走的蓬草，也暗含使者漂泊的感受。",
+              "picture": "一团蓬草被风带过关塞，人的行程和植物的漂泊叠在一起。",
+              "prompt": "蓬草为什么能让人想到远行？",
+              "childMeaning": "飘飞的蓬草离开汉地边塞，诗人借它写自己像蓬草一样远行。",
+              "keyWords": [
+                "征蓬",
+                "出汉塞"
+              ],
+              "commonMisunderstanding": "‘征蓬’不是出征的军队，而是被风吹走的蓬草，也暗含使者漂泊的感受。",
+              "imagePrompt": "一团蓬草被风带过关塞，人的行程和植物的漂泊叠在一起。"
             },
             {
               "lineId": "child-shi-zhi-sai-shang-line-4",
-              "meaning": "先从原句找出大漠和边塞：这句写了“归雁入胡天。”，再用自己的话说说画面怎样变化。",
+              "meaning": "归来的大雁飞进了北方边地的天空。",
               "keywords": [
-                "大漠",
-                "边塞",
-                "落日"
+                "归雁",
+                "胡天"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“归雁入胡天。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘归雁’写大雁按季节飞行，‘胡天’是古代对北方边地天空的称呼，不是说天空属于某个人。",
+              "picture": "雁阵从高空掠过，越过边塞，飞入辽阔的北方天空。",
+              "prompt": "大雁的方向和诗人的方向有什么不同？",
+              "childMeaning": "归来的大雁飞进了北方边地的天空。",
+              "keyWords": [
+                "归雁",
+                "胡天"
+              ],
+              "commonMisunderstanding": "‘归雁’写大雁按季节飞行，‘胡天’是古代对北方边地天空的称呼，不是说天空属于某个人。",
+              "imagePrompt": "雁阵从高空掠过，越过边塞，飞入辽阔的北方天空。"
             },
             {
               "lineId": "child-shi-zhi-sai-shang-line-5",
-              "meaning": "先从原句找出大漠和边塞：这句写了“大漠孤烟直，”，再用自己的话说说画面怎样变化。",
+              "meaning": "大沙漠中，一缕孤独的烽烟笔直地升向天空。",
               "keywords": [
                 "大漠",
-                "边塞",
-                "落日"
+                "孤烟",
+                "直"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“大漠孤烟直，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘孤烟’写沙漠开阔、烟柱清晰，不等于周围完全没有人；‘直’是烟上升的形状。",
+              "picture": "黄沙铺到天边，细长的烟柱把地面和天空连起来。",
+              "prompt": "什么景物在大漠里成为一条向上的线？",
+              "childMeaning": "大沙漠中，一缕孤独的烽烟笔直地升向天空。",
+              "keyWords": [
+                "大漠",
+                "孤烟",
+                "直"
+              ],
+              "commonMisunderstanding": "‘孤烟’写沙漠开阔、烟柱清晰，不等于周围完全没有人；‘直’是烟上升的形状。",
+              "imagePrompt": "黄沙铺到天边，细长的烟柱把地面和天空连起来。"
             },
             {
               "lineId": "child-shi-zhi-sai-shang-line-6",
-              "meaning": "先从原句找出大漠和边塞：这句写了“长河落日圆。”，再用自己的话说说画面怎样变化。",
+              "meaning": "长长的河流旁，夕阳显得又大又圆。",
               "keywords": [
-                "大漠",
-                "边塞",
-                "落日"
+                "长河",
+                "落日",
+                "圆"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“长河落日圆。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘长河’是边地长河的远景参照，不是说河一定叫长河；落日圆是视觉感受，不是太阳改变了形状。",
+              "picture": "河面伸向远方，落日贴近地平线，暖色把空旷的沙漠照亮。",
+              "prompt": "长河和落日怎样共同扩大画面？",
+              "childMeaning": "长长的河流旁，夕阳显得又大又圆。",
+              "keyWords": [
+                "长河",
+                "落日",
+                "圆"
+              ],
+              "commonMisunderstanding": "‘长河’是边地长河的远景参照，不是说河一定叫长河；落日圆是视觉感受，不是太阳改变了形状。",
+              "imagePrompt": "河面伸向远方，落日贴近地平线，暖色把空旷的沙漠照亮。"
             },
             {
               "lineId": "child-shi-zhi-sai-shang-line-7",
-              "meaning": "先从原句找出大漠和边塞：这句写了“萧关逢候骑，”，再用自己的话说说画面怎样变化。",
+              "meaning": "在萧关，诗人遇到负责巡察的骑兵。",
               "keywords": [
-                "大漠",
-                "边塞",
-                "落日"
+                "萧关",
+                "候骑"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“萧关逢候骑，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘候骑’是侦察、巡逻的骑兵，骑可读 qí；不是普通游客骑马经过。",
+              "picture": "关口附近出现巡察骑兵，远景的边塞突然有了人的行动。",
+              "prompt": "诗人在关口遇见了什么人？",
+              "childMeaning": "在萧关，诗人遇到负责巡察的骑兵。",
+              "keyWords": [
+                "萧关",
+                "候骑"
+              ],
+              "commonMisunderstanding": "‘候骑’是侦察、巡逻的骑兵，骑可读 qí；不是普通游客骑马经过。",
+              "imagePrompt": "关口附近出现巡察骑兵，远景的边塞突然有了人的行动。"
             },
             {
               "lineId": "child-shi-zhi-sai-shang-line-8",
-              "meaning": "先从原句找出大漠和边塞：这句写了“都护在燕然。”，再用自己的话说说画面怎样变化。",
+              "meaning": "边地的都护正在燕然一带，关塞事务仍在继续。",
               "keywords": [
-                "大漠",
-                "边塞",
-                "落日"
+                "都护",
+                "燕然"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“都护在燕然。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘都护’是古代边疆军政长官，‘燕然’是历史山地名；二者都是历史语境，不直接对应今天的行政路线。",
+              "picture": "视线从关口和骑兵又指向远方的燕然，行程在更大的边塞空间中收束。",
+              "prompt": "结尾把目光又送到了哪个远方？",
+              "childMeaning": "边地的都护正在燕然一带，关塞事务仍在继续。",
+              "keyWords": [
+                "都护",
+                "燕然"
+              ],
+              "commonMisunderstanding": "‘都护’是古代边疆军政长官，‘燕然’是历史山地名；二者都是历史语境，不直接对应今天的行政路线。",
+              "imagePrompt": "视线从关口和骑兵又指向远方的燕然，行程在更大的边塞空间中收束。"
             }
           ],
-          "wholeMeaning": "这首诗围绕大漠、边塞、落日展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过大漠、边塞、落日写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "诗人带着出使边地的任务，乘车经过居延，看到飞蓬、归雁和胡天。大漠中一缕孤烟直上，长河旁落日浑圆；最后他在萧关遇到侦察骑兵，听说都护正在燕然。诗把使者的行程和塞外辽阔景色连在一起。",
+          "mainContent": "诗先写出使者的身份和行进方向，再由飞蓬、归雁推进到大漠、长河、落日的远景，最后回到关塞遇见候骑的具体事件。",
           "evidenceLines": [
             "child-shi-zhi-sai-shang-line-1",
             "child-shi-zhi-sai-shang-line-2",
@@ -33258,12 +33367,13 @@
             "child-shi-zhi-sai-shang-line-7",
             "child-shi-zhi-sai-shang-line-8"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过大漠、边塞、落日表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先写出使者的身份和行进方向，再由飞蓬、归雁推进到大漠、长河、落日的远景，最后回到关塞遇见候骑的具体事件。",
+          "emotion": "边地空间带来的开阔、苍茫和出使途中沉静的观察。",
+          "centralIdea": "旅行中的地名、天空和沙漠景物共同建立了塞外的空间尺度；读边塞诗要同时看见自然景色和人物承担的任务，不把诗句变成未经证实的军队路线。",
           "evidenceLines": [
             "child-shi-zhi-sai-shang-line-1",
             "child-shi-zhi-sai-shang-line-2",
@@ -33273,6 +33383,11 @@
             "child-shi-zhi-sai-shang-line-6",
             "child-shi-zhi-sai-shang-line-7",
             "child-shi-zhi-sai-shang-line-8"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -33280,73 +33395,200 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "大漠",
-              "边塞"
-            ],
-            [
-              "大漠",
-              "边塞"
-            ],
-            [
-              "大漠",
-              "边塞"
-            ],
-            [
-              "大漠",
-              "边塞"
-            ],
-            [
-              "大漠",
-              "边塞"
-            ],
-            [
-              "大漠",
-              "边塞"
-            ],
-            [
-              "大漠",
-              "边塞"
-            ],
-            [
-              "大漠",
-              "边塞"
-            ]
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-1",
+              "keywords": [
+                "单车",
+                "问边"
+              ],
+              "cue": "使车走向边地"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-2",
+              "keywords": [
+                "属国",
+                "居延"
+              ],
+              "cue": "经过历史地名"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-3",
+              "keywords": [
+                "征蓬",
+                "汉塞"
+              ],
+              "cue": "蓬草漂过关塞"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-4",
+              "keywords": [
+                "归雁",
+                "胡天"
+              ],
+              "cue": "雁入北方天空"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-5",
+              "keywords": [
+                "大漠",
+                "孤烟"
+              ],
+              "cue": "沙漠一线孤烟"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-6",
+              "keywords": [
+                "长河",
+                "落日"
+              ],
+              "cue": "长河旁落日圆"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-7",
+              "keywords": [
+                "萧关",
+                "候骑"
+              ],
+              "cue": "关口遇巡骑"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-8",
+              "keywords": [
+                "都护",
+                "燕然"
+              ],
+              "cue": "目光指向燕然"
+            }
           ],
           "firstCharacterHints": [
-            "单",
-            "属",
-            "征",
-            "归",
-            "大",
-            "长",
-            "萧",
-            "都"
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-1",
+              "character": "单",
+              "cue": "单车欲问边"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-2",
+              "character": "属",
+              "cue": "属国过居延"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-3",
+              "character": "征",
+              "cue": "征蓬出汉塞"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-4",
+              "character": "归",
+              "cue": "归雁入胡天"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-5",
+              "character": "大",
+              "cue": "大漠孤烟直"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-6",
+              "character": "长",
+              "cue": "长河落日圆"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-7",
+              "character": "萧",
+              "cue": "萧关逢候骑"
+            },
+            {
+              "lineId": "child-shi-zhi-sai-shang-line-8",
+              "character": "都",
+              "cue": "都护在燕然"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "诗人带着出使边地的任务，乘车经过居延，看到飞蓬、归雁和胡天。大漠中一缕孤烟直上，长河旁落日浑圆；最后他在萧关遇到侦察骑兵，听说都护正在燕然。诗把使者的行程和塞外辽阔景色连在一起。",
+        "lineMeanings": [
+          {
+            "lineId": "child-shi-zhi-sai-shang-line-1",
+            "meaning": "我乘着一辆轻车，准备到边地去问候、察看边情。"
+          },
+          {
+            "lineId": "child-shi-zhi-sai-shang-line-2",
+            "meaning": "作为出使边地的官员，诗人经过居延一带。"
+          },
+          {
+            "lineId": "child-shi-zhi-sai-shang-line-3",
+            "meaning": "飘飞的蓬草离开汉地边塞，诗人借它写自己像蓬草一样远行。"
+          },
+          {
+            "lineId": "child-shi-zhi-sai-shang-line-4",
+            "meaning": "归来的大雁飞进了北方边地的天空。"
+          },
+          {
+            "lineId": "child-shi-zhi-sai-shang-line-5",
+            "meaning": "大沙漠中，一缕孤独的烽烟笔直地升向天空。"
+          },
+          {
+            "lineId": "child-shi-zhi-sai-shang-line-6",
+            "meaning": "长长的河流旁，夕阳显得又大又圆。"
+          },
+          {
+            "lineId": "child-shi-zhi-sai-shang-line-7",
+            "meaning": "在萧关，诗人遇到负责巡察的骑兵。"
+          },
+          {
+            "lineId": "child-shi-zhi-sai-shang-line-8",
+            "meaning": "边地的都护正在燕然一带，关塞事务仍在继续。"
+          }
+        ],
+        "extension": {
+          "title": "一条出使路上的远近镜头",
+          "text": "《使至塞上》先写车和身份，再写蓬草、归雁、大漠、长河与落日，最后落到关口的骑兵。地图帮助我们理解边地距离，诗句则让空旷的景色和人的任务同时出现。",
+          "prompt": "如果为这首诗画一条观察线，你会把哪一个近景和哪一个远景连起来？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -33403,19 +33645,65 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-043",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十三批内容复核：荆门入楚、山随平野、江入大荒、月影海楼与故乡水送行的空间推进已人工确认；不把诗意行舟路线当作现代导航。",
         "overrideSource": null
       },
-      "reviewFlags": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
       "pronunciationOverrides": [],
-      "spatialLearning": null,
-      "placeRelations": null,
-      "canonicalPlaceIds": [],
+      "spatialLearning": {
+        "coreRelation": "jingmen-river-journey-and-homecoming",
+        "observation": "船从荆门外进入楚地，山势退远、长江展开，月影和云气把夜景推向水天，最后故乡水回到送行关系。",
+        "mapAction": "连接荆门与长江作现代地理参照，再用‘山退—江开—月镜—海楼—故乡水’复述诗中观察，不绘制唐代精确航线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4",
+          "line-5",
+          "line-6",
+          "line-7",
+          "line-8"
+        ],
+        "childTakeaway": "远行让山河不断变换，故乡水又把遥远的路和心里的家连在一起。"
+      },
+      "placeRelations": [
+        {
+          "targetId": "jingmen",
+          "type": "departure_region",
+          "confidence": "high",
+          "assertion": "荆门直接出现在诗句中，是远游进入楚地的区域参照，不证明诗人精确出发坐标。",
+          "childMeaning": "船从荆门山河进入更开阔的水路。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        },
+        {
+          "targetId": "yangtze",
+          "type": "river_journey",
+          "confidence": "high",
+          "assertion": "江水直接构成山随平野、江入大荒和送行舟的水路参照，不等于已核实历史航迹。",
+          "childMeaning": "长江把远方和故乡的记忆串起来。",
+          "sourceKeys": [
+            "chinesePoetry",
+            "yangtzeNDRC"
+          ]
+        }
+      ],
+      "canonicalPlaceIds": [
+        "jingmen",
+        "yangtze"
+      ],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "荆门、楚地和长江是诗中远游空间的直接参照；地图可展示现代荆门—长江关系，不推断李白当日的精确航道和停泊点。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -33708,100 +33996,156 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-du-jing-men-song-bie-line-1",
-              "meaning": "先从原句找出江山和远行：这句写了“渡远荆门外，”，再用自己的话说说画面怎样变化。",
+              "meaning": "船驶过远处的荆门山外，诗人开始进入新的山河空间。",
               "keywords": [
-                "江山",
-                "远行",
-                "故乡"
+                "渡远",
+                "荆门外"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“渡远荆门外，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘荆门’是山名和地域参照，不是普通的荆棘做成的门；‘渡’写船行经过。",
+              "picture": "船离开荆门山口，前方的水路向楚地展开。",
+              "prompt": "船从哪一个地理参照处驶向远方？",
+              "childMeaning": "船驶过远处的荆门山外，诗人开始进入新的山河空间。",
+              "keyWords": [
+                "渡远",
+                "荆门外"
+              ],
+              "commonMisunderstanding": "‘荆门’是山名和地域参照，不是普通的荆棘做成的门；‘渡’写船行经过。",
+              "imagePrompt": "船离开荆门山口，前方的水路向楚地展开。"
             },
             {
               "lineId": "child-du-jing-men-song-bie-line-2",
-              "meaning": "先从原句找出江山和远行：这句写了“来从楚国游。”，再用自己的话说说画面怎样变化。",
+              "meaning": "我来到楚地游历，开始一段远方的行程。",
               "keywords": [
-                "江山",
-                "远行",
-                "故乡"
+                "来从",
+                "楚国游"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“来从楚国游。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘楚国’是古代地域文化称谓，不能直接等同今天的省界；‘游’是游历、行走观察。",
+              "picture": "船上的人把身后的荆门留在远处，面向楚地的平原和江流。",
+              "prompt": "诗人此行是为了停留不动，还是为了游历？",
+              "childMeaning": "我来到楚地游历，开始一段远方的行程。",
+              "keyWords": [
+                "来从",
+                "楚国游"
+              ],
+              "commonMisunderstanding": "‘楚国’是古代地域文化称谓，不能直接等同今天的省界；‘游’是游历、行走观察。",
+              "imagePrompt": "船上的人把身后的荆门留在远处，面向楚地的平原和江流。"
             },
             {
               "lineId": "child-du-jing-men-song-bie-line-3",
-              "meaning": "先从原句找出江山和远行：这句写了“山随平野尽，”，再用自己的话说说画面怎样变化。",
+              "meaning": "两岸的山仿佛随着平坦的原野展开，渐渐退到远方。",
               "keywords": [
-                "江山",
-                "远行",
-                "故乡"
+                "山随",
+                "平野尽"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“山随平野尽，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "不是山真的移动，而是船行和地势开阔带来的视线感觉；‘尽’写山势渐隐。",
+              "picture": "山脚线降低，平野变宽，船行让视野从峡口打开。",
+              "prompt": "为什么山看起来像退远了？",
+              "childMeaning": "两岸的山仿佛随着平坦的原野展开，渐渐退到远方。",
+              "keyWords": [
+                "山随",
+                "平野尽"
+              ],
+              "commonMisunderstanding": "不是山真的移动，而是船行和地势开阔带来的视线感觉；‘尽’写山势渐隐。",
+              "imagePrompt": "山脚线降低，平野变宽，船行让视野从峡口打开。"
             },
             {
               "lineId": "child-du-jing-men-song-bie-line-4",
-              "meaning": "先从原句找出江山和远行：这句写了“江入大荒流。”，再用自己的话说说画面怎样变化。",
+              "meaning": "长江流入广阔的荒野，水路把视线带向无边远方。",
               "keywords": [
-                "江山",
-                "远行",
-                "故乡"
+                "江入",
+                "大荒流"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“江入大荒流。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘大荒’是辽阔、少人烟的原野，不是荒废到什么都没有；江水仍然有方向地流动。",
+              "picture": "长江在平野之间伸展，岸线和天边一起变得开阔。",
+              "prompt": "哪一条河流把山河空间带到更远处？",
+              "childMeaning": "长江流入广阔的荒野，水路把视线带向无边远方。",
+              "keyWords": [
+                "江入",
+                "大荒流"
+              ],
+              "commonMisunderstanding": "‘大荒’是辽阔、少人烟的原野，不是荒废到什么都没有；江水仍然有方向地流动。",
+              "imagePrompt": "长江在平野之间伸展，岸线和天边一起变得开阔。"
             },
             {
               "lineId": "child-du-jing-men-song-bie-line-5",
-              "meaning": "先从原句找出江山和远行：这句写了“月下飞天镜，”，再用自己的话说说画面怎样变化。",
+              "meaning": "月亮映在江面上，像一面从天上飞来的明亮镜子。",
               "keywords": [
-                "江山",
-                "远行",
-                "故乡"
+                "月下",
+                "飞天镜"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“月下飞天镜，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘飞天镜’是月影和江面的比喻，不是天上真的飞来一面镜子；‘下’写月光照下或月影落入水中。",
+              "picture": "夜里的江面托住月影，船行时月光仿佛跟着水面移动。",
+              "prompt": "月亮在水中为什么像一面镜子？",
+              "childMeaning": "月亮映在江面上，像一面从天上飞来的明亮镜子。",
+              "keyWords": [
+                "月下",
+                "飞天镜"
+              ],
+              "commonMisunderstanding": "‘飞天镜’是月影和江面的比喻，不是天上真的飞来一面镜子；‘下’写月光照下或月影落入水中。",
+              "imagePrompt": "夜里的江面托住月影，船行时月光仿佛跟着水面移动。"
             },
             {
               "lineId": "child-du-jing-men-song-bie-line-6",
-              "meaning": "先从原句找出江山和远行：这句写了“云生结海楼。”，再用自己的话说说画面怎样变化。",
+              "meaning": "云气升起，水天之间像结出了一座海市蜃楼。",
               "keywords": [
-                "江山",
-                "远行",
-                "故乡"
+                "云生",
+                "海楼"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“云生结海楼。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘海楼’是海市蜃楼般的想象，不是船真的到了海边；云气使远景产生奇幻层次。",
+              "picture": "云雾从江面升起，远方的水天像出现一座若有若无的楼阁。",
+              "prompt": "云气让远处的景色发生了什么变化？",
+              "childMeaning": "云气升起，水天之间像结出了一座海市蜃楼。",
+              "keyWords": [
+                "云生",
+                "海楼"
+              ],
+              "commonMisunderstanding": "‘海楼’是海市蜃楼般的想象，不是船真的到了海边；云气使远景产生奇幻层次。",
+              "imagePrompt": "云雾从江面升起，远方的水天像出现一座若有若无的楼阁。"
             },
             {
               "lineId": "child-du-jing-men-song-bie-line-7",
-              "meaning": "先从原句找出江山和远行：这句写了“仍怜故乡水，”，再用自己的话说说画面怎样变化。",
+              "meaning": "即使走到了很远的地方，我仍然怜爱故乡的江水。",
               "keywords": [
-                "江山",
-                "远行",
-                "故乡"
+                "仍怜",
+                "故乡水"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“仍怜故乡水，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘怜’是喜爱、珍惜；故乡水不是一条被证明跟着船走的具体水流，而是故乡记忆的寄托。",
+              "picture": "远游者回望来路，熟悉的江水成为心里还连着故乡的线。",
+              "prompt": "远行以后，什么仍把诗人和故乡连在一起？",
+              "childMeaning": "即使走到了很远的地方，我仍然怜爱故乡的江水。",
+              "keyWords": [
+                "仍怜",
+                "故乡水"
+              ],
+              "commonMisunderstanding": "‘怜’是喜爱、珍惜；故乡水不是一条被证明跟着船走的具体水流，而是故乡记忆的寄托。",
+              "imagePrompt": "远游者回望来路，熟悉的江水成为心里还连着故乡的线。"
             },
             {
               "lineId": "child-du-jing-men-song-bie-line-8",
-              "meaning": "先从原句找出江山和远行：这句写了“万里送行舟。”，再用自己的话说说画面怎样变化。",
+              "meaning": "故乡的水仿佛走了万里路，一直为我的船送行。",
               "keywords": [
-                "江山",
-                "远行",
-                "故乡"
+                "万里",
+                "送行舟"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“万里送行舟。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘送行’是拟人化想象，江水不会真的安排路线；‘万里’写距离很远和依恋很深。",
+              "picture": "江流从故乡方向延伸到船边，像一位沉默的朋友一路相送。",
+              "prompt": "诗人把故乡水想象成了什么？",
+              "childMeaning": "故乡的水仿佛走了万里路，一直为我的船送行。",
+              "keyWords": [
+                "万里",
+                "送行舟"
+              ],
+              "commonMisunderstanding": "‘送行’是拟人化想象，江水不会真的安排路线；‘万里’写距离很远和依恋很深。",
+              "imagePrompt": "江流从故乡方向延伸到船边，像一位沉默的朋友一路相送。"
             }
           ],
-          "wholeMeaning": "这首诗围绕江山、远行、故乡展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过江山、远行、故乡写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "诗人乘船渡过荆门，来到楚地远游。两岸山势随着平原展开而退远，长江流入辽阔荒野；月亮映在江面像从天上飞来的镜子，云气升起又像海市蜃楼。即使走了很远，他仍然喜爱故乡的水，因为江水一路送着他的船。",
+          "mainContent": "诗先交代离开荆门、进入楚地，再写山退、江流、月影和云气的空间变化，最后把远行的视线收回故乡水的陪伴。",
           "evidenceLines": [
             "child-du-jing-men-song-bie-line-1",
             "child-du-jing-men-song-bie-line-2",
@@ -33812,12 +34156,13 @@
             "child-du-jing-men-song-bie-line-7",
             "child-du-jing-men-song-bie-line-8"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过江山、远行、故乡表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗先交代离开荆门、进入楚地，再写山退、江流、月影和云气的空间变化，最后把远行的视线收回故乡水的陪伴。",
+          "emotion": "远游中的新鲜开阔、对山河的惊喜和对故乡的依恋。",
+          "centralIdea": "远行让眼前山河不断变换，但故乡并没有消失；故乡的水被想象成一路送行的朋友，把远方和家连接起来。",
           "evidenceLines": [
             "child-du-jing-men-song-bie-line-1",
             "child-du-jing-men-song-bie-line-2",
@@ -33827,6 +34172,11 @@
             "child-du-jing-men-song-bie-line-6",
             "child-du-jing-men-song-bie-line-7",
             "child-du-jing-men-song-bie-line-8"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -33834,73 +34184,200 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "江山",
-              "远行"
-            ],
-            [
-              "江山",
-              "远行"
-            ],
-            [
-              "江山",
-              "远行"
-            ],
-            [
-              "江山",
-              "远行"
-            ],
-            [
-              "江山",
-              "远行"
-            ],
-            [
-              "江山",
-              "远行"
-            ],
-            [
-              "江山",
-              "远行"
-            ],
-            [
-              "江山",
-              "远行"
-            ]
+            {
+              "lineId": "child-du-jing-men-song-bie-line-1",
+              "keywords": [
+                "荆门外",
+                "渡远"
+              ],
+              "cue": "船过荆门向远方"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-2",
+              "keywords": [
+                "楚国",
+                "游"
+              ],
+              "cue": "进入楚地游历"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-3",
+              "keywords": [
+                "山随",
+                "平野"
+              ],
+              "cue": "山退平野开"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-4",
+              "keywords": [
+                "江入",
+                "大荒"
+              ],
+              "cue": "长江流入开阔原野"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-5",
+              "keywords": [
+                "月",
+                "飞天镜"
+              ],
+              "cue": "月影像天镜"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-6",
+              "keywords": [
+                "云生",
+                "海楼"
+              ],
+              "cue": "云气结成奇景"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-7",
+              "keywords": [
+                "仍怜",
+                "故乡水"
+              ],
+              "cue": "远行仍念故乡"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-8",
+              "keywords": [
+                "万里",
+                "送行舟"
+              ],
+              "cue": "故乡水一路相送"
+            }
           ],
           "firstCharacterHints": [
-            "渡",
-            "来",
-            "山",
-            "江",
-            "月",
-            "云",
-            "仍",
-            "万"
+            {
+              "lineId": "child-du-jing-men-song-bie-line-1",
+              "character": "渡",
+              "cue": "渡远荆门外"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-2",
+              "character": "来",
+              "cue": "来从楚国游"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-3",
+              "character": "山",
+              "cue": "山随平野尽"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-4",
+              "character": "江",
+              "cue": "江入大荒流"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-5",
+              "character": "月",
+              "cue": "月下飞天镜"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-6",
+              "character": "云",
+              "cue": "云生结海楼"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-7",
+              "character": "仍",
+              "cue": "仍怜故乡水"
+            },
+            {
+              "lineId": "child-du-jing-men-song-bie-line-8",
+              "character": "万",
+              "cue": "万里送行舟"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "诗人乘船渡过荆门，来到楚地远游。两岸山势随着平原展开而退远，长江流入辽阔荒野；月亮映在江面像从天上飞来的镜子，云气升起又像海市蜃楼。即使走了很远，他仍然喜爱故乡的水，因为江水一路送着他的船。",
+        "lineMeanings": [
+          {
+            "lineId": "child-du-jing-men-song-bie-line-1",
+            "meaning": "船驶过远处的荆门山外，诗人开始进入新的山河空间。"
+          },
+          {
+            "lineId": "child-du-jing-men-song-bie-line-2",
+            "meaning": "我来到楚地游历，开始一段远方的行程。"
+          },
+          {
+            "lineId": "child-du-jing-men-song-bie-line-3",
+            "meaning": "两岸的山仿佛随着平坦的原野展开，渐渐退到远方。"
+          },
+          {
+            "lineId": "child-du-jing-men-song-bie-line-4",
+            "meaning": "长江流入广阔的荒野，水路把视线带向无边远方。"
+          },
+          {
+            "lineId": "child-du-jing-men-song-bie-line-5",
+            "meaning": "月亮映在江面上，像一面从天上飞来的明亮镜子。"
+          },
+          {
+            "lineId": "child-du-jing-men-song-bie-line-6",
+            "meaning": "云气升起，水天之间像结出了一座海市蜃楼。"
+          },
+          {
+            "lineId": "child-du-jing-men-song-bie-line-7",
+            "meaning": "即使走到了很远的地方，我仍然怜爱故乡的江水。"
+          },
+          {
+            "lineId": "child-du-jing-men-song-bie-line-8",
+            "meaning": "故乡的水仿佛走了万里路，一直为我的船送行。"
+          }
+        ],
+        "extension": {
+          "title": "地图上的远行，心里的回家线",
+          "text": "《渡荆门送别》把山、江、月和云写成一条不断打开的水路，可是越走得远，故乡水的形象越清楚。地图给出距离，诗句保存依恋。",
+          "prompt": "如果你要画一条‘远行但仍连着家’的线，会用什么景物表示起点和陪伴？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -40781,19 +41258,56 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-056",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十三批内容复核：黄河曲折沙浪、风簸天涯与银河牵牛织女的现实—想象跃迁已人工确认；簸按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
-      "placeRelations": null,
-      "canonicalPlaceIds": [],
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-2.token-4",
+          "char": "簸",
+          "pinyin": "bǒ",
+          "reason": "‘风簸’写风吹浪翻、上下颠动，簸读 bǒ。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "yellow-river-to-mythic-galaxy",
+        "observation": "镜头从九曲黄河和万里沙浪开始，经过风簸天涯的远景，再沿诗人的想象向上连接银河与牵牛织女。",
+        "mapAction": "先定位黄河作为现实参照，再用虚线把黄河的力量延伸到银河神话；明确区分地图事实与诗歌想象。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "childTakeaway": "想象可以从真实的河流和风浪长出来，但神话空间不等于现实地图。"
+      },
+      "placeRelations": [
+        {
+          "targetId": "yellow-river",
+          "type": "river_imagery",
+          "confidence": "high",
+          "assertion": "黄河直接出现在首句，是现实山河的核心参照。",
+          "childMeaning": "从黄河的曲折和风浪开始读这首诗。",
+          "sourceKeys": [
+            "chinesePoetry"
+          ]
+        }
+      ],
+      "canonicalPlaceIds": [
+        "yellow-river"
+      ],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《浪淘沙》以黄河为现实地理参照，以银河和牵牛织女保留神话想象；不把诗中直上银河解释为真实水路或航天路线。",
       "priority": "p2",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -40870,8 +41384,9 @@
             },
             {
               "char": "簸",
-              "pinyin": "bò",
-              "tone": 5
+              "pinyin": "bǒ",
+              "tone": 3,
+              "pronunciationReview": "‘风簸’写风吹浪翻、上下颠动，簸读 bǒ。"
             },
             {
               "char": "自",
@@ -40986,73 +41501,115 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-lang-tao-sha-line-1",
-              "meaning": "先从原句找出黄河和浪：这句写了“九曲黄河万里沙，”，再用自己的话说说画面怎样变化。",
+              "meaning": "九曲黄河蜿蜒曲折，河水裹着很长一段河道里的黄沙。",
               "keywords": [
+                "九曲",
                 "黄河",
-                "浪",
-                "想象"
+                "万里沙"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“九曲黄河万里沙，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘九曲’和‘万里’都是写曲折、遥远和规模的夸张概称，不是要求数出九个弯或一万里沙。",
+              "picture": "黄河在大地上多次转弯，沙浪把河道铺向遥远天边。",
+              "prompt": "哪些词让黄河显得曲折又辽阔？",
+              "childMeaning": "九曲黄河蜿蜒曲折，河水裹着很长一段河道里的黄沙。",
+              "keyWords": [
+                "九曲",
+                "黄河",
+                "万里沙"
+              ],
+              "commonMisunderstanding": "‘九曲’和‘万里’都是写曲折、遥远和规模的夸张概称，不是要求数出九个弯或一万里沙。",
+              "imagePrompt": "黄河在大地上多次转弯，沙浪把河道铺向遥远天边。"
             },
             {
               "lineId": "child-lang-tao-sha-line-2",
-              "meaning": "先从原句找出黄河和浪：这句写了“浪淘风簸自天涯。”，再用自己的话说说画面怎样变化。",
+              "meaning": "风把黄河的浪涛吹得翻滚，仿佛从天涯一同卷来。",
               "keywords": [
-                "黄河",
-                "浪",
-                "想象"
+                "浪淘",
+                "风簸",
+                "天涯"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“浪淘风簸自天涯。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘簸’读 bǒ，写风吹浪翻、上下颠动；‘天涯’是极远处的诗意说法，不是精确起点。",
+              "picture": "风从远方来，黄河浪头一层层被掀起，水和沙一起运动。",
+              "prompt": "风怎样改变了黄河的浪？",
+              "childMeaning": "风把黄河的浪涛吹得翻滚，仿佛从天涯一同卷来。",
+              "keyWords": [
+                "浪淘",
+                "风簸",
+                "天涯"
+              ],
+              "commonMisunderstanding": "‘簸’读 bǒ，写风吹浪翻、上下颠动；‘天涯’是极远处的诗意说法，不是精确起点。",
+              "imagePrompt": "风从远方来，黄河浪头一层层被掀起，水和沙一起运动。"
             },
             {
               "lineId": "child-lang-tao-sha-line-3",
-              "meaning": "先从原句找出黄河和浪：这句写了“如今直上银河去，”，再用自己的话说说画面怎样变化。",
+              "meaning": "如今真想沿着黄河一直向上，直达银河。",
               "keywords": [
-                "黄河",
-                "浪",
-                "想象"
+                "如今",
+                "直上",
+                "银河"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“如今直上银河去，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘直上银河’是想象和夸张，黄河不能真的流到银河；‘直’写想象中的坚定方向。",
+              "picture": "现实的黄河水线在诗人的想象里向上抬升，接到夜空的银河。",
+              "prompt": "诗人的视线从河面跳到了哪里？",
+              "childMeaning": "如今真想沿着黄河一直向上，直达银河。",
+              "keyWords": [
+                "如今",
+                "直上",
+                "银河"
+              ],
+              "commonMisunderstanding": "‘直上银河’是想象和夸张，黄河不能真的流到银河；‘直’写想象中的坚定方向。",
+              "imagePrompt": "现实的黄河水线在诗人的想象里向上抬升，接到夜空的银河。"
             },
             {
               "lineId": "child-lang-tao-sha-line-4",
-              "meaning": "先从原句找出黄河和浪：这句写了“同到牵牛织女家。”，再用自己的话说说画面怎样变化。",
+              "meaning": "如果到了银河，就能和牵牛、织女的家相会。",
               "keywords": [
-                "黄河",
-                "浪",
-                "想象"
+                "牵牛",
+                "织女",
+                "同到"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“同到牵牛织女家。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "牵牛、织女来自神话传说，这句不是天文学路线，也不是说诗人真的乘船上天。",
+              "picture": "河流、星河和神话人物的家在想象中相遇，结尾明亮而奇幻。",
+              "prompt": "最后诗人想和谁一起到达哪里？",
+              "childMeaning": "如果到了银河，就能和牵牛、织女的家相会。",
+              "keyWords": [
+                "牵牛",
+                "织女",
+                "同到"
+              ],
+              "commonMisunderstanding": "牵牛、织女来自神话传说，这句不是天文学路线，也不是说诗人真的乘船上天。",
+              "imagePrompt": "河流、星河和神话人物的家在想象中相遇，结尾明亮而奇幻。"
             }
           ],
-          "wholeMeaning": "这首诗围绕黄河、浪、想象展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过黄河、浪、想象写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "九曲黄河带着万里黄沙奔流，风把浪涛从天边卷来。诗人忽然展开奇特想象：要沿着黄河一直冲上银河，和牵牛、织女相会。现实的黄河与神话的星河在想象里连成了一条路。",
+          "mainContent": "前两句写黄河曲折、沙多、风急浪大，后两句把水路抬到银河和牛郎织女的神话空间，现实景物因此变得雄奇而浪漫。",
           "evidenceLines": [
             "child-lang-tao-sha-line-1",
             "child-lang-tao-sha-line-2",
             "child-lang-tao-sha-line-3",
             "child-lang-tao-sha-line-4"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过黄河、浪、想象表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "前两句写黄河曲折、沙多、风急浪大，后两句把水路抬到银河和牛郎织女的神话空间，现实景物因此变得雄奇而浪漫。",
+          "emotion": "豪迈、奇幻和对黄河力量的赞叹。",
+          "centralIdea": "诗歌可以从真实河流出发，把眼前的力量延伸到想象中的宇宙；理解夸张时要先找到现实景物，再辨认想象跳跃。",
           "evidenceLines": [
             "child-lang-tao-sha-line-1",
             "child-lang-tao-sha-line-2",
             "child-lang-tao-sha-line-3",
             "child-lang-tao-sha-line-4"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -41060,53 +41617,133 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "黄河",
-              "浪"
-            ],
-            [
-              "黄河",
-              "浪"
-            ],
-            [
-              "黄河",
-              "浪"
-            ],
-            [
-              "黄河",
-              "浪"
-            ]
+            {
+              "lineId": "child-lang-tao-sha-line-1",
+              "keywords": [
+                "九曲",
+                "黄河",
+                "万里沙"
+              ],
+              "cue": "曲折黄河带着万里沙"
+            },
+            {
+              "lineId": "child-lang-tao-sha-line-2",
+              "keywords": [
+                "浪淘",
+                "风簸"
+              ],
+              "cue": "风吹浪翻从天涯来"
+            },
+            {
+              "lineId": "child-lang-tao-sha-line-3",
+              "keywords": [
+                "直上",
+                "银河"
+              ],
+              "cue": "想象从河水升到银河"
+            },
+            {
+              "lineId": "child-lang-tao-sha-line-4",
+              "keywords": [
+                "牵牛",
+                "织女"
+              ],
+              "cue": "和神话人物相会"
+            }
           ],
           "firstCharacterHints": [
-            "九",
-            "浪",
-            "如",
-            "同"
+            {
+              "lineId": "child-lang-tao-sha-line-1",
+              "character": "九",
+              "cue": "九曲黄河"
+            },
+            {
+              "lineId": "child-lang-tao-sha-line-2",
+              "character": "浪",
+              "cue": "浪淘风簸"
+            },
+            {
+              "lineId": "child-lang-tao-sha-line-3",
+              "character": "如",
+              "cue": "如今直上"
+            },
+            {
+              "lineId": "child-lang-tao-sha-line-4",
+              "character": "同",
+              "cue": "同到牵牛"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "九曲黄河带着万里黄沙奔流，风把浪涛从天边卷来。诗人忽然展开奇特想象：要沿着黄河一直冲上银河，和牵牛、织女相会。现实的黄河与神话的星河在想象里连成了一条路。",
+        "lineMeanings": [
+          {
+            "lineId": "child-lang-tao-sha-line-1",
+            "meaning": "九曲黄河蜿蜒曲折，河水裹着很长一段河道里的黄沙。"
+          },
+          {
+            "lineId": "child-lang-tao-sha-line-2",
+            "meaning": "风把黄河的浪涛吹得翻滚，仿佛从天涯一同卷来。"
+          },
+          {
+            "lineId": "child-lang-tao-sha-line-3",
+            "meaning": "如今真想沿着黄河一直向上，直达银河。"
+          },
+          {
+            "lineId": "child-lang-tao-sha-line-4",
+            "meaning": "如果到了银河，就能和牵牛、织女的家相会。"
+          }
+        ],
+        "extension": {
+          "title": "从一条河走进想象的星河",
+          "text": "诗人先抓住黄河的曲折、沙浪和风，再把水路写到银河。想象不是凭空跳走，而是从真实观察一步一步长出来。",
+          "prompt": "选一条你见过的河流或道路，想象它如果一直延伸，会通向怎样的奇妙地方？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -42493,19 +43130,108 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-059",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十三批内容复核：江南熟景、日出江花、春来江水的红绿对照与反问怀念已人工确认；标点后的逐字拼音和谙、胜按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-1.token-5",
+          "char": "风",
+          "pinyin": "fēng",
+          "reason": "‘风景’中的风读 fēng；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-1.token-6",
+          "char": "景",
+          "pinyin": "jǐng",
+          "reason": "‘风景’中的景读 jǐng；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-1.token-7",
+          "char": "旧",
+          "pinyin": "jiù",
+          "reason": "‘旧曾谙’中的旧读 jiù；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-1.token-8",
+          "char": "曾",
+          "pinyin": "céng",
+          "reason": "‘旧曾谙’表示过去曾经熟悉，曾读 céng；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-1.token-9",
+          "char": "谙",
+          "pinyin": "ān",
+          "reason": "‘谙’意为熟悉、了解，读 ān；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-9",
+          "char": "春",
+          "pinyin": "chūn",
+          "reason": "‘春来’中的春读 chūn；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-10",
+          "char": "来",
+          "pinyin": "lái",
+          "reason": "‘春来’中的来读 lái；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-11",
+          "char": "江",
+          "pinyin": "jiāng",
+          "reason": "‘江水’中的江读 jiāng；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-12",
+          "char": "水",
+          "pinyin": "shuǐ",
+          "reason": "‘江水’中的水读 shuǐ；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-13",
+          "char": "绿",
+          "pinyin": "lǜ",
+          "reason": "‘江水绿’中的绿读 lǜ；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-14",
+          "char": "如",
+          "pinyin": "rú",
+          "reason": "‘绿如蓝’中的如读 rú；修正词调标点后的逐字对齐。"
+        },
+        {
+          "path": "line-2.token-15",
+          "char": "蓝",
+          "pinyin": "lán",
+          "reason": "‘蓝’指蓝草颜色，读 lán；修正词调标点后的逐字对齐。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "jiangnan-color-and-memory",
+        "observation": "记忆先从江南总景展开，再收进日出时的江花和春来的江水，最后由颜色回到不能忘怀的地方。",
+        "mapAction": "以江南水乡作宽泛现代区域参照，不强行绑定西湖或作者精确写作地点；用‘花红—水绿—忆江南’复述颜色与记忆。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3"
+        ],
+        "childTakeaway": "地图能给一个区域，颜色和记忆才让‘想念一个地方’变得具体。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《忆江南》写江南区域记忆，不把候选西湖直接当作唯一写作地点；地图只展示江南水乡的现代区域参照，颜色和怀念回到诗句。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -42541,28 +43267,33 @@
             },
             {
               "char": "风",
-              "pinyin": "，",
-              "tone": 5
+              "pinyin": "fēng",
+              "tone": 1,
+              "pronunciationReview": "‘风景’中的风读 fēng；修正词调标点后的逐字对齐。"
             },
             {
               "char": "景",
-              "pinyin": "fēng",
-              "tone": 5
+              "pinyin": "jǐng",
+              "tone": 3,
+              "pronunciationReview": "‘风景’中的景读 jǐng；修正词调标点后的逐字对齐。"
             },
             {
               "char": "旧",
-              "pinyin": "jǐng",
-              "tone": 5
+              "pinyin": "jiù",
+              "tone": 4,
+              "pronunciationReview": "‘旧曾谙’中的旧读 jiù；修正词调标点后的逐字对齐。"
             },
             {
               "char": "曾",
-              "pinyin": "jiù",
-              "tone": 5
+              "pinyin": "céng",
+              "tone": 2,
+              "pronunciationReview": "‘旧曾谙’表示过去曾经熟悉，曾读 céng；修正词调标点后的逐字对齐。"
             },
             {
               "char": "谙",
-              "pinyin": "céng",
-              "tone": 5
+              "pinyin": "ān",
+              "tone": 1,
+              "pronunciationReview": "‘谙’意为熟悉、了解，读 ān；修正词调标点后的逐字对齐。"
             },
             {
               "char": "。",
@@ -42615,38 +43346,45 @@
             },
             {
               "char": "春",
-              "pinyin": "，",
-              "tone": 5
+              "pinyin": "chūn",
+              "tone": 1,
+              "pronunciationReview": "‘春来’中的春读 chūn；修正词调标点后的逐字对齐。"
             },
             {
               "char": "来",
-              "pinyin": "chūn",
-              "tone": 5
+              "pinyin": "lái",
+              "tone": 2,
+              "pronunciationReview": "‘春来’中的来读 lái；修正词调标点后的逐字对齐。"
             },
             {
               "char": "江",
-              "pinyin": "lái",
-              "tone": 5
+              "pinyin": "jiāng",
+              "tone": 1,
+              "pronunciationReview": "‘江水’中的江读 jiāng；修正词调标点后的逐字对齐。"
             },
             {
               "char": "水",
-              "pinyin": "jiāng",
-              "tone": 5
+              "pinyin": "shuǐ",
+              "tone": 3,
+              "pronunciationReview": "‘江水’中的水读 shuǐ；修正词调标点后的逐字对齐。"
             },
             {
               "char": "绿",
-              "pinyin": "shuǐ",
-              "tone": 5
+              "pinyin": "lǜ",
+              "tone": 4,
+              "pronunciationReview": "‘江水绿’中的绿读 lǜ；修正词调标点后的逐字对齐。"
             },
             {
               "char": "如",
-              "pinyin": "lǜ",
-              "tone": 5
+              "pinyin": "rú",
+              "tone": 2,
+              "pronunciationReview": "‘绿如蓝’中的如读 rú；修正词调标点后的逐字对齐。"
             },
             {
               "char": "蓝",
-              "pinyin": "rú",
-              "tone": 5
+              "pinyin": "lán",
+              "tone": 2,
+              "pronunciationReview": "‘蓝’指蓝草颜色，读 lán；修正词调标点后的逐字对齐。"
             },
             {
               "char": "。",
@@ -42691,60 +43429,91 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-yi-jiang-nan-line-1",
-              "meaning": "先从原句找出江南和颜色：这句写了“江南好，风景旧曾谙。”，再用自己的话说说画面怎样变化。",
+              "meaning": "江南真美，那里熟悉的风景我过去常常见到、记在心里。",
               "keywords": [
-                "江南",
-                "颜色",
-                "记忆"
+                "江南好",
+                "风景",
+                "旧曾谙"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“江南好，风景旧曾谙。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘谙’读 ān，是熟悉、了解；‘旧曾’写过去曾经熟悉，不是说风景已经陈旧。",
+              "picture": "一句‘江南好’打开记忆，熟悉的水乡景色从心里浮现。",
+              "prompt": "‘谙’说明诗人和江南是什么关系？",
+              "childMeaning": "江南真美，那里熟悉的风景我过去常常见到、记在心里。",
+              "keyWords": [
+                "江南好",
+                "风景",
+                "旧曾谙"
+              ],
+              "commonMisunderstanding": "‘谙’读 ān，是熟悉、了解；‘旧曾’写过去曾经熟悉，不是说风景已经陈旧。",
+              "imagePrompt": "一句‘江南好’打开记忆，熟悉的水乡景色从心里浮现。"
             },
             {
               "lineId": "child-yi-jiang-nan-line-2",
-              "meaning": "先从原句找出江南和颜色：这句写了“日出江花红胜火，春来江水绿如蓝。”，再用自己的话说说画面怎样变化。",
+              "meaning": "太阳升起时，江边的花红得胜过火焰；春天的江水绿得像蓝草。",
               "keywords": [
-                "江南",
-                "颜色",
-                "记忆"
+                "江花",
+                "红胜火",
+                "江水绿如蓝"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“日出江花红胜火，春来江水绿如蓝。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘胜’是超过，读 shèng；‘蓝’指可染青色的蓝草，不是只说天空的蓝色；这是明亮的颜色比喻。",
+              "picture": "日光把江花照成火红，春水又映出蓝草般的深绿，红绿相衬。",
+              "prompt": "诗人用了哪两种颜色描写江南？",
+              "childMeaning": "太阳升起时，江边的花红得胜过火焰；春天的江水绿得像蓝草。",
+              "keyWords": [
+                "江花",
+                "红胜火",
+                "江水绿如蓝"
+              ],
+              "commonMisunderstanding": "‘胜’是超过，读 shèng；‘蓝’指可染青色的蓝草，不是只说天空的蓝色；这是明亮的颜色比喻。",
+              "imagePrompt": "日光把江花照成火红，春水又映出蓝草般的深绿，红绿相衬。"
             },
             {
               "lineId": "child-yi-jiang-nan-line-3",
-              "meaning": "先从原句找出江南和颜色：这句写了“能不忆江南？”，再用自己的话说说画面怎样变化。",
+              "meaning": "这么美的江南，怎么能不让人回忆、想念呢？",
               "keywords": [
-                "江南",
-                "颜色",
-                "记忆"
+                "能不",
+                "忆江南"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“能不忆江南？”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "这是反问，意思是‘不能不忆江南’；‘忆’不只是背地名，还包含对景色和生活的怀念。",
+              "picture": "颜色停在记忆里，诗人把问题留给读者，也把思念留在江南。",
+              "prompt": "结尾的问句其实表达了怎样的心情？",
+              "childMeaning": "这么美的江南，怎么能不让人回忆、想念呢？",
+              "keyWords": [
+                "能不",
+                "忆江南"
+              ],
+              "commonMisunderstanding": "这是反问，意思是‘不能不忆江南’；‘忆’不只是背地名，还包含对景色和生活的怀念。",
+              "imagePrompt": "颜色停在记忆里，诗人把问题留给读者，也把思念留在江南。"
             }
           ],
-          "wholeMeaning": "这首诗围绕江南、颜色、记忆展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过江南、颜色、记忆写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "江南真美，那里熟悉的风景一直留在白居易的记忆里。太阳升起时，江边的花红得胜过火焰；春天到来，江水绿得像蓝草。这样美的江南，怎么能不让人想起呢？",
+          "mainContent": "词先用一句总写江南和熟悉感，再把镜头推到日出江花和春来江水的红绿对照，最后用反问收束为深长的怀念。",
           "evidenceLines": [
             "child-yi-jiang-nan-line-1",
             "child-yi-jiang-nan-line-2",
             "child-yi-jiang-nan-line-3"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过江南、颜色、记忆表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "词先用一句总写江南和熟悉感，再把镜头推到日出江花和春来江水的红绿对照，最后用反问收束为深长的怀念。",
+          "emotion": "明丽、亲切和对江南风景的怀念。",
+          "centralIdea": "记忆里的地方会被颜色和季节重新点亮；江南之美不是抽象赞美，而是由花、日光和江水的具体色彩组成。",
           "evidenceLines": [
             "child-yi-jiang-nan-line-1",
             "child-yi-jiang-nan-line-2",
             "child-yi-jiang-nan-line-3"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -42752,48 +43521,116 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "江南",
-              "颜色"
-            ],
-            [
-              "江南",
-              "颜色"
-            ],
-            [
-              "江南",
-              "颜色"
-            ]
+            {
+              "lineId": "child-yi-jiang-nan-line-1",
+              "keywords": [
+                "江南好",
+                "旧曾谙"
+              ],
+              "cue": "先说熟悉的江南"
+            },
+            {
+              "lineId": "child-yi-jiang-nan-line-2",
+              "keywords": [
+                "日出江花",
+                "红胜火",
+                "绿如蓝"
+              ],
+              "cue": "红花绿水的颜色"
+            },
+            {
+              "lineId": "child-yi-jiang-nan-line-3",
+              "keywords": [
+                "能不",
+                "忆江南"
+              ],
+              "cue": "反问收住思念"
+            }
           ],
           "firstCharacterHints": [
-            "江",
-            "日",
-            "能"
+            {
+              "lineId": "child-yi-jiang-nan-line-1",
+              "character": "江",
+              "cue": "江南好"
+            },
+            {
+              "lineId": "child-yi-jiang-nan-line-2",
+              "character": "日",
+              "cue": "日出江花"
+            },
+            {
+              "lineId": "child-yi-jiang-nan-line-3",
+              "character": "能",
+              "cue": "能不忆江南"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "江南真美，那里熟悉的风景一直留在白居易的记忆里。太阳升起时，江边的花红得胜过火焰；春天到来，江水绿得像蓝草。这样美的江南，怎么能不让人想起呢？",
+        "lineMeanings": [
+          {
+            "lineId": "child-yi-jiang-nan-line-1",
+            "meaning": "江南真美，那里熟悉的风景我过去常常见到、记在心里。"
+          },
+          {
+            "lineId": "child-yi-jiang-nan-line-2",
+            "meaning": "太阳升起时，江边的花红得胜过火焰；春天的江水绿得像蓝草。"
+          },
+          {
+            "lineId": "child-yi-jiang-nan-line-3",
+            "meaning": "这么美的江南，怎么能不让人回忆、想念呢？"
+          }
+        ],
+        "extension": {
+          "title": "用颜色保存一个地方",
+          "text": "《忆江南》没有列出许多地名，而是用红花、绿水和日出保存江南。记住一个地方时，颜色、声音和气味常常比抽象的介绍更有力量。",
+          "prompt": "你想用哪两种颜色记住一个喜欢的地方？请说出颜色对应的景物。"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": true
       }
@@ -65207,19 +66044,47 @@
       },
       "curation": {
         "selectionStatus": "human_shortlist",
-        "reviewStatus": "catalog_candidate",
+        "reviewStatus": "curated_content_v1",
         "sourceId": "raw-097",
-        "overrideApplied": false,
-        "overrideReason": "",
+        "overrideApplied": true,
+        "overrideReason": "第十三批内容复核：鸡黍相邀、村树青山、开轩话桑麻与重阳再访的友情时间链已人工确认；重、还按语境校正。",
         "overrideSource": null
       },
-      "reviewFlags": null,
-      "pronunciationOverrides": [],
-      "spatialLearning": null,
+      "reviewFlags": {
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false
+      },
+      "pronunciationOverrides": [
+        {
+          "path": "line-8.token-1",
+          "char": "还",
+          "pinyin": "huán",
+          "reason": "‘还来就菊花’表示回来再访，读 huán。"
+        }
+      ],
+      "spatialLearning": {
+        "coreRelation": "village-home-and-friendship-return",
+        "observation": "空间从朋友家和鸡黍展开，经村边绿树、郭外青山进入窗前田园，最后由重阳约定把眼前村居延伸到未来。",
+        "mapAction": "画‘故人家—村边树—郭外山—场圃—重阳菊花’的生活空间，不创建诗人的历史访问路线。",
+        "evidenceLineIds": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4",
+          "line-5",
+          "line-6",
+          "line-7",
+          "line-8"
+        ],
+        "childTakeaway": "友情由一顿家常饭、一次田园聊天和下一次相见的约定组成。"
+      },
       "placeRelations": null,
       "canonicalPlaceIds": [],
       "relationAliases": [],
-      "reviewNotes": "",
+      "reviewNotes": "《过故人庄》提供的是泛化乡村朋友家和田园生活，没有可核定的单一地点；不把村居景物扩写为孟浩然的具体行程。",
       "priority": "p1",
       "provenance": {
         "source": "https://github.com/chinese-poetry/chinese-poetry",
@@ -65481,8 +66346,9 @@
           "tokens": [
             {
               "char": "还",
-              "pinyin": "hái",
-              "tone": 5
+              "pinyin": "huán",
+              "tone": 2,
+              "pronunciationReview": "‘还来就菊花’表示回来再访，读 huán。"
             },
             {
               "char": "来",
@@ -65512,100 +66378,166 @@
         }
       ],
       "learningContract": {
-        "status": "machine-assisted-candidate",
+        "status": "curated_content_v1",
         "understanding": {
           "lineMeanings": [
             {
               "lineId": "child-guo-gu-ren-zhuang-line-1",
-              "meaning": "先从原句找出乡村和友情：这句写了“故人具鸡黍，”，再用自己的话说说画面怎样变化。",
+              "meaning": "老朋友准备好鸡肉和黄米饭，热情地邀请我到家里做客。",
               "keywords": [
-                "乡村",
-                "友情",
-                "田园"
+                "故人",
+                "鸡黍",
+                "邀我"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“故人具鸡黍，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘故人’是老朋友，不是已经去世的人；‘鸡黍’是家常饭，不是隆重宴席。",
+              "picture": "朋友在村舍准备饭食，门口有人等着迎接远来的客人。",
+              "prompt": "朋友用什么家常饭来招待诗人？",
+              "childMeaning": "老朋友准备好鸡肉和黄米饭，热情地邀请我到家里做客。",
+              "keyWords": [
+                "故人",
+                "鸡黍",
+                "邀我"
+              ],
+              "commonMisunderstanding": "‘故人’是老朋友，不是已经去世的人；‘鸡黍’是家常饭，不是隆重宴席。",
+              "imagePrompt": "朋友在村舍准备饭食，门口有人等着迎接远来的客人。"
             },
             {
               "lineId": "child-guo-gu-ren-zhuang-line-2",
-              "meaning": "先从原句找出乡村和友情：这句写了“邀我至田家。”，再用自己的话说说画面怎样变化。",
+              "meaning": "我来到朋友的田舍，乡村的树木和山景把屋子围在其中。",
               "keywords": [
-                "乡村",
-                "友情",
-                "田园"
+                "至田家",
+                "绿树",
+                "青山"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“邀我至田家。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘田家’是乡村人家，不是田地本身；绿树和青山先把村庄的位置和环境交代出来。",
+              "picture": "进村后，绿树在村边合拢，远处青山从屋舍外斜斜展开。",
+              "prompt": "村庄近处和远处分别有什么景物？",
+              "childMeaning": "我来到朋友的田舍，乡村的树木和山景把屋子围在其中。",
+              "keyWords": [
+                "至田家",
+                "绿树",
+                "青山"
+              ],
+              "commonMisunderstanding": "‘田家’是乡村人家，不是田地本身；绿树和青山先把村庄的位置和环境交代出来。",
+              "imagePrompt": "进村后，绿树在村边合拢，远处青山从屋舍外斜斜展开。"
             },
             {
               "lineId": "child-guo-gu-ren-zhuang-line-3",
-              "meaning": "先从原句找出乡村和友情：这句写了“绿树村边合，”，再用自己的话说说画面怎样变化。",
+              "meaning": "打开窗户就面对田野和菜园，举起酒杯谈起种桑种麻的农事。",
               "keywords": [
-                "乡村",
-                "友情",
-                "田园"
+                "开轩",
+                "场圃",
+                "桑麻"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“绿树村边合，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘轩’是有窗的屋子或窗，‘场圃’是田场菜园；‘话桑麻’是谈农事，不是只背两个植物名称。",
+              "picture": "窗户把屋内的酒席和屋外的田园连起来，聊天有了真实的生活内容。",
+              "prompt": "窗户打开后，屋内外连成了怎样的空间？",
+              "childMeaning": "打开窗户就面对田野和菜园，举起酒杯谈起种桑种麻的农事。",
+              "keyWords": [
+                "开轩",
+                "场圃",
+                "桑麻"
+              ],
+              "commonMisunderstanding": "‘轩’是有窗的屋子或窗，‘场圃’是田场菜园；‘话桑麻’是谈农事，不是只背两个植物名称。",
+              "imagePrompt": "窗户把屋内的酒席和屋外的田园连起来，聊天有了真实的生活内容。"
             },
             {
               "lineId": "child-guo-gu-ren-zhuang-line-4",
-              "meaning": "先从原句找出乡村和友情：这句写了“青山郭外斜。”，再用自己的话说说画面怎样变化。",
+              "meaning": "等到重阳节那天，我还要来这里和朋友一起赏菊。",
               "keywords": [
-                "乡村",
-                "友情",
-                "田园"
+                "重阳日",
+                "还来",
+                "菊花"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“青山郭外斜。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘还’在‘还来’中读 huán，表示回来；‘重阳’是传统节日，重读 chóng，不是重量的 zhòng。",
+              "picture": "这次聚会还没有结束，诗人已经约好秋日再来，友情延伸到未来。",
+              "prompt": "诗人和朋友约定什么时候再见？",
+              "childMeaning": "等到重阳节那天，我还要来这里和朋友一起赏菊。",
+              "keyWords": [
+                "重阳日",
+                "还来",
+                "菊花"
+              ],
+              "commonMisunderstanding": "‘还’在‘还来’中读 huán，表示回来；‘重阳’是传统节日，重读 chóng，不是重量的 zhòng。",
+              "imagePrompt": "这次聚会还没有结束，诗人已经约好秋日再来，友情延伸到未来。"
             },
             {
               "lineId": "child-guo-gu-ren-zhuang-line-5",
-              "meaning": "先从原句找出乡村和友情：这句写了“开轩面场圃，”，再用自己的话说说画面怎样变化。",
+              "meaning": "等待重阳到来，也是在等待下一次一起赏菊的相聚。",
               "keywords": [
-                "乡村",
-                "友情",
-                "田园"
+                "待到",
+                "重阳"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“开轩面场圃，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘待到’是等到，不是马上发生；诗末的时间跳转让眼前的友情有了未来。",
+              "picture": "酒席和田园景物留在记忆里，重阳的菊花成为下一次见面的线索。",
+              "prompt": "最后一句为什么要写未来的节日？",
+              "childMeaning": "等待重阳到来，也是在等待下一次一起赏菊的相聚。",
+              "keyWords": [
+                "待到",
+                "重阳"
+              ],
+              "commonMisunderstanding": "‘待到’是等到，不是马上发生；诗末的时间跳转让眼前的友情有了未来。",
+              "imagePrompt": "酒席和田园景物留在记忆里，重阳的菊花成为下一次见面的线索。"
             },
             {
               "lineId": "child-guo-gu-ren-zhuang-line-6",
-              "meaning": "先从原句找出乡村和友情：这句写了“把酒话桑麻。”，再用自己的话说说画面怎样变化。",
+              "meaning": "诗人想把这次乡村做客的温暖留到下一次相见。",
               "keywords": [
-                "乡村",
-                "友情",
-                "田园"
+                "就菊花",
+                "再访"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“把酒话桑麻。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "‘就菊花’是靠近菊花、赏菊的省略说法，不是把菊花拿来做别的事情；‘再访’是诗意概括。",
+              "picture": "从鸡黍、青山到重阳菊花，朋友的生活空间和时间被一条约定连在一起。",
+              "prompt": "诗人把哪一种花变成了再次相聚的记号？",
+              "childMeaning": "诗人想把这次乡村做客的温暖留到下一次相见。",
+              "keyWords": [
+                "就菊花",
+                "再访"
+              ],
+              "commonMisunderstanding": "‘就菊花’是靠近菊花、赏菊的省略说法，不是把菊花拿来做别的事情；‘再访’是诗意概括。",
+              "imagePrompt": "从鸡黍、青山到重阳菊花，朋友的生活空间和时间被一条约定连在一起。"
             },
             {
               "lineId": "child-guo-gu-ren-zhuang-line-7",
-              "meaning": "先从原句找出乡村和友情：这句写了“待到重阳日，”，再用自己的话说说画面怎样变化。",
+              "meaning": "这首诗里的村庄既有山水风景，也有种田、做饭和谈农事的生活。",
               "keywords": [
-                "乡村",
-                "友情",
-                "田园"
+                "村居",
+                "桑麻"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“待到重阳日，”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "不能把村庄只看成风景画；诗中人物的动作和谈话同样重要。",
+              "picture": "树、山、田圃和人的声音共同组成故人庄，而不是空无一人的景点。",
+              "prompt": "如果没有人物的活动，村庄会少掉什么？",
+              "childMeaning": "这首诗里的村庄既有山水风景，也有种田、做饭和谈农事的生活。",
+              "keyWords": [
+                "村居",
+                "桑麻"
+              ],
+              "commonMisunderstanding": "不能把村庄只看成风景画；诗中人物的动作和谈话同样重要。",
+              "imagePrompt": "树、山、田圃和人的声音共同组成故人庄，而不是空无一人的景点。"
             },
             {
               "lineId": "child-guo-gu-ren-zhuang-line-8",
-              "meaning": "先从原句找出乡村和友情：这句写了“还来就菊花。”，再用自己的话说说画面怎样变化。",
+              "meaning": "朋友之间的约定让一次普通做客变成可以记住、可以再来的友情。",
               "keywords": [
-                "乡村",
-                "友情",
-                "田园"
+                "故人",
+                "待到",
+                "再来"
               ],
-              "misunderstanding": "不要只把这句翻成单个词；要把它和前后句的画面连起来。",
-              "picture": "把“还来就菊花。”画成一个清楚的画面，并标出一个动作、景物或声音。"
+              "misunderstanding": "诗的重点不只在‘赏菊’，也在朋友相邀、相谈和再次相见的信任；不要把它读成旅游打卡路线。",
+              "picture": "眼前的村居被约定延伸到未来，友情像一条看不见的回访路线。",
+              "prompt": "哪一个约定让这次做客变得更长久？",
+              "childMeaning": "朋友之间的约定让一次普通做客变成可以记住、可以再来的友情。",
+              "keyWords": [
+                "故人",
+                "待到",
+                "再来"
+              ],
+              "commonMisunderstanding": "诗的重点不只在‘赏菊’，也在朋友相邀、相谈和再次相见的信任；不要把它读成旅游打卡路线。",
+              "imagePrompt": "眼前的村居被约定延伸到未来，友情像一条看不见的回访路线。"
             }
           ],
-          "wholeMeaning": "这首诗围绕乡村、友情、田园展开，先看每句画面，再把它们连成整首诗的意思。",
-          "mainContent": "作品通过乡村、友情、田园写出一个可观察、可复述的诗境。",
+          "wholeMeaning": "老朋友准备了鸡肉和黄米饭，邀请诗人到乡村家中做客。村边绿树合拢，城外青山斜立；打开窗户面对田园，端酒谈论桑麻。约好重阳节再来赏菊，诗写出乡村友情和朴素而亲切的生活。",
+          "mainContent": "诗从朋友备饭邀客开始，镜头移到村边绿树和郭外青山，再进入窗前田园与谈农事，最后以重阳再访留下期待。",
           "evidenceLines": [
             "child-guo-gu-ren-zhuang-line-1",
             "child-guo-gu-ren-zhuang-line-2",
@@ -65616,12 +66548,13 @@
             "child-guo-gu-ren-zhuang-line-7",
             "child-guo-gu-ren-zhuang-line-8"
           ],
+          "completionEvidence": "孩子用自己的话、关键词或画面说明每句大意，并能把诗句和画面对应起来；点击展开不单独算完成。",
           "requiresEvidence": true
         },
         "theme": {
-          "mainContent": "作品通过乡村、友情、田园表达一种值得回到原句寻找证据的感受。",
-          "emotion": "情感与中心意思待编辑复核；先用自己的话说感受。",
-          "centralIdea": "先说清诗中发生了什么，再说明它带来的感受。",
+          "mainContent": "诗从朋友备饭邀客开始，镜头移到村边绿树和郭外青山，再进入窗前田园与谈农事，最后以重阳再访留下期待。",
+          "emotion": "朋友相邀的亲切、乡村生活的安闲和对再次相聚的期待。",
+          "centralIdea": "真挚的友情常藏在一顿家常饭、一次面对田园的聊天和一句下次再来的约定里；自然景物让这份友情有了具体空间。",
           "evidenceLines": [
             "child-guo-gu-ren-zhuang-line-1",
             "child-guo-gu-ren-zhuang-line-2",
@@ -65631,6 +66564,11 @@
             "child-guo-gu-ren-zhuang-line-6",
             "child-guo-gu-ren-zhuang-line-7",
             "child-guo-gu-ren-zhuang-line-8"
+          ],
+          "acceptedExpressions": [
+            "用自己的话说",
+            "意思相近即可",
+            "可以先说出画面"
           ],
           "allowReasonableExpression": true,
           "matchMode": "semantic-paraphrase"
@@ -65638,73 +66576,202 @@
         "recitation": {
           "stages": [
             "原文+拼音",
-            "去拼音",
+            "without pinyin / 去拼音",
             "隐藏关键词",
             "首字提示",
             "画面线索",
-            "完全隐藏"
+            "完全隐藏 / 无提示完整背诵"
           ],
           "memoryKeywords": [
-            [
-              "乡村",
-              "友情"
-            ],
-            [
-              "乡村",
-              "友情"
-            ],
-            [
-              "乡村",
-              "友情"
-            ],
-            [
-              "乡村",
-              "友情"
-            ],
-            [
-              "乡村",
-              "友情"
-            ],
-            [
-              "乡村",
-              "友情"
-            ],
-            [
-              "乡村",
-              "友情"
-            ],
-            [
-              "乡村",
-              "友情"
-            ]
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-1",
+              "keywords": [
+                "故人",
+                "鸡黍",
+                "田家"
+              ],
+              "cue": "朋友备饭相邀"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-2",
+              "keywords": [
+                "绿树",
+                "青山"
+              ],
+              "cue": "村边树和郭外山"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-3",
+              "keywords": [
+                "开轩",
+                "场圃",
+                "桑麻"
+              ],
+              "cue": "开窗看田园谈农事"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-4",
+              "keywords": [
+                "重阳",
+                "菊花"
+              ],
+              "cue": "约好节日再赏菊"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-5",
+              "keywords": [
+                "待到",
+                "再聚"
+              ],
+              "cue": "期待下一次相见"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-6",
+              "keywords": [
+                "就菊花",
+                "再访"
+              ],
+              "cue": "菊花成为回访记号"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-7",
+              "keywords": [
+                "村居",
+                "桑麻"
+              ],
+              "cue": "风景和生活并置"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-8",
+              "keywords": [
+                "故人",
+                "还来"
+              ],
+              "cue": "友情由约定延长"
+            }
           ],
           "firstCharacterHints": [
-            "故",
-            "邀",
-            "绿",
-            "青",
-            "开",
-            "把",
-            "待",
-            "还"
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-1",
+              "character": "故",
+              "cue": "故人具鸡黍"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-2",
+              "character": "邀",
+              "cue": "邀我至田家"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-3",
+              "character": "绿",
+              "cue": "绿树村边合"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-4",
+              "character": "青",
+              "cue": "青山郭外斜"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-5",
+              "character": "开",
+              "cue": "开轩面场圃"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-6",
+              "character": "把",
+              "cue": "把酒话桑麻"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-7",
+              "character": "待",
+              "cue": "待到重阳日"
+            },
+            {
+              "lineId": "child-guo-gu-ren-zhuang-line-8",
+              "character": "还",
+              "cue": "还来就菊花"
+            }
           ],
           "verification": {
-            "requiresNoPrompt": true
+            "requiresNoPrompt": true,
+            "unassistedEvidence": "隐藏正文和拼音后从头到尾背出，允许一次轻微自我纠正；AI语音仅作辅助证据。"
           }
         },
+        "statuses": [
+          {
+            "id": "understood",
+            "label": "读懂印"
+          },
+          {
+            "id": "interpreted",
+            "label": "会意印"
+          },
+          {
+            "id": "recited",
+            "label": "熟背印"
+          },
+          {
+            "id": "retained",
+            "label": "记牢印"
+          }
+        ],
         "retention": {
           "intervalsDays": [
             1,
             3,
             7
-          ]
+          ],
+          "rule": "次日、三日后、七日后再次无提示背诵，并回忆大意或核心画面。"
+        }
+      },
+      "interpretation": {
+        "summary": "老朋友准备了鸡肉和黄米饭，邀请诗人到乡村家中做客。村边绿树合拢，城外青山斜立；打开窗户面对田园，端酒谈论桑麻。约好重阳节再来赏菊，诗写出乡村友情和朴素而亲切的生活。",
+        "lineMeanings": [
+          {
+            "lineId": "child-guo-gu-ren-zhuang-line-1",
+            "meaning": "老朋友准备好鸡肉和黄米饭，热情地邀请我到家里做客。"
+          },
+          {
+            "lineId": "child-guo-gu-ren-zhuang-line-2",
+            "meaning": "我来到朋友的田舍，乡村的树木和山景把屋子围在其中。"
+          },
+          {
+            "lineId": "child-guo-gu-ren-zhuang-line-3",
+            "meaning": "打开窗户就面对田野和菜园，举起酒杯谈起种桑种麻的农事。"
+          },
+          {
+            "lineId": "child-guo-gu-ren-zhuang-line-4",
+            "meaning": "等到重阳节那天，我还要来这里和朋友一起赏菊。"
+          },
+          {
+            "lineId": "child-guo-gu-ren-zhuang-line-5",
+            "meaning": "等待重阳到来，也是在等待下一次一起赏菊的相聚。"
+          },
+          {
+            "lineId": "child-guo-gu-ren-zhuang-line-6",
+            "meaning": "诗人想把这次乡村做客的温暖留到下一次相见。"
+          },
+          {
+            "lineId": "child-guo-gu-ren-zhuang-line-7",
+            "meaning": "这首诗里的村庄既有山水风景，也有种田、做饭和谈农事的生活。"
+          },
+          {
+            "lineId": "child-guo-gu-ren-zhuang-line-8",
+            "meaning": "朋友之间的约定让一次普通做客变成可以记住、可以再来的友情。"
+          }
+        ],
+        "extension": {
+          "title": "把友情放进一座村庄",
+          "text": "《过故人庄》让友情有了可以走进去的空间：厨房里的鸡黍、村边的树、窗外的田园和谈农事的酒席。最后的重阳约定又让一次相聚延伸到未来。",
+          "prompt": "如果邀请朋友到一个你喜欢的地方，你会准备什么、带他看什么、约定下次做什么？"
         }
       },
       "review": {
-        "pinyinReviewed": false,
-        "textReviewed": false,
-        "meaningReviewed": false,
-        "geoReviewed": false,
+        "textReviewed": true,
+        "pinyinReviewed": true,
+        "meaningReviewed": true,
+        "geoReviewed": true,
+        "conceptReviewed": false,
         "guidedReady": true,
         "immersiveReady": false
       }

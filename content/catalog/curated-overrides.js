@@ -1477,6 +1477,115 @@ export const curatedOverrides = {
     }),
   },
 
+  "child-shi-zhi-sai-shang": {
+    overrideReason: "第十三批内容复核：出使边地、居延历史地名、大漠孤烟、长河落日与候骑燕然的远近空间已人工确认；属、骑按历史语境校正。",
+    ...catalogReview({
+      reviewNotes: "《使至塞上》直接提供居延、萧关、燕然等历史边塞参照；现代地图只用玉门关作西北边地文化参照，不把出使诗句扩写为已证实的个人军行路线。",
+      pinyinOverrides: [
+        { path: "line-2.token-1", char: "属", pinyin: "shǔ", reason: "‘属国’是古代官职或使者身份称谓，属读 shǔ。" },
+        { path: "line-7.token-5", char: "骑", pinyin: "qí", reason: "‘候骑’指巡察骑兵，骑读 qí。" },
+      ],
+      spatialLearning: {
+        coreRelation: "frontier-mission-and-desert-horizon",
+        observation: "视线从使车和历史地名推进到蓬草、归雁、大漠、长河和落日，最后在萧关遇到候骑并指向燕然。",
+        mapAction: "以玉门关作西北边地文化参照，画‘使车—居延—大漠—长河—萧关—燕然’的历史空间关系，不画个人出使路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8"],
+        childTakeaway: "地名给出边塞尺度，烟、雁、落日和人物行动让辽阔空间变得可以观察。",
+      },
+      placeRelations: [
+        { targetId: "yumen-pass", type: "frontier_region", confidence: "medium", assertion: "居延、萧关、燕然构成历史边塞文化空间，可用玉门关作西北区域参照，不等同于诗中每个地名。", childMeaning: "把大漠、关口和远方长河放回西北边地的尺度。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["yumen-pass"],
+    }),
+  },
+
+  "child-du-jing-men-song-bie": {
+    overrideReason: "第十三批内容复核：荆门入楚、山随平野、江入大荒、月影海楼与故乡水送行的空间推进已人工确认；不把诗意行舟路线当作现代导航。",
+    ...catalogReview({
+      reviewNotes: "荆门、楚地和长江是诗中远游空间的直接参照；地图可展示现代荆门—长江关系，不推断李白当日的精确航道和停泊点。",
+      spatialLearning: {
+        coreRelation: "jingmen-river-journey-and-homecoming",
+        observation: "船从荆门外进入楚地，山势退远、长江展开，月影和云气把夜景推向水天，最后故乡水回到送行关系。",
+        mapAction: "连接荆门与长江作现代地理参照，再用‘山退—江开—月镜—海楼—故乡水’复述诗中观察，不绘制唐代精确航线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8"],
+        childTakeaway: "远行让山河不断变换，故乡水又把遥远的路和心里的家连在一起。",
+      },
+      placeRelations: [
+        { targetId: "jingmen", type: "departure_region", confidence: "high", assertion: "荆门直接出现在诗句中，是远游进入楚地的区域参照，不证明诗人精确出发坐标。", childMeaning: "船从荆门山河进入更开阔的水路。", sourceKeys: ["chinesePoetry"] },
+        { targetId: "yangtze", type: "river_journey", confidence: "high", assertion: "江水直接构成山随平野、江入大荒和送行舟的水路参照，不等于已核实历史航迹。", childMeaning: "长江把远方和故乡的记忆串起来。", sourceKeys: ["chinesePoetry", "yangtzeNDRC"] },
+      ],
+      canonicalPlaceIds: ["jingmen", "yangtze"],
+    }),
+  },
+
+  "child-lang-tao-sha": {
+    overrideReason: "第十三批内容复核：黄河曲折沙浪、风簸天涯与银河牵牛织女的现实—想象跃迁已人工确认；簸按语境校正。",
+    ...catalogReview({
+      reviewNotes: "《浪淘沙》以黄河为现实地理参照，以银河和牵牛织女保留神话想象；不把诗中直上银河解释为真实水路或航天路线。",
+      pinyinOverrides: [
+        { path: "line-2.token-4", char: "簸", pinyin: "bǒ", reason: "‘风簸’写风吹浪翻、上下颠动，簸读 bǒ。" },
+      ],
+      spatialLearning: {
+        coreRelation: "yellow-river-to-mythic-galaxy",
+        observation: "镜头从九曲黄河和万里沙浪开始，经过风簸天涯的远景，再沿诗人的想象向上连接银河与牵牛织女。",
+        mapAction: "先定位黄河作为现实参照，再用虚线把黄河的力量延伸到银河神话；明确区分地图事实与诗歌想象。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4"],
+        childTakeaway: "想象可以从真实的河流和风浪长出来，但神话空间不等于现实地图。",
+      },
+      placeRelations: [
+        { targetId: "yellow-river", type: "river_imagery", confidence: "high", assertion: "黄河直接出现在首句，是现实山河的核心参照。", childMeaning: "从黄河的曲折和风浪开始读这首诗。", sourceKeys: ["chinesePoetry"] },
+      ],
+      canonicalPlaceIds: ["yellow-river"],
+    }),
+  },
+
+  "child-yi-jiang-nan": {
+    overrideReason: "第十三批内容复核：江南熟景、日出江花、春来江水的红绿对照与反问怀念已人工确认；标点后的逐字拼音和谙、胜按语境校正。",
+    ...catalogReview({
+      reviewNotes: "《忆江南》写江南区域记忆，不把候选西湖直接当作唯一写作地点；地图只展示江南水乡的现代区域参照，颜色和怀念回到诗句。",
+      pinyinOverrides: [
+        { path: "line-1.token-5", char: "风", pinyin: "fēng", reason: "‘风景’中的风读 fēng；修正词调标点后的逐字对齐。" },
+        { path: "line-1.token-6", char: "景", pinyin: "jǐng", reason: "‘风景’中的景读 jǐng；修正词调标点后的逐字对齐。" },
+        { path: "line-1.token-7", char: "旧", pinyin: "jiù", reason: "‘旧曾谙’中的旧读 jiù；修正词调标点后的逐字对齐。" },
+        { path: "line-1.token-8", char: "曾", pinyin: "céng", reason: "‘旧曾谙’表示过去曾经熟悉，曾读 céng；修正词调标点后的逐字对齐。" },
+        { path: "line-1.token-9", char: "谙", pinyin: "ān", reason: "‘谙’意为熟悉、了解，读 ān；修正词调标点后的逐字对齐。" },
+        { path: "line-2.token-9", char: "春", pinyin: "chūn", reason: "‘春来’中的春读 chūn；修正词调标点后的逐字对齐。" },
+        { path: "line-2.token-10", char: "来", pinyin: "lái", reason: "‘春来’中的来读 lái；修正词调标点后的逐字对齐。" },
+        { path: "line-2.token-11", char: "江", pinyin: "jiāng", reason: "‘江水’中的江读 jiāng；修正词调标点后的逐字对齐。" },
+        { path: "line-2.token-12", char: "水", pinyin: "shuǐ", reason: "‘江水’中的水读 shuǐ；修正词调标点后的逐字对齐。" },
+        { path: "line-2.token-13", char: "绿", pinyin: "lǜ", reason: "‘江水绿’中的绿读 lǜ；修正词调标点后的逐字对齐。" },
+        { path: "line-2.token-14", char: "如", pinyin: "rú", reason: "‘绿如蓝’中的如读 rú；修正词调标点后的逐字对齐。" },
+        { path: "line-2.token-15", char: "蓝", pinyin: "lán", reason: "‘蓝’指蓝草颜色，读 lán；修正词调标点后的逐字对齐。" },
+      ],
+      spatialLearning: {
+        coreRelation: "jiangnan-color-and-memory",
+        observation: "记忆先从江南总景展开，再收进日出时的江花和春来的江水，最后由颜色回到不能忘怀的地方。",
+        mapAction: "以江南水乡作宽泛现代区域参照，不强行绑定西湖或作者精确写作地点；用‘花红—水绿—忆江南’复述颜色与记忆。",
+        evidenceLineIds: ["line-1", "line-2", "line-3"],
+        childTakeaway: "地图能给一个区域，颜色和记忆才让‘想念一个地方’变得具体。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
+  "child-guo-gu-ren-zhuang": {
+    overrideReason: "第十三批内容复核：鸡黍相邀、村树青山、开轩话桑麻与重阳再访的友情时间链已人工确认；重、还按语境校正。",
+    ...catalogReview({
+      reviewNotes: "《过故人庄》提供的是泛化乡村朋友家和田园生活，没有可核定的单一地点；不把村居景物扩写为孟浩然的具体行程。",
+      pinyinOverrides: [
+        { path: "line-8.token-1", char: "还", pinyin: "huán", reason: "‘还来就菊花’表示回来再访，读 huán。" },
+      ],
+      spatialLearning: {
+        coreRelation: "village-home-and-friendship-return",
+        observation: "空间从朋友家和鸡黍展开，经村边绿树、郭外青山进入窗前田园，最后由重阳约定把眼前村居延伸到未来。",
+        mapAction: "画‘故人家—村边树—郭外山—场圃—重阳菊花’的生活空间，不创建诗人的历史访问路线。",
+        evidenceLineIds: ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8"],
+        childTakeaway: "友情由一顿家常饭、一次田园聊天和下一次相见的约定组成。",
+      },
+      canonicalPlaceIds: [],
+    }),
+  },
+
   "child-lu-chai": {
     text: "空山不见人，但闻人语响。\n返景入深林，复照青苔上。",
     overrideReason: "修正候选快照把‘但闻人语响’误录为‘但余钟磬音’的问题；保留原始快照，由人工 override 覆盖运行时。",
